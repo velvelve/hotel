@@ -1,0 +1,35 @@
+###############################################################################
+#                          Generated on phpdocker.io                          #
+###############################################################################
+version: '3.1'
+services:
+    redis:
+        image: 'redis:alpine'
+
+    postgres:
+        image: 'postgres:15-alpine'
+        working_dir: /hotel
+        volumes:
+            - '.:/hotel'
+        environment:
+            - POSTGRES_USER=user
+            - POSTGRES_PASSWORD=123456789
+            - POSTGRES_DB=hotel
+        ports:
+            - '2027:5432'
+
+    webserver:
+        image: 'nginx:alpine'
+        working_dir: /hotel
+        volumes:
+            - '.:/hotel'
+            - './docker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf'
+        ports:
+            - '2023:80'
+
+    php-fpm:
+        build: docker/php-fpm
+        working_dir: /hotel
+        volumes:
+            - '.:/hotel'
+            - './docker/php-fpm/php-ini-overrides.ini:/etc/php/8.2/fpm/conf.d/99-overrides.ini'

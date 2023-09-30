@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Mail\ContactMessage;
+use Exception;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\View\View;
 
@@ -17,23 +17,26 @@ class ContactsController extends Controller
 
     public function sendMessage(Request $request)
     {
-        if (!Config::has('mail.username') || !Config::has('mail.password')) {
-            return response()->json(['error' => 'В вашем .env не прописаны конфигурации почты MAIL_USERNAME и MAIL_PASSWORD'], 500);
+        if (is_null(env('MAIL_USERNAME')) || is_null(env('MAIL_PASSWORD'))) {
+            return response()->json(['error' => 'In yours .env MAIL_USERNAME and MAIL_PASSWORD configurations are not registered. Try clearing the configuration and cache "php artisan config:clear", "php artisan cache:clear"'], 500);
         }
 
         // Получаем данные из формы
         $data = $request->only([
-            'name', 
-            'phone', 
-            'email', 
-            'hotel', 
-            'category', 
+            'name',
+            'phone',
+            'email',
+            'hotel',
+            'category',
             'message'
         ]);
 
-        // Отправляем сообщение на почту
-        Mail::to('hello@example.com')->send(new ContactMessage($data));
-
-        return redirect()->back()->with('success', 'Ваше сообщение успешно отправлено!');
+        try {
+            // Отправляем сообщение на почту
+            Mail::to('hello@example.com')->send(new ContactMessage($data));
+            return redirect()->back()->with('success', 'Ваше сообщение успешно отправлено!');
+        } catch (Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     }
 }

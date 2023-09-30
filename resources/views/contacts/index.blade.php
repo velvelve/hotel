@@ -52,8 +52,8 @@
 
         <label for="category">Категория</label>
         <select id="category" name="category" required>
-            <option value="категория 1">Оставить отзыв</option>
-            <option value="категория 2">Жалоба</option>
+            <option value="Оставить отзыв">Оставить отзыв</option>
+            <option value="Жалоба">Жалоба</option>
             <!-- Добавьте нужные категории -->
         </select><br>
 

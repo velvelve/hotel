@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 /*
@@ -14,3 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index']);
+
+//Контакты
+Route::get('/contacts', [ContactsController::class, 'index'])
+    ->name('contacts.index');
+Route::post('/contacts/send-message', [ContactsController::class, 'sendMessage'])
+    ->name('contacts.sendMessage');

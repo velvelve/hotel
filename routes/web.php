@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -14,3 +16,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index']);
+
+//поиск комнат
+//результат поиска
+Route::get('/search-rooms', [SearchController::class, 'index'])
+    ->name('search.rooms');
+
+//Контакты
+Route::get('/contacts', [ContactsController::class, 'index'])
+    ->name('contacts.index');
+Route::post('/contacts/send-message', [ContactsController::class, 'sendMessage'])
+    ->name('contacts.sendMessage');

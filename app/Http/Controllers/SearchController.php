@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Room;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -10,31 +11,18 @@ class SearchController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): view
+    public function index(Request $request,): view
     {
-        //временный статичный массив, пока отсутствует БД
-        $freeRooms=[
-            [
-            'name'=>'standart',
-            'image' => 'https://siriushotels.ru/pr_img/500_1918100371/20230421/79734237/1.jpg',
-            'description' => fake()->text(200),
-            'price' => 2000
-            ],
-            [
-                'name'=>'superior',
-                'image' => 'https://siriushotels.ru/pr_img/500_1918100371/20230421/79734237/1.jpg',
-                'description' => fake()->text(200),
-                'price' => 3000
-            ],
-            [
-                'name'=>'premium',
-                'image' => 'https://siriushotels.ru/pr_img/500_1918100371/20230421/79734237/1.jpg',
-                'description' => fake()->text(200),
-                'price' => 5000
-            ],
-        ];
 
-        return view('search.rooms',['roomsList'=>$freeRooms]);
+
+        $dateRange = $request->input('date_range');
+        $dateParts = explode(' - ', $dateRange);
+        $checkInDate = $dateParts[0];
+        $checkOutDate = $dateParts[1];
+        $guestCount = $request->input('guest_count');
+        //временный статичный массив, пока отсутствует БД
+        $freeRooms = Room::query()->where('max_guest_count', '>=', $guestCount)->get();
+        return view('search.rooms', ['roomsList' => $freeRooms]);
     }
 
     /**

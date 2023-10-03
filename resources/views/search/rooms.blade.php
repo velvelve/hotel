@@ -1,10 +1,9 @@
-
 <div>
     @foreach($roomsList as $room)
-        <h2>{{$room['name']}}</h2>
-        <img src="{{$room['image']}}" alt="image">
-        <div>{{$room['description']}}</div>
-        <div>Цена:{{$room['price']}}</div>
-        <button><a href="#">Забронировать</a></button>
+    <h2>{{ $room->number }}</h2>
+    <img src="{{ url($room->image()->path) }}" alt="{{ $room->image()->filename }}">
+    <div>Цена: {{ $room->price }}</div>
+    <div>Максимальная вместительность: {{ $room->max_guest_count }}</div>
+    <button><a href="#">Забронировать</a></button>
     @endforeach
-<div>
+    <div>

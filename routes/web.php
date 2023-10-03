@@ -19,7 +19,7 @@ Route::get('/', [HomeController::class, 'index']);
 
 //поиск комнат
 //результат поиска
-Route::get('/search-rooms', [SearchController::class, 'index'])
+Route::post('/search-rooms', [SearchController::class, 'index'])
     ->name('search.rooms');
 
 //Контакты

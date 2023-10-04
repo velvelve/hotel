@@ -26,11 +26,14 @@
             <div>Максимальная вместительность: {{ $room->max_guest_count }}</div>
 
             <div>Сервисы:</div>
-            @foreach ($services as $service)
-                @if ($room->id === $service->room_id)
-                    <div>{{ $service->name }}</div>
-                    <div>{{ $service->description }}</div @endif
-                @endforeach
+
+            @foreach ($room->services as $service)
+
+                <div>{{ $service->name }}</div>
+                <div>{{ $service->description }}</div>
+            @endforeach
+
+
 
                 <form action="#" method="POST">
                     <button>Выбрать</button>

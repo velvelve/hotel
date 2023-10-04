@@ -20,15 +20,13 @@ class SearchController extends Controller
         $freeRooms = SearchRooms::freeRooms($request,$reservedRoomsId);
 
         //получаем массив изображений для отфильтрованных комнат
-        $images=SearchRooms::roomsImage($freeRooms);
+        //$images=SearchRooms::roomsImage($freeRooms);
 
         //получаем массив сервисов для отфильтрованных комнат
-        $services=SearchRooms::roomsServices($freeRooms);
+        //$services=SearchRooms::roomsServices($freeRooms);
 
         return view('search.rooms', [
             'roomsList' => $freeRooms,
-            'images' => $images,
-            'services' => $services,
             'guest_count' => $request->input('guest_count')
         ]);
     }

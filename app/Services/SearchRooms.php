@@ -19,6 +19,7 @@ class SearchRooms
         $dateParts = explode(' - ', $dateRange);
         $checkInDate = $dateParts[0];
         $checkOutDate = $dateParts[1];
+        $guestCount = $request->input('guest_count');
         $reservedRoomsId = [];
 
         $roomsFreeDate = Booking::query()
@@ -32,6 +33,7 @@ class SearchRooms
         //по просьбе Дмитрия
         $request->session()->put('check_in_date', $checkInDate);
         $request->session()->put('check_out_date', $checkOutDate);
+        $request->session()->put('guest_count', $guestCount);
         //
         return $reservedRoomsId;
     }
@@ -45,30 +47,4 @@ class SearchRooms
                 ->whereNotIn('id', $reservedRoomsId)
                 ->get();
         }
-
-//получаем массив изображений для отфильтрованных комнат
-        static function roomsImage($freeRooms): Collection|array
-        {
-            $freeRoomsId=[];
-            foreach ($freeRooms as $room){
-                $freeRoomsId[]=$room->id;
-            }
-
-            return Image::query()
-                ->whereIn('room_id', $freeRoomsId)
-                ->get();
-        }
-
-    //получаем массив сервисов для отфильтрованных комнат
-    static function roomsServices($freeRooms): Collection|array
-    {
-        $freeRoomsId=[];
-        foreach ($freeRooms as $room){
-            $freeRoomsId[]=$room->id;
-        }
-
-        return Service::query()
-            ->whereIn('room_id', $freeRoomsId)
-            ->get();
-    }
 }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Room;
+use App\Services\SearchRooms;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -11,18 +11,24 @@ class SearchController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request,): view
+    public function index(Request $request): view
     {
+        //получаем массив зарезервированных комнат, чтобы исключить их
+        $reservedRoomsId=SearchRooms::reservedRooms($request);
 
+        //получаем массив свободных комнат, на заданный период + фильтр по максимальному колличеству гостей
+        $freeRooms = SearchRooms::freeRooms($request,$reservedRoomsId);
 
-        $dateRange = $request->input('date_range');
-        $dateParts = explode(' - ', $dateRange);
-        $checkInDate = $dateParts[0];
-        $checkOutDate = $dateParts[1];
-        $guestCount = $request->input('guest_count');
-        //временный статичный массив, пока отсутствует БД
-        $freeRooms = Room::query()->where('max_guest_count', '>=', $guestCount)->get();
-        return view('search.rooms', ['roomsList' => $freeRooms]);
+        //получаем массив изображений для отфильтрованных комнат
+        //$images=SearchRooms::roomsImage($freeRooms);
+
+        //получаем массив сервисов для отфильтрованных комнат
+        //$services=SearchRooms::roomsServices($freeRooms);
+
+        return view('search.rooms', [
+            'roomsList' => $freeRooms,
+            'guest_count' => $request->input('guest_count')
+        ]);
     }
 
     /**

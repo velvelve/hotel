@@ -31,6 +31,8 @@ Route::get('/profile', fn() => 'Профиль')->middleware('auth')->name('prof
 
 //поиск комнат
 //результат поиска
+Route::get('/search-rooms', [SearchController::class, 'index'])
+    ->name('search.rooms');
 Route::post('/search-rooms', [SearchController::class, 'index'])
     ->name('search.rooms');
 

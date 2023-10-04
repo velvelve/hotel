@@ -1,0 +1,154 @@
+@charset "UTF-8";
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+.container {
+    width: 1460px;
+    margin: 0 auto;
+    padding: 0px 10px;
+}
+
+/* Шапка */
+.header_content {
+    max-width: 1052px;
+    padding: 0 10px;
+}
+
+header {
+    display: flex;
+    width: 1600px;
+    margin: 0 auto;
+    padding: 0;
+    height: 160px;
+    align-items: center;
+    background: url(../img/von.png) no-repeat center/cover;
+}
+
+/* Гамбургер иконка */
+.menu-btn {
+    display: none;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+}
+
+@media (max-width: 760px) {
+    .menu-btn {
+        display: block;
+    }
+}
+
+.menu-btn span {
+    width: 30px;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #222222;
+    transition: all 0.5s;
+}
+
+.menu-btn span:nth-of-type(2) {
+    top: calc(50% - 5px);
+}
+
+.menu-btn span:nth-of-type(3) {
+    top: calc(50% + 5px);
+}
+
+/* Меняем гамбургер иконку, когда меню открыто */
+.menu-btn.active span:nth-of-type(1) {
+    display: none;
+}
+
+.menu-btn.active span:nth-of-type(2) {
+    top: 50%;
+    transform: translate(-50%, 0%) rotate(45deg);
+}
+
+.menu-btn.active span:nth-of-type(3) {
+    top: 50%;
+    transform: translate(-50%, 0%) rotate(-45deg);
+}
+
+/* Меню, которое будет появляться */
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+}
+
+@media (max-width: 760px) {
+    .menu {
+        position: absolute;
+        transform: translateY(-110%);
+    }
+}
+
+.menu_ul {
+    display: flex;
+    gap: 70px;
+    padding-right: 10px;
+}
+
+@media (max-width: 760px) {
+    .menu_ul {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.menu_li {
+    font-family: Montserrat;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 700;
+    color: #ffffff;
+    position: relative;
+}
+
+.menu_li:hover {
+    transform: scale(1.3);
+}
+
+.menu_li:hover::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #ffffff;
+}
+
+@media (max-width: 760px) {
+    .menu_li {
+        font-size: 40px;
+    }
+}
+
+.active_li {
+    color: #ffffff;
+}
+
+.menu.active {
+    transform: translateY(0);
+    transition: 0.8s;
+    top: 15%;
+    left: 0;
+    overflow: auto;
+    background: rgba(253, 253, 253, 0.94);
+    z-index: 1;
+}

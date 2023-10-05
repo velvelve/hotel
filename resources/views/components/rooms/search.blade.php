@@ -1,4 +1,4 @@
-<div class="roomsSearch">
+<div class="componentRoomsSearch">
     <div class="roomsSearch-head">
         Поиск номеров
     </div>
@@ -17,7 +17,8 @@
                     <img src="/img/roomsSearch/guest.svg">
                     <label for="guest_count">Кол-во гостей</label>
                 </div>
-                <input type="number" name="guest_count" id="guest_count" value="{{ (int) $guests }}" required>
+                <input type="number" name="guest_count" id="guest_count" value="{{ (int) $guests }}" min="1"
+                    required>
             </div>
             <button type="submit" class="roomsSearch-menu__btn">Искать</button>
 

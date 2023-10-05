@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.searchResult-bg {
+    width: 100%;
+    min-height: 100vh;
+    max-height: 100%;
+    background: rgb(120, 104, 83);
+    background: linear-gradient(90deg, rgba(120, 104, 83, 1) 0%, rgba(217, 235, 235, 1) 100%);
+}
+
+.componentRoomsSearch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.searchResult {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.searchResults {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+}
+
+.searchResult-head {
+    min-height: 100px;
+    max-height: 100px;
+    color: #fff;
+    font-family: 'Forum', cursive;
+    font-size: 62px;
+}
+
+.searchResult-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.searchResult-content__item {
+    display: flex;
+    flex-direction: column;
+    min-width: 450px;
+    max-width: 450px;
+    min-height: 220px;
+    max-height: 220px;
+    margin: 10px 10px 10px 10px;
+    padding: 16px;
+    background-color: #DBDBDB;
+}
+
+.searchResult-content__item .item-description {
+    display: flex;
+    justify-content: space-between;
+    min-width: 450px;
+    max-width: 450px;
+    min-height: 186px;
+    max-height: 186px;
+}
+
+.item-description__leftSide {
+    min-width: 256px;
+    max-width: 256px;
+    min-height: 186px;
+    max-height: 186px;
+}
+
+.item-description__rightSide {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 190px;
+    max-width: 190px;
+    min-height: 186px;
+    max-height: 186px;
+}
+
+.item-description__rightSide-upperText {
+    font-family: 'Forum', cursive;
+    font-size: 24px;
+    color: #79655E;
+    text-align: center;
+}
+
+.item-description__rightSide-centralText {
+    font-family: 'Forum', cursive;
+    font-size: 24px;
+    color: #79655E;
+    text-align: center;
+}
+
+.item-description__rightSide-lowerText {
+    font-family: 'Forum', cursive;
+    font-size: 24px;
+    color: #CE6845;
+    text-align: center;
+}
+
+.searchResult-content__item .item-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 450px;
+    max-width: 450px;
+    min-height: 34px;
+    max-height: 34px;
+}
+
+.searchResult-content__item .item-btn button {
+    width: 144px;
+    height: 25px;
+    border: none;
+    border-radius: 50px;
+    background-color: #C09B5A;
+}
+
+.searchResult-content__item .item-btn a {
+    text-decoration: none;
+    font-family: 'Fraunces', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #79655E;
+}

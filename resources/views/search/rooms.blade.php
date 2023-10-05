@@ -1,43 +1,45 @@
 @extends('layouts.main')
 
 @section('content')
-    <x-rooms.search :guests=$guests />
-    <div>
-        @foreach ($roomsList as $room)
-            <h2>{{ $room->number }}</h2>
+    <div class="searchResult-bg">
+        <div class="searchResult">
+            <div class="searchResult-head">Результаты поиска :</div>
+            <x-rooms.search :guests=$guests />
+            <div class="searchResults">
+                @foreach ($roomsList as $room)
+                    <div class="searchResult-content"> <!-- В этом диве генерируются карточки номеров -->
+                        <div class="searchResult-content__item"> <!-- Карточка номера -->
+                            <div class="item-description">
+                                <img src="{{ $room->images[0]->path }}" alt="{{ $room->images[0]->filename }}">
+                                <div class="item-description__rightSide">
+                                    <div class="item-description__rightSide-upperText"> <!-- Номер комнаты -->
+                                        Комната №{{ $room->room_number }}
+                                    </div>
+                                    <div class="item-description__rightSide-centralText">
+                                        <!-- Максимальная вместительность -->
+                                        Максимальная вместительность: {{ $room->max_guest_count }}
+                                    </div>
+                                    <div class="item-description__rightSide-lowerText"> <!-- Цена -->
+                                        Цена: {{ $room->price }}
+                                    </div>
+                                    <div>Сервисы:</div>
 
-            @foreach ($room->images as $image)
-                <img src="{{ $image->path }}" alt="{{ $image->filename }}">
-            @endforeach
+                                    @foreach ($room->services as $service)
+                                        <div>{{ $service->name }}</div>
+                                        <div>{{ $service->description }}</div>
+                                    @endforeach
 
-            {{-- для наглядности --}}
-            <div>ID:{{ $room->id }}</div>
-            {{-- для наглядности --}}
-
-            <div>Цена: {{ $room->price }}</div>
-            <div>Максимальная вместительность: {{ $room->max_guest_count }}</div>
-
-            <div>Сервисы:</div>
-
-            @foreach ($room->services as $service)
-                <div>{{ $service->name }}</div>
-                <div>{{ $service->description }}</div>
-            @endforeach
-
-
-
-            <form action="#" method="POST">
-                <button>Выбрать</button>
-            </form>
-        @endforeach
+                                </div>
+                            </div>
+                            <form action="#" method="POST">
+                                <div class="item-btn">
+                                    <button><a href="#">Выбрать</a></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
     </div>
-    <script>
-        $(function() {
-            $('input[name="date_range"]').daterangepicker({
-                autoApply: true,
-                opens: 'left',
-                minDate: new Date(),
-            })
-        });
-    </script>
 @endsection

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Booking;
+namespace App\Http\Requests\Bookings;
 
 use App\Enums\Booking\Status;
 use Illuminate\Foundation\Http\FormRequest;

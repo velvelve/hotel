@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SearchController;
@@ -15,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 //поиск комнат
 //результат поиска
@@ -27,3 +28,9 @@ Route::get('/contacts', [ContactsController::class, 'index'])
     ->name('contacts.index');
 Route::post('/contacts/send-message', [ContactsController::class, 'sendMessage'])
     ->name('contacts.sendMessage');
+
+//Бронирование
+Route::get('/bookings/create/{room_id}', [BookingController::class, 'create'])
+    ->name('bookings.create');
+Route::post('/bookings', [BookingController::class, 'store'])
+    ->name('bookings.store');

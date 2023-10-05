@@ -2,7 +2,7 @@
 
 @section('content')
 
-
+@include('inc.message')
 <form action="{{ route('search.rooms') }}" method="POST">
     @csrf
     <input type="text" name="date_range" id="date_range" required>

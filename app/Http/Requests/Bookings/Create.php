@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Booking;
+namespace App\Http\Requests\Bookings;
 
 use App\Enums\Booking\Status;
 use Illuminate\Foundation\Http\FormRequest;
@@ -29,7 +29,6 @@ class Create extends FormRequest
             'check_in_date' => ['required', 'date'],
             'check_out_date' => ['required', 'date', 'after:check_in_date'],
             'guests_count' => ['required', 'integer', 'min:1'],
-            'status' => ['required', new Enum(Status::class)],
         ];
     }
 }

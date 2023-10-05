@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
+    @include('inc.message')
     <div class="main-container">
         <div class="section-1">
             <div class="section-1-header">

@@ -14,7 +14,7 @@ class HomeController extends Controller
     {
 
         return view('home.welcome', [
-            'guests' => 0
+            'guests' => 1
         ]);
     }
 

@@ -1,15 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    <form action="{{ route('search.rooms') }}" method="POST">
-        @csrf
-        <label for="date_range">Дата:</label>
-        <input type="text" name="date_range" id="date_range" required>
-        <label for="guest_count">Количество гостей:</label>
-        <input type="number" name="guest_count" id="guest_count" value="{{ $guest_count }}" required>
-        <button type="submit">Искать</button>
-        <br>
-    </form>
+    <x-rooms.search :guests=$guests />
     <div>
         @foreach ($roomsList as $room)
             <h2>{{ $room->number }}</h2>
@@ -28,17 +20,16 @@
             <div>Сервисы:</div>
 
             @foreach ($room->services as $service)
-
                 <div>{{ $service->name }}</div>
                 <div>{{ $service->description }}</div>
             @endforeach
 
 
 
-                <form action="#" method="POST">
-                    <button>Выбрать</button>
-                </form>
-            @endforeach
+            <form action="#" method="POST">
+                <button>Выбрать</button>
+            </form>
+        @endforeach
     </div>
     <script>
         $(function() {

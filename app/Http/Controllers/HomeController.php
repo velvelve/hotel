@@ -12,9 +12,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $rooms = Room::all();
 
-        return view('home.welcome', ['rooms' => $rooms]);
+        return view('home.welcome', [
+            'guests' => 0
+        ]);
     }
 
     /**

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\SearchRooms;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -10,31 +11,24 @@ class SearchController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): view
+    public function index(Request $request): view
     {
-        //временный статичный массив, пока отсутствует БД
-        $freeRooms=[
-            [
-            'name'=>'standart',
-            'image' => 'https://siriushotels.ru/pr_img/500_1918100371/20230421/79734237/1.jpg',
-            'description' => fake()->text(200),
-            'price' => 2000
-            ],
-            [
-                'name'=>'superior',
-                'image' => 'https://siriushotels.ru/pr_img/500_1918100371/20230421/79734237/1.jpg',
-                'description' => fake()->text(200),
-                'price' => 3000
-            ],
-            [
-                'name'=>'premium',
-                'image' => 'https://siriushotels.ru/pr_img/500_1918100371/20230421/79734237/1.jpg',
-                'description' => fake()->text(200),
-                'price' => 5000
-            ],
-        ];
+        //получаем массив зарезервированных комнат, чтобы исключить их
+        $reservedRoomsId=SearchRooms::reservedRooms($request);
 
-        return view('search.rooms',['roomsList'=>$freeRooms]);
+        //получаем массив свободных комнат, на заданный период + фильтр по максимальному колличеству гостей
+        $freeRooms = SearchRooms::freeRooms($request,$reservedRoomsId);
+
+        //получаем массив изображений для отфильтрованных комнат
+        //$images=SearchRooms::roomsImage($freeRooms);
+
+        //получаем массив сервисов для отфильтрованных комнат
+        //$services=SearchRooms::roomsServices($freeRooms);
+
+        return view('search.rooms', [
+            'roomsList' => $freeRooms,
+            'guest_count' => $request->input('guest_count')
+        ]);
     }
 
     /**

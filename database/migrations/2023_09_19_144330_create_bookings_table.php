@@ -18,7 +18,7 @@ return new class extends Migration {
             $table->unsignedBigInteger('user_id');
             $table->date('check_in_date');
             $table->date('check_out_date');
-            $table->integer('guests_count'); // Обсудить категории!!!
+            $table->integer('guests_count');
             $table->enum('status', ['забронировано', 'подтверждено', 'отменено'])->default('забронировано');
             $table->timestamps();
 

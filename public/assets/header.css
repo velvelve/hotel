@@ -1,5 +1,26 @@
 @charset "UTF-8";
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 50px;
+}
+
 a {
     text-decoration: none;
 }
@@ -8,11 +29,6 @@ li {
     list-style-type: none;
 }
 
-.container {
-    width: 1460px;
-    margin: 0 auto;
-    padding: 0px 10px;
-}
 
 /* Шапка */
 .header_content {
@@ -21,13 +37,11 @@ li {
 }
 
 header {
-    display: flex;
-    width: 1600px;
-    margin: 0 auto;
-    padding: 0;
+    width: 98%;
     height: 160px;
-    align-items: center;
-    background: url(../img/von.png) no-repeat center/cover;
+    display: flex;
+    margin: 0 auto;
+    background: url(../img/von.png) 50%/cover no-repeat;
 }
 
 /* Гамбургер иконка */
@@ -152,3 +166,5 @@ header {
     background: rgba(253, 253, 253, 0.94);
     z-index: 1;
 }
+
+/*# sourceMappingURL=header.css.map */

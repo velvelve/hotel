@@ -27,7 +27,7 @@ Route::post('/register', [RegisterController::class, 'store'])->middleware('gues
 //логин
 Route::get('/login', [LoginController::class, 'create'])->middleware('guest')->name('login');
 Route::post('/login', [LoginController::class, 'store'])->middleware('guest');
-Route::post('/logout', [LoginController::class, 'destroy'])->middleware('auth')->name('logout');
+Route::get('/logout', [LoginController::class, 'destroy'])->middleware('auth')->name('logout');
 Route::get('/profile', fn() => 'Профиль')->middleware('auth')->name('profile');
 
 //поиск комнат
@@ -45,6 +45,7 @@ Route::post('/contacts/send-message', [ContactsController::class, 'sendMessage']
 
 //Бронирование
 Route::get('/bookings/create/{room_id}', [BookingController::class, 'create'])
+    ->where('room_id', '\w+')
     ->name('bookings.create');
 Route::post('/bookings', [BookingController::class, 'store'])
     ->name('bookings.store');

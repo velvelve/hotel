@@ -3,7 +3,7 @@
 @section('content')
     <!-- Хлебные крошки, если нужны -->
     <ul>
-        <li><a href="#">Главная</a></li>
+        <li><a href="{{ route('home') }}">Главная</a></li>
         <li><a href="#">Контакты</a></li>
     </ul>
 

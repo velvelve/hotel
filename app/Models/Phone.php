@@ -6,20 +6,19 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Image extends Model
+class Phone extends Model
 {
     use HasFactory;
 
-    protected $table = 'images';
+    protected $table = 'phones';
+
+    protected $fillable = [
+        'hotel_id',
+        'number'
+    ];
 
     public function hotel(): BelongsTo
     {
         return $this->belongsTo(Hotel::class, 'hotel_id');
     }
-
-    public function room(): BelongsTo
-    {
-        return $this->belongsTo(Room::class, 'room_id');
-    }
-
 }

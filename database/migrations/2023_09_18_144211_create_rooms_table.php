@@ -18,7 +18,6 @@ return new class extends Migration {
             $table->string('room_number'); // Обсудить тип!!!
             $table->enum('room_type', ['эконом', 'стандарт', 'стандарт улучшенный', 'полулюкс', 'люкс']);  // Обсудить!!!
             $table->decimal('price', 8, 2);
-            $table->unsignedTinyInteger('max_guest_count')->default(1);
             $table->boolean('availability')->default(true);
             $table->timestamps();
 

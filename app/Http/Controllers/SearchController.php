@@ -14,10 +14,10 @@ class SearchController extends Controller
     public function index(Request $request): view
     {
         //получаем массив зарезервированных комнат, чтобы исключить их
-        $reservedRoomsId = SearchRooms::reservedRooms($request);
+        $availableRooms = SearchRooms::getAvailableRooms($request);
 
         //получаем массив свободных комнат, на заданный период + фильтр по максимальному колличеству гостей
-        $freeRooms = SearchRooms::freeRooms($request, $reservedRoomsId);
+        $freeRooms = SearchRooms::freeRooms($request, $availableRooms);
 
         //получаем массив изображений для отфильтрованных комнат
         //$images=SearchRooms::roomsImage($freeRooms);

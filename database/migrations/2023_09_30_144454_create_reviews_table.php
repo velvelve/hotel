@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Таблица для хранения отзывов пользователей об отеле или номерах.
+     * Таблица для хранения отзывов пользователей об отеле.
      */
     public function up(): void
     {

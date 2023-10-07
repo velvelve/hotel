@@ -1,6 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
+    @include('inc.message')
     <div class="main-container">
         <div class="section-1">
             <div class="section-1-header">
@@ -14,7 +15,7 @@
                     <ul>
                         <li><a href="#">Главная</a></li>
                         <li><a href="#">Номера</a></li>
-                        <li><a href="#">Контакты</a></li>
+                        <li><a href="/contacts">Контакты</a></li>
                         <li><a href="#">Войти</a></li>
                         <li><a href="#">Регистрация</a></li>
                     </ul>

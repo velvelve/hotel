@@ -15,9 +15,14 @@
                     <ul>
                         <li><a href="#">Главная</a></li>
                         <li><a href="#">Номера</a></li>
-                        <li><a href="/contacts">Контакты</a></li>
-                        <li><a href="#">Войти</a></li>
-                        <li><a href="#">Регистрация</a></li>
+                        <li><a href="{{ route('contacts.index') }}">Контакты</a></li>
+                        @auth
+                            <li><a href="{{ route('profile') }}">Профиль</a></li>
+                            <li><a href="{{ route('logout') }}">Выйти</a></li>
+                        @else
+                            <li><a href="{{ route('login') }}">Войти</a></li>
+                            <li><a href="{{ route('register') }}">Регистрация</a></li>
+                        @endauth
                     </ul>
                 </div>
             </div>

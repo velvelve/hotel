@@ -180,6 +180,10 @@ ul {
     padding-left: 35px;
     color: #ffffff;
    }
+
+textarea::placeholder {
+    padding-top: 30px;
+}
    
    .section-two_social {
        position: absolute;

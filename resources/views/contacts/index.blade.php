@@ -125,6 +125,5 @@
     </div>
 </div>
     @push('styles')
-    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     <link href="{{ asset('css/contacts/contacts.css') }}" rel="stylesheet">
 @endsection

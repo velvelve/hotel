@@ -30,6 +30,11 @@ class Room extends Model
         return $this->hasMany(Service::class);
     }
 
+    public function bookings(): HasMany
+    {
+        return $this->hasMany(Booking::class);
+    }
+
     public function hotel(): BelongsTo
     {
         return $this->belongsTo(Hotel::class, 'hotel_id');

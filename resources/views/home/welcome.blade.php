@@ -15,7 +15,7 @@
                     <ul>
                         <li><a href="#">Главная</a></li>
                         <li><a href="#">Номера</a></li>
-                        <li><a href="#">Контакты</a></li>
+                        <li><a href="/contacts">Контакты</a></li>
                         <li><a href="#">Войти</a></li>
                         <li><a href="#">Регистрация</a></li>
                     </ul>

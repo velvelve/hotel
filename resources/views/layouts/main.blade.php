@@ -23,11 +23,15 @@
 
     <link href="{{ asset('css/roomsSearch/roomsSearch.css') }}" rel="stylesheet">
     <link href="{{ asset('css/searchResult/searchResult.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/header.css') }}" rel="stylesheet">
 
     @stack('styles')
 </head>
 
 <body>
+    @if (Request::route()->getName() !== 'home')
+        @include('includes.header')
+    @endif
     <main>
         <div>
             @yield('content')

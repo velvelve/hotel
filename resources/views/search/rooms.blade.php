@@ -10,7 +10,8 @@
                     <div class="searchResult-content"> <!-- В этом диве генерируются карточки номеров -->
                         <div class="searchResult-content__item"> <!-- Карточка номера -->
                             <div class="item-description">
-                                <img style="width: 50%" src="{{ asset($room->images[0]->path) }}" alt="{{ $room->images[0]->filename }}">
+                                <img style="width: 50%" src="{{ asset($room->images[mt_rand(0, 2)]->path) }}"
+                                    alt="{{ $room->images[mt_rand(0, 2)]->filename }}">
                                 <div class="item-description__rightSide">
                                     <div class="item-description__rightSide-upperText"> <!-- Номер комнаты -->
                                         Комната №{{ $room->room_number }}
@@ -33,7 +34,8 @@
                             </div>
                             <form action="#" method="POST">
                                 <div class="item-btn">
-                                    <button><a href="{{ route('bookings.create', ['room_id' => $room->id,])}}">Выбрать</a></button>
+                                    <button><a
+                                            href="{{ route('bookings.create', ['room_id' => $room->id]) }}">Выбрать</a></button>
                                 </div>
                             </form>
                         </div>

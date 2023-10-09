@@ -9,11 +9,13 @@ h2 {
 a {
     text-decoration: none;
     color: white;
+    transition: 1s; 
+    text-align: center; 
 }
 
  a:hover {
-    font-size: 34px;
- }
+    transform: scale(1.2); 
+  }
 
  a:visited {
     color: #e2f7f6; /* Цвет посещенной ссылки */
@@ -26,15 +28,18 @@ ul {
 .content-contacts {
     margin: 0 auto;
     background: linear-gradient(to right, #786853,  #D9EBEB);
-    min-height: 2006px;
+    min-height: 2200px;
     min-width: 1800px;
+    background-size: 100% 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
 }
 
 .section-contact {
     position: relative;
     display: flex;
     width: 727px;
-    top: 39px;
     left: 55px;
 
 }
@@ -109,10 +114,9 @@ ul {
  }
 
 .section-two {
-    position: absolute;
+    position: relative;
     display: flex;
-    top: 800px;
-    height: 1279px;
+    height: 1220px;
     padding-left: 55px;
 }
 
@@ -148,12 +152,19 @@ ul {
 .forms-title {
     display: flex;
     height: 34px;
-    width: 148px;
+    width: 166px;
     font-size: 20px;
     color: white;
     padding-left: 30px;
 }
 
+.forms-title:focus {
+    outline: none;
+}
+
+option:focus {
+    outline: none;
+}
 .section-two_img-container {
     position: relative;
     height: 522px;
@@ -175,42 +186,60 @@ ul {
 
 }
 
+input {
+    font-size: 14px;
+    color: #e2f7f6;
+    padding-left: 15px;
+}
+
+input:focus {
+    outline: none;
+}
+
 ::placeholder {
-    position: relative;
-    padding-left: 35px;
+    position: absolute;
     color: #ffffff;
    }
 
-textarea::placeholder {
-    padding-top: 30px;
+textarea {
+    padding-top: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #e2f7f6;
+}
+
+
+textarea:focus {
+    outline: none;
 }
    
-   .section-two_social {
-       position: absolute;
-       top: 830px;
-   }
+.section-two_social {
+    position: absolute;
+    top: 830px;
+}
    
-   .forms-input {
-       background: transparent;
-       border: #ffffff solid 1px;
-       height: 64px;
-   }
+.forms-input {
+    background: transparent;
+    border: #ffffff solid 1px;
+    height: 64px;
+}
    
-   .input_name {
-       width: 574px;
-   }
+.input_name {
+    width: 574px;
+}
    
-   .input_phone {
-       width: 369px;
-   }
-   .forms-categories {
-       display: flex;
-       flex-direction: row;
-   }
+.input_phone {
+    width: 369px;
+}
 
-   .title_hotel {
+.forms-categories {
+    display: flex;
+    flex-direction: row;
+}
+
+.title_hotel {
     padding-bottom: 15px;
-   }
+}
 
 .forms-input_hotel {
     display: flex;
@@ -219,6 +248,10 @@ textarea::placeholder {
     border: #ffffff solid 1px;
     border-radius: 30px;
     width: 316px;
+}
+
+select:focus {
+    outline: none;
 }
 
 .forms-feedback {
@@ -239,9 +272,6 @@ textarea::placeholder {
 
 .text {
     color: #79655e;
-    border: #ffffff solid 1px;
-    border-radius: 30px;
-
 }
 
 .info-groups {
@@ -269,8 +299,13 @@ textarea::placeholder {
     margin-right: 50px;
 }
 
+.social-networks_list:hover {
+    height: 86px;
+    width: 80px;
+}
+
 .title-question {
-    width: 347px;
+    width: 370px;
 }
 
 .text-question {
@@ -309,7 +344,7 @@ textarea::placeholder {
     height: 61px;
     width: 363px;
     text-align: center;
-    border: #ffffff00 solid 1px;
+    border:  none;
     border-radius: 40px;
     color: #ffffff;
     font-size: 24px;
@@ -318,4 +353,6 @@ textarea::placeholder {
 
 .button:hover {
     background: linear-gradient(to top,#a7a095, #3f382b);
+    border: none;
 }
+

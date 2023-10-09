@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Search\SearchRequest;
 use App\Services\SearchRooms;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -11,7 +12,7 @@ class SearchController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request): view
+    public function index(SearchRequest $request): view
     {
         //получаем массив зарезервированных комнат, чтобы исключить их
         $availableRooms = SearchRooms::getAvailableRooms($request);
@@ -24,11 +25,14 @@ class SearchController extends Controller
 
         //получаем массив сервисов для отфильтрованных комнат
         //$services=SearchRooms::roomsServices($freeRooms);
+
         return view('search.rooms', [
             'roomsList' => $freeRooms,
             'guests' => $request->input('guest_count')
         ]);
     }
+
+
 
     /**
      * Show the form for creating a new resource.

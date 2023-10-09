@@ -1,19 +1,22 @@
 <div>
     <form action="{{ route('register') }}" method="post">
         @csrf
-        <label for="first_name" style="{{ $errors->has('first_name') ? 'color: red' : ''}}"> Имя
+        <label for="first_name"> Имя
+            @error('first_name')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
             <input type="text"
                    placeholder="Введите имя"
                    name="first_name"
                    id="name"
                    value="{{ old('first_name') }}"
                    autofocus>
-            @error('first_name')
-            <span style="color: red"> {{ $message }}</span>
-            @enderror
         </label>
         <label for="last_name">
             Фамилия
+            @error('last_name')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
             <input type="text"
                    placeholder="Введите фамилию"
                    name="last_name"
@@ -22,6 +25,9 @@
         </label>
         <label for="email">
             Почта
+            @error('email')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
             <input type="email"
                    placeholder="Введите почту"
                    name="email"
@@ -30,6 +36,9 @@
         </label>
         <label for="password">
             Пароль
+            @error('password')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
             <input type="password"
                    placeholder="Введите пароль"
                    name="password"
@@ -37,8 +46,11 @@
         </label>
         <label for="password_confirmation">
             Пароль
+            @error('password')
+            <div class="alert alert-danger">{{ $message }}</div>
+            @enderror
             <input type="password"
-                   placeholder="Введите пароль"
+                   placeholder="Введите пароль повторно"
                    name="password_confirmation"
                    id="password_confirmation">
         </label>

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\Bookings\Create;
+use App\Http\Requests\Bookings\CreateBookingRequest;
 use App\Models\Booking;
 use App\Models\Room;
 use Illuminate\Http\Request;
@@ -33,7 +33,7 @@ class BookingController extends Controller
 
         //Получаю авторизированого user
         $user = Auth::user();
-        
+
         return view('bookings.create', [
             'check_in_date' => $check_in_date,
             'check_out_date' => $check_out_date,
@@ -44,7 +44,7 @@ class BookingController extends Controller
     }
 
     // Сохранение нового бронирования
-    public function store(Create $request)
+    public function store(CreateBookingRequest $request)
     {
         // Валидация запроса
         $validatedData = $request->validated();
@@ -52,10 +52,10 @@ class BookingController extends Controller
         // Создаем новый объект бронирования
         $booking = new Booking($validatedData);
         $booking->status = \App\Enums\Booking\Status::BOOKED->value;
-        
+
         // Сохраняем бронирование в базе данных
         $booking->save();
-        
+
         // После сохранения перенаправит пользователя на другую страницу
         return redirect()->route('home')->with('success', 'Бронирование успешно создано!');
     }

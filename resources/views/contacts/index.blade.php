@@ -1,5 +1,10 @@
 @extends('layouts.main')
 
+@push('styles')
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/contacts/contacts.css') }}" rel="stylesheet">
+@endpush
+
 @section('content')
 <!-- Секция без хедера и футера -->
 <div class="content-contacts">
@@ -13,11 +18,11 @@
             <h2 class="section-contact_heading" >Написать в отдел бронирования</h2>
             <ul class="section-contact_messenger">
                 <li class="section-contact_heading section-contact_messenger-list ">
-                    <img class="icons-img" src="img/contacts/icons-whatsapp.png" alt="whatsapp">
+                    <img class="icons-img" src="img/contacts/whatsapp.png" alt="whatsapp">
                     <a class="a-number" href="#">+7-900-900-99-90</a>
                 </li>
                 <li class="section-contact_heading section-contact_messenger-list">
-                    <img class="icons-img" src="img/contacts/icons-telegram.png" alt="telegram">
+                    <img class="icons-img" src="img/contacts/telegram.png" alt="telegram">
                     <a class="a-number" href="#">+7-900-900-99-90</a>
                 </li>
             </ul>
@@ -105,25 +110,24 @@
     <!-- Иконки -->
                 <ul class="section-two_social-networks">
                     <li class="section-contact_heading social-networks_list">
-                        <a class="a-number" href="#"><img src="img/contacts/vk.png" alt="vk"></a>
+                        <a class="a-number" href="#"><img src="img/contacts/icons-vk.png" alt="vk"></a>
                     </li>
                     <li class="section-contact_heading social-networks_list">
-                        <a class="a-number" href="#"><img src="img/contacts/facebook.png" alt="facebook"></a>
+                        <a class="a-number" href="#"><img src="img/contacts/icons-facebook.png" alt="facebook"></a>
                     </li>
                     <li class="section-contact_heading social-networks_list">
-                        <a class="a-number" href="#"><img src="img/contacts/twitter.png" alt="twitter"></a>
+                        <a class="a-number" href="#"><img src="img/contacts/icons-twitter.png" alt="twitter"></a>
                     </li>
                     <li class="section-contact_heading social-networks_list">
-                        <a class="a-number" href="#"><img src="img/contacts/instagram.png" alt="instagram"></a>
+                        <a class="a-number" href="#"><img src="img/contacts/icons-instagram.png" alt="instagram"></a>
                     </li>
                     <li class="section-contact_heading social-networks_list">
-                        <a class="a-number" href="#"><img src="img/contacts/tiktok 1.png" alt="tiktok"></a>
+                        <a class="a-number" href="#"><img src="img/contacts/icons-tiktok.png" alt="tiktok"></a>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
 </div>
-    @push('styles')
-    <link href="{{ asset('css/contacts/contacts.css') }}" rel="stylesheet">
 @endsection
+   

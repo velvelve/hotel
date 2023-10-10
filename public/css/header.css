@@ -17,7 +17,7 @@
 .header_content_container {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     min-width: 1275px;
     max-width: 1275px;

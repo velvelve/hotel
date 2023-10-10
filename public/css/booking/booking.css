@@ -1,0 +1,173 @@
+h1 {
+    font-size: 58px;
+}
+
+h2 {
+    font-size: 42px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    transition: 1s;
+    text-align: center;
+}
+
+a:hover {
+    transform: scale(1.2);
+}
+
+a:visited {
+    color: #e2f7f6;
+    /* Цвет посещенной ссылки */
+}
+
+ul {
+    list-style-type: none;
+}
+
+.content-booking {
+    margin: 0 auto;
+    background: linear-gradient(to right, #786853, #D9EBEB);
+    color: #FFF;
+    padding: 0 0 100px 0;
+}
+
+.container {
+    margin: 0 auto;
+    width: 90%;
+    max-width: 1530px;
+}
+
+.content-booking-heading {
+    padding: 63px 0 100px;
+    font-family: 'Forum', cursive;
+    font-style: normal;
+    font-size: 62px;
+    font-weight: 400;
+}
+
+.content-booking-wrp {
+    display: flex;
+}
+
+.section-form {
+    width: 705px;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.forms-label {
+    padding: 0 0 11px 37px;
+    display: block;
+    font-family: Manrope;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 179.8%;
+    /* 35.96px */
+}
+
+.forms-input {
+    background: transparent;
+    border: #ffffff solid 1px;
+    height: 64px;
+    width: 100%;
+    border-radius: 30px;
+    padding: 18px 10px 21px 37px;
+}
+
+.forms-date {
+    min-width: 271px;
+    padding: 20px 10px 15px 65px;
+}
+
+.forms-name,
+.forms-midname {
+    min-width: 300px;
+}
+
+.form-info {
+    padding: 0 0 5px 37px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.form-connection-text {
+    padding: 0 0 0 37px;
+}
+
+.form-info-text {
+    padding-left: 37px;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.form-info-text--last {
+    padding-bottom: 37px;
+}
+
+.forms-textarea {
+    margin-bottom: 75px;
+    width: 100%;
+    height: 160px;
+    resize: none;
+}
+
+input {
+    font-size: 14px;
+    color: #e2f7f6;
+    padding-left: 15px;
+    margin-bottom: 31px;
+}
+
+input:focus {
+    outline: none;
+}
+
+::placeholder {
+    position: absolute;
+    color: #ffffff;
+}
+
+textarea {
+    padding-top: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #e2f7f6;
+}
+
+
+textarea:focus {
+    outline: none;
+}
+
+.button {
+    position: relative;
+    height: 61px;
+    width: 495px;
+    text-align: center;
+    border: none;
+    border-radius: 40px;
+    color: #ffffff;
+    font-size: 24px;
+    background: linear-gradient(to top, #463820, #BFB7A8);
+    font-family: Forum;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.96px;
+    text-transform: uppercase;
+}
+
+.button:hover {
+    background: linear-gradient(to top, #a7a095, #3f382b);
+    border: none;
+}

@@ -12,13 +12,23 @@
                 </div>
                 <input type="text" name="date_range" id="date_range" required>
             </div>
+
             <div class="roomsSearch-menu__guest">
                 <div class="roomsSearch-menu__guest-head">
                     <img src="/img/roomsSearch/guest.svg">
                     <label for="guest_count">Кол-во гостей</label>
                 </div>
-                <input type="number" name="guest_count" id="guest_count" value="{{ (int) $guests }}" min="1"
-                    required>
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+                <input type="number" name="guest_count" id="guest_count" value="{{ (int) $guests }}"
+                    >
             </div>
             <button type="submit" class="roomsSearch-menu__btn">Искать</button>
 

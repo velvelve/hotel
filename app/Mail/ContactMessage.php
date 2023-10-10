@@ -16,7 +16,7 @@ class ContactMessage extends Mailable
     public $data;
 
     /**
-     * Create a new message instance.
+     * CreateBookingRequest a new message instance.
      */
     public function __construct($data)
     {

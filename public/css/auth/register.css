@@ -1,0 +1,103 @@
+h2 {
+    font-size: 42px;
+    color: #79655E;
+    font-family: 'Forum', cursive;
+}
+ 
+p {
+    color: #79655E;
+    font-family: 'Forum', cursive;
+}
+
+span {
+    color: red;
+}
+
+a {
+    text-decoration: none;
+    color: #be1d17;
+    
+}
+
+ a:hover {
+    font-size: 22px;
+ }
+
+.container {
+    min-height: 1000px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-auto-flow: column;
+    margin: 0 auto;
+    background: linear-gradient(to right, #786853,  #D9EBEB);
+}
+
+.left-wrapper {
+    position: relative;
+    width: 50em;
+}
+
+.left-wrapper__img {
+    height: 816px;
+    width: 616px;
+}
+
+.right-wrapper {
+    width: 50em;
+    position: relative;
+}
+
+.title {
+    position: relative;
+    height: 47px;
+    width: 250px;
+    padding-bottom: 15px;
+
+}
+
+.text {
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.forms-title {
+    display: inline-block;
+    height: 50px;
+    color: #79655E;
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+input {
+    color: rgb(58, 12, 12);
+    border-radius: 30px;
+    border: 1px solid #79655E;
+    padding-left: 15px;
+    text-align: left;
+    font-size: 14px;
+    background: transparent;
+    padding-bottom: 15px;
+}
+
+input:focus {
+    outline: none;
+}
+
+.button {
+    position: relative;
+    height: 30px;
+    width: 200px;
+    text-align: center;
+    border:  none;
+    border-radius: 40px;
+    color: white;
+    font-size: 20px;
+    background: linear-gradient(to top,#7e7461, #bdf1e6);
+}
+
+.button:hover {
+    background: linear-gradient(to top,#bdf1e6, #7e7461);
+    border: none;
+}

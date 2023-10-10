@@ -36,7 +36,7 @@ class SearchRooms
         $request->session()->put('check_out_date', $checkOutDate);
         $request->session()->put('guest_count', $guestCount);
         //
-        return  $availableRooms;
+        return  $availableRooms->sortBy('price');
     }
 
     //получаем массив свободных комнат, на заданный период + фильтр по максимальному колличеству гостей

@@ -6,7 +6,7 @@ use App\Enums\Booking\Status;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rules\Enum;
 
-class Create extends FormRequest
+class EditBookingRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -29,6 +29,7 @@ class Create extends FormRequest
             'check_in_date' => ['required', 'date'],
             'check_out_date' => ['required', 'date', 'after:check_in_date'],
             'guests_count' => ['required', 'integer', 'min:1'],
+            'status' => ['required', new Enum(Status::class)],
         ];
     }
 }

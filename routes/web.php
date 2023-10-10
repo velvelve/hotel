@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
@@ -22,14 +23,23 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
 //регистрация
-Route::get('/register', [RegisterController::class, 'create'])->middleware('guest')->name('register');
+Route::get('/register', [RegisterController::class, 'create'])->middleware('guest')
+    ->name('register');
 Route::post('/register', [RegisterController::class, 'store'])->middleware('guest');
 
 //логин
 Route::get('/login', [LoginController::class, 'create'])->middleware('guest')->name('login');
 Route::post('/login', [LoginController::class, 'store'])->middleware('guest');
 Route::get('/logout', [LoginController::class, 'destroy'])->middleware('auth')->name('logout');
-Route::get('/profile', fn() => 'Профиль')->middleware('auth')->name('profile');
+Route::get('/profile', fn() => 'Профиль')->middleware('auth', 'verified')->name('profile');
+
+//подтверждение почты
+Route::get('/email-confirmation', [EmailVerificationController::class, 'redirect'])->middleware('auth')
+    ->name('verification.notice');
+Route::get('/email-confirmation/{id}/{hash}', [EmailVerificationController::class, 'confirmation'])->middleware(['auth', 'signed'])
+    ->name('verification.verify');
+Route::post('/email-confirmation', [EmailVerificationController::class, 'resend'])->middleware('auth')
+    ->name('verification.send');
 
 //поиск комнат
 //результат поиска

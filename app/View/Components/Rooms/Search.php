@@ -9,7 +9,7 @@ use Illuminate\View\Component;
 class Search extends Component
 {
     /**
-     * Create a new component instance.
+     * CreateBookingRequest a new component instance.
      */
 
     public function __construct(public $guests)

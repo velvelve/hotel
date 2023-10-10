@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Auth\RegisterAuthRequest;
 use App\Models\User;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
@@ -17,15 +18,8 @@ class RegisterController extends Controller
         return view('auth.register'); //возвращает шаблон с формой регистрации
     }
 
-    public function store(Request $request): Redirector|RedirectResponse
+    public function store(RegisterAuthRequest $request): Redirector|RedirectResponse
     {
-        $request->validate([
-            'first_name' => ['required', 'string'],
-            'last_name' => ['required', 'string'],
-            'email' => ['required', 'string', 'email', 'unique:users'],
-            'password' => ['required', 'confirmed', 'min:8']
-            ]);
-
         $user = User::create([
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,

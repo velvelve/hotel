@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Contacts\ContactsRequest;
 use App\Mail\ContactMessage;
 use App\Services\MailService;
 use Exception;
@@ -16,7 +17,7 @@ class ContactsController extends Controller
         return view('contacts.index');
     }
 
-    public function sendMessage(Request $request, MailService $mailService)
+    public function sendMessage(ContactsRequest $request, MailService $mailService)
     {
 
         //Временная логика для проверки заполненных в .env MAIL_USERNAME и MAIL_PASSWORD для корректной работы формы отправки сообщения

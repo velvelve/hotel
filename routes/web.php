@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RoomTypeController;
 use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
@@ -50,3 +51,9 @@ Route::get('/bookings/create/{room_id}', [BookingController::class, 'create'])
     ->name('bookings.create');
 Route::post('/bookings', [BookingController::class, 'store'])
     ->name('bookings.store');
+
+//номера
+Route::get('/rooms-types', [RoomTypeController::class, 'index'])
+    ->name('rooms.types');
+Route::get('/rooms-types/{room_type}', [RoomTypeController::class, 'show'])
+    ->name('rooms.show');

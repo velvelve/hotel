@@ -1,9 +1,9 @@
 h1 {
-    font-size: 58px;  
+    font-size: 48px;  
 }
 
 h2 {
-    font-size: 42px;
+    font-size: 36px;
 }
 
 a {
@@ -97,7 +97,7 @@ ul {
 }
 
 .connection-_messenger-list {
-    font-size: 32px;
+    font-size: 28px;
     padding-top: 25px;
 }
 
@@ -187,9 +187,10 @@ option:focus {
 }
 
 input {
-    font-size: 14px;
+    font-size: 18px;
     color: #e2f7f6;
     padding-left: 15px;
+    font-size: 18px;
 }
 
 input:focus {
@@ -199,6 +200,8 @@ input:focus {
 ::placeholder {
     position: absolute;
     color: #ffffff;
+    font-size: 18px;
+
    }
 
 textarea {
@@ -206,11 +209,13 @@ textarea {
     padding-left: 15px;
     padding-right: 15px;
     color: #e2f7f6;
+    font-size: 18px;
 }
 
 
 textarea:focus {
     outline: none;
+    font-size: 18px;
 }
    
 .section-two_social {
@@ -222,6 +227,7 @@ textarea:focus {
     background: transparent;
     border: #ffffff solid 1px;
     height: 64px;
+    font-size: 20px;
 }
    
 .input_name {
@@ -317,6 +323,7 @@ select:focus {
     border-radius: 40px;
     background: transparent;
     top: -34px;
+    font-size: 20px;
 }
 
 .title-question_approval {

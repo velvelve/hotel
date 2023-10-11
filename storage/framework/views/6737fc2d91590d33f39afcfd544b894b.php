@@ -1,11 +1,23 @@
-@extends('layouts.main')
-
-@section('content')
-    @include('inc.message')
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('inc.message', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <div class="section-1">
-        {{-- Хедер главной страницы --}}
-        <x-homePageHeader.homePageHeader />
-        {{-- Секция 1 главной страницы --}}
+        
+        <?php if (isset($component)) { $__componentOriginal71c6471fa76ce19017edc287b6f4508c = $component; } ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.homePageHeader.homePageHeader','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
+<?php $component->withName('homePageHeader.homePageHeader'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(Illuminate\View\AnonymousComponent::class))->getConstructor()): ?>
+<?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginal71c6471fa76ce19017edc287b6f4508c)): ?>
+<?php $component = $__componentOriginal71c6471fa76ce19017edc287b6f4508c; ?>
+<?php unset($__componentOriginal71c6471fa76ce19017edc287b6f4508c); ?>
+<?php endif; ?>
+        
         <div class="section-1-social">
             <div class="section-1-social__followUs">
                 Follow us
@@ -33,9 +45,23 @@
                 </div>
             </div>
         </div>
-        {{-- Поиск --}}
+        
         <div class="section-1-search">
-            <x-rooms.search :guests=$guests />
+            <?php if (isset($component)) { $__componentOriginal4956d9090668e90cf3ab0f621275a098 = $component; } ?>
+<?php $component = App\View\Components\Rooms\Search::resolve(['guests' => $guests] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
+<?php $component->withName('rooms.search'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(App\View\Components\Rooms\Search::class))->getConstructor()): ?>
+<?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginal4956d9090668e90cf3ab0f621275a098)): ?>
+<?php $component = $__componentOriginal4956d9090668e90cf3ab0f621275a098; ?>
+<?php unset($__componentOriginal4956d9090668e90cf3ab0f621275a098); ?>
+<?php endif; ?>
         </div>
         <div class="section-1-services">
             <div class="section-1-services__numbers">
@@ -56,9 +82,23 @@
             </div>
         </div>
     </div>
-    {{-- Секция 2 главной страницы --}}
+    
     <div class="section-2">
-        <x-slider.slider />
+        <?php if (isset($component)) { $__componentOriginal71c6471fa76ce19017edc287b6f4508c = $component; } ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.slider.slider','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
+<?php $component->withName('slider.slider'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(Illuminate\View\AnonymousComponent::class))->getConstructor()): ?>
+<?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginal71c6471fa76ce19017edc287b6f4508c)): ?>
+<?php $component = $__componentOriginal71c6471fa76ce19017edc287b6f4508c; ?>
+<?php unset($__componentOriginal71c6471fa76ce19017edc287b6f4508c); ?>
+<?php endif; ?>
         <div class="services">
             <div class="services-item">
                 <img src="/img/homePage/section2/swim.svg" class="item-ico">
@@ -116,7 +156,21 @@
             </div>
         </div>
         <div class="service-carts">
-            <x-serviceCart.serviceCart />
+            <?php if (isset($component)) { $__componentOriginal71c6471fa76ce19017edc287b6f4508c = $component; } ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.serviceCart.serviceCart','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
+<?php $component->withName('serviceCart.serviceCart'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(Illuminate\View\AnonymousComponent::class))->getConstructor()): ?>
+<?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginal71c6471fa76ce19017edc287b6f4508c)): ?>
+<?php $component = $__componentOriginal71c6471fa76ce19017edc287b6f4508c; ?>
+<?php unset($__componentOriginal71c6471fa76ce19017edc287b6f4508c); ?>
+<?php endif; ?>
             <div class="service-cart-2">
                 <div class="service-cart-description">
                     Расслабся в чистейшем бассейне с теплой водой и функцией гидромассажа
@@ -134,10 +188,24 @@
             </div>
         </div>
     </div>
-    {{-- Секция 3 главной страницы --}}
+    
     <div class="section-3">
         <div class="section-3-carts">
-            <x-section3Cart.section3Cart />
+            <?php if (isset($component)) { $__componentOriginal71c6471fa76ce19017edc287b6f4508c = $component; } ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.section3Cart.section3Cart','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
+<?php $component->withName('section3Cart.section3Cart'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag && $constructor = (new ReflectionClass(Illuminate\View\AnonymousComponent::class))->getConstructor()): ?>
+<?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
+<?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginal71c6471fa76ce19017edc287b6f4508c)): ?>
+<?php $component = $__componentOriginal71c6471fa76ce19017edc287b6f4508c; ?>
+<?php unset($__componentOriginal71c6471fa76ce19017edc287b6f4508c); ?>
+<?php endif; ?>
             <div class="section-3-carts__item">
                 <div class="section-3-carts__item-img">
                     <img src="/img/homePage/section3/hot-stones.svg" />
@@ -185,7 +253,7 @@
             </div>
         </div>
     </div>
-    {{-- Секция 4 главной страницы --}}
+    
     <div class="section-4">
         <div class="section-4-top">
             <div class="section-4-top__description">
@@ -209,7 +277,7 @@
                 <div class="section-4-subscription__title">
                     Будь в курсе последних новостей
                     <div class="section-4-subscription__subscribeText">
-                        Подпишись на нашу рассылку
+                        Подпишись на рассылку
                     </div>
                 </div>
                 <form action="#" class="section-4-subscription__form">
@@ -221,8 +289,10 @@
             </div>
         </div>
     </div>
-    @push('styles')
-        <link href="{{ asset('css/main.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/homePage/home.css') }}" rel="stylesheet">
-    @endpush
-@endsection
+    <?php $__env->startPush('styles'); ?>
+        <link href="<?php echo e(asset('css/main.css')); ?>" rel="stylesheet">
+        <link href="<?php echo e(asset('css/homePage/home.css')); ?>" rel="stylesheet">
+    <?php $__env->stopPush(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.main', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /hotel/resources/views/home/welcome.blade.php ENDPATH**/ ?>

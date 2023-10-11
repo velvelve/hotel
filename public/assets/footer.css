@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: aliceblue;
+}
+
+ul {
+    list-style-type: none;
+    /* убираем графические метки (круглешки) */
+}
+
+a {
+    text-decoration: none;
+    /* убираем подчеркивание у ссылки */
+}
+
+.page {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/*
+    Для grid:
+    .page {
+        overflow: hidden;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        min-height: 100vh;
+    }
+*/
+.footer {
+    margin-top: auto;
+    background: linear-gradient(179deg, #066074 6.99%, rgb(1, 21, 29) 100%);
+}
+
+.footer_container {
+    max-width: 96%;
+    margin: auto;
+    padding: 0px 15px 20px 15px;
+}
+
+.footer_top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer_img {
+    margin: 0px 0px 155px 0px;
+}
+
+.footer_list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.contacts {
+    gap: 0px;
+}
+
+.adress {
+    margin: 0px 0px 30px 0px;
+}
+
+.footer_contacts {
+    display: flex;
+    gap: 120px;
+}
+
+.social_p {
+    margin: 0px 0px 20px 0px;
+}
+
+.social_link {
+    max-width: 230px;
+}
+
+.footer_link_img {
+    padding: 0px 16px 26px 0px;
+}
+
+/*# sourceMappingURL=footer.css.map */

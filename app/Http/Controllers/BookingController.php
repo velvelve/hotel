@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\Bookings\Create;
+use App\Http\Requests\Bookings\CreateBookingRequest;
 use App\Models\Booking;
 use App\Models\Room;
 use Illuminate\Http\Request;
@@ -37,6 +37,7 @@ class BookingController extends Controller
         //Получаю авторизированого user
         $user = Auth::user();
 
+
         return view('bookings.create', [
             'check_in_date' => $check_in_date,
             'check_out_date' => $check_out_date,
@@ -67,8 +68,10 @@ class BookingController extends Controller
         $booking = new Booking($data);
         $booking->status = \App\Enums\Booking\Status::BOOKED->value;
 
+
         // Сохраняем бронирование в базе данных
         $booking->save();
+
 
         // После сохранения перенаправит пользователя на другую страницу
         return redirect()->route('bookings.show')->with('success', 'Бронирование успешно создано!');

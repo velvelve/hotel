@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Auth\LoginAuthRequest;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Contracts\View\View;
@@ -21,12 +22,9 @@ class LoginController extends Controller
     /**
      * @throws ValidationException
      */
-    public function store(Request $request): RedirectResponse
+    public function store(LoginAuthRequest $request): RedirectResponse
     {
-        $credentials = $request->validate([
-            'email' => ['required', 'string', 'email'],
-            'password' => ['required', 'string']
-        ]);
+        $credentials = $request->validated();
 
         if (!Auth::attempt($credentials, $request->boolean('remember'))) {
             throw ValidationException::withMessages([

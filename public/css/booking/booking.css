@@ -49,6 +49,7 @@ ul {
 
 .content-booking-wrp {
     display: flex;
+    justify-content: space-between;
 }
 
 .section-form {
@@ -170,4 +171,46 @@ textarea:focus {
 .button:hover {
     background: linear-gradient(to top, #a7a095, #3f382b);
     border: none;
+}
+
+.section-room-info {
+    width: 690px;
+    text-align: center;
+}
+
+.room-info-text {
+    color: #7f786c;
+    padding: 5px;
+    text-align: left;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.room-info {
+    width: 690px;
+    background: linear-gradient(to top, #a7a095, #3f382b);
+}
+
+.room-info-heading {
+    font-family: 'Forum', cursive;
+    font-size: 42px;
+    padding: 20px 10px;
+}
+
+.room-info-paragraph {
+    width: 50%;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.room-info-button {
+    padding: 10px;
+    margin: 50px;
+    width: 250px;
+}
+
+.room-info-img {
+    max-width: 690px;
 }

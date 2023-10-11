@@ -123,14 +123,40 @@
                 </div>
                 <!-- Первая секция с информацией о номере -->
                 <div class="section-room-info">
-                    <div>
-                        Информация о бронировании:
+                    <p class="room-info-text">Информация о бронировании:</p>
+                    <div class="room-info">
+                        <div>
+                            <img class="room-info-img" src="{{ asset($room->images[mt_rand(0, 2)]->path) }}" alt="">
+                            <h3 class="room-info-heading">Номер {{ $room->room_type }}</h3>
+                            <p class="room-info-paragraph">Эти люксы с отдельными спальной и гостиной зонами идеально подойдут гостям, планирующим длительное пребывание в отеле.</p>
+                            <button class="button room-info-button">Изменить</button>
+                        </div>
                     </div>
-                    <div>
+                    <!-- Скрыт для презентации на уроке -->
+                    <div style="display: none">
                         <h2>Итоговая информация о бронировании</h2>
+                        <div>
+                            <p>Заезд: 01-10-23</p>
+                            <p>Номер: Lux Junior</p>
+                            <p>Сумма доп. услуг:</p>
+                            <p>Общая стоимость:</p>
+                        </div>
+                        
+                        <div>
+                            <p>Выезд: 05-10-23</p>
+                            <p>59 400.00 rub</p>
+                            <p>0.00 rub</p>
+                            <p>59 400.00 rub</p>
+                        </div>
                     </div>
-                    <div>
+                    <!-- Скрыт для презентации на уроке -->
+                    <div style="display: none">
                         Дополнительные услуги:
+                        <div style="display: flex">
+                            <img src="https://picsum.photos/219/313" alt="">
+                            <img src="https://picsum.photos/219/313" alt="">
+                            <img src="https://picsum.photos/219/313" alt="">
+                        </div>
                     </div>
                 </div>
                 </div>

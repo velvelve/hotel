@@ -1,0 +1,185 @@
+h2 {
+    font-size: 42px;
+    color: #534b47;
+    font-family: 'Forum', cursive;
+    margin-bottom: 20px;
+}
+ 
+p {
+    color: #39322F;
+    font-family: 'Forum', cursive;
+    font-size: 18px;
+    height: 35px;
+}
+
+a {
+    text-decoration: none;
+    color: #be1d17;
+}
+
+ a:hover {
+    color: rgb(28, 44, 44); 
+    
+ }
+
+.container {
+    position: relative;
+    background: linear-gradient(to right, #786853,  #D9EBEB);
+    min-height: 1050px;
+    display: flex;
+    justify-content: center;
+}
+
+.container-wrapper {
+    position: relative;
+    height: 700px;
+    width: 45em;
+    background: linear-gradient(to bottom, #f4f4f4ab,  #f8f8f800);
+    border-radius: 50px;
+    display: grid;
+    text-align: center;
+    justify-content: center;
+    top: 50px;
+}
+
+.container-wrapper__heading {
+    position: relative;
+    top: 35px;
+    height: 100px;
+}
+
+.forms-auth {
+    position: relative;
+    display: grid;
+    justify-content: center;
+    height: 270px;
+    width: 435px;
+    top: 20px;
+}
+
+.title {
+    position: relative;
+    height: 47px;
+}
+
+.forms-title {
+    position: relative;
+    display: grid;
+    color: #39322F;
+    font-size: 18px;
+    text-align: left;
+    height: 60px;
+    width: 325px;
+}
+
+
+input {
+    font-size: 18px;
+    width: 308px;
+    color: #39322F;
+    padding-left: 15px;
+    border: 1px solid #79655E;
+    background: transparent;
+    height: 30px;
+
+}
+
+input:focus {
+    outline: none;
+    border: 2px solid #39322F;
+}
+
+.account-button {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    position: relative;
+    height: 40px;
+    width: 200px;
+    text-align: center;
+    border: none;
+    border-radius: 40px;
+    color: #ffffff;
+    font-size: 20px;
+    background-color: #786853;
+}
+
+.button:hover {
+    background-color: transparent;
+    color: #39322F;
+    border: 1px solid #786853;
+}
+
+.registration {
+    position: relative;
+    width: 435px;
+    height: 70px;
+    background: transparent;    
+}
+.renember {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.text-renember {
+    position: relative;
+    left: 10px;
+    color: #39322F;
+}
+
+.text-entrance {
+    margin-top: 15px;
+}
+
+.checkbox {
+    height: 30px;
+    width: 30px;
+    border: none;
+}
+
+.checkbox:focus {
+    outline: none;
+}
+
+.entrance-icons {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 70px;
+    top: -20px;
+}
+
+.entrance-icons__vk {
+    margin-left: 15px;
+}
+
+.entrance-icons__google, .entrance-icons__vk {
+    border: 1px solid #5a524f;
+    height: 60px;
+    width: 80px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: #fff3;
+}
+
+.entrance-icons__google:hover, .entrance-icons__vk:hover {
+    transition: 1s;
+    transform: scale(1.2); 
+}
+
+.img-google {
+    height: 40px;
+    width: 40px;
+    position: relative;
+    
+}
+
+.img-vk {
+    height: 40px;
+}

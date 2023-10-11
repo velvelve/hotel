@@ -15,21 +15,35 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 40px;
 }
 
 .searchResult {
     display: flex;
     flex-direction: column;
     align-items: start;
+    margin-left: 60px;
+
 }
 
 .searchResults {
+    max-width: 1600px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    align-items: start;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: left;
+    gap: 10px;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 
 .searchResult-head {
+    padding-top: 40px;
     min-height: 100px;
     max-height: 100px;
     color: #fff;
@@ -37,20 +51,12 @@
     font-size: 62px;
 }
 
-.searchResult-content {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
 .searchResult-content__item {
     display: flex;
     flex-direction: column;
-    min-width: 450px;
-    max-width: 450px;
-    min-height: 220px;
-    max-height: 220px;
-    margin: 10px 10px 10px 10px;
+    max-width: 430px;
+    height: 290px;
+    margin: 5px 5px 5px 5px;
     padding: 16px;
     background-color: #DBDBDB;
 }
@@ -58,10 +64,7 @@
 .searchResult-content__item .item-description {
     display: flex;
     justify-content: space-between;
-    min-width: 450px;
-    max-width: 450px;
-    min-height: 186px;
-    max-height: 186px;
+
 }
 
 .item-description__leftSide {
@@ -75,42 +78,41 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
     min-width: 190px;
     max-width: 190px;
-    min-height: 186px;
-    max-height: 186px;
+
 }
 
 .item-description__rightSide-upperText {
     font-family: 'Forum', cursive;
     font-size: 24px;
     color: #79655E;
-    text-align: center;
+    text-align: left;
 }
 
 .item-description__rightSide-centralText {
     font-family: 'Forum', cursive;
-    font-size: 24px;
+    font-size: 18px;
     color: #79655E;
-    text-align: center;
+    text-align: left;
+    margin-bottom: 8px;
 }
 
 .item-description__rightSide-lowerText {
     font-family: 'Forum', cursive;
-    font-size: 24px;
+    font-size: 20px;
     color: #CE6845;
-    text-align: center;
+    text-align: left;
+    margin-bottom: 8px;
 }
 
 .searchResult-content__item .item-btn {
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
-    min-width: 450px;
-    max-width: 450px;
-    min-height: 34px;
-    max-height: 34px;
+    margin-top: 8px;
+    width: 380px;
+
 }
 
 .searchResult-content__item .item-btn button {
@@ -127,4 +129,59 @@
     font-size: 16px;
     font-weight: 700;
     color: #79655E;
+}
+
+.item-description__rightSide-servise {
+    display: flex;
+    position: relative;
+    top: 10px;
+    height: 52px;
+}
+
+.icon {
+    display: inline-block;
+    height: 30px;
+    vertical-align: sub;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.textDescription {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: left;
+    text-align: left;
+    min-width: 190px;
+    max-width: 190px;
+    margin-top: 8px;
+}
+
+.item-description-img {
+    width: 215px;
+    height: 150px;
+    margin-right: 10px;
+}
+
+.item-description__leftSide-block {
+    display: block;
+}
+
+.item-description__leftSide-block-text {
+    font-family: 'Forum', cursive;
+    font-size: 18px;
+    color: #79655E;
+    text-align: left;
+    margin-bottom: 8px;
+}
+
+.item-description__leftSide-block-text-heading {
+    font-family: 'Forum', cursive;
+    font-size: 18px;
+    color: #CE6845;
+    text-align: left;
+    margin-bottom: 8px;
+    margin-top: 10px;
 }

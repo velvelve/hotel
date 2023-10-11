@@ -11,6 +11,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class RegisterController extends Controller
 {
@@ -21,7 +22,23 @@ class RegisterController extends Controller
 
     public function store(RegisterAuthRequest $request): Redirector|RedirectResponse
     {
+        $request->validate([
+            'first_name' => ['required', 'string'],
+            'last_name' => ['required', 'string'],
+            'email' => ['required', 'string', 'email', 'unique:users'],
+            'password' => ['required', 'confirmed', 'min:8']
+        ]);
+
+        //этот код правит косяк с автоинкрементом (прикол psql)
+        DB::statement("SELECT setval(pg_get_serial_sequence('users', 'id'), coalesce(max(id)+1, 1), false) FROM users;");
+        $user = User::orderBy('id', 'desc')->first();
+        if ($user) {
+            $userId = $user->id + 1;
+        } else {
+            $userId = 1;
+        }
         $user = User::create([
+            'id' => $userId,
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'email' => $request->email,

@@ -31,7 +31,7 @@ Route::post('/register', [RegisterController::class, 'store'])->middleware('gues
 Route::get('/login', [LoginController::class, 'create'])->middleware('guest')->name('login');
 Route::post('/login', [LoginController::class, 'store'])->middleware('guest');
 Route::get('/logout', [LoginController::class, 'destroy'])->middleware('auth')->name('logout');
-Route::get('/profile', fn() => 'Профиль')->middleware('auth', 'verified')->name('profile');
+Route::get('/profile', fn () => 'Профиль')->middleware('auth', 'verified')->name('profile');
 
 //подтверждение почты
 Route::get('/email-confirmation', [EmailVerificationController::class, 'redirect'])->middleware('auth')
@@ -43,8 +43,7 @@ Route::post('/email-confirmation', [EmailVerificationController::class, 'resend'
 
 //поиск комнат
 //результат поиска
-Route::get('/search-rooms', [SearchController::class, 'index'])
-    ->name('search.rooms');
+
 Route::post('/search-rooms', [SearchController::class, 'index'])
     ->name('search.rooms');
 
@@ -58,5 +57,11 @@ Route::post('/contacts/send-message', [ContactsController::class, 'sendMessage']
 Route::get('/bookings/create/{room_id}', [BookingController::class, 'create'])
     ->where('room_id', '\w+')
     ->name('bookings.create');
-Route::post('/bookings', [BookingController::class, 'store'])
-    ->name('bookings.store');
+
+Route::get('/bookings/show', [BookingController::class, 'show'])
+    ->name('bookings.show');
+
+Route::post('/bookings/price', [BookingController::class, 'price'])->name('bookings.price');
+Route::post('/bookings/pay', [BookingController::class, 'pay'])->name('bookings.pay');
+Route::get('/bookings/save', [BookingController::class, 'save'])
+    ->name('bookings.save');

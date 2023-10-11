@@ -12,7 +12,7 @@
             <div class="content-booking-wrp">
                 <!-- Левая секция с формой -->
                 <div class="section-form">
-                    <form action="{{ route('bookings.store')}}" method="POST">
+                    <form action="{{ route('bookings.price')}}" method="POST">
                         @csrf
                         
                         <div class="form-group">
@@ -21,7 +21,7 @@
                                 @error('check_in_date')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
-                                <input type="date" name="check_in_date" id="check_in_date" class="forms-input forms-date" value="{{ $check_in_date }}">
+                                <input type="date" name="check_in_date" id="check_in_date" class="forms-input forms-date" value="{{ $check_in_date }}" readonly>
                             </div>
         
                             <div>
@@ -29,7 +29,7 @@
                                 @error('check_out_date')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
-                                <input type="date" name="check_out_date" id="check_out_date" class="forms-input forms-date" value="{{ $check_out_date }}"  >
+                                <input type="date" name="check_out_date" id="check_out_date" class="forms-input forms-date" value="{{ $check_out_date }}" readonly >
                             </div>
                         </div>
                 
@@ -58,6 +58,7 @@
                                 <input placeholder="Введите отчество" type="text" name="first_name" id="first_name" class="forms-input forms-midname" >
                             </div>
                         </div>
+
 
                         <label class="forms-label" for="tel">Телефон гостя</label>
                         @error('tel')

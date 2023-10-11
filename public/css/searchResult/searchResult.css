@@ -160,6 +160,7 @@ ul {
 }
 
 .item-description-img {
+    display: block;
     width: 215px;
     height: 150px;
     margin-right: 10px;

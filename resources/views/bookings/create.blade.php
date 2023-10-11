@@ -9,19 +9,19 @@
         @endforeach
     @endif
 
-    <form action="{{ route('bookings.store') }}" method="POST">
+    <form action="{{ route('bookings.price') }}" method="POST">
         @csrf
 
         <div class="form-group">
             <label for="check_in_date">Дата заезда:</label>
-            <input type="date" name="check_in_date" id="check_in_date" class="form-control" value="{{ $check_in_date }}"
-                required>
+            <input type="text" name="check_in_date" id="check_in_date" class="form-control" value="{{ $check_in_date }}"
+                required readonly>
         </div>
 
         <div class="form-group">
             <label for="check_out_date">Дата выезда:</label>
-            <input type="date" name="check_out_date" id="check_out_date" class="form-control"
-                value="{{ $check_out_date }}" required>
+            <input type="text" name="check_out_date" id="check_out_date" class="form-control"
+                value="{{ $check_out_date }}" required readonly>
         </div>
 
         <div class="form-group">
@@ -64,6 +64,10 @@
             <input type="number" name="user_id" id="user_id" class="form-control" value="{{ $user->id }}" required>
         </div>
 
+        <div style="display: none" class="form-group d-none">
+            <label for="price">ID user</label>
+            <input type="number" name="price" id="price" class="form-control" value="{{ $room->price }}" required>
+        </div>
         <button type="submit" class="btn btn-primary">Перейти к оплате</button>
     </form>
 @endsection

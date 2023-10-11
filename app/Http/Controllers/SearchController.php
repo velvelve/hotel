@@ -2,33 +2,36 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Search\SearchRequest;
 use App\Services\SearchRooms;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use SebastianBergmann\CodeCoverage\Driver\XdebugDriver;
 
 class SearchController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request): view
+    public function index(SearchRequest $request): view
     {
         //получаем массив зарезервированных комнат, чтобы исключить их
         $availableRooms = SearchRooms::getAvailableRooms($request);
-
         //получаем массив свободных комнат, на заданный период + фильтр по максимальному колличеству гостей
         $freeRooms = SearchRooms::freeRooms($request, $availableRooms);
-
         //получаем массив изображений для отфильтрованных комнат
         //$images=SearchRooms::roomsImage($freeRooms);
 
         //получаем массив сервисов для отфильтрованных комнат
         //$services=SearchRooms::roomsServices($freeRooms);
+
         return view('search.rooms', [
             'roomsList' => $freeRooms,
             'guests' => $request->input('guest_count')
         ]);
     }
+
+
 
     /**
      * Show the form for creating a new resource.

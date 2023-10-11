@@ -1,7 +1,9 @@
 @extends('layouts.main')
 
 @push('styles')
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     <link href="{{ asset('css/contacts/contacts.css') }}" rel="stylesheet">
+@endpush
 
 @section('content')
 <!-- Секция без хедера и футера -->
@@ -127,5 +129,5 @@
         </div>
     </div>
 </div>
-    
 @endsection
+   

@@ -9,7 +9,7 @@
         <div class="header_menu">
             <ul class="header_list">
                 <li><a href="{{ route('home') }}">Главная</a></li>
-                <li><a href="#">Номера</a></li>
+                <li><a href="{{ route('rooms.types')}}">Номера</a></li>
                 <li><a href="{{ route('contacts.index') }}">Контакты</a></li>
                 @auth
                     <li><a href="{{ route('profile') }}">Профиль</a></li>

@@ -14,11 +14,11 @@
         <div>К оплате: {{ $price }} </div>
         <div class='form-row row'>
             <div class='col-xs-12 col-md-6 form-group required'>
-                <label class='control-label'>Name on Card</label>
+                <label class='control-label'>Имя на карте</label>
                 <input class='form-control' size='4' type='text' value="Test">
             </div>
             <div class='col-xs-12 col-md-6 form-group required'>
-                <label class='control-label'>Card Number</label>
+                <label class='control-label'>Номер карты</label>
                 <input autocomplete='off' class='form-control card-number' size='20' type='text'
                     value="4242424242424242">
             </div>
@@ -30,11 +30,11 @@
                     value="123">
             </div>
             <div class='col-xs-12 col-md-4 form-group expiration required'>
-                <label class='control-label'>Expiration Month</label>
+                <label class='control-label'>Месяц окончания действия</label>
                 <input class='form-control card-expiry-month' placeholder='MM' size='2' type='text' value="04">
             </div>
             <div class='col-xs-12 col-md-4 form-group expiration required'>
-                <label class='control-label'>Expiration Year</label>
+                <label class='control-label'>Год окончания действия</label>
                 <input class='form-control card-expiry-year' placeholder='YYYY' size='4' type='text'
                     value="2024">
             </div>

@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Image;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
@@ -38,6 +39,42 @@ class ImageSeeder extends Seeder
             if ($i % 5 === 0) {
                 $currentRoomType++;
             }
+        }
+
+        $hotelServicesFolder = public_path('img/services/hotel');
+
+        $hotelServices = File::files($hotelServicesFolder);
+
+        foreach ($hotelServices as $hotelService) {
+            $hotelServiceFileName = pathinfo($hotelService, PATHINFO_FILENAME);
+            $hotelServicePath = Str::after($hotelService, public_path());
+
+            DB::table('images')->insert([
+                'hotel_id' => null,
+                'room_id' => null,
+                'filename' => $hotelServiceFileName,
+                'path' => $hotelServicePath,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+        }
+
+        $roomServicesFolder = public_path('img/services/room');
+
+        $roomServices = File::files($roomServicesFolder);
+
+        foreach ($roomServices as $roomService) {
+            $roomServiceFileName = pathinfo($roomService, PATHINFO_FILENAME);
+            $roomServicePath = Str::after($roomService, public_path());
+
+            DB::table('images')->insert([
+                'hotel_id' => null,
+                'room_id' => null,
+                'filename' => $roomServiceFileName,
+                'path' => $roomServicePath,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
         }
     }
 }

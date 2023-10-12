@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RoomTypeController;
 use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
@@ -57,11 +58,19 @@ Route::post('/contacts/send-message', [ContactsController::class, 'sendMessage']
 Route::get('/bookings/create/{room_id}', [BookingController::class, 'create'])
     ->where('room_id', '\w+')
     ->name('bookings.create');
-
+Route::post('/bookings', [BookingController::class, 'store'])
+    ->name('bookings.store');
 Route::get('/bookings/show', [BookingController::class, 'show'])
     ->name('bookings.show');
-
-Route::post('/bookings/price', [BookingController::class, 'price'])->name('bookings.price');
-Route::post('/bookings/pay', [BookingController::class, 'pay'])->name('bookings.pay');
+Route::post('/bookings/price', [BookingController::class, 'price'])
+  ->name('bookings.price');
+Route::post('/bookings/pay', [BookingController::class, 'pay'])
+  ->name('bookings.pay');
 Route::get('/bookings/save', [BookingController::class, 'save'])
     ->name('bookings.save');
+
+//номера
+Route::get('/rooms-types', [RoomTypeController::class, 'index'])
+    ->name('rooms.types');
+Route::get('/rooms-types/{room_type}', [RoomTypeController::class, 'show'])
+    ->name('rooms.show');

@@ -75,20 +75,20 @@ ul {
 .forms-input {
     background: transparent;
     border: #ffffff solid 1px;
-    height: 64px;
     width: 100%;
     border-radius: 30px;
     padding: 18px 10px 21px 37px;
+    box-sizing: border-box;
 }
 
 .forms-date {
-    min-width: 271px;
+    min-width: 290px;
     padding: 20px 10px 15px 65px;
 }
 
 .forms-name,
 .forms-midname {
-    min-width: 300px;
+    min-width: 290px;
 }
 
 .form-info {
@@ -191,6 +191,8 @@ textarea:focus {
 .room-info {
     width: 690px;
     background: linear-gradient(to top, #a7a095, #3f382b);
+    padding-bottom: 20px;
+    box-sizing: border-box;
 }
 
 .room-info-heading {
@@ -207,7 +209,9 @@ textarea:focus {
 
 .room-info-button {
     padding: 10px;
-    margin: 50px;
+    margin: 20px auto;
+    display: block;
+    height: auto;
     width: 250px;
 }
 

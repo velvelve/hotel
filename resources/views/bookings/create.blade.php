@@ -2,6 +2,7 @@
 
 @push('styles')
     <link href="{{ asset('css/booking/booking.css') }}" rel="stylesheet">
+@endpush
 
 @section('content')
     <!-- Секция без хедера и футера -->
@@ -38,7 +39,7 @@
                             @error('last_name')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
-                            <input placeholder="Введите фамилию" type="text" name="last_name" id="last_name" class="forms-input" value="{{ $user->last_name}} " >
+                            <input placeholder="Введите фамилию" type="text" name="last_name" id="last_name" class="forms-input" value="{{ $user->last_name}}" >
 
                 
                         <div class="form-group">
@@ -86,7 +87,7 @@
                         <textarea  class="forms-input forms-textarea" name="wishes" id="wishes" cols="30" rows="10" 
                         placeholder="Если у вас есть дополнительные пожелания, пожалуйста, дайте нам знать. Мы постараемся учесть ваши пожелания при наличии такой возможности."></textarea>
                 
-                        <!-- Поле room_id, user_id, guests_count нужны для создания booking, но по макету их там быть не должно. room_type пока что воообще не нужен. -->
+                        <!-- Поле room_id, user_id, guests_count нужны для создания booking, но по макету их там быть не должно. Price для fake оплаты -->
                         <div style="display: none" class="form-group d-none">
                             <label for="room_id">ID room</label>
                             @error('room_id')
@@ -112,17 +113,18 @@
                         </div>
 
                         <div style="display: none" class="form-group d-none">
-                            <label class="forms-label" for="room_type">Комната</label>
-                            @error('room_type')
+                            <label for="price">Цена</label>
+                            @error('price')
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
-                            <input type="text" name="room_type" id="room_type" class="forms-input" value="{{ $room->room_type }}" >
+                            <input type="number" name="price" id="price" class="forms-input" value="{{ $room->price }}" >
                         </div>
                 
                         <button type="submit" class="button">Перейти к оплате</button>
                     </form>
                 </div>
-                <!-- Первая секция с информацией о номере -->
+
+                <!-- Правая секция с информацией о номере -->
                 <div class="section-room-info">
                     <p class="room-info-text">Информация о бронировании:</p>
                     <div class="room-info">
@@ -130,9 +132,10 @@
                             <img class="room-info-img" src="{{ asset($room->images[mt_rand(0, 2)]->path) }}" alt="">
                             <h3 class="room-info-heading">Номер {{ $room->room_type }}</h3>
                             <p class="room-info-paragraph">Эти люксы с отдельными спальной и гостиной зонами идеально подойдут гостям, планирующим длительное пребывание в отеле.</p>
-                            <button class="button room-info-button">Изменить</button>
+                            <a class="button room-info-button" href="javascript:history.back()">Изменить</a>
                         </div>
                     </div>
+
                     <!-- Скрыт для презентации на уроке -->
                     <div style="display: none">
                         <h2>Итоговая информация о бронировании</h2>

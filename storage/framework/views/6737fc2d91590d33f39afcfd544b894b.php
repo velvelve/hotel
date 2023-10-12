@@ -277,7 +277,7 @@
                 <div class="section-4-subscription__title">
                     Будь в курсе последних новостей
                     <div class="section-4-subscription__subscribeText">
-                        Подпишись на рассылку
+                        Подпишись на нашу рассылку
                     </div>
                 </div>
                 <form action="#" class="section-4-subscription__form">

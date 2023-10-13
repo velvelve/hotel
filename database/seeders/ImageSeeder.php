@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Enums\Rooms\RoomsTypes;
 use App\Models\Image;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
@@ -15,7 +16,7 @@ class ImageSeeder extends Seeder
      */
     public function run(): void
     {
-        $roomTypes = ['standard', 'superior', 'premium', 'lux', 'royal'];
+        $roomTypes = RoomsTypes::getRoomsEnums();
         $currentRoomType = 0;
         $imageFolder = public_path('img/rooms');
         for ($i = 1; $i <= 25; $i++) {

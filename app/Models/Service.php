@@ -14,13 +14,16 @@ class Service extends Model
 
     public function images()
     {
-        return $this->hasMany(ServiceImage::class);
+        return $this->belongsToMany(Image::class, 'service_images');
     }
 
     public function icon()
     {
-        return $this->hasOne(ServiceImage::class)->where('is_icon', true);
+        $serviceImage = ServiceImage::query()->where('is_icon', true)
+            ->where('service_id', $this->id)->get();
+        return $this->images()->find($serviceImage[0]->image_id);
     }
+
 
     public function hotels()
     {
@@ -30,5 +33,10 @@ class Service extends Model
     public function rooms()
     {
         return $this->belongsToMany(Room::class, 'room_services');
+    }
+
+    public function roomService()
+    {
+        return $this->hasOne(RoomService::class, 'service_id');
     }
 }

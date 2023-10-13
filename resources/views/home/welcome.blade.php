@@ -125,60 +125,14 @@
                 </a>
             </div>
             <div class="services">
-                <div class="services-item">
-                    <img src="/img/section2/swim.svg" class="item-ico">
-                    <div class="item-description">
-                        Бассейн
+                @foreach ($hotel->services as $service)
+                    <div class="services-item">
+                        <img src="{{ $service->icon()->path }}" alt="{{ $service->icon()->filename }}" class="item-ico">
+                        <div class="item-description">
+                            {{ $service->short_description }}
+                        </div>
                     </div>
-                </div>
-                <div class="services-item">
-                    <img src="/img/section2/fitness.svg" class="item-ico">
-                    <div class="item-description">
-                        Фитнес
-                    </div>
-                </div>
-                <div class="services-item">
-                    <img src="/img/section2/restaurant.svg" class="item-ico">
-                    <div class="item-description">
-                        Ресторан
-                    </div>
-                </div>
-                <div class="services-item">
-                    <img src="/img/section2/transfer.svg" class="item-ico">
-                    <div class="item-description">
-                        Трансфер
-                    </div>
-                </div>
-                <div class="services-item">
-                    <img src="/img/section2/support.svg" class="item-ico">
-                    <div class="item-description">
-                        Поддержка
-                    </div>
-                </div>
-                <div class="services-item">
-                    <img src="/img/section2/spa.svg" class="item-ico">
-                    <div class="item-description">
-                        Spa
-                    </div>
-                </div>
-                <div class="services-item">
-                    <img src="/img/section2/wifi2.svg" class="item-ico">
-                    <div class="item-description">
-                        Wifi
-                    </div>
-                </div>
-                <div class="services-item">
-                    <img src="/img/section2/parking.svg" class="item-ico">
-                    <div class="item-description">
-                        Паркинг
-                    </div>
-                </div>
-                <div class="services-item">
-                    <img src="/img/section2/service.svg" class="item-ico">
-                    <div class="item-description">
-                        Сервис
-                    </div>
-                </div>
+                @endforeach
             </div>
             <div class="service-carts">
                 <div class="service-cart-1">

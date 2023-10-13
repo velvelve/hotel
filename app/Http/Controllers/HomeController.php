@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Hotel;
 use App\Models\Room;
 use Illuminate\Http\Request;
 
@@ -12,9 +13,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-
+        $hotel = Hotel::all()[0];
         return view('home.welcome', [
-            'guests' => 1
+            'guests' => 1,
+            'hotel' => $hotel
         ]);
     }
 

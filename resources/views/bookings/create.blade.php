@@ -42,7 +42,7 @@
                         <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
                         <input placeholder="Введите фамилию" type="text" name="last_name" id="last_name"
-                               class="forms-input" value="{{ $client_last_name }}">
+                               class="forms-input" required>
 
 
                         <div class="form-group">
@@ -52,16 +52,16 @@
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                                 <input placeholder="Введите имя" type="text" name="first_name" id="first_name"
-                                       class="forms-input forms-name" value="{{ $client_first_name}}">
+                                       class="forms-input forms-name" required>
                             </div>
 
                             <div>
-                                <label class="forms-label" for="first_name">Отчество</label>
-                                @error('first_name')
+                                <label class="forms-label" for="patronymic_name">Отчество</label>
+                                @error('patronymic_name')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
-                                <input placeholder="Введите отчество" type="text" name="first_name" id="first_name"
-                                       class="forms-input forms-midname" value="{{ $client_patronymic}}">
+                                <input placeholder="Введите отчество" type="text" name="patronymic_name" id="patronymic_name"
+                                       class="forms-input forms-midname" required>
                             </div>
                         </div>
 
@@ -72,7 +72,7 @@
                         @enderror
                         <div class="form-group">
                             <input placeholder="Введите номер телeфона" type="tel" name="tel" id="tel"
-                                   class="forms-input" value="{{ $client_phone }}">
+                                   class="forms-input" required>
                             <p class="form-connection-text">На этот номер вы получите SMS с номером брони</p>
                         </div>
 
@@ -82,16 +82,23 @@
                         @enderror
                         <div class="form-group">
                             <input placeholder="Введите E-mail" type="email" name="email" id="email" class="forms-input"
-                                   value="{{ $client_email }}">
+                                   required>
                             <p class="form-connection-text">На этот адрес вы получите подтверждение бронирования</p>
                         </div>
+
+                        <label class="forms-label" for="promo_code">Промокод</label>
+                        @error('promo_code')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                        @enderror
+                        <input placeholder="Введите промокод" type="text" name="promo_code" id="promo_code"
+                               class="forms-input" required>
 
                         <h2 class="form-info">Время заезда и выезда:</h2>
                         <p class="form-info-text">Заезд: с 14 до 23:30</p>
                         <p class="form-info-text form-info-text--last">Выезд: 12:00</p>
 
                         <label class="forms-label" for="wishes">Ваши пожелания</label>
-                        <textarea class="forms-input forms-textarea" value="{{$client_wishes}}" name="wishes"
+                        <textarea class="forms-input forms-textarea"  name="wishes"
                                   id="wishes" cols="30" rows="10"
                                   placeholder="Если у вас есть дополнительные пожелания, пожалуйста, дайте нам знать. Мы постараемся учесть ваши пожелания при наличии такой возможности."></textarea>
 
@@ -121,7 +128,7 @@
                             <div class="alert alert-danger">{{ $message }}</div>
                             @enderror
                             <input type="number" name="guests_count" id="guests_count" class="forms-input"
-                                   value="{{ $client_guests_count }}">
+                                   value="{{ $guests_count }}">
                         </div>
 
                         <div style="display: none" class="form-group d-none">

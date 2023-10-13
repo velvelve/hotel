@@ -40,25 +40,60 @@
             </div>
         </div>
         <div style="display: none" class="form-group d-none">
-            <label for="check_in_date">ID user</label>
+            <label for="check_in_date">check_in_date</label>
             <input type="text" name="check_in_date" id="check_in_date" class="form-control" value="{{ $check_in_date }}"
                 required>
         </div>
         <div style="display: none" class="form-group d-none">
-            <label for="check_out_date">ID user</label>
+            <label for="check_out_date">check_out_date</label>
             <input type="text" name="check_out_date" id="check_out_date" class="form-control"
                 value="{{ $check_out_date }}" required>
         </div>
         <div style="display: none" class="form-group d-none">
-            <label for="room_id">ID user</label>
+            <label for="last_name">last_name</label>
+            <input type="text" name="last_name" id="last_name" class="form-control"
+                value="{{ $last_name }}" required>
+        </div>
+        <div style="display: none" class="form-group d-none">
+            <label for="first_name">first_name</label>
+            <input type="text" name="first_name" id="first_name" class="form-control"
+                value="{{ $first_name }}" required>
+        </div>
+        <div style="display: none" class="form-group d-none">
+            <label for="patronymic_name">patronymic_name</label>
+            <input type="text" name="patronymic_name" id="patronymic_name" class="form-control"
+                value="{{ $patronymic_name }}" required>
+        </div>
+        <div style="display: none" class="form-group d-none">
+            <label for="tel">tel</label>
+            <input type="tel" name="tel" id="tel" class="form-control"
+                value="{{ $tel }}" required>
+        </div>
+        <div style="display: none" class="form-group d-none">
+            <label for="email">email</label>
+            <input type="email" name="email" id="email" class="form-control"
+                value="{{ $email }}" required>
+        </div>
+        <div style="display: none" class="form-group d-none">
+            <label for="promo_code">promo_code</label>
+            <input type="text" name="promo_code" id="promo_code" class="form-control"
+                value="{{ $promo_code }}">
+        </div>
+        <div style="display: none" class="form-group d-none">
+            <label for="wishes">wishes</label>
+            <input type="text" name="wishes" id="wishes" class="form-control"
+                value="{{ $wishes }}">
+        </div>
+        <div style="display: none" class="form-group d-none">
+            <label for="room_id">room_id</label>
             <input type="number" name="room_id" id="room_id" class="form-control" value="{{ $room_id }}" required>
         </div>
         <div style="display: none" class="form-group d-none">
-            <label for="user_id">ID user</label>
+            <label for="user_id">user_id</label>
             <input type="number" name="user_id" id="user_id" class="form-control" value="{{ $user_id }}" required>
         </div>
         <div style="display: none" class="form-group d-none">
-            <label for="guests_count">ID user</label>
+            <label for="guests_count">guests_count</label>
             <input type="number" name="guests_count" id="guests_count" class="form-control" value="{{ $guests_count }}"
                 required>
         </div>

@@ -19,7 +19,14 @@ class Booking extends Model
         'user_id',
         'check_in_date',
         'check_out_date',
-        'guests_count',
+        'client_first_name',
+        'client_patronymic',
+        'client_last_name',
+        'client_phone',
+        'client_email',
+        'client_promo_code',
+        'client_wishes',
+        'client_guests_count',
         'status',
     ];
 

@@ -29,7 +29,7 @@ class BookingController extends Controller
         //Получаю из сессии данные о датах
         $check_in_date = session('check_in_date');
         $check_out_date = session('check_out_date');
-        $guest_count = session('guest_count');
+        $guests_count = session('guest_count');
 
         //Получаю из url room_id
         $room = Room::findOrFail($room_id);
@@ -37,37 +37,50 @@ class BookingController extends Controller
         //Получаю авторизированого user
         $user = Auth::user();
 
-
         return view('bookings.create', [
             'check_in_date' => $check_in_date,
             'check_out_date' => $check_out_date,
-            'guest_count' => $guest_count,
+            'guests_count' => $guests_count,
             'room' => $room,
             'user' => $user,
         ]);
     }
 
     // Сохранение нового бронирования
-    public function save(Request $request)
+    public function save()
     {
+        //получаем данные из сессии, отправленные в pay.
         $customerData = session('customer_data');
         $check_in_date = $customerData['check_in_date'];
         $check_out_date = $customerData['check_out_date'];
-        $guest_count = $customerData['guests_count'];
+        $client_last_name = $customerData['last_name'];
+        $client_first_name = $customerData['first_name'];
+        $client_patronymic = $customerData['patronymic_name'];
+        $client_phone = $customerData['tel'];
+        $client_email = $customerData['email'];
+        $client_promo_code = $customerData['promo_code'];
+        $client_wishes = $customerData['wishes'];
         $room_id = $customerData['room_id'];
         $user_id = $customerData['user_id'];
-        $data =  [
+        $client_guests_count = $customerData['guests_count'];
+        $data = [
             'room_id' => $room_id,
             'user_id' => $user_id,
             'check_in_date' => $check_in_date,
             'check_out_date' => $check_out_date,
-            'guests_count' => $guest_count,
+            'client_first_name' => $client_first_name,
+            'client_last_name' => $client_last_name,
+            'client_patronymic' => $client_patronymic,
+            'client_phone' => $client_phone,
+            'client_email' => $client_email,
+            'client_promo_code' => $client_promo_code,
+            'client_wishes' => $client_wishes,
+            'client_guests_count' => $client_guests_count,
         ];
 
         // Создаем новый объект бронирования
         $booking = new Booking($data);
         $booking->status = \App\Enums\Booking\Status::BOOKED->value;
-
 
         // Сохраняем бронирование в базе данных
         $booking->save();
@@ -84,11 +97,14 @@ class BookingController extends Controller
             'check_out_date' => $request->input('check_out_date'),
             'last_name' => $request->input('last_name'),
             'first_name' => $request->input('first_name'),
-            'guests_count' => $request->input('guests_count'),
+            'patronymic_name' => $request->input('patronymic_name'),
+            'tel' => $request->input('tel'),
             'email' => $request->input('email'),
-            'room_type' => $request->input('room_type'),
+            'promo_code' => $request->input('promo_code'),
+            'wishes' => $request->input('wishes'),
             'room_id' => $request->input('room_id'),
             'user_id' => $request->input('user_id'),
+            'guests_count' => $request->input('guests_count'),
             'price' => $request->input('price'),
         ];
         return view('bookings.price', $data);

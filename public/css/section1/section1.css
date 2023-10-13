@@ -10,7 +10,7 @@
 
 .section-1-header {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     min-width: 1275px;
     max-width: 1275px;

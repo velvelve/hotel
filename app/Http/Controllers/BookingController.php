@@ -29,7 +29,14 @@ class BookingController extends Controller
         //Получаю из сессии данные о датах
         $check_in_date = session('check_in_date');
         $check_out_date = session('check_out_date');
-        $guest_count = session('guest_count');
+        $client_first_name = session('client_first_name');
+        $client_last_name = session('client_last_name');
+        $client_patronymic = session('client_patronymic');
+        $client_phone = session('client_phone');
+        $client_email = session('client_email');
+        $client_promo_code = session('client_promo_code');
+        $client_wishes = session('client_wishes');
+        $client_guests_count = session('client_guests_count');
 
         //Получаю из url room_id
         $room = Room::findOrFail($room_id);
@@ -37,31 +44,51 @@ class BookingController extends Controller
         //Получаю авторизированого user
         $user = Auth::user();
 
-
         return view('bookings.create', [
             'check_in_date' => $check_in_date,
             'check_out_date' => $check_out_date,
-            'guest_count' => $guest_count,
+            'client_first_name' => $client_first_name,
+            'client_last_name' => $client_last_name,
+            'client_patronymic' => $client_patronymic,
+            'client_phone' => $client_phone,
+            'client_email' => $client_email,
+            'client_promo_code' => $client_promo_code,
+            'client_wishes' => $client_wishes,
+            'client_guests_count' => $client_guests_count,
             'room' => $room,
             'user' => $user,
         ]);
     }
 
     // Сохранение нового бронирования
-    public function save(Request $request)
+    public function save(CreateBookingRequest $request)
     {
         $customerData = session('customer_data');
         $check_in_date = $customerData['check_in_date'];
         $check_out_date = $customerData['check_out_date'];
-        $guest_count = $customerData['guests_count'];
+        $client_first_name = $customerData['client_first_name'];
+        $client_last_name = $customerData['client_last_name'];
+        $client_patronymic = $customerData['client_patronymic'];
+        $client_phone = $customerData['client_phone'];
+        $client_email = $customerData['client_email'];
+        $client_promo_code = $customerData['client_promo_code'];
+        $client_wishes = $customerData['client_wishes'];
+        $client_guests_count = $customerData['client_guests_count'];
         $room_id = $customerData['room_id'];
         $user_id = $customerData['user_id'];
-        $data =  [
+        $data = [
             'room_id' => $room_id,
             'user_id' => $user_id,
             'check_in_date' => $check_in_date,
             'check_out_date' => $check_out_date,
-            'guests_count' => $guest_count,
+            'client_first_name' => $client_first_name,
+            'client_last_name' => $client_last_name,
+            'client_patronymic' => $client_patronymic,
+            'client_phone' => $client_phone,
+            'client_email' => $client_email,
+            'client_promo_code' => $client_promo_code,
+            'client_wishes' => $client_wishes,
+            'client_guests_count' => $client_guests_count,
         ];
 
         // Создаем новый объект бронирования

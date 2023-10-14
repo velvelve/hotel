@@ -141,8 +141,8 @@
                     <p class="booking-information__info">Информация о бронировании:</p>
 
                     <div class="booking-information__card">
-                        <img src="{{ asset($room->images[mt_rand(0, 2)]->path) }}" alt="image-room" width="691px"
-                            height="291px">
+                        <img src="{{ asset($room->images[mt_rand(0, 2)]->path) }}" alt="image-room" width="691"
+                            height="291">
                         <h2 class="booking-information__title">Номер {{ $room->room_type }}</h2>
                         <p class="booking-information__room-parameter">35 m2 | 2 кровати TWIN или 1 кровать Queen или King
                             | 3 взрослых, 1 ребенок (0-11 лет)</p>
@@ -212,18 +212,18 @@
 
                         <div class="booking-information__wrp">
                             <div class="booking-information__image-container">
-                                <img class="booking-information__img" src="{{ asset('img\booking\service1.jpg') }}"
-                                    alt="images-services" width="219px" height="313px">
+                                <img class="booking-information__img" src="{{ asset('img/booking/service1.jpg') }}"
+                                    alt="images-services" width="219" height="313">
                                 <p class="booking-information__overlay-text">Завтрак Подробнее ></p>
                             </div>
                             <div class="booking-information__image-container">
-                                <img class="booking-information__img" src="{{ asset('img\booking\service2.jpg') }}"
-                                    alt="images-services" width="219px" height="313px">
+                                <img class="booking-information__img" src="{{ asset('img/booking/service2.jpg') }}"
+                                    alt="images-services" width="219" height="313">
                                 <p class="booking-information__overlay-text">Шведский стол Подробнее ></p>
                             </div>
                             <div class="booking-information__image-container">
-                                <img class="booking-information__img" src="{{ asset('img\booking\service3.jpg') }}"
-                                    alt="images-services" width="219px" height="313px">
+                                <img class="booking-information__img" src="{{ asset('img/booking/service3.jpg') }}"
+                                    alt="images-services" width="219" height="313">
                                 <p class="booking-information__overlay-text">Скидка 10% в ресторане Подробнее ></p>
                             </div>
                         </div>

@@ -6,6 +6,34 @@ body {
     line-height: 179.8%;
 }
 
+textarea {
+    padding-top: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #e2f7f6;
+}
+
+
+textarea:focus {
+    outline: none;
+}
+
+input {
+    font-size: 14px;
+    color: #e2f7f6;
+    padding-left: 15px;
+    margin-bottom: 31px;
+}
+
+input:focus {
+    outline: none;
+}
+
+::placeholder {
+    position: absolute;
+    color: #ffffff;
+}
+
 .visually-hidden {
     position: absolute;
     white-space: nowrap;
@@ -316,188 +344,4 @@ body {
     font-style: normal;
     font-weight: 700;
     line-height: 179.8%;
-}
-
-/*-----------------------OLD-----------------------*/
-
-
-
-.content-booking-heading {
-    padding: 63px 0 100px;
-    font-family: 'Forum', cursive;
-    font-style: normal;
-    font-size: 62px;
-    font-weight: 400;
-}
-
-.content-booking-wrp {
-    display: flex;
-    justify-content: space-between;
-}
-
-.section-form {
-    width: 705px;
-}
-
-.form-group {
-    display: flex;
-    justify-content: space-between;
-}
-
-.forms-label {
-    padding: 0 0 11px 37px;
-    display: block;
-    font-family: Manrope;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 179.8%;
-    /* 35.96px */
-}
-
-.forms-input {
-    background: transparent;
-    border: #ffffff solid 1px;
-    width: 100%;
-    border-radius: 30px;
-    padding: 18px 10px 21px 37px;
-    box-sizing: border-box;
-}
-
-.forms-date {
-    min-width: 290px;
-    padding: 20px 10px 15px 65px;
-}
-
-.forms-name,
-.forms-midname {
-    min-width: 290px;
-}
-
-.form-info {
-    padding: 0 0 5px 37px;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 600;
-}
-
-.form-connection-text {
-    padding: 0 0 0 37px;
-}
-
-.form-info-text {
-    padding-left: 37px;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-}
-
-.form-info-text--last {
-    padding-bottom: 37px;
-}
-
-.forms-textarea {
-    margin-bottom: 75px;
-    width: 100%;
-    height: 160px;
-    resize: none;
-}
-
-input {
-    font-size: 14px;
-    color: #e2f7f6;
-    padding-left: 15px;
-    margin-bottom: 31px;
-}
-
-input:focus {
-    outline: none;
-}
-
-::placeholder {
-    position: absolute;
-    color: #ffffff;
-}
-
-textarea {
-    padding-top: 25px;
-    padding-left: 15px;
-    padding-right: 15px;
-    color: #e2f7f6;
-}
-
-
-textarea:focus {
-    outline: none;
-}
-
-.button {
-    position: relative;
-    height: 61px;
-    width: 495px;
-    text-align: center;
-    border: none;
-    border-radius: 40px;
-    color: #ffffff;
-    font-size: 24px;
-    background: linear-gradient(to top, #463820, #BFB7A8);
-    font-family: Forum;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 0.96px;
-    text-transform: uppercase;
-}
-
-.button:hover {
-    background: linear-gradient(to top, #a7a095, #3f382b);
-    border: none;
-}
-
-.section-room-info {
-    width: 690px;
-    text-align: center;
-}
-
-.room-info-text {
-    color: #7f786c;
-    padding: 5px;
-    text-align: left;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-}
-
-.room-info {
-    width: 690px;
-    background: linear-gradient(to top, #a7a095, #3f382b);
-    padding-bottom: 20px;
-    box-sizing: border-box;
-}
-
-.room-info-heading {
-    font-family: 'Forum', cursive;
-    font-size: 42px;
-    padding: 20px 10px;
-}
-
-.room-info-paragraph {
-    width: 50%;
-    margin: 0 auto;
-    padding: 10px;
-}
-
-.room-info-button {
-    padding: 10px;
-    margin: 20px auto;
-    display: block;
-    height: auto;
-    width: 250px;
-}
-
-.room-info-img {
-    max-width: 690px;
 }

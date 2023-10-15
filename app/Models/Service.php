@@ -12,13 +12,23 @@ class Service extends Model
 
     protected $table = 'services';
 
-    public function hotel(): BelongsTo
+    public function images()
     {
-        return $this->belongsTo(Hotel::class, 'hotel_id');
+        return $this->belongsToMany(Image::class, 'service_images')->wherePivot('is_icon', false);
     }
 
-    public function room(): BelongsTo
+    public function icon()
     {
-        return $this->belongsTo(Room::class, 'room_id');
+        return $this->belongsToMany(Image::class, 'service_images')->wherePivot('is_icon', true)->first();
+    }
+
+    public function hotels()
+    {
+        return $this->belongsToMany(Hotel::class, 'hotel_services');
+    }
+
+    public function rooms()
+    {
+        return $this->belongsToMany(Room::class, 'room_services');
     }
 }

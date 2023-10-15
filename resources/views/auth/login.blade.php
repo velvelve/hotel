@@ -6,6 +6,7 @@
 @endpush
 
 @section('content')
+@include('inc.message')
 <div class="container">
     <div class="container-wrapper">
     <!-- Загаловок -->

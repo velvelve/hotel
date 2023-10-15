@@ -1,0 +1,347 @@
+body {
+    font-family: Manrope;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 179.8%;
+}
+
+textarea {
+    padding-top: 25px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #e2f7f6;
+}
+
+
+textarea:focus {
+    outline: none;
+}
+
+input {
+    font-size: 14px;
+    color: #e2f7f6;
+    padding-left: 15px;
+    margin-bottom: 31px;
+}
+
+input:focus {
+    outline: none;
+}
+
+::placeholder {
+    position: absolute;
+    color: #ffffff;
+}
+
+.visually-hidden {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+}
+
+.container {
+    margin: 0 auto;
+    width: 91.87%;
+}
+
+/*-----------------------booking-----------------------*/
+
+.booking {
+    background: linear-gradient(to right, #786853, #D9EBEB);
+    color: #FFF;
+    padding: 63px 0 32px 0;
+}
+
+.booking__title {
+    margin: 0 0 61px 0;
+    font-family: 'Forum';
+    font-style: normal;
+    min-height: 102px;
+    font-size: 62px;
+    font-weight: 400;
+}
+
+.booking__form {
+    max-width: 714px;
+}
+
+.booking__wraper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.booking__wrp {
+    display: flex;
+}
+
+.booking__wrp_name {
+    justify-content: space-between;
+}
+
+.booking__wrp-date {
+    position: relative;
+    margin: 0 32px 0 0;
+}
+
+.booking__wrp-f-name {
+    min-width: 316px;
+}
+
+.booking__wrp-l-name {
+    min-width: 368px;
+}
+
+.booking__wrp-communication {
+    min-width: 368px;
+    margin: 0 18px 0 0;
+}
+
+.booking__label {
+    display: flex;
+    margin: 0 0 11px 37px;
+}
+
+.booking__input {
+    background: transparent;
+    border: #ffffff solid 1px;
+    width: 100%;
+    border-radius: 30px;
+    margin: 0 0 12px 0;
+    padding: 18px 10px 21px 37px;
+    box-sizing: border-box;
+}
+
+.booking__input_date {
+    min-width: 270px;
+    margin: 0 0 31px 0;
+    padding: 20px 10px 15px 65px;
+    box-sizing: border-box;
+}
+
+/* надо настраивать иконку 
+.booking__input_date::after {
+    content: url('/img/roomsSearch/date.svg');
+    position: absolute;
+    right: 10px; 
+    top: 50%; 
+    transform: translateY(-50%);
+} */
+
+.booking__input_f-name {
+    min-width: 316px;
+}
+
+.booking__input_textarea {
+    margin: 0 0 75px 0;
+    min-height: 160px;
+    resize: none;
+}
+
+.booking__input_textarea::placeholder {
+    width: 50%;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.booking__form-text {
+    font-size: 16px;
+    font-weight: 500;
+    max-width: 274px;
+    align-self: self-end;
+}
+
+.booking__subtitle {
+    padding: 0 0 5px 37px;
+    box-sizing: border-box;
+    font-weight: 600;
+}
+
+.booking__text-info {
+    padding: 0 0 0 37px;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.booking__text-info_last {
+    padding: 0 0 37px 37px;
+    box-sizing: border-box;
+}
+
+.booking__button {
+    min-height: 61px;
+    width: 493px;
+    text-align: center;
+    border: none;
+    border-radius: 40px;
+    color: #ffffff;
+    background: linear-gradient(to top, #463820, #BFB7A8);
+    font-family: Forum;
+    font-size: 24px;
+    line-height: normal;
+    letter-spacing: 0.96px;
+    text-transform: uppercase;
+}
+
+.booking__button:hover {
+    background: linear-gradient(to top, #a7a095, #3f382b);
+    border: none;
+    cursor: pointer;
+}
+
+/*-----------------------booking-information-----------------------*/
+
+.booking-information {
+    color: #79655E;
+}
+
+.booking-information__info {
+    color: #7f786c;
+    padding: 5px;
+    text-align: left;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.booking-information__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 691px;
+    min-height: 660px;
+    background: #DBDBDB;
+}
+
+.booking-information__title {
+    font-family: Forum;
+    margin: 16px 0 15px;
+    font-size: 36px;
+    font-weight: 400;
+}
+
+.booking-information__room-parameter {
+    margin: 0 0 13px 0;
+    width: 270px;
+    text-align: center;
+    font-family: Forum;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 98.5%;
+}
+
+.booking-information__services-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 490px;
+}
+
+.booking-information__services-item {
+    margin: 0 16px 0 0;
+}
+
+.booking-information__text {
+    margin: 34px 36px;
+    text-align: center;
+    font-family: Forum;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 98.5%;
+}
+
+.booking-information__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #CE6845;
+    margin: 0 0 26px 0;
+    min-height: 50px;
+    width: 272px;
+    border: none;
+    border-radius: 40px;
+    background: rgba(192, 155, 90, 0.60);
+    text-decoration: none;
+    text-align: center;
+    font-family: Fraunces;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.56px;
+    text-transform: uppercase;
+}
+
+.booking-information__button:hover {
+    background: linear-gradient(to top, #a7a095, #3f382b);
+    border: none;
+    cursor: pointer;
+}
+
+.booking-information__result {
+    margin: 44px 0 31px;
+    padding: 24px 80px;
+    box-sizing: border-box;
+    width: 691px;
+    background: #DBDBDB;
+    text-align: center;
+}
+
+.booking-information__wrp {
+    display: flex;
+    justify-content: space-between;
+}
+
+.booking-information__list {}
+
+.booking-information__item {
+    display: flex;
+    margin: 0 0 30px 0;
+}
+
+.booking-information__important {
+    color: #CE6845;
+    font-family: Manrope;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.booking-information__additional-services {
+    width: 691px;
+}
+
+.booking-information__image-container {
+    position: relative;
+}
+
+.booking-information__img {
+    margin: 0 17px 0 0;
+    border-radius: 25px;
+    opacity: 0.8;
+}
+
+.booking-information__overlay-text {
+    position: absolute;
+    top: 80%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    color: #FFF;
+    font-family: Manrope;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 179.8%;
+}

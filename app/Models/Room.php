@@ -6,12 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-
+use Symfony\Component\HttpKernel\Attribute\WithLogLevel;
 
 class Room extends Model
 {
     use HasFactory;
     protected $table = 'rooms';
+
+    protected $with = ['images'];
 
     protected $fillable = [
         'room_number',
@@ -25,9 +27,20 @@ class Room extends Model
     {
         return $this->hasMany(Image::class);
     }
-    public function services(): HasMany
+
+    public function services()
     {
-        return $this->hasMany(Service::class);
+        return $this->belongsToMany(Service::class, 'room_services');
+    }
+
+    public function includedServices()
+    {
+        return $this->belongsToMany(Service::class, 'room_services')->wherePivot('additional', false);
+    }
+
+    public function additionalServices()
+    {
+        return $this->belongsToMany(Service::class, 'room_services')->wherePivot('additional', true);
     }
 
     public function bookings(): HasMany

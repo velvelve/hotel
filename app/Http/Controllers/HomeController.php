@@ -20,7 +20,7 @@ class HomeController extends Controller
                 ->groupBy('room_type');
         })
             ->get();
-        return view('home.home', [
+        return view('home.index', [
             'guests' => 1,
             'hotel' => $hotel,
             'rooms' => $rooms,

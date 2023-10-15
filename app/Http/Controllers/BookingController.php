@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\Bookings\CreateBookingRequest;
 use App\Models\Booking;
 use App\Models\Room;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
@@ -24,8 +24,13 @@ class BookingController extends Controller
     }
 
     // Отображение формы для создания нового бронирования
-    public function create($room_id): View
+    public function create($room_id): View | RedirectResponse
     {
+        //Проверка авторизации пользователя
+        if (!Auth::check()) {
+            return redirect()->route('login')->with('error', 'Для бронирования необходимо авторизоваться');
+        }
+
         //Получаю из сессии данные о датах
         $check_in_date = session('check_in_date');
         $check_out_date = session('check_out_date');

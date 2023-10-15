@@ -14,16 +14,13 @@ class Service extends Model
 
     public function images()
     {
-        return $this->belongsToMany(Image::class, 'service_images');
+        return $this->belongsToMany(Image::class, 'service_images')->wherePivot('is_icon', false);
     }
 
     public function icon()
     {
-        $serviceImage = ServiceImage::query()->where('is_icon', true)
-            ->where('service_id', $this->id)->get();
-        return $this->images()->find($serviceImage[0]->image_id);
+        return $this->belongsToMany(Image::class, 'service_images')->wherePivot('is_icon', true)->first();
     }
-
 
     public function hotels()
     {
@@ -33,10 +30,5 @@ class Service extends Model
     public function rooms()
     {
         return $this->belongsToMany(Room::class, 'room_services');
-    }
-
-    public function roomService()
-    {
-        return $this->hasOne(RoomService::class, 'service_id');
     }
 }

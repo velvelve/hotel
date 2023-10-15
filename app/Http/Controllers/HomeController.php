@@ -14,9 +14,16 @@ class HomeController extends Controller
     public function index()
     {
         $hotel = Hotel::all()[0];
-        return view('home.welcome', [
+        $rooms = Room::whereIn('id', function ($query) {
+            $query->selectRaw('MIN(id)')
+                ->from('rooms')
+                ->groupBy('room_type');
+        })
+            ->get();
+        return view('home.home', [
             'guests' => 1,
-            'hotel' => $hotel
+            'hotel' => $hotel,
+            'rooms' => $rooms,
         ]);
     }
 

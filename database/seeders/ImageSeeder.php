@@ -21,7 +21,7 @@ class ImageSeeder extends Seeder
         $imageFolder = public_path('img/rooms');
         for ($i = 1; $i <= 25; $i++) {
 
-            $imageFolderPath = $imageFolder . '/' . $roomTypes[$currentRoomType];
+            $imageFolderPath = $imageFolder . '/' . strtolower($roomTypes[$currentRoomType]);
             $images = File::files($imageFolderPath);
 
             foreach ($images as $image) {

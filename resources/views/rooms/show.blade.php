@@ -14,20 +14,15 @@
                 @endforeach
                 <h3>Сервисы:</h3>
                 <h2>Дополнительные:</h2>
-                @foreach ($room->services as $service)
-                    @if ($service->roomService->additional)
-                        <img src="{{ $service->icon()->path }}" alt="{{ $service->icon()->filename }}" />
-                        <div>{{ $service->short_description }}</div>
-                        <div>{{ $service->full_description }}</div>
-                    @endif
+                @foreach ($room->additionalServices as $service)
+                    <img src="{{ $service->icon()->path }}" alt="{{ $service->icon()->filename }}" />
+                    <div>{{ $service->name }}</div>
+                    <div>Цена: {{ $service->price }}$</div>
                 @endforeach
                 <h2>Включены в стоимость:</h2>
-                @foreach ($room->services as $service)
-                    @if (!$service->roomService->additional)
-                        <img src="{{ $service->icon()->path }}" alt="{{ $service->icon()->filename }}" />
-                        <div>{{ $service->short_description }}</div>
-                        <div>{{ $service->full_description }}</div>
-                    @endif
+                @foreach ($room->includedServices as $service)
+                    <img src="{{ $service->icon()->path }}" alt="{{ $service->icon()->filename }}" />
+                    <div>{{ $service->name }}</div>
                 @endforeach
             </div>
         @endforeach

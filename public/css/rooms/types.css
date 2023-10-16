@@ -1,0 +1,119 @@
+.room_main_container {
+    background: linear-gradient(to right, #786853,  #D9EBEB);
+    background-size: 100% 100%;
+    min-height: 2200px;
+    min-width: 1800px;
+}
+
+.room_wrapper{
+    width: 1600px;
+    height: auto;
+    margin-right: auto;
+    margin-left:  auto;
+}
+
+.room_title {
+    padding: 43px 50px 48px;
+    font-family: Forum, serif;
+    font-size: 58px;
+    font-weight: 400;
+    line-height: 59px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #FFFFFF;
+}
+
+.room_content {
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 40px;
+    grid-row-gap: 50px;
+}
+.room_content_family {
+    padding-left: 50px;
+    padding-right: 50px;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.room_cart{
+    position: relative;
+    Width:730px;
+    Height:574px;
+}
+
+.room_cart_image{
+    width: 730px;
+    height: 574px;
+    object-fit:cover;
+}
+
+.room_cart_title{
+    position: absolute;
+    top: 194px;
+    right: 142px;
+    left: 142px;
+    bottom: 176px;
+    width: 445px;
+    height: 154px;
+    font-size: 60px;
+    color: #79655E;
+    text-align: center;
+    padding-top: 50px;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(224, 224, 224, 0.67) 99.99%, rgba(217, 217, 217, 0) 100%);
+    text-decoration:none;
+    border: 1px solid white;
+    border-radius: 5px;
+    -webkit-transition: 1s;
+    transition:0.7s;
+    opacity: 0.7;
+}
+.room_cart_title:hover{
+    opacity: 1;
+    background-color: #79655E;
+    color: #fff;
+}
+
+.room_cart_family{
+    position: relative;
+    width: 1500px;
+    height: 568px;
+    padding-top: 30px;
+    padding-bottom: 80px;
+}
+
+.room_cart_image_family{
+    width: 100%;
+    height: 568px;
+    object-fit:cover;
+}
+
+.room_cart_title_family{
+    position: absolute;
+    top: 194px;
+    right: 291px;
+    left: 291px;
+    bottom: 176px;
+    width: 916px;
+    height: 154px;
+    font-size: 60px;
+    color: #79655E;
+    text-align: center;
+    padding-top: 50px;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(224, 224, 224, 0.67) 99.99%, rgba(217, 217, 217, 0) 100%);
+    text-decoration:none;
+    border: 1px solid white;
+    border-radius: 5px;
+    -webkit-transition: 1s;
+    transition:0.7s;
+    opacity: 0.7;
+}
+
+.room_cart_title_family:hover{
+    opacity: 1;
+    background-color: #79655E;
+    color: #fff;
+}

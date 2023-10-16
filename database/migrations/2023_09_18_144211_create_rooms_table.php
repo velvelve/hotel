@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\Rooms\RoomsTypes;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,7 +17,7 @@ return new class extends Migration {
             $table->id();
             $table->unsignedBigInteger('hotel_id');
             $table->string('room_number'); // Обсудить тип!!!
-            $table->enum('room_type', ['эконом', 'стандарт', 'стандарт улучшенный', 'полулюкс', 'люкс']);  // Обсудить!!!
+            $table->enum('room_type', RoomsTypes::getRoomsEnums());
             $table->decimal('price', 8, 2);
             $table->boolean('availability')->default(true);
             $table->timestamps();

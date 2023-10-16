@@ -1,25 +1,24 @@
-<div class="wrapper">
-    <header class="header">
-        <a href="#">
-            <img src="{{asset('img/von.png')}}" alt="logo">
-        </a>
-        <div class="header_content">
-            <div class="menu-btn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div class="menu">
-                <nav>
-                    <ul class="menu_ul">
-                        <li><a class="menu_li" href="#">Главная</a></li>
-                        <li><a class="menu_li" href="#">Номера</a></li>
-                        <li><a class="menu_li" href="#">Контакты</a></li>
-                        <li><a class="menu_li" href="#">Войти</a></li>
-                        <li><a class="menu_li" href="#">Регистрация</a></li>
-                    </ul>
-                </nav>
+<header class="header_container">
+    <div class="header_content_container">
+        <div class="header_logo">
+            <div class="header_logo_background">
+                <div class="header_logo_upper_text">LUXURY</div>
+                <div class="header_logo_lower_text">HOTELS</div>
             </div>
         </div>
-    </header>
-</div>
+        <div class="header_menu">
+            <ul class="header_list">
+                <li><a href="{{ route('home') }}">Главная</a></li>
+                <li><a href="{{ route('rooms.types')}}">Номера</a></li>
+                <li><a href="{{ route('contacts.index') }}">Контакты</a></li>
+                @auth
+                <li><a href="{{ route('profile') }}">Профиль</a></li>
+                <li><a href="{{ route('logout') }}">Выйти</a></li>
+                @else
+                <li><a href="{{ route('login') }}">Войти</a></li>
+                <li><a href="{{ route('register') }}">Регистрация</a></li>
+                @endauth
+            </ul>
+        </div>
+    </div>
+</header>

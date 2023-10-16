@@ -10,7 +10,7 @@
 <div class="container">
     <div class="container-wrapper">
     <!-- Загаловок -->
-        <div class="container-wrapper__heading"> 
+        <div class="container-wrapper__heading">
             <h2 class="title"> Войти </h2>
             <p class="text">Войдите, чтобы получить доступ к своей учетной записи.</p>
         </div>
@@ -36,7 +36,7 @@
                         name="password"
                         id="password">
             </label>
-        <div class="renember"> 
+        <div class="renember">
             <input class="checkbox" type="checkbox" id="remember" name="remember">
             <label class="forms-text text-renember" for="remember">Запомнить меня</label>
         </div>
@@ -51,11 +51,11 @@
             </div>
      <!--Варианты входа-->
         <div class="entrance-icons">
-            <div class="entrance-icons__google" > 
+            <div class="entrance-icons__google" >
                  <a> <img class="img-google" src="img/auth/icons_google.png" alt="google"> </a>
             </div>
-            <div class="entrance-icons__vk"> 
-                <a> <img class="img-vk"  src="img/auth/icons_vk.png" alt="vk"> </a>
+            <div class="entrance-icons__vk">
+                <a href="{{ route('social-providers.redirect', ['driver' => 'vkontakte']) }}"> <img class="img-vk"  src="img/auth/icons_vk.png" alt="vk"> </a>
             </div>
         </div>
     </div>

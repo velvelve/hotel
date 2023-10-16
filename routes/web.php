@@ -8,6 +8,7 @@ use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoomTypeController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\SocialProvidersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,6 +42,12 @@ Route::get('/email-confirmation/{id}/{hash}', [EmailVerificationController::clas
     ->name('verification.verify');
 Route::post('/email-confirmation', [EmailVerificationController::class, 'resend'])->middleware('auth')
     ->name('verification.send');
+
+
+Route::get('/{driver}/redirect', [SocialProvidersController::class, 'redirect'])->middleware('guest')
+    ->name('social-providers.redirect');
+Route::get('/{driver}/callback', [SocialProvidersController::class, 'callback'])->middleware('guest')
+    ->name('social-providers.callback');
 
 //поиск комнат
 //результат поиска

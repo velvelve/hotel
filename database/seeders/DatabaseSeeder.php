@@ -34,9 +34,9 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             ReviewSeeder::class,
             RoomSeeder::class,
-            ServiceSeeder::class,
             BookingSeeder::class,
             ImageSeeder::class,
+            ServiceSeeder::class,
         ]);
     }
 }

@@ -67,10 +67,9 @@
 
                                 </div>
                             </div>
-                            <form action="#" method="POST">
+                            <form action="{{ route('bookings.create', ['room_id' => $room->id]) }}" method="GET">
                                 <div class="item-btn">
-                                    <button><a
-                                            href="{{ route('bookings.create', ['room_id' => $room->id]) }}">Выбрать</a></button>
+                                    <button>Выбрать</button>
                                 </div>
                             </form>
                         </div>

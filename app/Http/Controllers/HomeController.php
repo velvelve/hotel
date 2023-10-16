@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Hotel;
 use App\Models\Room;
 use Illuminate\Http\Request;
 
@@ -12,9 +13,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-
-        return view('home.welcome', [
-            'guests' => 1
+        $hotel = Hotel::all()[0];
+        $rooms = Room::whereIn('id', function ($query) {
+            $query->selectRaw('MIN(id)')
+                ->from('rooms')
+                ->groupBy('room_type');
+        })
+            ->get();
+        return view('home.index', [
+            'guests' => 1,
+            'hotel' => $hotel,
+            'rooms' => $rooms,
         ]);
     }
 

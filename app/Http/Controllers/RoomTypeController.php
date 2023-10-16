@@ -20,6 +20,7 @@ class RoomTypeController extends Controller
     {
         $rooms = Room::query()
             ->where('room_type', '=', $room_type)
+            ->with(['includedServices', 'additionalServices'])
             ->get();
         return view('rooms.show', ['rooms' => $rooms]);
     }

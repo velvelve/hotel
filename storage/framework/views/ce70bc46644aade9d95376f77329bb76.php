@@ -8,8 +8,8 @@
         </div>
         <div class="header_menu">
             <ul class="header_list">
-                <li><a href="#">Главная</a></li>
-                <li><a href="#">Номера</a></li>
+                <li><a href="<?php echo e(route('home')); ?>">Главная</a></li>
+                <li><a href="<?php echo e(route('rooms.types')); ?>">Номера</a></li>
                 <li><a href="<?php echo e(route('contacts.index')); ?>">Контакты</a></li>
                 <?php if(auth()->guard()->check()): ?>
                     <li><a href="<?php echo e(route('profile')); ?>">Профиль</a></li>

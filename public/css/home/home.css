@@ -211,19 +211,6 @@
     background-color: #000;
 }
 
-.slider {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-width: 1378px;
-    max-width: 1378px;
-    margin-top: 121px;
-}
-
-.slider-btn-img {
-    cursor: pointer;
-}
-
 .slider-cart {
     display: flex;
     flex-direction: column;
@@ -642,3 +629,4 @@
     cursor: pointer;
     z-index: 1;
 }
+

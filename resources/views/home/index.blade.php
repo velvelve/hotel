@@ -82,38 +82,46 @@
     {{-- Секция 2 главной страницы --}}
     <div class="section-2">
         {{-- Слайдер --}}
-        <div class="swiper mySwiper" style="width: 1274px; height: 560px; margin-top: 120px">
-            <div class="swiper-wrapper">
-                {{-- Слайды --}}
-                @foreach ($rooms as $room)
-                    <div class="swiper-slide" style="max-width: 390px">
-                        <div class="slider-cart">
-                            <img src="{{ $room->images[0]->path }}" class="cart-img" />
-                            <div class="slider-cart-description">
-                                <div class="description-wrapper">
-                                    <div class="description-level">Номер {{ $room->room_type }}</div>
-                                    <div class="description-upperText">18 m2 | 1 кровать Queen | 2 взрослых, 1 ребенок (0-11
-                                        лет)
+        <div class="slider" style="display: flex; justify-content: space-between; align-items: center; width: 1400px; margin-top: 120px">
+            <div class="slider-btn-prev" style="height: 30px; cursor: pointer">
+                <img src="img/homePage/section2/slider-btn-left.svg" />
+            </div>
+            <div class="swiper" style="width: 1274px; height: 560px">
+                <div class="swiper-wrapper">
+                    {{-- Слайды --}}
+                    @foreach ($rooms as $room)
+                        <div class="swiper-slide" style="max-width: 390px">
+                            <div class="slider-cart">
+                                <img src="{{ $room->images[0]->path }}" class="cart-img" />
+                                <div class="slider-cart-description">
+                                    <div class="description-wrapper">
+                                        <div class="description-level">Номер {{ $room->room_type }}</div>
+                                        <div class="description-upperText">18 m2 | 1 кровать Queen | 2 взрослых, 1 ребенок
+                                            (0-11
+                                            лет)
+                                        </div>
+                                        <div class="description-icons">
+                                            @foreach ($room->includedServices as $service)
+                                                <div class="description-icon-container">
+                                                    <img src="{{ $service->icon()->path }}" class="description-ico">
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                        <div class="description-lowerText">В номерах Standart есть все необходимое для
+                                            комфортного
+                                            пребывания и спокойного сна.</div>
                                     </div>
-                                    <div class="description-icons">
-                                        @foreach ($room->includedServices as $service)
-                                            <div class="description-icon-container">
-                                                <img src="{{ $service->icon()->path }}" class="description-ico">
-                                            </div>
-                                        @endforeach
-                                    </div>
-                                    <div class="description-lowerText">В номерах Standart есть все необходимое для
-                                        комфортного
-                                        пребывания и спокойного сна.</div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                @endforeach
+                    @endforeach
+                </div>
             </div>
-            <div class="swiper-button-prev" style="color: #C09B5A"></div>
-            <div class="swiper-button-next" style="color: #C09B5A"></div>
+            <div class="slider-btn-next" style="height: 30px; cursor: pointer">
+                <img src="img/homePage/section2/slider-btn-right.svg" />
+            </div>
         </div>
+
         <div class="services">
             @foreach ($hotel->services as $service)
                 <div class="services-item">
@@ -260,16 +268,16 @@
 <script type="module">
     import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.mjs'
 
-    const swiper = new Swiper('.mySwiper', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: false,
+    const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: false,
 
-    slidesPerView: 3,
-    spaceBetween: 53,
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    }
+        slidesPerView: 3,
+        spaceBetween: 53,
+        navigation: {
+            nextEl: '.slider-btn-next',
+            prevEl: '.slider-btn-prev',
+        }
     });
 </script>

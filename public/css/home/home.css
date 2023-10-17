@@ -292,10 +292,15 @@
 
 .description-icons {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
     min-height: 45px;
     max-height: 45px;
+}
+
+.description-icon-container {
+    width: 55px;
+    height: 55px;
 }
 
 .description-ico {
@@ -629,4 +634,3 @@
     cursor: pointer;
     z-index: 1;
 }
-

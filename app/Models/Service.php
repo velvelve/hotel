@@ -12,6 +12,8 @@ class Service extends Model
 
     protected $table = 'services';
 
+    //protected $with = ['icon'];
+
     public function images()
     {
         return $this->belongsToMany(Image::class, 'service_images')->wherePivot('is_icon', false);

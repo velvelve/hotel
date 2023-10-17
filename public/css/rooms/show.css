@@ -3,15 +3,5 @@
     background-size: 100% 100%;
     min-height: 2200px;
     min-width: 1800px;
-}
-
-
-.wrapper{
-
-}
-
-
-.swiper-slide {
-    color: #79655E;
-    background: #DBDBDB;
+    padding: 100px;
 }

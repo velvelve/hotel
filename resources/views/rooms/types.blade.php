@@ -3,7 +3,6 @@
 @push('styles')
     <link href="{{ asset('css/rooms/types.css') }}" rel="stylesheet">
 @endpush
-
 @section('content')
     <div class="room_main_container">
         <div class="room_wrapper">

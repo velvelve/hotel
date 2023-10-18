@@ -15,12 +15,12 @@ use Illuminate\Support\Facades\DB;
 
 class RegisterController extends Controller
 {
-    public function create(): View
+    public function index(): View
     {
         return view('auth.register'); //возвращает шаблон с формой регистрации
     }
 
-    public function store(RegisterAuthRequest $request): Redirector|RedirectResponse
+    public function create(RegisterAuthRequest $request): Redirector|RedirectResponse
     {
         $request->validate([
             'first_name' => ['required', 'string'],

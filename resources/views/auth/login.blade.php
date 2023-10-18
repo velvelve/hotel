@@ -61,7 +61,7 @@
                  <a> <img class="img-google" src="img/auth/icons_google.png" alt="google"> </a>
             </div>
             <div class="entrance-icons__vk">
-                <a> <img class="img-vk"  src="img/auth/icons_vk.png" alt="vk"> </a>
+                <a href="{{ route('social-providers.redirect', ['driver' => 'vkontakte']) }}"> <img class="img-vk"  src="img/auth/icons_vk.png" alt="vk"> </a>
             </div>
         </div>
     </div>

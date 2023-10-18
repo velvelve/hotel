@@ -13,6 +13,7 @@
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.2",
+        "socialiteproviders/vkontakte": "^5.0",
         "stripe/stripe-php": "^12.7"
     },
     "require-dev": {

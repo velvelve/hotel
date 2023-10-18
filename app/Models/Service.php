@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Service extends Model
 {
@@ -12,7 +11,7 @@ class Service extends Model
 
     protected $table = 'services';
 
-    //protected $with = ['icon'];
+    protected $with = ['icon'];
 
     public function images()
     {
@@ -21,7 +20,7 @@ class Service extends Model
 
     public function icon()
     {
-        return $this->belongsToMany(Image::class, 'service_images')->wherePivot('is_icon', true)->first();
+        return $this->belongsToMany(Image::class, 'service_images')->wherePivot('is_icon', true);
     }
 
     public function hotels()

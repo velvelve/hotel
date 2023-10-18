@@ -16,7 +16,7 @@
             <div class="section-1-header__menu">
                 <ul>
                     <li><a href="{{ route('home') }}">Главная</a></li>
-                    <li><a href="#">Номера</a></li>
+                    <li><a href="{{ route('rooms.types') }}">Номера</a></li>
                     <li><a href="{{ route('contacts.index') }}">Контакты</a></li>
                     @auth
                         <li><a href="{{ route('profile') }}">Профиль</a></li>
@@ -82,7 +82,8 @@
     {{-- Секция 2 главной страницы --}}
     <div class="section-2">
         {{-- Слайдер --}}
-        <div class="slider" style="display: flex; justify-content: space-between; align-items: center; width: 1400px; margin-top: 120px">
+        <div class="slider"
+            style="display: flex; justify-content: space-between; align-items: center; width: 1400px; margin-top: 120px">
             <div class="slider-btn-prev" style="height: 30px; cursor: pointer">
                 <img src="img/homePage/section2/slider-btn-left.svg" />
             </div>
@@ -92,28 +93,29 @@
                     @foreach ($rooms as $room)
                         <div class="swiper-slide" style="max-width: 390px">
                             <a href="{{ route('rooms.types') }}" class="slider-route">
-                            <div class="slider-cart">
-                                <img src="{{ $room->images[0]->path }}" class="cart-img" />
-                                <div class="slider-cart-description">
-                                    <div class="description-wrapper">
-                                        <div class="description-level">Номер {{ $room->room_type }}</div>
-                                        <div class="description-upperText">18 m2 | 1 кровать Queen | 2 взрослых, 1 ребенок
-                                            (0-11
-                                            лет)
+                                <div class="slider-cart">
+                                    <img src="{{ $room->images[0]->path }}" class="cart-img" />
+                                    <div class="slider-cart-description">
+                                        <div class="description-wrapper">
+                                            <div class="description-level">Номер {{ $room->room_type }}</div>
+                                            <div class="description-upperText">18 m2 | 1 кровать Queen | 2 взрослых, 1
+                                                ребенок
+                                                (0-11
+                                                лет)
+                                            </div>
+                                            <div class="description-icons">
+                                                @foreach ($room->includedServices as $service)
+                                                    <div class="description-icon-container">
+                                                        <img src="{{ $service->icon[0]->path }}" class="description-ico">
+                                                    </div>
+                                                @endforeach
+                                            </div>
+                                            <div class="description-lowerText">В номерах Standart есть все необходимое для
+                                                комфортного
+                                                пребывания и спокойного сна.</div>
                                         </div>
-                                        <div class="description-icons">
-                                            @foreach ($room->includedServices as $service)
-                                                <div class="description-icon-container">
-                                                    <img src="{{ $service->icon()->path }}" class="description-ico">
-                                                </div>
-                                            @endforeach
-                                        </div>
-                                        <div class="description-lowerText">В номерах Standart есть все необходимое для
-                                            комфортного
-                                            пребывания и спокойного сна.</div>
                                     </div>
                                 </div>
-                            </div>
                             </a>
                         </div>
                     @endforeach
@@ -127,7 +129,7 @@
         <div class="services">
             @foreach ($hotel->services as $service)
                 <div class="services-item">
-                    <img src="{{ $service->icon()->path }}" alt="{{ $service->icon()->filename }}" class="item-ico">
+                    <img src="{{ $service->icon[0]->path }}" alt="{{ $service->icon[0]->filename }}" class="item-ico">
                     <div class="item-description">
                         {{ $service->name }}
                     </div>

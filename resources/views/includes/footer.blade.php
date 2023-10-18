@@ -6,7 +6,7 @@
         <div class="footer_top">
 
             <div class="footer_logo">
-                <img class="footer_img" src="{{asset('img/von.png')}}" alt="logo">
+                <img class="footer_img" src="{{ asset('img/von.png') }}" alt="logo">
                 <p class="copyright">© {{ date('Y') }} LUXURY HOTEL</p>
             </div>
 
@@ -14,21 +14,21 @@
 
                 <div>
                     <ul class="footer_list">
-                        <li><a href="{{ route('about') }}">Об отеле</a></li>
-                        <li><a href="{{ route('rooms') }}">Номера и цены</a></li>
-                        <li><a href="{{ route('restaurants') }}">Рестораны</a></li>
-                        <li><a href="{{ route('spa') }}">Спа</a></li>
-                        <li><a href="{{ route('legal') }}">Правовая информация</a></li>
+                        <li><a href="#">Об отеле</a></li>
+                        <li><a href="#">Номера и цены</a></li>
+                        <li><a href="#">Рестораны</a></li>
+                        <li><a href="#">Спа</a></li>
+                        <li><a href="#">Правовая информация</a></li>
                     </ul>
                 </div>
 
                 <div>
                     <ul class="footer_list">
-                        <li><a href="{{ route('conference') }}">Конференц-залы</a></li>
-                        <li><a href="{{ route('contacts') }}">Контакты</a></li>
-                        <li><a href="{{ route('booking') }}">Бронирование</a></li>
-                        <li><a href="{{ route('rent') }}">Аренда</a></li>
-                        <li><a href="{{ route('services') }}">Услуги</a></li>
+                        <li><a href="#">Конференц-залы</a></li>
+                        <li><a href="#">Контакты</a></li>
+                        <li><a href="#">Бронирование</a></li>
+                        <li><a href="#">Аренда</a></li>
+                        <li><a href="#">Услуги</a></li>
                     </ul>
                 </div>
 

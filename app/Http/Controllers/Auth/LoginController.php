@@ -14,7 +14,7 @@ use Illuminate\Validation\ValidationException;
 
 class LoginController extends Controller
 {
-    public function create(): View
+    public function index(): View
     {
         return view('auth.login'); //возвращает шаблон с формой авторизации
     }
@@ -22,7 +22,7 @@ class LoginController extends Controller
     /**
      * @throws ValidationException
      */
-    public function store(LoginAuthRequest $request): RedirectResponse
+    public function login(LoginAuthRequest $request): RedirectResponse
     {
         $credentials = $request->validated();
 

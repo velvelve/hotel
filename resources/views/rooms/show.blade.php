@@ -15,7 +15,6 @@
                 <h3>Сервисы:</h3>
                 <h2>Дополнительные:</h2>
                 @foreach ($room->additionalServices as $service)
-                    @dd($service->icon())
                     <img src="{{ $service->icon[0]->path }}" alt="{{ $service->icon[0]->filename }}" />
                     <div>{{ $service->name }}</div>
                     <div>Цена: {{ $service->price }}$</div>

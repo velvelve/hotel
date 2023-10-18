@@ -106,7 +106,7 @@
                                             <div class="description-icons">
                                                 @foreach ($room->includedServices as $service)
                                                     <div class="description-icon-container">
-                                                        <img src="{{ $service->icon()->path }}" class="description-ico">
+                                                        <img src="{{ $service->icon[0]->path }}" class="description-ico">
                                                     </div>
                                                 @endforeach
                                             </div>
@@ -129,7 +129,7 @@
         <div class="services">
             @foreach ($hotel->services as $service)
                 <div class="services-item">
-                    <img src="{{ $service->icon()->path }}" alt="{{ $service->icon()->filename }}" class="item-ico">
+                    <img src="{{ $service->icon[0]->path }}" alt="{{ $service->icon[0]->filename }}" class="item-ico">
                     <div class="item-description">
                         {{ $service->name }}
                     </div>

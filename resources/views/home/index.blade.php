@@ -91,6 +91,7 @@
                     {{-- Слайды --}}
                     @foreach ($rooms as $room)
                         <div class="swiper-slide" style="max-width: 390px">
+                            <a href="{{ route('rooms.types') }}" class="slider-route">
                             <div class="slider-cart">
                                 <img src="{{ $room->images[0]->path }}" class="cart-img" />
                                 <div class="slider-cart-description">
@@ -113,6 +114,7 @@
                                     </div>
                                 </div>
                             </div>
+                            </a>
                         </div>
                     @endforeach
                 </div>

@@ -132,7 +132,10 @@
                         <input type="number" name="price" id="price" value="{{ $room->price }}">
                     </div>
 
-                    <button class="booking__button" type="submit">Перейти к оплате</button>
+                    <div class="booking__wraper">
+                        <button class="booking__button" type="submit">Перейти к оплате</button>
+                        <a class="booking__button" href="javascript:history.back()">Назад</a>
+                    </div>
 
                 </form>
 
@@ -147,25 +150,14 @@
                         <p class="booking-information__room-parameter">35 m2 | 2 кровати TWIN или 1 кровать Queen или King
                             | 3 взрослых, 1 ребенок (0-11 лет)</p>
                         <ul class="booking-information__services-list">
-                            <li class="booking-information__services-item">
-                                <img src="/img/section2/wifi.svg" alt="">
-                            </li>
-                            <li class="booking-information__services-item">
-                                <img src="/img/section2/wifi.svg" alt="">
-                            </li>
-                            <li class="booking-information__services-item">
-                                <img src="/img/section2/wifi.svg" alt="">
-                            </li>
-                            <li class="booking-information__services-item">
-                                <img src="/img/section2/wifi.svg" alt="">
-                            </li>
-                            <li class="booking-information__services-item">
-                                <img src="/img/section2/wifi.svg" alt="">
-                            </li>
+                            @foreach ($room->includedServices as $service)
+                                <li class="booking-information__services-item">
+                                    <img class="booking-information__service-icon" src="{{ $service->icon[0]->path }}" alt="{{ $service->icon[0]->filename }}" title="{{ $service->name }}">
+                                </li>
+                            @endforeach
                         </ul>
                         <p class="booking-information__text">Эти люксы с отдельными спальной и гостиной зонами идеально
                             подойдут гостям, планирующим длительное пребывание в отеле.</p>
-                        <a class="booking-information__button" href="javascript:history.back()">Изменить</a>
                     </div>
 
                     <div class="booking-information__result">
@@ -214,17 +206,17 @@
                             <div class="booking-information__image-container">
                                 <img class="booking-information__img" src="{{ asset('img/booking/service1.jpg') }}"
                                     alt="images-services" width="219" height="313">
-                                <p class="booking-information__overlay-text">Завтрак Подробнее ></p>
+                                <a href="#" class="booking-information__overlay-text">Завтрак Подробнее ></a>
                             </div>
                             <div class="booking-information__image-container">
                                 <img class="booking-information__img" src="{{ asset('img/booking/service2.jpg') }}"
                                     alt="images-services" width="219" height="313">
-                                <p class="booking-information__overlay-text">Шведский стол Подробнее ></p>
+                                <a href="#" class="booking-information__overlay-text">Шведский стол Подробнее ></a>
                             </div>
                             <div class="booking-information__image-container">
                                 <img class="booking-information__img" src="{{ asset('img/booking/service3.jpg') }}"
                                     alt="images-services" width="219" height="313">
-                                <p class="booking-information__overlay-text">Скидка 10% в ресторане Подробнее ></p>
+                                <a href="#" class="booking-information__overlay-text">Скидка 10% в ресторане Подробнее ></a>
                             </div>
                         </div>
                     </div>

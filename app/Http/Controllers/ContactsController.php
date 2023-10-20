@@ -36,8 +36,8 @@ class ContactsController extends Controller
         ]);
 
         try {
-            // Отправляем сообщение на почту
-            $mailService->send($data);
+            // Отправляем сообщение на почту администратора
+            $mailService->sentToAdmin($data);
             return redirect()->back()->with('success', 'Ваше сообщение успешно отправлено!');
         } catch (Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);

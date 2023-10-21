@@ -6,10 +6,18 @@
 @endpush
 
 @section('content')
+
 <!-- Секция без хедера и футера -->
 <div class="content-contacts">
+    @if($errors->any())
+        @foreach($errors->all() as $error)
+            <x-alert :message="$error" type="danger"></x-alert>
+        @endforeach
+    @endif
+    @include('includes.message')
  <!-- Первая секция с контактами -->
     <div class="section-contact">
+        
         <div class="section-contact_content">
 <!-- Загаловок -->
             <h1 class="section-contact_heading">Контакты</h1>
@@ -55,30 +63,33 @@
             @csrf
                 <label class="forms-title" for="name">Фамилия и имя</label>
                 <input class="forms-input input_name" type="text" id="name" name="name"  
-        placeholder="Введите фамилию и имя" prequired><br>
+        placeholder="Введите фамилию и имя" prequired value="{{ old('name') }}"><br>
 
                 <label class="forms-title" for="phone">Телефон</label>
-                <input class="forms-input input_phone" type="tel" id="phone" name="phone" placeholder="Введите номер телефона" required><br>
+                <input class="forms-input input_phone" type="tel" id="phone" name="phone" placeholder="Введите номер телефона" required 
+                value="{{ old('phone') }}"><br>
 
                 <label class="forms-title" for="email">Email</label>
-                <input  class="forms-input input_phone" type="email" id="email" name="email" placeholder="Введите E-mail" required><br>
+                <input  class="forms-input input_phone" type="email" id="email" name="email" placeholder="Введите E-mail" required 
+                value="{{ old('email') }}"><br>
 <!-- Отель и категория в одну линию -->
                 <div class="forms-categories"> 
                     <div class="categories-hotel">
                         <label class="forms-title title_hotel" for="hotel">Отель</label>
-                        <input  class="forms-input forms-input_hotel" type="text" id="hotel" name="hotel" placeholder="Введите название Отеля" required><br>
+                        <input  class="forms-input forms-input_hotel" type="text" id="hotel" name="hotel" placeholder="Введите название Отеля" required 
+                        value="{{ old('hotel') }}"><br>
                     </div>
                     <div class="forms-feedback">
                         <label class="forms-title " for="category">Категория</label>
                         <select class="forms-input input-feedback" id="category" name="category" required>
-                            <option class="text" value="Оставить отзыв">Оставить отзыв</option>
-                            <option class="text" value="Жалоба">Жалоба</option>
+                            <option class="text" @if(old('category')==="Оставить отзыв") selected @endif value="Оставить отзыв">Оставить отзыв</option>
+                            <option class="text" @if(old('category')==="Жалоба") selected @endif value="Жалоба">Жалоба</option>
                         </select><br>
                     </div>
                 </div>
                 <label class="forms-title title-question" for="message">Задать вопрос или оставить отзыв</label><br>
                 <textarea class="text-question" id="message" name="message" placeholder="Если у вас есть дополнительные пожелания, 
-пожалуйста, дайте нам знать. Мы постараемся учесть ваши пожелания при наличии такой возможности." required></textarea><br>
+пожалуйста, дайте нам знать. Мы постараемся учесть ваши пожелания при наличии такой возможности." required value="{{ old('message') }}"></textarea><br>
 <!-- Чекбокс на обработку данных -->
                 <div class="title-question_approval">
                     <input class="approval" type="checkbox" id="agreement" name="agreement" required>

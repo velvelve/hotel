@@ -47,7 +47,7 @@
         </div>
 <!-- картинка ресепшена -->
             <div class="section-contact_img">
-                <img class="img_reception" src="img/contacts/ресепшн.png" alt="reception">
+                <img class="img_reception" src="img/contacts/reception2.png" alt="reception">
             </div>
     </div>
 
@@ -66,11 +66,11 @@
         placeholder="Введите фамилию и имя" prequired value="{{ old('name') }}"><br>
 
                 <label class="forms-title" for="phone">Телефон</label>
-                <input class="forms-input input_phone" type="tel" id="phone" name="phone" placeholder="Введите номер телефона" required 
+                <input class="forms-input input_name" type="tel" id="phone" name="phone" placeholder="Введите номер телефона" required 
                 value="{{ old('phone') }}"><br>
 
                 <label class="forms-title" for="email">Email</label>
-                <input  class="forms-input input_phone" type="email" id="email" name="email" placeholder="Введите E-mail" required 
+                <input  class="forms-input input_name" type="email" id="email" name="email" placeholder="Введите E-mail" required 
                 value="{{ old('email') }}"><br>
 <!-- Отель и категория в одну линию -->
                 <div class="forms-categories"> 
@@ -121,19 +121,19 @@
     <!-- Иконки -->
                 <ul class="section-two_social-networks">
                     <li class="section-contact_heading social-networks_list">
-                        <a class="a-number" href="#"><img src="img/contacts/icons-vk.png" alt="vk"></a>
+                        <a class="a-number a-social" href="#"><img class="icons-img vk" src="img/contacts/icons-vk.png" alt="vk"></a>
                     </li>
                     <li class="section-contact_heading social-networks_list">
-                        <a class="a-number" href="#"><img src="img/contacts/icons-facebook.png" alt="facebook"></a>
+                        <a class="a-number a-social_twit" href="#"><img class="icons-img twitter" src="img/contacts/icons-twitter.png" alt="twitter"></a>
                     </li>
                     <li class="section-contact_heading social-networks_list">
-                        <a class="a-number" href="#"><img src="img/contacts/icons-twitter.png" alt="twitter"></a>
+                        <a class="a-number a-social" href="#"><img class="icons-img facebook" src="img/contacts/icons-facebook.png" alt="facebook"></a>
                     </li>
                     <li class="section-contact_heading social-networks_list">
-                        <a class="a-number" href="#"><img src="img/contacts/icons-instagram.png" alt="instagram"></a>
+                        <a class="a-number a-social_twit" href="#"><img class="icons-img instagram" src="img/contacts/icons-instagram.png" alt="instagram"></a>
                     </li>
                     <li class="section-contact_heading social-networks_list">
-                        <a class="a-number" href="#"><img src="img/contacts/icons-tiktok.png" alt="tiktok"></a>
+                        <a class="a-number a-social" href="#"><img class="icons-img tiktok" src="img/contacts/icons-tiktok.png" alt="tiktok"></a>
                     </li>
                 </ul>
             </div>

@@ -1,109 +1,131 @@
 @extends('layouts.main')
 
+@push('styles')
+    <link href="{{ asset('css/reset.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/booking/payment.css') }}" rel="stylesheet">
+@endpush
+
 @section('content')
-    <h1>Оформление бронирования</h1>
 
     @if ($errors->any())
         @foreach ($errors->all() as $error)
             <x-alert :message="$error" type="danger"></x-alert>
         @endforeach
     @endif
-    <form role="form" action="{{ route('bookings.pay') }}" method="post" class="require-validation" data-cc-on-file="false"
-        data-stripe-publishable-key="{{ env('STRIPE_KEY') }}" id="payment-form">
-        @csrf
-        <div>К оплате: {{ $price }} </div>
-        <div class='form-row row'>
-            <div class='col-xs-12 col-md-6 form-group required'>
-                <label class='control-label'>Имя на карте</label>
-                <input class='form-control' size='4' type='text' value="Test">
+
+    <section class="payment">
+        <div class="payment__wrp">
+            <div>
+                <img src="{{ asset('img\auth\img.png') }}" alt="photo-hotel">
             </div>
-            <div class='col-xs-12 col-md-6 form-group required'>
-                <label class='control-label'>Номер карты</label>
-                <input autocomplete='off' class='form-control card-number' size='20' type='text'
-                    value="4242424242424242">
+
+            <div class="payment__info">
+                <a class="payment__link-back" href="javascript:history.back()">
+                    <span class="payment__link-arrow">&lsaquo;</span>Назад
+                </a>
+                <h1 class="payment__title">Оплата бронирования</h1>
+
+                <form role="form" action="{{ route('bookings.pay') }}" method="post" class="require-validation"
+                    data-cc-on-file="false" data-stripe-publishable-key="{{ env('STRIPE_KEY') }}" id="payment-form">
+                    @csrf
+
+                    <p class="payment__text">К оплате: <strong>{{ $price }}</strong></p>
+
+                    <div class="payment__input-container">
+                        <label class='payment__label'>Введите номер карты</label>
+                        <input class='payment__input card-number' autocomplete='off' size='20' type='text'
+                            value="4242424242424242">
+                    </div>
+
+                    <div class="payment__flex">
+
+                        <div class="payment__input-container payment__input-container_mod">
+                            <label for="card-month" class='payment__label'>Месяц/год</label>
+                            <label for="card-year"></label>
+                            <div class="payment__input">
+                                <input class='card-expiry-month' name="card-month" id="card-month" type="text"
+                                    pattern="\d{2}" maxlength="2" placeholder="ММ" size='2' value="04" required>
+                                /
+                                <input class="card-expiry-year" name="card-year" id="card-year" size='4'
+                                    type="text" pattern="\d{4}" maxlength="4" placeholder="ГГГГ" value="2024"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="payment__input-container payment__input-container_mod">
+                            <label class='payment__label'>CVC</label>
+                            <input class='payment__input card-cvc' autocomplete='off' placeholder='ex. 311' size='4'
+                                type='text' value="123">
+                        </div>
+
+                    </div>
+
+                    <div class="payment__input-container">
+                        <label class='payment__label'>Владелец карты</label>
+                        <input class='payment__input' size='4' type='text' placeholder="введите фамилию и имя"
+                            value="Test">
+                    </div>
+
+                    <div class="payment__input-container">
+                        <label class="payment__label" for="email">E-mail для получения чека</label>
+                        <input class="payment__input" type="email" name="email" id="email"
+                            placeholder="введите e-mail">
+                    </div>
+
+                    <label class="payment__ticket">
+                        <input type="checkbox" name="receive_receipt" value="yes">
+                        получить квитанцию на электронную почту
+                    </label>
+
+                    <!--Скрытые input-->
+                    <div style="display: none">
+                        <label for="check_in_date">check_in_date</label>
+                        <input type="text" name="check_in_date" id="check_in_date" value="{{ $check_in_date }}" required>
+
+                        <label for="check_out_date">check_out_date</label>
+                        <input type="text" name="check_out_date" id="check_out_date" value="{{ $check_out_date }}"
+                            required>
+
+                        <label for="last_name">last_name</label>
+                        <input type="text" name="last_name" id="last_name" value="{{ $last_name }}" required>
+
+                        <label for="first_name">first_name</label>
+                        <input type="text" name="first_name" id="first_name" value="{{ $first_name }}" required>
+
+                        <label for="patronymic_name">patronymic_name</label>
+                        <input type="text" name="patronymic_name" id="patronymic_name"
+                            value="{{ $patronymic_name }}" required>
+
+                        <label for="tel">tel</label>
+                        <input type="tel" name="tel" id="tel" value="{{ $tel }}" required>
+
+                        <label for="email">email</label>
+                        <input type="email" name="email" id="email" value="{{ $email }}" required>
+
+                        <label for="promo_code">promo_code</label>
+                        <input type="text" name="promo_code" id="promo_code" value="{{ $promo_code }}">
+
+                        <label for="wishes">wishes</label>
+                        <input type="text" name="wishes" id="wishes" value="{{ $wishes }}">
+
+                        <label for="room_id">room_id</label>
+                        <input type="number" name="room_id" id="room_id" value="{{ $room_id }}" required>
+
+                        <label for="user_id">user_id</label>
+                        <input type="number" name="user_id" id="user_id" value="{{ $user_id }}" required>
+
+                        <label for="guests_count">guests_count</label>
+                        <input type="number" name="guests_count" id="guests_count" value="{{ $guests_count }}"
+                            required>
+                    </div>
+
+                    <button class="payment__button" type="submit">Оплатить</button>
+
+                </form>
             </div>
         </div>
-        <div class='form-row row'>
-            <div class='col-xs-12 col-md-4 form-group cvc required'>
-                <label class='control-label'>CVC</label>
-                <input autocomplete='off' class='form-control card-cvc' placeholder='ex. 311' size='4' type='text'
-                    value="123">
-            </div>
-            <div class='col-xs-12 col-md-4 form-group expiration required'>
-                <label class='control-label'>Месяц окончания действия</label>
-                <input class='form-control card-expiry-month' placeholder='MM' size='2' type='text' value="04">
-            </div>
-            <div class='col-xs-12 col-md-4 form-group expiration required'>
-                <label class='control-label'>Год окончания действия</label>
-                <input class='form-control card-expiry-year' placeholder='YYYY' size='4' type='text'
-                    value="2024">
-            </div>
-        </div>
-        <div style="display: none" class="form-group d-none">
-            <label for="check_in_date">check_in_date</label>
-            <input type="text" name="check_in_date" id="check_in_date" class="form-control" value="{{ $check_in_date }}"
-                required>
-        </div>
-        <div style="display: none" class="form-group d-none">
-            <label for="check_out_date">check_out_date</label>
-            <input type="text" name="check_out_date" id="check_out_date" class="form-control"
-                value="{{ $check_out_date }}" required>
-        </div>
-        <div style="display: none" class="form-group d-none">
-            <label for="last_name">last_name</label>
-            <input type="text" name="last_name" id="last_name" class="form-control"
-                value="{{ $last_name }}" required>
-        </div>
-        <div style="display: none" class="form-group d-none">
-            <label for="first_name">first_name</label>
-            <input type="text" name="first_name" id="first_name" class="form-control"
-                value="{{ $first_name }}" required>
-        </div>
-        <div style="display: none" class="form-group d-none">
-            <label for="patronymic_name">patronymic_name</label>
-            <input type="text" name="patronymic_name" id="patronymic_name" class="form-control"
-                value="{{ $patronymic_name }}" required>
-        </div>
-        <div style="display: none" class="form-group d-none">
-            <label for="tel">tel</label>
-            <input type="tel" name="tel" id="tel" class="form-control"
-                value="{{ $tel }}" required>
-        </div>
-        <div style="display: none" class="form-group d-none">
-            <label for="email">email</label>
-            <input type="email" name="email" id="email" class="form-control"
-                value="{{ $email }}" required>
-        </div>
-        <div style="display: none" class="form-group d-none">
-            <label for="promo_code">promo_code</label>
-            <input type="text" name="promo_code" id="promo_code" class="form-control"
-                value="{{ $promo_code }}">
-        </div>
-        <div style="display: none" class="form-group d-none">
-            <label for="wishes">wishes</label>
-            <input type="text" name="wishes" id="wishes" class="form-control"
-                value="{{ $wishes }}">
-        </div>
-        <div style="display: none" class="form-group d-none">
-            <label for="room_id">room_id</label>
-            <input type="number" name="room_id" id="room_id" class="form-control" value="{{ $room_id }}" required>
-        </div>
-        <div style="display: none" class="form-group d-none">
-            <label for="user_id">user_id</label>
-            <input type="number" name="user_id" id="user_id" class="form-control" value="{{ $user_id }}" required>
-        </div>
-        <div style="display: none" class="form-group d-none">
-            <label for="guests_count">guests_count</label>
-            <input type="number" name="guests_count" id="guests_count" class="form-control" value="{{ $guests_count }}"
-                required>
-        </div>
-        <div class="form-row row">
-            <div class="col-xs-12">
-                <button class="btn btn-primary btn-lg btn-block" type="submit">Pay
-                    Now</button>
-            </div>
-        </div>
-    </form>
+
+    </section>
 
     <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
     <script type="text/javascript">

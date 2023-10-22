@@ -92,4 +92,18 @@
             },
         });
     </script>
-@endsection
+                <h3>Сервисы:</h3>
+                <h2>Дополнительные:</h2>
+                @foreach ($room->additionalServices as $service)
+                    <img src="{{ $service->icon[0]->path }}" alt="{{ $service->icon[0]->filename }}" />
+                    <div>{{ $service->name }}</div>
+                    <div>Цена: {{ $service->price }}$</div>
+                @endforeach
+                <h2>Включены в стоимость:</h2>
+                @foreach ($room->includedServices as $service)
+                    <img src="{{ $service->icon[0]->path }}" alt="{{ $service->icon[0]->filename }}" />
+                    <div>{{ $service->name }}</div>
+                @endforeach
+            </div>
+        @endforeach
+    </section>

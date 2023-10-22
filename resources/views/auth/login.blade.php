@@ -10,9 +10,12 @@
 <div class="container">
     <div class="container-wrapper">
     <!-- Загаловок -->
-        <div class="container-wrapper__heading"> 
+        <div class="container-wrapper__heading">
             <h2 class="title"> Войти </h2>
             <p class="text">Войдите, чтобы получить доступ к своей учетной записи.</p>
+            @if (session('status'))
+                <h3>{{ session('status') }}</h3>
+            @endif
         </div>
     <!--Форма авторизации-->
         <form class="forms-auth" action="{{ route('login') }}" method="post">
@@ -36,7 +39,7 @@
                         name="password"
                         id="password">
             </label>
-        <div class="renember"> 
+        <div class="renember">
             <input class="checkbox" type="checkbox" id="remember" name="remember">
             <label class="forms-text text-renember" for="remember">Запомнить меня</label>
         </div>
@@ -45,17 +48,20 @@
             <button class="button" type="submit">Войти</button>
         </div>
         </form>
+        <div class="reset-password">
+            <p class="text"><a href="{{ route('password.request') }}" src="auth"> Восстановить пароль </a></p>
+        </div>
             <div class="registration">
-                <p class="text">У вас нет учетной записи? <a href="#" src="auth"> Зарегистрироваться </a></p>
+                <p class="text">У вас нет учетной записи? <a href="{{ route('register') }}" src="auth"> Зарегистрироваться </a></p>
                 <p class="text-entrance">Или войдите с помощью </p>
             </div>
      <!--Варианты входа-->
         <div class="entrance-icons">
-            <div class="entrance-icons__google" > 
-                 <a> <img class="img-google" src="img/auth/icons_google.png" alt="google"> </a>
+            <div class="entrance-icons__google" >
+                 <a href="{{ route('social-providers.redirect', ['driver' => 'google']) }}"> <img class="img-google" src="img/auth/icons_google.png" alt="google"> </a>
             </div>
-            <div class="entrance-icons__vk"> 
-                <a> <img class="img-vk"  src="img/auth/icons_vk.png" alt="vk"> </a>
+            <div class="entrance-icons__vk">
+                <a href="{{ route('social-providers.redirect', ['driver' => 'vkontakte']) }}"> <img class="img-vk"  src="img/auth/icons_vk.png" alt="vk"> </a>
             </div>
         </div>
     </div>

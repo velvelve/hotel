@@ -89,7 +89,7 @@
                 </div>
                 <label class="forms-title title-question" for="message">Задать вопрос или оставить отзыв</label><br>
                 <textarea class="text-question" id="message" name="message" placeholder="Если у вас есть дополнительные пожелания, 
-пожалуйста, дайте нам знать. Мы постараемся учесть ваши пожелания при наличии такой возможности." required value="{{ old('message') }}"></textarea><br>
+пожалуйста, дайте нам знать. Мы постараемся учесть ваши пожелания при наличии такой возможности." required>{{ old('message') }}</textarea><br>
 <!-- Чекбокс на обработку данных -->
                 <div class="title-question_approval">
                     <input class="approval" type="checkbox" id="agreement" name="agreement" required>

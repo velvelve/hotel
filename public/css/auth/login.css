@@ -125,7 +125,7 @@
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 
-.login__text {
+.login__ask {
     color: #79655E;
     font-family: Montserrat;
     font-size: 14px;
@@ -137,6 +137,7 @@
 
 .login__alternative {
     color: #79655E;
+    margin: 40px 0 0 0;
     font-family: Montserrat;
     font-size: 14px;
     font-style: normal;
@@ -167,12 +168,14 @@
 }
 
 .login__social {
+    width: 512px;
     display: flex;
-    justify-content: space-around
+    flex-wrap: wrap;
+    justify-content: center
 }
 
 .login__social-link {
-    margin: 40px 0 0 0;
+    margin: 40px 20px 0 20px;
     width: 100px;
     text-align: center;
     padding: 16px 20px;

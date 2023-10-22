@@ -43,7 +43,7 @@
 
                     <div class="login__flex">
                         <div class="login__renember">
-                            <input class="checkbox" type="checkbox" id="remember" name="remember">
+                            <input type="checkbox" id="remember" name="remember">
                             <label class="login__renember-label" for="remember">запомнить</label>
                         </div>
 
@@ -56,7 +56,7 @@
                 </form>
 
 
-                <p class="login__text">У вас нет учетной записи?
+                <p class="login__ask">У вас нет учетной записи?
                     <a class="login__link" href="{{ route('register') }}">
                         Зарегистрироваться </a>
                 </p>
@@ -64,10 +64,11 @@
                 <p class="login__alternative">Или войдите с помощью </p>
 
                 <div class="login__social">
-                    <a class="login__social-link" href="{{ route('social-providers.redirect', ['driver' => 'google']) }}"> <img class="img-google"
-                            src="img/auth/icons_google.png" alt="google"> </a>
+                    <a class="login__social-link" href="{{ route('social-providers.redirect', ['driver' => 'google']) }}">
+                        <img class="img-google" src="img/auth/icons_google.png" alt="google"> </a>
 
-                    <a class="login__social-link" href="{{ route('social-providers.redirect', ['driver' => 'vkontakte']) }}"> <img class="img-vk"
+                    <a class="login__social-link"
+                        href="{{ route('social-providers.redirect', ['driver' => 'vkontakte']) }}"> <img class="img-vk"
                             src="img/auth/icons_vk.png" alt="vk"> </a>
                 </div>
 

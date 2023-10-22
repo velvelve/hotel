@@ -6,7 +6,7 @@
 @endpush
 
 @section('content')
-    @include('inc.message')
+    @include('includes.message')
 
     <section class="login">
 
@@ -83,5 +83,5 @@
 
 
         </div>
-    </section>
-@endsection
+        </div>
+    @endsection

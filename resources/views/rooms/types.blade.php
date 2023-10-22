@@ -41,7 +41,7 @@
                                 </div>
                                 <div class="icons_wrapper">
                                     @foreach ($room->includedServices as $service)
-                                        <img class="icon" src="{{ $service->icon[0]->path }}" alt="{{ $service->icon[0]->filename }}" />
+                                        <img class="icon" src="{{ $service->icon[0]->path }}" alt="{{ $service->icon[0]->filename }}" title="{{ $service->name }}"/>
                                     @endforeach
                                 </div>
                             </div>

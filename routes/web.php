@@ -93,5 +93,3 @@ Route::get('/bookings/save', [BookingController::class, 'save'])
 //номера
 Route::get('/rooms-types', [RoomTypeController::class, 'index'])
     ->name('rooms.types');
-Route::get('/rooms-types/{room_type}', [RoomTypeController::class, 'show'])
-    ->name('rooms.show');

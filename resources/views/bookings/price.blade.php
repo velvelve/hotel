@@ -15,6 +15,8 @@
 
     <section class="payment">
         <div class="payment__wrp">
+            <div class="payment__logo"></div>
+
             <div>
                 <img src="{{ asset('img\auth\img.png') }}" alt="photo-hotel">
             </div>

@@ -12,6 +12,17 @@
     align-items: center;
     justify-content: space-evenly;
     border-radius: 25px;
+    position: relative;
+}
+
+.payment__logo::before {
+    content: '';
+    background-image: url(/img/auth/logo.png);
+    position: absolute;
+    top: 0;
+    right: 100px;
+    height: 85.16px;
+    width: 245.62px;
 }
 
 .payment__flex {
@@ -107,7 +118,7 @@
 }
 
 .payment__button {
-    margin:  43px 0;
+    margin: 43px 0;
     display: block;
     border: none;
     color: #453834;

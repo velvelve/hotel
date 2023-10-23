@@ -29,8 +29,8 @@ class ContactsController extends Controller
         $validatedData = $request->validated();
 
         try {
-            // Отправляем сообщение на почту
-            $mailService->send($validatedData);
+            // Отправляем сообщение на почту администратора
+            $mailService->sentToAdmin($validatedData);
             return redirect()->back()->with('success', 'Ваше сообщение успешно отправлено!');
         } catch (Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);

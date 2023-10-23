@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\Auth\ProfileController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\Auth\LoginController;
@@ -35,7 +36,7 @@ Route::post('/register', [RegisterController::class, 'create'])->middleware('gue
 Route::get('/login', [LoginController::class, 'index'])->middleware('guest')->name('login');
 Route::post('/login', [LoginController::class, 'login'])->middleware('guest');
 Route::get('/logout', [LoginController::class, 'destroy'])->middleware('auth')->name('logout');
-Route::get('/profile', fn () => 'Профиль')->middleware('auth', 'verified')->name('profile');
+Route::get('/profile', [ProfileController::class, 'index'])->middleware('auth', 'verified')->name('profile');
 
 //подтверждение почты
 Route::get('/email-confirmation', [EmailVerificationController::class, 'redirect'])->middleware('auth')
@@ -92,5 +93,3 @@ Route::get('/bookings/save', [BookingController::class, 'save'])
 //номера
 Route::get('/rooms-types', [RoomTypeController::class, 'index'])
     ->name('rooms.types');
-Route::get('/rooms-types/{room_type}', [RoomTypeController::class, 'show'])
-    ->name('rooms.show');

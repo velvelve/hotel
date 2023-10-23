@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('content')
-    @include('inc.message')
+    @include('includes.message')
     <div class="section-1">
         {{-- Хедер главной страницы --}}
         <div class="section-1-header">

@@ -22,13 +22,14 @@ class ContactsRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'string', 'max:5'],
+            'name' => ['required', 'string', 'max:15'],
             'phone' => ['required', 'string', 'max:20'],
             'email' => ['required', 'string', 'email', 'unique:users'],
-            'hotel' => ['required', 'confirmed', 'min:8'],
-            'message' => ['required', 'confirmed', 'min:8'],
+            'hotel' => ['required', 'min:3'],
+            'message' => ['required', 'min:8'],
         ];
     }
+
     public function attributes(): array
     {
         return [

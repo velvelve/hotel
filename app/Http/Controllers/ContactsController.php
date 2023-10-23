@@ -26,18 +26,11 @@ class ContactsController extends Controller
         }
 
         // Получаем данные из формы
-        $data = $request->only([
-            'name',
-            'phone',
-            'email',
-            'hotel',
-            'category',
-            'message'
-        ]);
+        $validatedData = $request->validated();
 
         try {
-            // Отправляем сообщение на почту
-            $mailService->send($data);
+            // Отправляем сообщение на почту администратора
+            $mailService->sentToAdmin($validatedData);
             return redirect()->back()->with('success', 'Ваше сообщение успешно отправлено!');
         } catch (Exception $e) {
             return response()->json(['error' => $e->getMessage()], 500);

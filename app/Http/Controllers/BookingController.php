@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Booking;
 use App\Models\Room;
+use App\Services\MailService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -52,7 +53,7 @@ class BookingController extends Controller
     }
 
     // Сохранение нового бронирования
-    public function save()
+    public function save(MailService $mailService)
     {
         //получаем данные из сессии, отправленные в pay.
         $customerData = session('customer_data');
@@ -90,6 +91,8 @@ class BookingController extends Controller
         // Сохраняем бронирование в базе данных
         $booking->save();
 
+        // Отправляем письм с информацией о бронировании
+        $mailService->sendConfirmation($booking);
 
         // После сохранения перенаправит пользователя на другую страницу
         return redirect()->route('bookings.show')->with('success', 'Бронирование успешно создано!');

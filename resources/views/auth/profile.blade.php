@@ -154,26 +154,42 @@
                         <div class="security-head">
                             Изменить пароль
                         </div>
-                        <form action="#" class="security-form" id="security-form">
+                        @if (session('error'))
+                            <div>
+                                {{ session('error') }}
+                            </div>
+                        @endif
+                        @if (session('success'))
+                            <div>
+                                {{ session('success') }}
+                            </div>
+                        @endif
+                        @if($errors)
+                            @foreach ($errors->all() as $error)
+                                <div>{{ $error }}</div>
+                            @endforeach
+                        @endif
+                        <form action="{{ route('password.change') }}" method="POST" class="security-form" id="security-form">
+                            @csrf
                             <div class="security-form__item">
                                 <div class="security-form__item-head">
                                     Введите текущий пароль:
                                 </div>
-                                <input type="password" class="security-form__item-input" />
+                                <input id="current_password" name="current_password" type="password" class="security-form__item-input" />
                             </div>
                             <div class="security-form__item">
                                 <div class="security-form__item-head">
                                     Новый пароль:
                                 </div>
-                                <input type="password" class="security-form__item-input" />
+                                <input id="new_password" name="new_password" type="password" class="security-form__item-input" />
                             </div>
                             <div class="security-form__item">
                                 <div class="security-form__item-head">
                                     Повторите новый пароль:
                                 </div>
-                                <input type="password" class="security-form__item-input" />
+                                <input id="new_password_confirmation" name="new_password_confirmation" type="password" class="security-form__item-input" />
                             </div>
-                            <button class="form-btn">Сохранить</button>
+                            <button id="change-password-btn" type="submit" class="form-btn">Сохранить</button>
                         </form>
                     </div>
                 </div>
@@ -289,7 +305,7 @@ let reservationClickOnCurrent = () => {
     let reservationLiCurrent = document.getElementById('current-li')
     let reservationLiPast = document.getElementById('past-li')
     let reservationLiCanceled = document.getElementById('canceled-li')
-    
+
     let reservationLinkCurrent = document.getElementById('current-link')
     let reservationLinkPast = document.getElementById('past-link')
     let reservationLinkCanceled = document.getElementById('canceled-link')
@@ -318,7 +334,7 @@ let reservationClickOnPast = () => {
     let reservationLiCurrent = document.getElementById('current-li')
     let reservationLiPast = document.getElementById('past-li')
     let reservationLiCanceled = document.getElementById('canceled-li')
-    
+
     let reservationLinkCurrent = document.getElementById('current-link')
     let reservationLinkPast = document.getElementById('past-link')
     let reservationLinkCanceled = document.getElementById('canceled-link')
@@ -347,7 +363,7 @@ let reservationClickOnCanceled = () => {
     let reservationLiCurrent = document.getElementById('current-li')
     let reservationLiPast = document.getElementById('past-li')
     let reservationLiCanceled = document.getElementById('canceled-li')
-    
+
     let reservationLinkCurrent = document.getElementById('current-link')
     let reservationLinkPast = document.getElementById('past-link')
     let reservationLinkCanceled = document.getElementById('canceled-link')

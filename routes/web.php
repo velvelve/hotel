@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\ChangePasswordController;
 use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ProfileController;
@@ -61,6 +62,8 @@ Route::get('/reset-password/{token}', [ResetPasswordController::class, 'index'])
     ->name('password.reset');
 Route::post('/reset-password', [ResetPasswordController::class, 'reset'])->middleware('guest')
     ->name('password.update');
+Route::post('/change-password', [ChangePasswordController::class, 'changePassword'])
+    ->name('password.change');
 
 //поиск комнат
 //результат поиска

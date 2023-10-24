@@ -12,7 +12,7 @@ class Search extends Component
      * CreateBookingRequest a new component instance.
      */
 
-    public function __construct(public $guests)
+    public function __construct(public $guests, public $typeRoom)
     {
         //
     }

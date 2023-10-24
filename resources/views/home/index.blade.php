@@ -58,7 +58,7 @@
         </div>
         {{-- Поиск --}}
         <div class="section-1-search">
-            <x-rooms.search :guests=$guests />
+            <x-rooms.search :guests="$guests" :typeRoom="$typeRoom" />
         </div>
         <div class="section-1-services">
             <div class="section-1-services__numbers">

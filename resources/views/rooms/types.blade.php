@@ -10,8 +10,10 @@
         <div class="room_wrapper">
             @foreach ($rooms as $room)
                 <div class="room_cart">
-                    <div class="room-cart__modal" onclick="handleCloseModal('{{ $room->room_type }}')" id="modal-{{ $room->room_type }}">
-                        <x-rooms.search :guests=$guests />
+                    <div class="room-cart__modal" id="modal-{{ $room->room_type }}">
+                        <div class="modal-cart">
+                            <x-rooms.search :guests=$guests />
+                        </div>
                     </div>
                     <div class="room-cart-container">
                         <div class="room_slider_wrapper">
@@ -67,7 +69,7 @@
                             </p>
                         </div>
                         <button class="button" type="submit"
-                            onclick="handleOpenModal('{{ $room->room_type }}')">Выбрать</button>
+                            onclick="showModal('{{ $room->room_type }}')">Выбрать</button>
                         <div class="right-text right-text-wrapper">
                             <div class="price">
                                 <p class="tariff-title">RUB {{ $room->price }}</p>
@@ -107,48 +109,15 @@
             @endforeach
         });
 
-        let handleOpenModal = (room_type) => {
+        let showModal = (room_type) => {
             let modalEl = document.getElementById('modal-' + room_type)
+            modalEl.style.display = 'flex'
 
-            switch (true) {
-                case (room_type == 'Standard'):
-                    modalEl.style.display = 'flex'
-                    break;
-                case (room_type == 'Superior'):
-                    modalEl.style.display = 'flex'
-                    break;
-                case (room_type == 'Premium'):
-                    modalEl.style.display = 'flex'
-                    break;
-                case (room_type == 'Lux'):
-                    modalEl.style.display = 'flex'
-                    break;
-                case (room_type == 'Family'):
-                    modalEl.style.display = 'flex'
-                    break;
-            }
-        }
-
-        let handleCloseModal = (room_type) => {
-            let modalEl = document.getElementById('modal-' + room_type)
-
-            switch (true) {
-                case (room_type == 'Standard'):
-                    modalEl.style.display = 'none'
-                    break;
-                case (room_type == 'Superior'):
-                    modalEl.style.display = 'none'
-                    break;
-                case (room_type == 'Premium'):
-                    modalEl.style.display = 'none'
-                    break;
-                case (room_type == 'Lux'):
-                    modalEl.style.display = 'none'
-                    break;
-                case (room_type == 'Family'):
-                    modalEl.style.display = 'none'
-                    break;
-            }
+            modalEl.addEventListener('click', (e) => {
+                if(e.target.id == 'modal-' + room_type) {
+                    modalEl.style.display="none"
+                }
+            })
         }
     </script>
 @endsection

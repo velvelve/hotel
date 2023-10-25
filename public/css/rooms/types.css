@@ -204,3 +204,15 @@
     color: #DBDBDB;
     background: #79655E;
 }
+
+.room-cart__modal {
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width:1500px;
+    height:900px;
+    border-radius: 50px;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 100;
+}

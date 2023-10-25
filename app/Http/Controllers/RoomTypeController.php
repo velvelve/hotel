@@ -11,7 +11,7 @@ class RoomTypeController extends Controller
     public function index(): View
     {
         $rooms = Room::all(['id', 'room_type','max_guest_count','price'])->unique('room_type');
-        return view('rooms.types', ['rooms' => $rooms,]);
+        return view('rooms.types', ['rooms' => $rooms, 'guests' => 1]);
     }
 
 }

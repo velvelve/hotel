@@ -81,17 +81,24 @@
                     </ul>
                 </div>
                 <div class="profileSettings-content">
+                    @if(session('profile'))
+                        <span> {{ session('profile') }}</span>
+                    @endif
+                        @foreach ($errors->all() as $error)
+                            <p>{{ $error }}</p>
+                        @endforeach
                     <!-- Подраздел Общее  -->
                     <div class="profileSettings-content__general">
-                        <form action="#" class="profileSettings-form" id="profile-form">
+                        <form action="{{ route('profile.update', auth()->user()) }}" method="post" class="profileSettings-form" id="profile-form">
+                            @csrf
                             <div class="form-input-group__type-text">
                                 <div class="form-item">
                                     <div class="form-item-name">Фамилия</div>
-                                    <input type="text" class="form-item-input" />
+                                    <input name="last_name" type="text" class="form-item-input" value="{{ auth()->user()->last_name }}"/>
                                 </div>
                                 <div class="form-item">
                                     <div class="form-item-name">Имя</div>
-                                    <input type="text" class="form-item-input" />
+                                    <input name="first_name" type="text" class="form-item-input" value="{{ auth()->user()->first_name }}"/>
                                 </div>
                                 <div class="form-item">
                                     <div class="form-item-name">Отчество</div>
@@ -114,7 +121,7 @@
                                 </div>
                                 <div class="form-item">
                                     <div class="form-item-name">Электронная почта</div>
-                                    <input type="email" class="form-item-input" />
+                                    <input type="email" class="form-item-input" value="{{ auth()->user()->email }}"/>
                                 </div>
                                 <div class="form-item">
                                     <div class="form-item-name">Страна</div>
@@ -146,7 +153,7 @@
                                         отзывы</label>
                                 </div>
                             </div>
-                            <button class="form-btn">Сохранить</button>
+                            <button type="submit" class="form-btn">Сохранить</button>
                         </form>
                     </div>
                     <!-- Подраздел Безопасность -->
@@ -214,10 +221,10 @@
                     </div>
                     <div class="profileInfo-head__nameAndEmail">
                         <div class="profileInfo-head__nameAndEmail-name">
-                            Имя Фамилия
+                            {{ auth()->user()->last_name . ' ' . auth()->user()->first_name }}
                         </div>
                         <div class="profileInfo-head__nameAndEmail-email">
-                            email@gmail.com
+                            {{ auth()->user()->email }}
                         </div>
                     </div>
                 </div>

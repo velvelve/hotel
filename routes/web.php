@@ -38,6 +38,7 @@ Route::get('/login', [LoginController::class, 'index'])->middleware('guest')->na
 Route::post('/login', [LoginController::class, 'login'])->middleware('guest');
 Route::get('/logout', [LoginController::class, 'destroy'])->middleware('auth')->name('logout');
 Route::get('/profile', [ProfileController::class, 'index'])->middleware('auth', 'verified')->name('profile');
+Route::post('/profile/{user}',[ProfileController::class,'update'])->middleware('auth', 'verified')->name('profile.update');
 
 //подтверждение почты
 Route::get('/email-confirmation', [EmailVerificationController::class, 'redirect'])->middleware('auth')
@@ -68,9 +69,9 @@ Route::post('/change-password', [ChangePasswordController::class, 'changePasswor
 //поиск комнат
 //результат поиска
 Route::get('/search-rooms', [SearchController::class, 'index'])
-  ->name('search.rooms');
+    ->name('search.rooms');
 Route::post('/search-rooms', [SearchController::class, 'index'])
-  ->name('search.rooms');
+    ->name('search.rooms');
 
 //Контакты
 Route::get('/contacts', [ContactsController::class, 'index'])

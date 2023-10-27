@@ -12,6 +12,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoomTypeController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SocialProvidersController;
+use App\Http\Controllers\LegalInfoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -93,3 +94,7 @@ Route::get('/bookings/save', [BookingController::class, 'save'])
 //номера
 Route::get('/rooms-types', [RoomTypeController::class, 'index'])
     ->name('rooms.types');
+
+//Правовая информация
+Route::get('/pages.legal-info', [LegalInfoController::class, 'index'])
+->name('legal-info');

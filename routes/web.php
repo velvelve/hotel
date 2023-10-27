@@ -96,5 +96,5 @@ Route::get('/rooms-types', [RoomTypeController::class, 'index'])
     ->name('rooms.types');
 
 //Правовая информация
-Route::get('/pages.legal-info', [LegalInfoController::class, 'index'])
+Route::get('/legal-info', [LegalInfoController::class, 'index'])
 ->name('legal-info');

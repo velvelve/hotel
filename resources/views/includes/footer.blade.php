@@ -16,7 +16,7 @@
                         <li><a class="footer__link" href="#">Номера и цены</a></li>
                         <li><a class="footer__link" href="#">Рестораны</a></li>
                         <li><a class="footer__link" href="#">Спа</a></li>
-                        <li><a class="footer__link" href="#">Правовая информация</a></li>
+                        <li><a class="footer__link" href="{{ route('legal-info')}}">Правовая информация</a></li>
                     </ul>
                 </div>
 

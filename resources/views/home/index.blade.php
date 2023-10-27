@@ -175,7 +175,7 @@
                     силы.
                 </div>
                 <div class="section-3-carts__item-btn">
-                    <a href="#">Подробнее</a>
+                    <a href="{{ route('massage') }}">Подробнее</a>
                 </div>
             </div>
             <div class="section-3-carts__item">
@@ -190,7 +190,7 @@
                     горячими камнями.
                 </div>
                 <div class="section-3-carts__item-btn">
-                    <a href="#">Подробнее</a>
+                    <a href="{{ route('hot-stones') }}">Подробнее</a>
                 </div>
             </div>
             <div class="section-3-carts__item">
@@ -205,7 +205,7 @@
                     омолаживающей терапии для лица.
                 </div>
                 <div class="section-3-carts__item-btn">
-                    <a href="#">Подробнее</a>
+                    <a href="{{ route('facial-therapy') }}">Подробнее</a>
                 </div>
             </div>
             <div class="section-3-carts__item">
@@ -221,7 +221,7 @@
                     процедур.
                 </div>
                 <div class="section-3-carts__item-btn">
-                    <a href="#">Подробнее</a>
+                    <a href="{{ route('cosmetic-procedures') }}">Подробнее</a>
                 </div>
             </div>
         </div>

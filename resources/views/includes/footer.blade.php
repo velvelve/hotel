@@ -3,8 +3,6 @@
 <footer class="footer">
     <div class="footer_container">
 
-        <div class="footer_top">
-
             <div class="footer_logo">
                 <img class="footer_img" src="{{ asset('img\footer\logo.png') }}" alt="logo">
                 <p class="copyright">© {{ date('Y') }} LUXURY HOTEL</p>
@@ -61,5 +59,4 @@
 
         </div>
 
-    </div>
 </footer>

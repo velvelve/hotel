@@ -46,11 +46,9 @@
                 @endif
                 <select name="type-room" id="type-room">
                     <option value="Все" {{ $typeRoom == 'Все' ? 'selected' : '' }}>Все</option>
-                    <option value="Standard" {{ $typeRoom == 'Standard' ? 'selected' : '' }}>Standard</option>
-                    <option value="Superior" {{ $typeRoom == 'Superior' ? 'selected' : '' }}>Superior</option>
-                    <option value="Premium" {{ $typeRoom == 'Premium' ? 'selected' : '' }}>Premium</option>
-                    <option value="Lux" {{ $typeRoom == 'Lux' ? 'selected' : '' }}>Lux</option>
-                    <option value="Family" {{ $typeRoom == 'Family' ? 'selected' : '' }}>Family</option>
+                    @foreach(\App\Enums\Rooms\RoomsTypes::getRoomsEnums() as $type)
+                    <option value="{{$type}}" {{ $typeRoom == $type ? 'selected' : '' }}>{{$type}}</option>
+                    @endforeach
                 </select>
             </div>
 

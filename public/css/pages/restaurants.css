@@ -1,5 +1,5 @@
 .wrapper {
-    max-height: 1718px;
+    min-height: 1718px;
     background: linear-gradient(to right, #786853, #D9EBEB);
     position: relative;
     display: flex;
@@ -30,7 +30,7 @@
 
 .restaurant-info {
     max-width: 751px;
-    max-height: 422px;
+    min-height: 422px;
     margin-right: 30px;
 }
 

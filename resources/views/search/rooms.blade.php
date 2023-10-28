@@ -4,7 +4,7 @@
     <div class="searchResult-bg">
         <div class="searchResult">
             <div class="searchResult-head">Результаты поиска :</div>
-            <x-rooms.search :guests=$guests />
+            <x-rooms.search :guests=$guests :typeRoom="$typeRoom" />
             <div class="searchResults">
                 @foreach ($roomsList as $room)
                     <div class="searchResult-content"> <!-- В этом диве генерируются карточки номеров -->
@@ -22,7 +22,7 @@
                                 </div>
                                 <div class="item-description__rightSide">
                                     <div class="item-description__rightSide-upperText"> <!-- Номер комнаты -->
-                                        Комната №{{ $room->room_number }}
+                                        {{ $room->room_type }}
                                     </div>
                                     <div class="item-description__rightSide-textDescription">
                                         <div class="textDescription">В номерах есть все необходимое для комфортного пребывания и спокойного 

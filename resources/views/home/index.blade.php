@@ -58,7 +58,7 @@
         </div>
         {{-- Поиск --}}
         <div class="section-1-search">
-            <x-rooms.search :guests=$guests />
+            <x-rooms.search :guests="$guests" :typeRoom="$typeRoom" />
         </div>
         <div class="section-1-services">
             <div class="section-1-services__numbers">
@@ -175,7 +175,7 @@
                     силы.
                 </div>
                 <div class="section-3-carts__item-btn">
-                    <a href="#">Подробнее</a>
+                    <a href="{{ route('massage') }}">Подробнее</a>
                 </div>
             </div>
             <div class="section-3-carts__item">
@@ -190,7 +190,7 @@
                     горячими камнями.
                 </div>
                 <div class="section-3-carts__item-btn">
-                    <a href="#">Подробнее</a>
+                    <a href="{{ route('hot-stones') }}">Подробнее</a>
                 </div>
             </div>
             <div class="section-3-carts__item">
@@ -205,7 +205,7 @@
                     омолаживающей терапии для лица.
                 </div>
                 <div class="section-3-carts__item-btn">
-                    <a href="#">Подробнее</a>
+                    <a href="{{ route('facial-therapy') }}">Подробнее</a>
                 </div>
             </div>
             <div class="section-3-carts__item">
@@ -221,7 +221,7 @@
                     процедур.
                 </div>
                 <div class="section-3-carts__item-btn">
-                    <a href="#">Подробнее</a>
+                    <a href="{{ route('cosmetic-procedures') }}">Подробнее</a>
                 </div>
             </div>
         </div>

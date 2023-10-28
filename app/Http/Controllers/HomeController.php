@@ -17,6 +17,7 @@ class HomeController extends Controller
         $hotel = Hotel::all()[0];
         $rooms = RoomTypeModel::getRoomTypesArray();
         return view('home.index', [
+            'typeRoom' => 'Все',
             'guests' => 1,
             'hotel' => $hotel,
             'rooms' => $rooms,

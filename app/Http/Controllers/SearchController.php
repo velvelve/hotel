@@ -9,27 +9,30 @@ use Illuminate\View\View;
 
 class SearchController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index(SearchRequest $request): view
+    public function searchRooms(SearchRequest $request): view
     {
         //получаем массив зарезервированных комнат, чтобы исключить их
         $availableRooms = SearchRooms::getAvailableRooms($request);
         //получаем массив свободных комнат, на заданный период + фильтр по максимальному колличеству гостей
         $freeRooms = SearchRooms::freeRooms($request, $availableRooms);
+        //получаем массив комнат с фильтром по типу
+        $roomsRightType = SearchRooms::roomsRightType($request, $freeRooms);
+
         //получаем массив изображений для отфильтрованных комнат
         //$images=SearchRooms::roomsImage($freeRooms);
 
         //получаем массив сервисов для отфильтрованных комнат
         //$services=SearchRooms::roomsServices($freeRooms);
+
+        $typeRoom = $request->input('type-room');
+        $guests = $request->input('guest_count');
+
         return view('search.rooms', [
-            'roomsList' => $freeRooms,
-            'guests' => $request->input('guest_count')
+            'roomsList' => $roomsRightType,
+            'guests' => $guests,
+            'typeRoom' => $typeRoom
         ]);
     }
-
-
 
     /**
      * Show the form for creating a new resource.

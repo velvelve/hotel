@@ -1,0 +1,154 @@
+.wrapper {
+    background: linear-gradient(to right, #786853, #D9EBEB);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    min-height: 2508px;
+}
+
+.section-about-the-company {
+    max-width: 1600px;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-the-company-heading-main {
+    font-size: 48px;
+    font-family: 'Forum';
+    margin-bottom: 30px;
+    color: #333333;
+    margin-top: 40px;
+    margin-left: 40px;
+}
+
+.about-the-company-main {
+    display: flex;
+    max-width: 1600px;
+    min-height: 303px;
+    margin-bottom: 60px;
+}
+
+.about-the-company-img-main {
+    max-width: 1518px;
+    max-height: 303px;
+    display: flex;
+    position: relative;
+}
+
+.about-the-company-title-heading {
+    font-size: 30px;
+    font-family: 'Forum';
+    margin-bottom: 30px;
+    color: #FFFCFC;
+    max-width: 775px;
+    min-height: 166px;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    margin-top: 50px;
+    margin-left: 40px;
+}
+
+.about-the-company-title-text {
+    font-size: 30px;
+    font-family: 'Forum';
+    margin-bottom: 30px;
+    color: #FFFCFC;
+    max-width: 775px;
+    min-height: 166px;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    margin-top: 90px;
+    margin-left: 40px;
+
+}
+
+.section-about-the-company-one {
+    display: flex;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.section-about-the-company-two {
+    display: flex;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.section-about-the-company-three {
+    display: flex;
+    margin-left: 0px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.about-the-company-info {
+    max-width: 751px;
+    min-height: 422px;
+    margin-right: 20px;
+    margin-top: 50px;
+
+}
+
+.about-the-company-heading {
+    font-size: 32px;
+    font-family: 'Forum';
+    margin-bottom: 30px;
+    color: #333333;
+}
+
+.about-the-company-text {
+    font-size: 26px;
+    font-family: 'Forum';
+    color: #333333;
+}
+
+.about-the-company-img {
+    max-width: 702px;
+    max-height: 388;
+}
+
+.about-the-company-img2 {
+    max-width: 702px;
+    max-height: 388;
+    margin-right: 20px;
+}
+
+.about-the-company-text-description {
+    font-size: 24px;
+    font-family: 'Forum';
+    color: #333333;
+    text-align: center;
+    align-items: center;
+    max-width: 1377px;
+    min-height: 265px;
+    margin-top: 70px;
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+.about-the-company-advantages {
+    background: #D9D9D9;
+    opacity: 0.8;
+    display: flex;
+    justify-content: center;
+    min-height: 150px;
+}
+
+.about-the-company-fon {
+    max-height: 121px;
+    max-width: 1518px;
+}
+
+.about-the-company-advantages-text {
+    max-width: 250px;
+    min-height: 100px;
+    text-align: center;
+    justify-content: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 50px;
+
+
+}

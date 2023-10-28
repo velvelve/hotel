@@ -52,4 +52,22 @@ class SearchRooms
         }
         return $roomsThatFeetRequirements;
     }
+
+    //получаем массив комнат с фильтром по типу
+    static function roomsRightType(Request $request, $freeRooms): Collection|array
+    {
+        $roomsThatFeetRequirements = [];
+        $typeRoom = $request->input('type-room');
+        
+        if($typeRoom == 'Все') {
+            return $freeRooms;
+        }
+
+        foreach ($freeRooms as $freeRoom) {
+            if ($freeRoom->room_type == $typeRoom) {
+                $roomsThatFeetRequirements[] = $freeRoom;
+            }
+        }
+        return $roomsThatFeetRequirements;
+    }
 }

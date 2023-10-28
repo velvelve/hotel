@@ -75,9 +75,7 @@ Route::post('/reset-password', [ResetPasswordController::class, 'reset'])->middl
 
 //поиск комнат
 //результат поиска
-Route::get('/search-rooms', [SearchController::class, 'index'])
-  ->name('search.rooms');
-Route::post('/search-rooms', [SearchController::class, 'index'])
+Route::post('/search-rooms', [SearchController::class, 'searchRooms'])
   ->name('search.rooms');
 
 //Контакты

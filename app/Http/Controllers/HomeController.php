@@ -21,6 +21,7 @@ class HomeController extends Controller
         })
             ->get();
         return view('home.index', [
+            'typeRoom' => 'Все',
             'guests' => 1,
             'hotel' => $hotel,
             'rooms' => $rooms,

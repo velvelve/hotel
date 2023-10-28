@@ -87,21 +87,23 @@
             <div class="slider-btn-prev" style="height: 30px; cursor: pointer">
                 <img src="img/homePage/section2/slider-btn-left.svg" />
             </div>
-            <div class="swiper" style="width: 1274px; height: 560px">
+            <div class="swiper" style="width: 1274px; height: 650px">
                 <div class="swiper-wrapper">
                     {{-- Слайды --}}
                     @foreach ($rooms as $room)
                         <div class="swiper-slide" style="max-width: 390px">
                             <a href="{{ route('rooms.types') }}" class="slider-route">
                                 <div class="slider-cart">
-                                    <img src="{{ $room->images[0]->path }}" class="cart-img" />
+                                    <img src="{{ $room->images[0] }}" class="cart-img" />
                                     <div class="slider-cart-description">
                                         <div class="description-wrapper">
-                                            <div class="description-level">Номер {{ $room->room_type }}</div>
-                                            <div class="description-upperText">18 m2 | 1 кровать Queen | 2 взрослых, 1
-                                                ребенок
-                                                (0-11
-                                                лет)
+                                            <div class="description-level">Номер {{ $room->roomTypeName }}</div>
+                                            <div class="description-upperText" style="white-space: pre-line;">
+                                                Ценовой дипапазон: {{ $room->getPriceRange() }}
+                                                Площади: {{ $room->getAreaRange() }}
+                                                Количество гостей: {{ $room->getGuestCountRange() }}
+                                                Доступные виды из окна: {{ $room->viewTypeDescriptions }}
+                                                Доступные типы кроватей: {{ $room->bedTypeDescriptions }}
                                             </div>
                                             <div class="description-icons">
                                                 @foreach ($room->includedServices as $service)
@@ -110,9 +112,7 @@
                                                     </div>
                                                 @endforeach
                                             </div>
-                                            <div class="description-lowerText">В номерах Standart есть все необходимое для
-                                                комфортного
-                                                пребывания и спокойного сна.</div>
+                                            <div class="description-lowerText">{{ $room->roomTypeDescription }}</div>
                                         </div>
                                     </div>
                                 </div>

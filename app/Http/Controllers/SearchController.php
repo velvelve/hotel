@@ -6,7 +6,6 @@ use App\Http\Requests\Search\SearchRequest;
 use App\Services\SearchRooms;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
-use SebastianBergmann\CodeCoverage\Driver\XdebugDriver;
 
 class SearchController extends Controller
 {
@@ -24,7 +23,6 @@ class SearchController extends Controller
 
         //получаем массив сервисов для отфильтрованных комнат
         //$services=SearchRooms::roomsServices($freeRooms);
-
         return view('search.rooms', [
             'roomsList' => $freeRooms,
             'guests' => $request->input('guest_count')

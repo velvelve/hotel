@@ -13,7 +13,7 @@
         <h1>Массаж горячими камнями</h2>
     </div>
 <!--Основная часть-->
-    <div class="main__content ">
+    <div class="main__content content">
 <!--Заголовок-->
         <div class="content__header">
             <h2 class="header_stones">Расслабляющая процедура с прикосновением живых горячих камней. </h2> 

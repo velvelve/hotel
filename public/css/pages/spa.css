@@ -1,0 +1,202 @@
+.wrapper {
+    min-width: 100%;
+    min-height: 100%;
+    background: linear-gradient(to right, #786853,  #D9EBEB);
+}
+
+.main-section {
+    position: relative;
+    height: 1245px;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-section_screensaver {
+    height: 879px;
+    width: 1600px;
+    background-image: url(../../img/spa/spa.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.text_h1 {
+    position: relative;
+    font-family: 'Forum', cursive;
+    font-size: 80px;
+    color: #453834;
+    top: 383px;
+}
+
+.mail-section_content {
+    position: relative;
+    width: 1421px;
+    height: 311px;
+    text-align: center;
+    top: 56px;
+}
+
+.content_text {
+    font-family: 'Forum', cursive;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #453834;
+}
+
+.second-section, .third-section {
+    position: relative;
+    height: 845px;
+    width: 1600px;
+    margin-bottom: 25px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    top: 450px;
+}
+
+.second-section_spa, .second-section_sauna, .third-section_swimming, .third-section_fitness, .fourth-section_cafe  {
+    position: relative;
+    height: 422px;
+    display: flex;
+    width: 1478px;
+    margin-bottom: 45px;
+    left: 61px;
+}
+
+.spa_img, .swimming_img, .cafe_img  {
+    width: 739px;
+    position: relative;
+    justify-content: start;
+}
+
+.img {
+    width: 702px;
+    height: 388px;
+}
+
+.spa_description {
+    height: 422px;
+    width: 702px;
+    position: relative;
+    left: 44px;
+    display: grid;
+}
+
+.description_heading {
+    font-family: 'Francois One';
+    font-size: 32px;
+    color: #453834;
+    margin-bottom: 25px;
+    height: 42px;
+    width: 232px;
+}
+
+.description_text {
+    font-family: 'Forum', cursive;
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #453834;
+    position: relative;
+} 
+
+.sauna_description {
+    width: 751px;
+    height: 422px;
+    position: relative;
+}
+
+.sauna_img {
+    position: relative;
+    left: 34px;
+}
+
+.heading_sauna {
+    position: relative;
+    font-family: 'Francois One';
+    font-size: 32px;
+    color: #453834;
+    margin-bottom: 25px;
+    height: 42px;
+    width: 232px;
+    top: 130px;
+}
+
+.text_sauna {
+    font-family: 'Forum', cursive;
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #453834;
+    position: relative;
+    height: 232px;
+    width: 751px;
+    top: 130px;
+}
+
+.third-section_swimming, .third-section_fitness {
+    position: relative;
+    display: flex
+}
+
+.swimming_description {
+    height: 160px;
+    width: 702px;
+    position: relative;
+    top: 131px;
+    left: 73px;
+}
+
+.fitness_description {
+    position: relative;
+    height: 270px;
+    top: 30px;
+}
+
+.fourth-section {
+    position: relative;
+    height: 725px;
+    width: 1600px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    top: 450px;
+}
+
+.cafe_description {
+    position: relative;
+    height: 166px;
+    left: 73px;
+    top: 100px;
+}
+
+.fourth-section_work {
+    width: 882px;
+    height: 172px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    left: 359px;
+}
+
+.img_background {
+    position: relative;
+    height: 159px;
+    min-width: 100%;
+}
+
+.background {
+    position: relative;
+    padding-top: 159px;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    height: 159px;
+    min-width: 100%;
+
+}

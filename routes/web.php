@@ -1,12 +1,13 @@
 <?php
 
+use App\Http\Controllers\Admin\IndexController as AdminController;
 use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ProfileController;
 use App\Http\Controllers\Auth\ResetPasswordController;
-use App\Http\Controllers\BookingController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoomTypeController;
@@ -37,6 +38,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+
+//Админка
+Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin.'], static function(){
+    Route::get('/', AdminController::class)->name('index');
+});
 
 //регистрация
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest')

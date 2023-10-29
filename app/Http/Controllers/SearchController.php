@@ -6,7 +6,6 @@ use App\Http\Requests\Search\SearchRequest;
 use App\Services\SearchRooms;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
-use SebastianBergmann\CodeCoverage\Driver\XdebugDriver;
 
 class SearchController extends Controller
 {

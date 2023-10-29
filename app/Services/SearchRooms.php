@@ -46,7 +46,8 @@ class SearchRooms
         $guestCount = $request->input('guest_count');
 
         foreach ($availableRooms as $availableRoom) {
-            if ($availableRoom->max_guest_count >= $guestCount) {
+            $totalCount = $availableRoom->adults_max_guests + $availableRoom->children_max_guests;
+            if ($totalCount >= $guestCount) {
                 $roomsThatFeetRequirements[] = $availableRoom;
             }
         }
@@ -58,13 +59,12 @@ class SearchRooms
     {
         $roomsThatFeetRequirements = [];
         $typeRoom = $request->input('type-room');
-        
-        if($typeRoom == 'Все') {
+        if ($typeRoom == 'Все') {
             return $freeRooms;
         }
 
         foreach ($freeRooms as $freeRoom) {
-            if ($freeRoom->room_type == $typeRoom) {
+            if ($freeRoom->roomType->name == $typeRoom) {
                 $roomsThatFeetRequirements[] = $freeRoom;
             }
         }

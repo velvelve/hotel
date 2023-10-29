@@ -5,13 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class RoomService extends Model
+class BedType extends Model
 {
     use HasFactory;
 
-    protected $table = 'room_service';
+    protected $fillable = ['constant'];
 
-    protected $primaryKey = null;
-
-    public $incrementing = false;
+    public function rooms()
+    {
+        return $this->hasMany(Room::class);
+    }
 }

@@ -2,9 +2,13 @@
 
 namespace Database\Seeders;
 
+use App\Models\Booking;
 use App\Models\Hotel;
+use App\Models\HotelService;
 use App\Models\Image;
+use App\Models\ImageService;
 use App\Models\Room;
+use App\Models\RoomService;
 use App\Models\Service;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -154,26 +158,24 @@ class ServiceSeeder extends Seeder
             'Телевизор' => 'tv',
             'Wi-Fi доступ' => 'wifi',
         ];
-        $images = Image::all();
         $services = Service::all();
+
+        $images = Image::all();
+
         foreach ($services as $service) {
             $iconFileName = $servicesToIcons[$service->name];
             foreach ($images as $image) {
                 if ($image->filename === $iconFileName) {
-                    DB::table('service_images')->insert([
+                    ImageService::create([
                         'service_id' => $service->id,
                         'image_id' => $image->id,
                         'is_icon' => true,
-                        'created_at' => now(),
-                        'updated_at' => now(),
                     ]);
                 } elseif (str_contains($image->filename, $iconFileName)) {
-                    DB::table('service_images')->insert([
+                    ImageService::create([
                         'service_id' => $service->id,
                         'image_id' => $image->id,
                         'is_icon' => false,
-                        'created_at' => now(),
-                        'updated_at' => now(),
                     ]);
                 }
             }
@@ -192,11 +194,9 @@ class ServiceSeeder extends Seeder
         foreach ($services as $service) {
             foreach ($hotels as $hotel) {
                 if (in_array($service->name, $servicesToHotels)) {
-                    DB::table('hotel_services')->insert([
+                    HotelService::create([
                         'service_id' => $service->id,
                         'hotel_id' => $hotel->id,
-                        'created_at' => now(),
-                        'updated_at' => now(),
                     ]);
                 }
             }
@@ -292,7 +292,7 @@ class ServiceSeeder extends Seeder
         ];
         $rooms = Room::all();
         foreach ($rooms as $room) {
-            $allRoomTypeServices = $servicesToRooms[$room->room_type];
+            $allRoomTypeServices = $servicesToRooms[$room->roomType->name];
             $additionalServices = $allRoomTypeServices['additional'];
             $includedServices = $allRoomTypeServices['included'];
             foreach ($services as $service) {
@@ -301,12 +301,10 @@ class ServiceSeeder extends Seeder
                         $service->name
                         === $additionalService
                     ) {
-                        DB::table('room_services')->insert([
+                        RoomService::create([
                             'service_id' => $service->id,
                             'room_id' => $room->id,
                             'additional' => true,
-                            'created_at' => now(),
-                            'updated_at' => now(),
                         ]);
                     }
                 }
@@ -315,16 +313,24 @@ class ServiceSeeder extends Seeder
                         $service->name
                         === $includedService
                     ) {
-                        DB::table('room_services')->insert([
+                        RoomService::create([
                             'service_id' => $service->id,
                             'room_id' => $room->id,
                             'additional' => false,
-                            'created_at' => now(),
-                            'updated_at' => now(),
                         ]);
                     }
                 }
             }
+        }
+        $bookings = Booking::all();
+        $allFamilyServices = $servicesToRooms['Family'];
+        $bookedServices = $allFamilyServices['additional'];
+        $filteredServices = $services->filter(function ($service) use ($bookedServices) {
+            return in_array($service->name, $bookedServices);
+        });
+        foreach ($bookings as $booking) {
+            $randomServices = $filteredServices->random(rand(1, 5));
+            $booking->services()->attach($randomServices);
         }
     }
 }

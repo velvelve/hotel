@@ -6,14 +6,12 @@
 @endpush
 
 @section('content')
-
-<section class="wrapper">
-    <div class="section-massage">
-        <h1 class="massage-heading-main">Massage The Luxury Hotel </h1>
         <div class="massage-main">
             <img class="massage-img-main" src="img/massage/main.png" alt="massage">
             <h1 class="massage-title">Виды массажа The Luxury Hotel</h1>
         </div>
+<section class="wrapper">
+    <div class="section-massage">
         <div class="massage-one">
             <div class="massage-info"> 
                 <h1 class="massage-heading">Традиционный тайский массаж</h1>

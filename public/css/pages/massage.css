@@ -1,9 +1,10 @@
 .wrapper {
     background: linear-gradient(to right, #786853, #D9EBEB);
     position: relative;
-    display: flex;
     justify-content: center;
-    min-height: 2637px;
+    display: flex;
+    align-items: center;
+    min-height: 2157px;
 }
 
 .section-massage {
@@ -12,27 +13,14 @@
     flex-direction: column;
 }
 
-.massage-heading-main {
-    font-size: 38px;
-    font-family: 'Forum';
-    margin-bottom: 30px;
-    color: #333333;
-    margin-top: 40px;
-    margin-left: 40px;
-}
-
 .massage-main {
     display: flex;
-    max-width: 1600px;
-    min-height: 303px;
-    margin-bottom: 60px;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(to right, #786853, #D9EBEB);
 }
 
 .massage-img-main {
-    max-width: 1519px;
-    max-height: 303px;
     display: flex;
     position: relative;
 }
@@ -40,6 +28,7 @@
 .massage-title {
     font-size: 36px;
     font-family: 'Forum', cursive;
+    font-weight: 400;
     color: #FFFCFC;
     display: flex;
     position: absolute;
@@ -51,6 +40,7 @@
     margin-left: 40px;
     margin-right: 40px;
     margin-bottom: 80px;
+    margin-top: 80px;
 }
 
 .massage-two {
@@ -62,7 +52,6 @@
 
 .massage-three {
     display: flex;
-    margin-left: 0px;
     margin-left: 40px;
     margin-right: 40px;
     margin-bottom: 80px;
@@ -70,9 +59,10 @@
 
 .massage-four {
     display: flex;
-    margin-left: 0px;
     margin-left: 40px;
     margin-right: 40px;
+    margin-bottom: 80px;
+
 }
 
 .massage-info {
@@ -85,6 +75,7 @@
 .massage-heading {
     font-size: 32px;
     font-family: 'Forum';
+    font-weight: 400;
     margin-bottom: 30px;
     color: #333333;
 }
@@ -92,6 +83,7 @@
 .massage-text {
     font-size: 26px;
     font-family: 'Forum';
+    font-weight: 400;
     color: #333333;
 }
 
@@ -128,6 +120,7 @@
     color: #453834;
     font-size: 16px;
     font-family: 'Montserrat';
+    font-weight: 400;
 
 
 

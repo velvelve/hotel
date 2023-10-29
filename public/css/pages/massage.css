@@ -8,7 +8,6 @@
 }
 
 .section-massage {
-    max-width: 1600px;
     display: flex;
     flex-direction: column;
 }
@@ -23,10 +22,11 @@
 .massage-img-main {
     display: flex;
     position: relative;
+    width: 100%;
 }
 
 .massage-title {
-    font-size: 36px;
+    font-size: 40px;
     font-family: 'Forum', cursive;
     font-weight: 400;
     color: #FFFCFC;

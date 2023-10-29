@@ -13,7 +13,7 @@
         <h1>Массаж горячими камнями</h2>
     </div>
 <!--Основная часть-->
-    <div class="main__content">
+    <div class="main__content ">
 <!--Заголовок-->
         <div class="content__header">
             <h2 class="header_stones">Расслабляющая процедура с прикосновением живых горячих камней. </h2> 
@@ -29,7 +29,6 @@
                 <img class="img__massage" src="img/hot-stones/photo1.png" alt="massage">
             </div>
         </div>
-    </div>
 <!--Цены-->
     <div class="main__price">
         <p class="price__text"><b>Стоимость </b><br><b>120 минут</b></p>
@@ -37,6 +36,7 @@
         <p class="price__text"><b>Gold</b><br><b>11 100 руб</b></p>
         <p class="price__text"><b>Premium</b><br><b>18 000 руб </b></p>
     </div>
+</div>
 <!--Фоновая картинка-->
     <div class="main__img-background">
         <img class="img-background" src="img/hot-stones/background.png" alt="bachground">

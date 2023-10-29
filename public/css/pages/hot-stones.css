@@ -16,6 +16,7 @@ h1 {
     top: 234px;
     display: flex;
     justify-content: center;
+    font-weight: 400px;
 }
 
 .main__header {
@@ -28,7 +29,7 @@ h1 {
 }
 
 .main__content {
-    min-height: 1000px;
+    min-height: 1205px;
     position: relative;
     display: grid;
     justify-items: center;
@@ -40,6 +41,7 @@ h1 {
     position: relative;
     text-align: center;
     top: 84px;
+    margin-bottom: 69px;
 }
 
 .header_stones {
@@ -51,8 +53,9 @@ h1 {
 .content-info {
     position: relative;
     display: flex;
-    min-width: 1600px;
+    max-width: 1600px;
     max-height: 581px;
+    top: 63px;
 }
 
 .info__text {
@@ -60,8 +63,8 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-width: 663px;
-    max-height: 581px;
+    width: 663px;
+    height: 581px;
     padding-left: 72px;
     padding-right: 26px;
 }
@@ -77,11 +80,13 @@ h1 {
     height: 510px;
     width: 780px;
     top: 35px;
+    padding-right: 59px;
 }
 
 .main__price {
-    min-width: 1600px;
+    max-width: 1600px;
     height: 208px;
+    top: 83px;
     background-color: #CACECB;
     position: relative;
     text-align: center;
@@ -105,4 +110,8 @@ h1 {
     min-width: 1600px;
     position: relative;
     display: contents;
+}
+
+.img-background {
+    height: 158px;
 }

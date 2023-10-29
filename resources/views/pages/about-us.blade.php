@@ -107,10 +107,6 @@
                 действительно незабываемым.
             </p>
         </div>
-        <!--Фон над footer-->
-        <div class="section-about-the-company">
-            <img class="about-the-company-fon" src="img/about/fon.png" alt="fon">
-        </div>
     </div>
   
 </section>

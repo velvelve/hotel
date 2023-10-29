@@ -3,7 +3,7 @@
     position: relative;
     display: flex;
     justify-content: center;
-    min-height: 2508px;
+    min-height: 2308px;
 }
 
 .section-about-the-company {
@@ -134,11 +134,6 @@
     display: flex;
     justify-content: center;
     min-height: 150px;
-}
-
-.about-the-company-fon {
-    max-height: 121px;
-    max-width: 1518px;
 }
 
 .about-the-company-advantages-text {

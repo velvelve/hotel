@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class RoomService extends Model
+class HotelService extends Model
 {
     use HasFactory;
 
-    protected $table = 'room_service';
+    protected $table = 'hotel_service';
 
     protected $primaryKey = null;
 

@@ -46,8 +46,9 @@
                 @endif
                 <select name="type-room" id="type-room">
                     <option value="Все" {{ $typeRoom == 'Все' ? 'selected' : '' }}>Все</option>
-                    @foreach(\App\Enums\Rooms\RoomsTypes::getRoomsEnums() as $type)
-                    <option value="{{$type}}" {{ $typeRoom == $type ? 'selected' : '' }}>{{$type}}</option>
+                    @foreach (\App\Enums\Rooms\RoomTypes::getRoomTypes() as $type)
+                        <option value="{{ $type }}" {{ $typeRoom == $type ? 'selected' : '' }}>
+                            {{ $type }}</option>
                     @endforeach
                 </select>
             </div>
@@ -70,7 +71,7 @@
                 autoApply: true,
                 opens: 'center',
                 minDate: dateRangePicker.val(
-                storedDateRange), // Устанавливаем сохраненное значение в качестве минимальной даты
+                    storedDateRange), // Устанавливаем сохраненное значение в качестве минимальной даты
                 locale: {
                     format: 'YYYY-MM-DD'
                 }
@@ -92,7 +93,7 @@
             const selectedDateRange =
                 `${picker.startDate.format('YYYY-MM-DD')} - ${picker.endDate.format('YYYY-MM-DD')}`;
             localStorage.setItem('selectedDateRange',
-            selectedDateRange); // Сохраняем выбранный промежуток дат в localStorage
+                selectedDateRange); // Сохраняем выбранный промежуток дат в localStorage
         });
     });
 </script>

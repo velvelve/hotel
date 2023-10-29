@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Hotel;
 use App\Models\Room;
+use App\Models\RoomTypeModel;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -14,12 +15,7 @@ class HomeController extends Controller
     public function index()
     {
         $hotel = Hotel::all()[0];
-        $rooms = Room::whereIn('id', function ($query) {
-            $query->selectRaw('MIN(id)')
-                ->from('rooms')
-                ->groupBy('room_type');
-        })
-            ->get();
+        $rooms = RoomTypeModel::getRoomTypesArray();
         return view('home.index', [
             'typeRoom' => 'Все',
             'guests' => 1,

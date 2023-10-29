@@ -4,7 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration {
+return new class extends Migration
+{
     /**
      * Таблица для хранения информации о бронированиях номеров в отеле,
      * включая даты заезда и выезда, количество гостей,
@@ -20,13 +21,14 @@ return new class extends Migration {
             $table->date('check_out_date');
             $table->string('client_first_name');
             $table->string('client_last_name');
-            $table->string('client_patronymic');
+            $table->string('client_middle_name')->nullable();
             $table->string('client_phone');
             $table->string('client_email');
-            $table->string('client_promo_code')->nullable();
+            $table->string('promo_code')->nullable();
             $table->string('client_wishes')->nullable();;
-            $table->integer('client_guests_count');
+            $table->integer('guests_count');
             $table->enum('status', ['забронировано', 'подтверждено', 'отменено'])->default('забронировано');
+            $table->decimal('total_price', 8, 2);
             $table->timestamps();
 
             $table->foreign('room_id')->references('id')->on('rooms')->onDelete('cascade');

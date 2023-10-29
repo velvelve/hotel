@@ -20,14 +20,15 @@ class Booking extends Model
         'check_in_date',
         'check_out_date',
         'client_first_name',
-        'client_patronymic',
+        'client_middle_name',
         'client_last_name',
         'client_phone',
         'client_email',
-        'client_promo_code',
+        'promo_code',
         'client_wishes',
-        'client_guests_count',
+        'guests_count',
         'status',
+        'total_price',
     ];
 
     public function room(): BelongsTo
@@ -38,5 +39,10 @@ class Booking extends Model
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function services()
+    {
+        return $this->belongsToMany(Service::class);
     }
 }

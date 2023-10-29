@@ -210,7 +210,7 @@
                 <div class="current-balance-points">Баллов: <span class="points">0</span></div>
                 <div class="current-balance-nights">Ночей: <span class="nights">0</span></div>
                 <!--Позже как добавим user is_admin  выставить тут проверку -->
-                <a href="{{ route('admin.index') }}">Перейдите в админ-панель</a>
+                <a href="{{ route('admin.dashboard') }}">Перейдите в админ-панель</a>
             </div>
         </div>
     </div>

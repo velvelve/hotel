@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\View\View;
 
-class IndexController extends Controller
+class DashboardController extends Controller
 {
-    public function __invoke():View
+    public function index():View
     {
-        return view('admin.index');
+        return view('admin.dashboard');
     }
 }

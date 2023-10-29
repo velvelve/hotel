@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Admin\IndexController as AdminController;
+use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ProfileController;
@@ -41,7 +41,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 //Админка
 Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin.'], static function(){
-    Route::get('/', AdminController::class)->name('index');
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 });
 
 //регистрация

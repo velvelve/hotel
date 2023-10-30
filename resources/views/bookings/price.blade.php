@@ -119,6 +119,8 @@
                         <label for="guests_count">guests_count</label>
                         <input type="number" name="guests_count" id="guests_count" value="{{ $guests_count }}"
                             required>
+                        <label for="total_price">total_price</label>
+                        <input type="number" name="total_price" id="total_price" value="{{ $price }}" required>
                     </div>
 
                     <button class="payment__button" type="submit">Оплатить</button>

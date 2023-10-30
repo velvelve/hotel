@@ -27,9 +27,32 @@
                         </ul>
                     </div>
                 @endif
-                <input type="number" name="guest_count" id="guest_count" value="{{ (int) $guests }}"
-                >
+                <input type="number" name="guest_count" id="guest_count" min="1" max="5" value="{{ (int) $guests }}">
             </div>
+
+            <div class="roomsSearch-menu__type">
+                <div class="roomsSearch-menu__type-head">
+                    <img src="/img/roomsSearch/type-room.svg">
+                    <label for="type-room">Категория</label>
+                </div>
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+                <select name="type-room" id="type-room">
+                    <option value="Все" {{ $typeRoom == 'Все' ? 'selected' : '' }}>Все</option>
+                    @foreach (\App\Enums\Rooms\RoomTypes::getRoomTypes() as $type)
+                        <option value="{{ $type }}" {{ $typeRoom == $type ? 'selected' : '' }}>
+                            {{ $type }}</option>
+                    @endforeach
+                </select>
+            </div>
+
             <button type="submit" class="roomsSearch-menu__btn">Искать</button>
 
         </form>
@@ -37,7 +60,7 @@
 </div>
 
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         const dateRangePicker = $('input[name="date_range"]');
         const storedDateRange = localStorage.getItem('selectedDateRange');
 
@@ -47,7 +70,8 @@
             dateRangePicker.daterangepicker({
                 autoApply: true,
                 opens: 'center',
-                minDate: dateRangePicker.val(storedDateRange), // Устанавливаем сохраненное значение в качестве минимальной даты
+                minDate: dateRangePicker.val(
+                    storedDateRange), // Устанавливаем сохраненное значение в качестве минимальной даты
                 locale: {
                     format: 'YYYY-MM-DD'
                 }
@@ -65,10 +89,11 @@
         }
 
         // Обработчик события применения выбранного промежутка дат
-        dateRangePicker.on('apply.daterangepicker', function (ev, picker) {
+        dateRangePicker.on('apply.daterangepicker', function(ev, picker) {
             const selectedDateRange =
                 `${picker.startDate.format('YYYY-MM-DD')} - ${picker.endDate.format('YYYY-MM-DD')}`;
-            localStorage.setItem('selectedDateRange', selectedDateRange); // Сохраняем выбранный промежуток дат в localStorage
+            localStorage.setItem('selectedDateRange',
+                selectedDateRange); // Сохраняем выбранный промежуток дат в localStorage
         });
     });
 </script>

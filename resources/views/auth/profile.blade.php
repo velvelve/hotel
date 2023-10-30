@@ -81,12 +81,16 @@
                     </ul>
                 </div>
                 <div class="profileSettings-content">
-                    @if(session('profile'))
-                        <span> {{ session('profile') }}</span>
-                    @endif
+                    @include('includes.message')
+                    @if($errors)
                         @foreach ($errors->all() as $error)
-                            <p>{{ $error }}</p>
-                        @endforeach
+                            <x-alert :message="$error" type="danger"></x-alert>
+                        @Endforeach
+                    @endif
+
+                    @if(session('profile'))
+                        <x-alert :message="session('profile')" type="success"></x-alert>
+                    @endif
                     <!-- Подраздел Общее  -->
                     <div class="profileSettings-content__general">
                         <form action="{{ route('profile.update', auth()->user()) }}" method="post" class="profileSettings-form" id="profile-form">

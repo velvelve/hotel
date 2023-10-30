@@ -209,21 +209,51 @@
     position: absolute;
     display: none;
     justify-content: center;
-    align-items: center;
     width:1500px;
-    height:900px;
+    height:700px;
+    padding-top: 200px;
     border-radius: 50px;
     background: rgba(0, 0, 0, 0.7);
     z-index: 100;
 }
 
 .modal-cart {
-    display: flex;
-    justify-content: center;
-    min-width: 950px;
-    max-width: 950px;
-    min-height: 642px;
-    max-height: 642px;
-    border-radius: 50px;
+    width: 950px;
+    height: 622px;
+    padding-top: 20px;
     background-color: #fff;
+    border-radius: 50px;
+}
+
+/* Стили календаря */
+
+.daterangepicker:before {
+    display: none !important;
+}
+
+.daterangepicker:after {
+    display: none !important;
+}
+
+.daterangepicker {
+    width: 600px;
+    height: 400px;
+    margin-top: 50px !important;
+    margin-left: 164px !important;
+    border-radius: 30px !important;
+    box-shadow: 0px 20px 30px 0px rgba(34, 60, 80, 0.2);
+}
+
+.left {
+    min-width: 580px !important;
+    max-width: 580px !important;
+    min-height: 160px !important;
+    max-height: 160px !important;
+}
+
+.right {
+    min-width: 580px !important;
+    max-width: 580px !important;
+    min-height: 160px !important;
+    max-height: 160px !important;
 }

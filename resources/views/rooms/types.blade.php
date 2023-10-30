@@ -113,9 +113,11 @@
             let modalEl = document.getElementById('modal-' + room_type)
             modalEl.style.display = 'flex'
 
+            modalEl.children[0].children[0].children[1].children[0].children[1].children[1].click()
+
             modalEl.addEventListener('click', (e) => {
-                if(e.target.id == 'modal-' + room_type) {
-                    modalEl.style.display="none"
+                if (e.target.id == 'modal-' + room_type) {
+                    modalEl.style.display = "none"
                 }
             })
         }

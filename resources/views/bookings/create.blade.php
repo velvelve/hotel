@@ -146,9 +146,14 @@
                     <div class="booking-information__card">
                         <img src="{{ asset($room->images[mt_rand(0, 2)]->path) }}" alt="image-room" width="691"
                             height="291">
-                        <h2 class="booking-information__title">Номер {{ $room->room_type }}</h2>
-                        <p class="booking-information__room-parameter">35 m2 | 2 кровати TWIN или 1 кровать Queen или King
-                            | 3 взрослых, 1 ребенок (0-11 лет)</p>
+                        <h2 class="booking-information__title">Номер {{ $room->roomType->name }} {{$room->viewType->description}}</h2>
+                        <p class="booking-information__room-parameter">{{ $room->area }} m2 | {{ $room->bedType->description }}
+                            | {{ $room->adults_max_guests }} @choice('messages.adult_plural', $room->adults_max_guests)
+                            @if($room->children_max_guests > 0)
+                                , {{ $room->children_max_guests }} 
+                                @choice('messages.child_plural', $room->children_max_guests) (0-11 лет)
+                            @endif
+                        </p>
                         <ul class="booking-information__services-list">
                             @foreach ($room->includedServices as $service)
                                 <li class="booking-information__services-item">
@@ -156,8 +161,7 @@
                                 </li>
                             @endforeach
                         </ul>
-                        <p class="booking-information__text">Эти люксы с отдельными спальной и гостиной зонами идеально
-                            подойдут гостям, планирующим длительное пребывание в отеле.</p>
+                        <p class="booking-information__text">{{$room->description}}</p>
                     </div>
 
                     <div class="booking-information__result">

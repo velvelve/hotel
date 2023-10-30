@@ -4,9 +4,9 @@
     <div class="searchResult-bg">
         <div class="searchResult">
             <div class="searchResult-head">Результаты поиска :</div>
-            <x-rooms.search :guests=$guests />
+            <x-rooms.search :guests=$guests :typeRoom="$typeRoom" />
             <div class="searchResults">
-                @foreach ($roomsList as $room)
+                @forelse ($roomsList as $room)
                     <div class="searchResult-content"> <!-- В этом диве генерируются карточки номеров -->
                         <div class="searchResult-content__item"> <!-- Карточка номера -->
                             <div class="item-description">
@@ -22,38 +22,22 @@
                                 </div>
                                 <div class="item-description__rightSide">
                                     <div class="item-description__rightSide-upperText"> <!-- Номер комнаты -->
-                                        Комната №{{ $room->room_number }}
+                                        {{ $room->roomType->name }} {{$room->viewType->description}} 
                                     </div>
                                     <div class="item-description__rightSide-textDescription">
-                                        <div class="textDescription">В номерах есть все необходимое для комфортного пребывания и спокойного 
-                                            сна.</div>
+                                        <div class="textDescription">{{ $room->description }}</div>
                                     </div>
                                     {{-- <div>Сервисы:</div> --}}
                                     <ul class="item-description__rightSide-servise">
-                                        <li class="item-search-icon_list">
-                                            <a class="icon" href="#"><img src="img/roomsSearch/icon/slippers.png" alt="
-                                                slippers"></a>
-                                        </li>
-                                        <li class="item-search-icon_list">
-                                            <a class="icon" href="#"><img src="img/roomsSearch/icon/teapot.png" alt="
-                                                teapot"></a>
-                                        </li>
-                                        <li class="item-search-icon_list">
-                                            <a class="icon" href="#"><img src="img/roomsSearch/icon/wifi.png" alt="
-                                                wifi"></a>
-                                        </li>
-                                        <li class="item-search-icon_list">
-                                            <a class="icon" href="#"><img src="img/roomsSearch/icon/television.png" alt="
-                                                television"></a>
-                                        </li>
-                                        <li class="item-search-icon_list">
-                                            <a class="icon" href="#"><img src="img/roomsSearch/icon/fan.png" alt="
-                                                fan"></a>
-                                        </li>
+                                        @foreach ($room->includedServices as $service)
+                                            <li class="item-search-icon_list">
+                                                <a href="#"><img class="icon" src="{{ $service->icon[0]->path }}" alt="{{ $service->icon[0]->filename }}" title="{{ $service->name }}"></a>
+                                            </li>
+                                        @endforeach
                                     </ul> 
                                     <div class="item-description__rightSide-centralText">
                                         <!-- Максимальная вместительность -->
-                                        Максимальная вместительность: {{ $room->max_guest_count }}
+                                        Максимальная вместительность: {{ $room->adults_max_guests + $room->children_max_guests }}
                                     </div>
                                     <div class="item-description__rightSide-lowerText"> <!-- Цена -->
                                         Цена: {{ $room->price }}
@@ -74,7 +58,9 @@
                             </form>
                         </div>
                     </div>
-                @endforeach
+                @empty
+                    <h2 style="color: #77635c;font-size: 50px;">Свободные номера не найдены 😥</h2>
+                @endforelse
             </div>
         </div>
     </div>

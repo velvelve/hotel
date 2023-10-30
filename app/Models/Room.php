@@ -6,7 +6,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Symfony\Component\HttpKernel\Attribute\WithLogLevel;
 
 class Room extends Model
 {
@@ -16,11 +15,17 @@ class Room extends Model
     protected $with = ['images'];
 
     protected $fillable = [
+        'hotel_id',
         'room_number',
-        'room_type',
+        'area',
+        'apartments_count',
         'price',
-        'max_guest_count',
         'availability',
+        'room_type_id',
+        'view_type_id',
+        'bed_type_id',
+        'adults_max_guests',
+        'children_max_guests',
     ];
 
     public function images(): HasMany
@@ -30,17 +35,17 @@ class Room extends Model
 
     public function services()
     {
-        return $this->belongsToMany(Service::class, 'room_services');
+        return $this->belongsToMany(Service::class);
     }
 
     public function includedServices()
     {
-        return $this->belongsToMany(Service::class, 'room_services')->wherePivot('additional', false);
+        return $this->belongsToMany(Service::class)->wherePivot('additional', false);
     }
 
     public function additionalServices()
     {
-        return $this->belongsToMany(Service::class, 'room_services')->wherePivot('additional', true);
+        return $this->belongsToMany(Service::class)->wherePivot('additional', true);
     }
 
     public function bookings(): HasMany
@@ -51,5 +56,20 @@ class Room extends Model
     public function hotel(): BelongsTo
     {
         return $this->belongsTo(Hotel::class, 'hotel_id');
+    }
+
+    public function roomType()
+    {
+        return $this->belongsTo(RoomType::class, 'room_type_id');
+    }
+
+    public function bedType()
+    {
+        return $this->belongsTo(BedType::class, 'bed_type_id');
+    }
+
+    public function viewType()
+    {
+        return $this->belongsTo(ViewType::class, 'view_type_id');
     }
 }

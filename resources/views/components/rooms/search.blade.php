@@ -27,9 +27,33 @@
                         </ul>
                     </div>
                 @endif
-                <input type="number" class="roomsSearch-menu__input guest-input" name="guest_count" id="guest_count"
-                    value="{{ (int) $guests }}">
+                <input type="number" name="guest_count" id="guest_count" value="{{ (int) $guests }}"
+                >
             </div>
+
+            <div class="roomsSearch-menu__type">
+                <div class="roomsSearch-menu__type-head">
+                    <img src="/img/roomsSearch/type-room.svg">
+                    <label for="type-room">Категория</label>
+                </div>
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+                <select name="type-room" id="type-room">
+                    <option value="Все" {{ $typeRoom == 'Все' ? 'selected' : '' }}>Все</option>
+                    @foreach (\App\Enums\Rooms\RoomTypes::getRoomTypes() as $type)
+                        <option value="{{ $type }}" class="option-{{$type}} options" {{ $typeRoom == $type ? 'selected' : '' }}>
+                            {{ $type }}</option>
+                    @endforeach
+                </select>
+            </div>
+
             <button type="submit" class="roomsSearch-menu__btn">Искать</button>
 
         </form>

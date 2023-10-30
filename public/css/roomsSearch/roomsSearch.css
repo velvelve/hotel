@@ -4,8 +4,17 @@
     cursor: pointer;
 }
 
-.guest-input {
+.roomsSearch-menu__guest input {
+    border: none;
+    outline: none;
+    cursor: pointer;
     text-align: center;
+}
+
+.roomsSearch-menu__type select {
+    border: none;
+    outline: none;
+    cursor: pointer;
 }
 
 .roomsSearch-menu__label {
@@ -59,12 +68,12 @@
     background-color: #f9f9f9;
 }
 
-.roomsSearch-menu, .roomsSearch-menu form {
+.roomsSearch-menu,
+.roomsSearch-menu form {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    min-width: 500px;
-    max-width: 500px;
+    width: 700px;
     min-height: 81px;
     max-height: 81px;
     border-radius: 50px;
@@ -72,7 +81,9 @@
     box-shadow: 0px 20px 50px 0px rgba(34, 60, 80, 0.2);
 }
 
-.roomsSearch-menu__date, .roomsSearch-menu__guest {
+.roomsSearch-menu__date,
+.roomsSearch-menu__guest,
+.roomsSearch-menu__type {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -85,7 +96,9 @@
     background-color: #fff;
 }
 
-.roomsSearch-menu__date-head img, .roomsSearch-menu__guest-head img {
+.roomsSearch-menu__date-head img,
+.roomsSearch-menu__guest-head img,
+.roomsSearch-menu__type-head img {
     margin-right: 5px;
 }
 

@@ -46,8 +46,26 @@ class SearchRooms
         $guestCount = $request->input('guest_count');
 
         foreach ($availableRooms as $availableRoom) {
-            if ($availableRoom->max_guest_count >= $guestCount) {
+            $totalCount = $availableRoom->adults_max_guests + $availableRoom->children_max_guests;
+            if ($totalCount >= $guestCount) {
                 $roomsThatFeetRequirements[] = $availableRoom;
+            }
+        }
+        return $roomsThatFeetRequirements;
+    }
+
+    //получаем массив комнат с фильтром по типу
+    static function roomsRightType(Request $request, $freeRooms): Collection|array
+    {
+        $roomsThatFeetRequirements = [];
+        $typeRoom = $request->input('type-room');
+        if ($typeRoom == 'Все') {
+            return $freeRooms;
+        }
+
+        foreach ($freeRooms as $freeRoom) {
+            if ($freeRoom->roomType->name == $typeRoom) {
+                $roomsThatFeetRequirements[] = $freeRoom;
             }
         }
         return $roomsThatFeetRequirements;

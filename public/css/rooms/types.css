@@ -2,7 +2,7 @@
     background: linear-gradient(to right, #786853,  #D9EBEB);
     background-size: 100% 100%;
     min-height: 2200px;
-    min-width: 1800px;
+    min-width: 1600px;
 }
 
 .room_wrapper{
@@ -210,8 +210,8 @@
     display: none;
     justify-content: center;
     width:1500px;
-    height:700px;
-    padding-top: 200px;
+    height:765px;
+    padding-top: 135px;
     border-radius: 50px;
     background: rgba(0, 0, 0, 0.7);
     z-index: 100;
@@ -239,21 +239,17 @@
     width: 600px;
     height: 400px;
     margin-top: 50px !important;
-    margin-left: 164px !important;
+    margin-left: 255px !important;
     border-radius: 30px !important;
     box-shadow: 0px 20px 30px 0px rgba(34, 60, 80, 0.2);
 }
 
 .left {
     min-width: 580px !important;
-    max-width: 580px !important;
-    min-height: 160px !important;
-    max-height: 160px !important;
+    height: 160px !important;
 }
 
 .right {
     min-width: 580px !important;
-    max-width: 580px !important;
-    min-height: 160px !important;
-    max-height: 160px !important;
+    height: 160px !important;
 }

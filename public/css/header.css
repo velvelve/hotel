@@ -19,8 +19,8 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    min-width: 1275px;
-    max-width: 1275px;
+    min-width: 1500px;
+    max-width: 1500px;
     min-height: 120px;
     max-height: 120px;
 }

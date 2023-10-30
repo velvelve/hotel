@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Booking;
 use App\Models\Room;
+use App\Services\MailService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -52,7 +53,7 @@ class BookingController extends Controller
     }
 
     // Сохранение нового бронирования
-    public function save()
+    public function save(MailService $mailService)
     {
         //получаем данные из сессии, отправленные в pay.
         $customerData = session('customer_data');
@@ -68,6 +69,7 @@ class BookingController extends Controller
         $room_id = $customerData['room_id'];
         $user_id = $customerData['user_id'];
         $client_guests_count = $customerData['guests_count'];
+        $total_price = $customerData['total_price'];
         $data = [
             'room_id' => $room_id,
             'user_id' => $user_id,
@@ -75,14 +77,14 @@ class BookingController extends Controller
             'check_out_date' => $check_out_date,
             'client_first_name' => $client_first_name,
             'client_last_name' => $client_last_name,
-            'client_patronymic' => $client_patronymic,
+            'client_middle_name' => $client_patronymic,
             'client_phone' => $client_phone,
             'client_email' => $client_email,
-            'client_promo_code' => $client_promo_code,
+            'promo_code' => $client_promo_code,
             'client_wishes' => $client_wishes,
-            'client_guests_count' => $client_guests_count,
+            'guests_count' => $client_guests_count,
+            'total_price' => $total_price,
         ];
-
         // Создаем новый объект бронирования
         $booking = new Booking($data);
         $booking->status = \App\Enums\Booking\Status::BOOKED->value;
@@ -90,6 +92,8 @@ class BookingController extends Controller
         // Сохраняем бронирование в базе данных
         $booking->save();
 
+        // Отправляем письм с информацией о бронировании
+        $mailService->sendConfirmation($booking);
 
         // После сохранения перенаправит пользователя на другую страницу
         return redirect()->route('bookings.show')->with('success', 'Бронирование успешно создано!');

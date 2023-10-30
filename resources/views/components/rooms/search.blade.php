@@ -27,7 +27,7 @@
                         </ul>
                     </div>
                 @endif
-                <input type="number" name="guest_count" id="guest_count" value="{{ (int) $guests }}">
+                <input type="number" name="guest_count" id="guest_count" min="1" max="5" value="{{ (int) $guests }}">
             </div>
 
             <div class="roomsSearch-menu__type">

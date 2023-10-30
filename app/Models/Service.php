@@ -15,21 +15,26 @@ class Service extends Model
 
     public function images()
     {
-        return $this->belongsToMany(Image::class, 'service_images')->wherePivot('is_icon', false);
+        return $this->belongsToMany(Image::class)->wherePivot('is_icon', false);
     }
 
     public function icon()
     {
-        return $this->belongsToMany(Image::class, 'service_images')->wherePivot('is_icon', true);
+        return $this->belongsToMany(Image::class)->wherePivot('is_icon', true);
     }
 
     public function hotels()
     {
-        return $this->belongsToMany(Hotel::class, 'hotel_services');
+        return $this->belongsToMany(Hotel::class);
     }
 
     public function rooms()
     {
-        return $this->belongsToMany(Room::class, 'room_services');
+        return $this->belongsToMany(Room::class);
+    }
+
+    public function bookings()
+    {
+        return $this->belongsToMany(Booking::class);
     }
 }

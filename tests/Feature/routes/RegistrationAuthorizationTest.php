@@ -44,6 +44,9 @@ class RegistrationAuthorizationTest extends TestCase
         // Проверьте хэшированное значение пароля
         $user = User::where('email', 'kwuhn.dax@example.net')->first();
         $this->assertTrue(Hash::check('password', $user->password));
+
+        // Удаляем пользователя из базы данных
+        $user->delete();
     }
 
     // Проверяет страницу входа.

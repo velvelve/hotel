@@ -40,7 +40,7 @@ class BookingController extends Controller
         //Получаю из url room_id
         $room = Room::findOrFail($room_id);
 
-        //Получаю авторизированого user
+        //Получаю авторизированного user
         $user = Auth::user();
 
         return view('bookings.create', [
@@ -82,6 +82,7 @@ class BookingController extends Controller
             'client_promo_code' => $client_promo_code,
             'client_wishes' => $client_wishes,
             'client_guests_count' => $client_guests_count,
+
         ];
 
         // Создаем новый объект бронирования

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -51,9 +53,20 @@ class ProfileController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, User $user): RedirectResponse
     {
-        //
+        $request->validate([
+            'first_name' => ['required', 'min:3'],
+            'last_name' => ['required', 'min:3'],
+        ]);
+
+        $user->update([
+            'first_name' => $request->first_name,
+            'last_name' => $request->last_name,
+            'updated_at' => now()
+        ]);
+
+        return redirect()->back()->with('profile','Данные изменены!');
     }
 
     /**

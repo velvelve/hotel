@@ -4,17 +4,25 @@ namespace Tests\Feature\migrations;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Support\Facades\Schema;
 use Tests\TestCase;
 
 class ImageMigrationTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     */
     public function test_example(): void
     {
-        $response = $this->get('/');
+        // Проверяем, что таблица "images" была создана
+        $this->assertTrue(Schema::hasTable('images'));
 
-        $response->assertStatus(200);
+        // Проверяем столбцы таблицы "images"
+        $this->assertTrue(Schema::hasColumns('images', [
+            'id',
+            'hotel_id',
+            'room_id',
+            'filename',
+            'path',
+            'created_at',
+            'updated_at',
+        ]));
     }
 }

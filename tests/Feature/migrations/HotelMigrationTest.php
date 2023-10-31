@@ -4,17 +4,23 @@ namespace Tests\Feature\migrations;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Support\Facades\Schema;
 use Tests\TestCase;
 
 class HotelMigrationTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     */
     public function test_example(): void
     {
-        $response = $this->get('/');
+        // Проверяем, что таблица "hotels" была создана
+        $this->assertTrue(Schema::hasTable('hotels'));
 
-        $response->assertStatus(200);
+        // Проверяем столбцы таблицы "hotels"
+        $this->assertTrue(Schema::hasColumns('hotels', [
+            'id',
+            'name',
+            'location_id',
+            'created_at',
+            'updated_at',
+        ]));
     }
 }

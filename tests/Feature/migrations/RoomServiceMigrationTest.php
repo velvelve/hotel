@@ -2,19 +2,23 @@
 
 namespace Tests\Feature\migrations;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Support\Facades\Schema;
 use Tests\TestCase;
 
 class RoomServiceMigrationTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     */
     public function test_example(): void
     {
-        $response = $this->get('/');
+        // Проверяем, что таблица "room_service" была создана
+        $this->assertTrue(Schema::hasTable('room_service'));
 
-        $response->assertStatus(200);
+        // Проверяем столбцы таблицы "room_service"
+        $this->assertTrue(Schema::hasColumns('room_service', [
+            'room_id',
+            'service_id',
+            'additional',
+            'created_at',
+            'updated_at',
+        ]));
     }
 }

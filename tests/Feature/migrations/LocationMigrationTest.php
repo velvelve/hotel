@@ -4,17 +4,25 @@ namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Support\Facades\Schema;
 use Tests\TestCase;
 
 class LocationMigrationTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     */
     public function test_example(): void
     {
-        $response = $this->get('/');
+        // Проверяем, что таблица "locations" была создана
+        $this->assertTrue(Schema::hasTable('locations'));
 
-        $response->assertStatus(200);
+        // Проверяем столбцы таблицы "locations"
+        $this->assertTrue(Schema::hasColumns('locations', [
+            'id',
+            'country',
+            'city',
+            'street',
+            'house',
+            'created_at',
+            'updated_at',
+        ]));
     }
 }

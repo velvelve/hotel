@@ -2,19 +2,25 @@
 
 namespace Tests\Feature\migrations;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Support\Facades\Schema;
 use Tests\TestCase;
 
 class ReviewMigrationTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     */
     public function test_example(): void
     {
-        $response = $this->get('/');
+        // Проверяем, что таблица "reviews" была создана
+        $this->assertTrue(Schema::hasTable('reviews'));
 
-        $response->assertStatus(200);
+        // Проверяем столбцы таблицы "reviews"
+        $this->assertTrue(Schema::hasColumns('reviews', [
+            'id',
+            'user_id',
+            'hotel_id',
+            'comment',
+            'rating',
+            'created_at',
+            'updated_at',
+        ]));
     }
 }

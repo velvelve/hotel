@@ -1,0 +1,70 @@
+.wrapper {
+    min-height: 1192px;
+    background: linear-gradient(to right, #786853,  #D9EBEB);
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.left-wrapper {
+    position: relative;
+    height: 844px;
+    width: 660px;
+}
+
+.content {
+    position: relative;
+    top: 129px;
+    width: 612px;
+}
+
+.text {
+    color: #333333;
+}
+
+h1 {
+    height: 72px;
+    width: 450px;
+    font-family: 'Forum', cursive;
+    font-size: 38px;
+    color: #333333;
+}
+
+h2 {
+    font-family: 'Francois One';
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+h3 {
+    font-family: 'Forum', cursive;
+    font-size: 28px;
+}
+
+p {
+    font-family: 'Forum', cursive;
+    font-size: 26px;
+    margin-bottom: 25px;
+}
+
+.phone {
+    position: relative;
+    display: flex;
+}
+
+.text-phone {
+    padding-left: 10px;
+}
+
+.right-wrapper {
+    position: relative;
+    right: 45px;
+    width: 785px;
+}
+
+.img {
+    position: relative;
+    top: 205px;
+    width: 785px;
+    height: 783px;
+}

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\ChangePasswordController;
 use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ProfileController;
@@ -12,6 +13,17 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoomTypeController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SocialProvidersController;
+use App\Http\Controllers\StaticPages\AboutUsController;
+use App\Http\Controllers\StaticPages\ConferenceRoomsController;
+use App\Http\Controllers\StaticPages\CosmeticProceduresController;
+use App\Http\Controllers\StaticPages\FacialTherapyController;
+use App\Http\Controllers\StaticPages\HotStonesController;
+use App\Http\Controllers\StaticPages\LegalInfoController;
+use App\Http\Controllers\StaticPages\MassageController;
+use App\Http\Controllers\StaticPages\RentController;
+use App\Http\Controllers\StaticPages\RestaurantsController;
+use App\Http\Controllers\StaticPages\ServicesController;
+use App\Http\Controllers\StaticPages\SpaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,6 +49,7 @@ Route::get('/login', [LoginController::class, 'index'])->middleware('guest')->na
 Route::post('/login', [LoginController::class, 'login'])->middleware('guest');
 Route::get('/logout', [LoginController::class, 'destroy'])->middleware('auth')->name('logout');
 Route::get('/profile', [ProfileController::class, 'index'])->middleware('auth', 'verified')->name('profile');
+Route::post('/profile/{user}',[ProfileController::class,'update'])->middleware('auth', 'verified')->name('profile.update');
 
 //подтверждение почты
 Route::get('/email-confirmation', [EmailVerificationController::class, 'redirect'])->middleware('auth')
@@ -61,12 +74,12 @@ Route::get('/reset-password/{token}', [ResetPasswordController::class, 'index'])
     ->name('password.reset');
 Route::post('/reset-password', [ResetPasswordController::class, 'reset'])->middleware('guest')
     ->name('password.update');
+Route::post('/change-password', [ChangePasswordController::class, 'changePassword'])
+    ->name('password.change');
 
 //поиск комнат
 //результат поиска
-Route::get('/search-rooms', [SearchController::class, 'index'])
-  ->name('search.rooms');
-Route::post('/search-rooms', [SearchController::class, 'index'])
+Route::post('/search-rooms', [SearchController::class, 'searchRooms'])
   ->name('search.rooms');
 
 //Контакты
@@ -93,3 +106,47 @@ Route::get('/bookings/save', [BookingController::class, 'save'])
 //номера
 Route::get('/rooms-types', [RoomTypeController::class, 'index'])
     ->name('rooms.types');
+
+//Правовая информация
+Route::get('/legal-info', [LegalInfoController::class, 'index'])
+->name('legal-info');
+
+//О нас
+Route::get('/about-us', [AboutUsController::class, 'index'])
+->name('about-us');
+
+//Рестораны
+Route::get('/restaurants', [RestaurantsController::class, 'index'])
+->name('restaurants');
+
+//Спа
+Route::get('/spa', [SpaController::class, 'index'])
+->name('spa');
+
+//Конференц-залы
+Route::get('/conference-rooms', [ConferenceRoomsController::class, 'index'])
+->name('conference-rooms');
+
+//Аренда
+Route::get('/rent', [RentController::class, 'index'])
+->name('rent');
+
+//Услуги
+Route::get('/services', [ServicesController::class, 'index'])
+->name('services');
+
+//Массаж
+Route::get('/massage', [MassageController::class, 'index'])
+->name('massage');
+
+//Горячие камни
+Route::get('/hot-stones', [HotStonesController::class, 'index'])
+->name('hot-stones');
+
+//Терапия для лица
+Route::get('/facial-therapy', [FacialTherapyController::class, 'index'])
+->name('facial-therapy');
+
+//Косметические процедуры
+Route::get('/cosmetic-procedures', [CosmeticProceduresController::class, 'index'])
+->name('cosmetic-procedures');

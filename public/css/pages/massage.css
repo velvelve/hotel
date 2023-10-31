@@ -1,0 +1,127 @@
+.wrapper {
+    background: linear-gradient(to right, #786853, #D9EBEB);
+    position: relative;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    min-height: 2157px;
+}
+
+.section-massage {
+    display: flex;
+    flex-direction: column;
+}
+
+.massage-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #786853, #D9EBEB);
+}
+
+.massage-img-main {
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+
+.massage-title {
+    font-size: 40px;
+    font-family: 'Forum', cursive;
+    font-weight: 400;
+    color: #FFFCFC;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+}
+
+.massage-one {
+    display: flex;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 80px;
+    margin-top: 80px;
+}
+
+.massage-two {
+    display: flex;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 80px;
+}
+
+.massage-three {
+    display: flex;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 80px;
+}
+
+.massage-four {
+    display: flex;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 80px;
+
+}
+
+.massage-info {
+    max-width: 751px;
+    min-height: 422px;
+    margin-top: 40px;
+
+}
+
+.massage-heading {
+    font-size: 32px;
+    font-family: 'Forum';
+    font-weight: 400;
+    margin-bottom: 30px;
+    color: #333333;
+}
+
+.massage-text {
+    font-size: 26px;
+    font-family: 'Forum';
+    font-weight: 400;
+    color: #333333;
+}
+
+.massage-img {
+    max-width: 702px;
+    max-height: 388;
+    margin-left: 30px;
+}
+
+.massage-img2 {
+    max-width: 702px;
+    max-height: 388;
+    margin-right: 30px;
+}
+
+.massage-pricelist {
+    background: #D9D9D9;
+    opacity: 0.7;
+    display: flex;
+    justify-content: center;
+    min-height: 60px;
+    max-width: 703px;
+    margin-top: 30px;
+}
+
+.massage-price-text {
+    max-width: 250px;
+    min-height: 60px;
+    text-align: center;
+    justify-content: center;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 20px;
+    color: #453834;
+    font-size: 16px;
+    font-family: 'Montserrat';
+    font-weight: 400;
+
+
+
+}

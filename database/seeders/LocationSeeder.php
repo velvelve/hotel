@@ -13,6 +13,11 @@ class LocationSeeder extends Seeder
      */
     public function run(): void
     {
-        Location::factory()->create();
+        Location::create([
+            'country' => 'RU',
+            'city' => 'Sochi',
+            'street' => 'Lenina',
+            'house' => '10'
+        ]);
     }
 }

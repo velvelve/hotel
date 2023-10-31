@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class RoomService extends Model
 {
     use HasFactory;
+
+    protected $table = 'room_service';
+
+    protected $primaryKey = null;
+
+    public $incrementing = false;
 }

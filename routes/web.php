@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\ChangePasswordController;
 use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ProfileController;
@@ -48,6 +49,7 @@ Route::get('/login', [LoginController::class, 'index'])->middleware('guest')->na
 Route::post('/login', [LoginController::class, 'login'])->middleware('guest');
 Route::get('/logout', [LoginController::class, 'destroy'])->middleware('auth')->name('logout');
 Route::get('/profile', [ProfileController::class, 'index'])->middleware('auth', 'verified')->name('profile');
+Route::post('/profile/{user}',[ProfileController::class,'update'])->middleware('auth', 'verified')->name('profile.update');
 
 //подтверждение почты
 Route::get('/email-confirmation', [EmailVerificationController::class, 'redirect'])->middleware('auth')
@@ -72,6 +74,8 @@ Route::get('/reset-password/{token}', [ResetPasswordController::class, 'index'])
     ->name('password.reset');
 Route::post('/reset-password', [ResetPasswordController::class, 'reset'])->middleware('guest')
     ->name('password.update');
+Route::post('/change-password', [ChangePasswordController::class, 'changePassword'])
+    ->name('password.change');
 
 //поиск комнат
 //результат поиска

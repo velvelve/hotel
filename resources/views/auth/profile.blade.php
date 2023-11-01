@@ -106,34 +106,34 @@
                                 </div>
                                 <div class="form-item">
                                     <div class="form-item-name">Отчество</div>
-                                    <input type="text" class="form-item-input" />
+                                    <input name="middle_name" type="text" class="form-item-input" value="{{ auth()->user()->middle_name }}" />
                                 </div>
                                 <div class="form-item form-item-date">
                                     <div class="form-item-name">Дата рождения</div>
-                                    <input type="date" class="form-item-input input-dateOfBirth" />
+                                    <input name="date_of_birth" type="date" class="form-item-input input-dateOfBirth" value="{{ auth()->user()->date_of_birth }}"/>
                                 </div>
                                 <div class="form-item form-item-gender">
                                     <div class="form-item-name">Пол</div>
-                                    <select class="form-item-input input-gender" form="profile-form">
-                                        <option>М</option>
-                                        <option>Ж</option>
+                                    <select name="gender" class="form-item-input input-gender" form="profile-form">
+                                        <option {{ (auth()->user()->gender === 'M') ? 'selected' : '' }} value="M">М</option>
+                                        <option {{ (auth()->user()->gender === 'W') ? 'selected' : '' }} value="W">Ж</option>
                                     </select>
                                 </div>
                                 <div class="form-item">
                                     <div class="form-item-name">Телефон гостя</div>
-                                    <input type="tel" class="form-item-input" />
+                                    <input name="phone" type="tel" class="form-item-input" value="{{ auth()->user()->phone }}" />
                                 </div>
                                 <div class="form-item">
                                     <div class="form-item-name">Электронная почта</div>
-                                    <input type="email" class="form-item-input" value="{{ auth()->user()->email }}"/>
+                                    <input name="email" type="email" class="form-item-input" value="{{ auth()->user()->email }}"/>
                                 </div>
                                 <div class="form-item">
                                     <div class="form-item-name">Страна</div>
-                                    <input type="text" class="form-item-input" />
+                                    <input name="country" type="text" class="form-item-input" value="{{ auth()->user()->country }}" />
                                 </div>
                                 <div class="form-item">
                                     <div class="form-item-name">Город</div>
-                                    <input type="text" class="form-item-input" />
+                                    <input name="city" type="text" class="form-item-input" value="{{ auth()->user()->city }}" />
                                 </div>
                             </div>
                             <div class="form-input-group__type-checkbox">

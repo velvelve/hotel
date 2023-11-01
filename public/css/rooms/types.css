@@ -204,3 +204,52 @@
     color: #DBDBDB;
     background: #79655E;
 }
+
+.room-cart__modal {
+    position: absolute;
+    display: none;
+    justify-content: center;
+    width:1500px;
+    height:765px;
+    padding-top: 135px;
+    border-radius: 50px;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 100;
+}
+
+.modal-cart {
+    width: 950px;
+    height: 622px;
+    padding-top: 20px;
+    background-color: #fff;
+    border-radius: 50px;
+}
+
+/* Стили календаря */
+
+.daterangepicker:before {
+    display: none !important;
+}
+
+.daterangepicker:after {
+    display: none !important;
+}
+
+.daterangepicker {
+    width: 600px;
+    height: 400px;
+    margin-top: 50px !important;
+    margin-left: 255px !important;
+    border-radius: 30px !important;
+    box-shadow: 0px 20px 30px 0px rgba(34, 60, 80, 0.2);
+}
+
+.left {
+    min-width: 580px !important;
+    height: 160px !important;
+}
+
+.right {
+    min-width: 580px !important;
+    height: 160px !important;
+}

@@ -68,6 +68,8 @@ return new class extends Migration
         Schema::dropIfExists('room_service');
         Schema::dropIfExists('hotel_service');
         Schema::dropIfExists('image_service');
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('services');
+        Schema::enableForeignKeyConstraints();
     }
 };

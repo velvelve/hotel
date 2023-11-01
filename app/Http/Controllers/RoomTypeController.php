@@ -11,6 +11,6 @@ class RoomTypeController extends Controller
     public function index(): View
     {
         $rooms = RoomTypeModel::getRoomTypesArray();
-        return view('rooms.types', ['rooms' => $rooms,]);
+        return view('rooms.types', ['rooms' => $rooms, 'guests' => 1, 'typeRoom' => 'Все']);
     }
 }

@@ -37,9 +37,11 @@
     -ms-flex-align: center;
     align-items: center;
     text-align: left;
-    gap: 10px;
+    gap: 55px;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
 }
 
 .searchResult-head {
@@ -55,10 +57,11 @@
     display: flex;
     flex-direction: column;
     max-width: 430px;
-    height: 290px;
+    min-height: 325px;
     margin: 5px 5px 5px 5px;
     padding: 16px;
     background-color: #DBDBDB;
+    justify-content: space-between;
 }
 
 .searchResult-content__item .item-description {
@@ -133,9 +136,9 @@
 
 .item-description__rightSide-servise {
     display: flex;
-    position: relative;
-    top: 10px;
-    height: 52px;
+    flex-wrap: wrap;
+    margin: 13px 0;
+    justify-content: flex-start;
 }
 
 .icon {

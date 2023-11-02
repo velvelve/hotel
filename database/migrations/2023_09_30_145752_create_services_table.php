@@ -22,7 +22,16 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        Schema::create('hotel_services', function (Blueprint $table) {
+        Schema::create('booking_service', function (Blueprint $table) {
+            $table->unsignedBigInteger('booking_id');
+            $table->unsignedBigInteger('service_id');
+            $table->timestamps();
+
+            $table->foreign('booking_id')->references('id')->on('bookings')->onDelete('cascade');
+            $table->foreign('service_id')->references('id')->on('services')->onDelete('cascade');
+        });
+
+        Schema::create('hotel_service', function (Blueprint $table) {
             $table->unsignedBigInteger('hotel_id');
             $table->unsignedBigInteger('service_id');
             $table->timestamps();
@@ -31,7 +40,7 @@ return new class extends Migration
             $table->foreign('service_id')->references('id')->on('services')->onDelete('cascade');
         });
 
-        Schema::create('room_services', function (Blueprint $table) {
+        Schema::create('room_service', function (Blueprint $table) {
             $table->unsignedBigInteger('room_id');
             $table->unsignedBigInteger('service_id');
             $table->boolean('additional')->default(false);
@@ -41,7 +50,7 @@ return new class extends Migration
             $table->foreign('service_id')->references('id')->on('services')->onDelete('cascade');
         });
 
-        Schema::create('service_images', function (Blueprint $table) {
+        Schema::create('image_service', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('service_id');
             $table->unsignedBigInteger('image_id');
@@ -55,9 +64,12 @@ return new class extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('room_services');
-        Schema::dropIfExists('hotel_services');
-        Schema::dropIfExists('service_images');
+        Schema::dropIfExists('booking_service');
+        Schema::dropIfExists('room_service');
+        Schema::dropIfExists('hotel_service');
+        Schema::dropIfExists('image_service');
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('services');
+        Schema::enableForeignKeyConstraints();
     }
 };

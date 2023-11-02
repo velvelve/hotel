@@ -1,3 +1,7 @@
+*{
+    scroll-behavior: smooth;
+}
+
 .section-1 {
     position: relative;
     display: flex;
@@ -182,7 +186,10 @@
     margin-bottom: 25px;
 }
 
-.section-1-services__numbers, .section-1-services__restaurant, .section-1-services__spa, .section-1-services__jacuzzi {
+.section-1-services__numbers,
+.section-1-services__restaurant,
+.section-1-services__spa,
+.section-1-services__jacuzzi {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -219,7 +226,7 @@
     display: flex;
     flex-direction: column;
     width: 390px;
-    height: 560px;
+    height: 650px;
     background-color: #DBDBDB;
     cursor: pointer;
 }
@@ -233,73 +240,68 @@
 
 .slider-cart-description {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     min-width: 390px;
     max-width: 390px;
-    min-height: 302px;
-    max-height: 302px;
+    height: 100%;
 }
 
 .description-wrapper {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     min-width: 257px;
     max-width: 257px;
-    min-height: 223px;
-    max-height: 223px;
+    height: 100%;
 }
 
 .description-level {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 34px;
-    max-height: 34px;
 
     font-family: 'Forum', cursive;
     font-size: 24px;
     color: #79655E;
     line-height: 98.5%;
     text-align: center;
+    margin-top: 16px;
 }
 
 .description-upperText {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 30px;
-    max-height: 30px;
 
     font-family: 'Forum', cursive;
     font-size: 10px;
     color: #79655E;
     line-height: 98.5%;
     text-align: center;
+    margin: 16px;
 }
 
 .description-lowerText {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 83px;
-    max-height: 83px;
 
     font-family: 'Forum', cursive;
     font-size: 16px;
     color: #79655E;
     line-height: 98.5%;
     text-align: center;
+    margin: 16px;
 }
 
 .description-icons {
     display: flex;
-    justify-content: space-between;
+    flex-flow: row wrap;
+    justify-content: center;
     align-items: center;
-    min-height: 45px;
-    max-height: 45px;
+    width: 257px;
 }
 
 .description-icon-container {
@@ -553,7 +555,7 @@
 }
 
 .section-4-bottom {
-    margin-bottom: 170px;
+
 }
 
 .section-4-subscription {
@@ -636,4 +638,22 @@
     color: #0C0B10;
     cursor: pointer;
     z-index: 1;
+}
+
+.section-4_anchor{
+    font-family: 'Forum', serif;
+    font-size: 30px;
+    color: #C09B5A;
+    margin-bottom: 80px;
+    transition: 0.7s;
+    width: 300px;
+    text-align: center;
+    border: solid rgba(192,155,90,1) 1px;
+    border-radius: 50px;
+    padding: 10px 0;
+}
+
+.section-4_anchor:hover{
+    border: solid rgba(255,255,255,1) 1px;
+    background-color: rgb(255,255,255);
 }

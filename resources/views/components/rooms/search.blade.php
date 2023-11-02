@@ -8,15 +8,15 @@
             <div class="roomsSearch-menu__date">
                 <div class="roomsSearch-menu__date-head">
                     <img src="/img/roomsSearch/date.svg">
-                    <label for="date_range">Заезд - Выезд</label>
+                    <label class="roomsSearch-menu__label" for="date_range">Заезд - Выезд</label>
                 </div>
-                <input type="text" name="date_range" id="date_range">
+                <input type="text" class="roomsSearch-menu__input" name="date_range" id="date_range">
             </div>
 
             <div class="roomsSearch-menu__guest">
                 <div class="roomsSearch-menu__guest-head">
                     <img src="/img/roomsSearch/guest.svg">
-                    <label for="guest_count">Кол-во гостей</label>
+                    <label class="roomsSearch-menu__label" for="guest_count">Кол-во гостей</label>
                 </div>
                 @if ($errors->any())
                     <div class="alert alert-danger">
@@ -27,7 +27,7 @@
                         </ul>
                     </div>
                 @endif
-                <input type="number" name="guest_count" id="guest_count" value="{{ (int) $guests }}">
+                <input type="number" name="guest_count" id="guest_count" min="1" max="5" value="{{ (int) $guests }}">
             </div>
 
             <div class="roomsSearch-menu__type">
@@ -46,8 +46,9 @@
                 @endif
                 <select name="type-room" id="type-room">
                     <option value="Все" {{ $typeRoom == 'Все' ? 'selected' : '' }}>Все</option>
-                    @foreach(\App\Enums\Rooms\RoomsTypes::getRoomsEnums() as $type)
-                    <option value="{{$type}}" {{ $typeRoom == $type ? 'selected' : '' }}>{{$type}}</option>
+                    @foreach (\App\Enums\Rooms\RoomTypes::getRoomTypes() as $type)
+                        <option value="{{ $type }}" class="option-{{$type}} options" {{ $typeRoom == $type ? 'selected' : '' }}>
+                            {{ $type }}</option>
                     @endforeach
                 </select>
             </div>
@@ -70,7 +71,7 @@
                 autoApply: true,
                 opens: 'center',
                 minDate: dateRangePicker.val(
-                storedDateRange), // Устанавливаем сохраненное значение в качестве минимальной даты
+                    storedDateRange), // Устанавливаем сохраненное значение в качестве минимальной даты
                 locale: {
                     format: 'YYYY-MM-DD'
                 }
@@ -92,7 +93,7 @@
             const selectedDateRange =
                 `${picker.startDate.format('YYYY-MM-DD')} - ${picker.endDate.format('YYYY-MM-DD')}`;
             localStorage.setItem('selectedDateRange',
-            selectedDateRange); // Сохраняем выбранный промежуток дат в localStorage
+                selectedDateRange); // Сохраняем выбранный промежуток дат в localStorage
         });
     });
 </script>

@@ -14,7 +14,7 @@ class SearchRoomsTest extends TestCase
     public function testSearchRoomsGet()
     {
         // Выполняем GET-запрос на маршрут search.rooms
-        $response = $this->get(route('search.rooms'));
+        $response = $this->post(route('search.rooms'));
 
         // Утверждаем, что ответ имеет статус 302 (успешный запрос)
         $response->assertStatus(302);

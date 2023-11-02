@@ -1,3 +1,7 @@
+*{
+    scroll-behavior: smooth;
+}
+
 .section-1 {
     position: relative;
     display: flex;
@@ -551,7 +555,7 @@
 }
 
 .section-4-bottom {
-    margin-bottom: 170px;
+
 }
 
 .section-4-subscription {
@@ -634,4 +638,22 @@
     color: #0C0B10;
     cursor: pointer;
     z-index: 1;
+}
+
+.section-4_anchor{
+    font-family: 'Forum', serif;
+    font-size: 30px;
+    color: #C09B5A;
+    margin-bottom: 80px;
+    transition: 0.7s;
+    width: 300px;
+    text-align: center;
+    border: solid rgba(192,155,90,1) 1px;
+    border-radius: 50px;
+    padding: 10px 0;
+}
+
+.section-4_anchor:hover{
+    border: solid rgba(255,255,255,1) 1px;
+    background-color: rgb(255,255,255);
 }

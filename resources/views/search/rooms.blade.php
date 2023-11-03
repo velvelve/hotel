@@ -9,54 +9,59 @@
             </div>
             <div class="search-carts-container">
                 @forelse ($roomsList as $room)
-                    <div class="searchResult-content__item"> <!-- Карточка номера -->
-                        <div class="item-description">
-                            <div class="item-description__leftSide-block">
-                                <img class="item-description-img" src="{{ asset($room->images[mt_rand(0, 2)]->path) }}"
-                                     alt="{{ $room->images[mt_rand(0, 2)]->filename }}">
-                                <div class="item-description__leftSide-block-text">
-                                    <p class="item-description__leftSide-block-text-heading">Описание тарифа</p>
-                                    <p>Только номер</p>
-                                    <p>Возврату не подлежит</p>
-                                    <p>Оплата баллами</p>
+                    {{--Карточка номера--}}
+                    <div class="searchResult-cart">
+                        <div class="cart-img">
+                            <img class="cart-img" src="{{ asset($room->images[mt_rand(0, 2)]->path) }}"
+                                 alt="{{ $room->images[mt_rand(0, 2)]->filename }}">
+                        </div>
+                        {{-- Сервисы:--}}
+                        <ul class="cart-includedServices">
+                            @foreach ($room->includedServices as $service)
+                                <li class="cart-icon-list">
+                                    <img class="cart-icon" src="{{ $service->icon[0]->path }}" alt="{{ $service->icon[0]->filename }}" title="{{ $service->name }}">
+                                </li>
+                            @endforeach
+                        </ul>
+                        <div class="cart-bottom-wrapper">
+                            {{--Тип комнаты--}}
+                            <div class="cart-roomType">
+                                {{ $room->roomType->name }} {{$room->viewType->description}}
+                            </div>
+                            <div class="cart-description">
+                                {{--колличество взрослых--}}
+                                <div class="cart-adults_max_guests cart-description-text_icon_wrapper">
+                                    <img class="cart-description-img" src="img/roomsSearch/cart-icons/men.svg" alt="взрослые" title="Взрослые">
+                                    <p class="cart-description-text">{{ $room->adults_max_guests}}</p>
+                                </div>
+                                {{--колличество детей--}}
+                                <div class="cart-adults_max_guests cart-description-text_icon_wrapper">
+                                    <img class="cart-description-img" src="img/roomsSearch/cart-icons/child.svg" alt="дети" title="Дети">
+                                    <p class="cart-description-text">{{$room->children_max_guests }}</p>
+                                </div>
+                                {{--полщадь комнаты--}}
+                                <div class="cart-area cart-description-text_icon_wrapper">
+                                    <img class="cart-description-img" src="img/roomsSearch/cart-icons/area.svg" alt="площадь" title="Площадь">
+                                    <p class="cart-description-text">{{$room->area}}m²</p>
+                                </div>
+                                {{--Тип кровати--}}
+                                <div class="cart-bed_type cart-description-text_icon_wrapper">
+                                    <img class="cart-description-img" src="img/roomsSearch/cart-icons/bed.svg" alt="кровать" title="Кровати">
+                                    <p class="cart-description-text">{{$room->BedType->description}}</p>
                                 </div>
                             </div>
-                            <div class="item-description__rightSide">
-                                <div class="item-description__rightSide-upperText"> <!-- Номер комнаты -->
-                                    {{ $room->roomType->name }} {{$room->viewType->description}}
-                                </div>
-                                <div class="item-description__rightSide-textDescription">
-                                    <div class="textDescription">{{ $room->description }}</div>
-                                </div>
-                                {{-- <div>Сервисы:</div> --}}
-                                <ul class="item-description__rightSide-servise">
-                                    @foreach ($room->includedServices as $service)
-                                        <li class="item-search-icon_list">
-                                            <a href="#"><img class="icon" src="{{ $service->icon[0]->path }}" alt="{{ $service->icon[0]->filename }}" title="{{ $service->name }}"></a>
-                                        </li>
-                                    @endforeach
-                                </ul>
-                                <div class="item-description__rightSide-centralText">
-                                    <!-- Максимальная вместительность -->
-                                    Максимальная вместительность: {{ $room->adults_max_guests + $room->children_max_guests }}
-                                </div>
-                                <div class="item-description__rightSide-lowerText"> <!-- Цена -->
-                                    Цена: {{ $room->price }}
+                            <div class="cart-price">
+                                {{--Цена--}}
+                                <div class="price-wrapper">
+                                    <p class="tariff">RUB {{$room->price}}</p>
+                                    <p class="tariff-discount">RUB {{round($room->price - ($room->price / 100) * 24,2) }} 24% savings </p>
                                 </div>
 
-
-                                @foreach ($room->services as $service)
-                                    {{-- <div class="item-description__leftSide-textDescription">{{ $service->name }}</div> --}}
-                                    {{-- <div>{{ $service->description }}</div> --}}
-                                @endforeach
-
+                                <form action="{{ route('bookings.create', ['room_id' => $room->id]) }}" method="GET">
+                                        <button class="cart-btn">Выбрать</button>
+                                </form>
                             </div>
                         </div>
-                        <form action="{{ route('bookings.create', ['room_id' => $room->id]) }}" method="GET">
-                            <div class="item-btn">
-                                <button>Выбрать</button>
-                            </div>
-                        </form>
                     </div>
                 @empty
                     <h2 style="color: #77635c;font-size: 50px;">Свободные номера не найдены 😥</h2>

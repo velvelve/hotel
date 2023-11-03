@@ -1,14 +1,27 @@
-.roomsSearch input {
+.roomsSearch-menu__input {
     border: none;
     outline: none;
     cursor: pointer;
 }
 
-.roomsSearch label {
+.roomsSearch-menu__guest input {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.roomsSearch-menu__type select {
+    border: none;
+    outline: none;
     cursor: pointer;
 }
 
-.roomsSearch button {
+.roomsSearch-menu__label {
+    cursor: pointer;
+}
+
+.roomsSearch-menu__btn {
     width: 124px;
     height: 36px;
     border: none;
@@ -20,6 +33,11 @@
     text-align: center;
     color: #fff;
     cursor: pointer;
+    transition: .3s;
+}
+
+.roomsSearch-menu__btn:hover {
+    opacity: .6;
 }
 
 .roomsSearch {
@@ -82,4 +100,12 @@
 .roomsSearch-menu__guest-head img,
 .roomsSearch-menu__type-head img {
     margin-right: 5px;
+}
+
+.in-range {
+    background-color: #e3dcd9 !important;
+}
+
+.active, .start-date, .end-date {
+    background-color: #79655E !important;
 }

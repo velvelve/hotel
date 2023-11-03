@@ -20,11 +20,14 @@ class RegistrationAuthorizationTest extends TestCase
     {
         // Задаем данные пользователя для регистрации
         $data = [
-            'first_name' => 'Андрей',
-            'last_name' => 'Смирнов',
+            'first_name' => 'Иван',
+
+            'last_name' => 'Иванов',
             'email' => 'kwuhn.dax@example.net',
-            'password' => 'password',
-            'password_confirmation' => 'password',
+            'tel' => '+123456789', // Устанавливаем значение для поля телефона
+            'password' => 'password', // Устанавливаем пароль
+            'password_confirmation' => 'password', // Устанавливаем подтверждение пароля
+
         ];
 
         // Отправляем POST-запрос на роут регистрации
@@ -36,8 +39,9 @@ class RegistrationAuthorizationTest extends TestCase
 
         // Проверьте, что пользователь был добавлен в базу данных
         $this->assertDatabaseHas('users', [
-            'first_name' => 'Андрей',
-            'last_name' => 'Смирнов',
+            'first_name' => 'Иван',
+
+            'last_name' => 'Иванов',
             'email' => 'kwuhn.dax@example.net',
         ]);
 

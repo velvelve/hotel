@@ -2,17 +2,34 @@
     <div class="position-sticky pt-3">
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link @if(request()->routeIs('admin.dashboard')) active @endif" aria-current="page" href="{{ route('admin.dashboard') }}">
+                <a class="nav-link @if (request()->routeIs('admin.index')) active @endif" aria-current="page"
+                    href="{{ route('admin.index') }}">
                     <span>📊</span>
                     Информационная доска
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <span>🚪</span>
-                    Номера
+                <a class="nav-link @if (request()->routeIs('admin.locations.index')) active @endif" aria-current="page"
+                    href="{{ route('admin.locations.index') }}">
+                    <span>⛳</span>
+                    Локации
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link @if (request()->routeIs('admin.countries.index')) active @endif" aria-current="page"
+                    href="{{ route('admin.countries.index') }}">
+                    <span>🎌</span>
+                    Страны
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link @if (request()->routeIs('admin.cities.index')) active @endif" aria-current="page"
+                    href="{{ route('admin.cities.index') }}">
+                    <span>🏰</span>
+                    Города
+                </a>
+            </li>
+
             <li class="nav-item">
                 <a class="nav-link" href="#">
                     <span>☎</span>

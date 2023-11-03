@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Hotel admin panel</title>
-
     <!-- Bootstrap core CSS -->
     <link href="{{ asset('css/admin/bootstrap.min.css') }}" rel="stylesheet">
 
@@ -24,7 +24,6 @@
             }
         }
     </style>
-
 
     <!-- Custom styles for this template -->
     <link href="{{ asset('css/admin/dashboard.css') }}" rel="stylesheet">
@@ -51,6 +50,7 @@
         integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous">
     </script>
     <script src="{{ asset('js/admin/dashboard.js') }}"></script>
+    @stack('js')
 </body>
 
 </html>

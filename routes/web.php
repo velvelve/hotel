@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Admin\LocationController as AdminLocationController;
+use App\Http\Controllers\Admin\CityController as AdminCityController;
+use App\Http\Controllers\Admin\CountryController as AdminCountryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Auth\ChangePasswordController;
 use App\Http\Controllers\Auth\EmailVerificationController;
@@ -42,7 +45,11 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 //Админка
 Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin.'], static function () {
-    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/', [DashboardController::class, 'index'])->name('index');
+    Route::resource('/locations', AdminLocationController::class);
+    Route::get('/locations/{country_id}/city', [AdminLocationController::class, 'city'])->name('location.city');
+    Route::resource('/cities', AdminCityController::class);
+    Route::resource('/countries', AdminCountryController::class);
 });
 
 //регистрация

@@ -1,0 +1,7 @@
+{
+    "Record was saved successfully": "Record was saved successfully",
+    "We can not save item, please try again": "We can not save item, please try again",
+    "We can not delete location, it has hotel bounded": "We can not delete location, it has hotel bounded",
+    "We can not delete city, it has location bounded": "We can not delete city, it has location bounded",
+    "We can not delete country, it has location bounded": "We can not delete country, it has location bounded"
+}

@@ -9,9 +9,18 @@
             </div>
             <div class="search-carts-container">
                 @forelse ($roomsList as $room)
+                    {{--Модальное окно--}}
+                    <div class="modal" id="modal-{{$room->id}}">
+                        <div class="modal-box">
+                            <div class="modal-title">
+                                <div class="modal-room-type">{{ $room->roomType->name }} {{$room->viewType->description}}</div>
+                                <img class="modal-close" id="close-modal-{{$room->id}}" src="img/roomsSearch/cart-icons/close.svg" alt="close">
+                            </div>
+                        </div>
+                    </div>
                     {{--Карточка номера--}}
-                    <div class="searchResult-cart">
-                        <div class="cart-img">
+                    <div class="searchResult-cart" >
+                        <div class="cart-img" id="open-modal-{{$room->id}}">
                             <img class="cart-img" src="{{ asset($room->images[mt_rand(0, 2)]->path) }}"
                                  alt="{{ $room->images[mt_rand(0, 2)]->filename }}">
                         </div>
@@ -69,4 +78,14 @@
             </div>
         </div>
     </div>
+    <script>
+        @foreach($roomsList as $room)
+        document.getElementById("open-modal-{{$room->id}}").addEventListener("click",function (){
+            document.getElementById("modal-{{$room->id}}").classList.add("open")
+        })
+        document.getElementById("close-modal-{{$room->id}}").addEventListener("click",function (){
+            document.getElementById("modal-{{$room->id}}").classList.remove("open")
+        })
+        @endforeach
+    </script>
 @endsection

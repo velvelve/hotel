@@ -58,7 +58,7 @@
 .search-carts-container{
     display: grid;
     grid-template-columns: auto auto auto;
-    gap: 50px;
+    gap: 75px;
 }
 
 .searchResult-cart {

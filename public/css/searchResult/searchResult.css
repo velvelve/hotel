@@ -7,7 +7,6 @@
     width: 100%;
     min-height: 100vh;
     max-height: 100%;
-    background: rgb(120, 104, 83);
     background: linear-gradient(90deg, rgba(120, 104, 83, 1) 0%, rgba(217, 235, 235, 1) 100%);
     padding-bottom: 50px;
 }
@@ -26,6 +25,7 @@
     width: 1500px;
     flex-wrap: wrap;
     margin: auto;
+    font-family: 'Forum', serif;
 }
 
 .searchResults {
@@ -105,12 +105,19 @@
 }
 
 .cart-roomType{
-    font-family: 'Forum', serif;
     font-weight: 400;
     font-size: 32px;
     text-align: center;
     color: #79655E;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: 0.5s;
+    border-bottom: solid rgba(6,94, 114, 0) 1px;
+}
+
+.cart-roomType:hover{
+    text-shadow: 20px 20px 20px rgba(0, 0, 0, 0.25);
+    border-bottom: solid rgba(6,94, 114, 0.3) 1px;
 }
 
 .cart-description{
@@ -125,7 +132,6 @@
 }
 
 .cart-description-text{
-    font-family: 'Forum', serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -148,7 +154,6 @@
 }
 
 .price-wrapper {
-    font-family: 'Forum', serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -216,7 +221,7 @@
 .modal-title {
     width: 100%;
     height: 80px;
-    background-color: #7C959A;
+    background-color: #0a5c6f;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -229,7 +234,6 @@
 }
 
 .modal-room-type{
-    font-family: 'Forum', serif;
     font-style: normal;
     font-weight: 400;
     font-size: 40px;
@@ -237,4 +241,175 @@
     color: #F8B94A;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
     padding-left: 25px;
+}
+
+.modal-img-wrapper{
+    display: grid;
+    grid-template-columns: 720px 300px 380px;
+    gap: 25px;
+    padding: 25px;
+}
+
+.modal-img-0{
+    width: 720px;
+    height: 500px;
+    object-fit: cover;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.modal-img-1{
+    width: 300px;
+    height: 500px;
+    object-fit: cover;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.modal-img-2{
+    width: 380px;
+    height: 237px;
+    object-fit: cover;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.modal-right-img{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.modal-bottom{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 25px;
+    height: 320px;
+    background-color: #DBDBDB;
+    gap: 25px;
+}
+
+.modal-left-wrapper{
+    width: 720px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.modal-right-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.modal-description{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.modal-description-text_icon_wrapper{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    min-width: 100px;
+    max-width: 250px;
+}
+
+.modal-description-img{
+    height: 50px;
+}
+
+.modal-description-text{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 98.5%;
+    text-align: center;
+    color: #79655E;
+}
+
+.modal-icon-list{
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    gap: 5px;
+    width: 200px;
+}
+
+.modal-icon{
+    height: 50px;
+}
+
+.modal-icon-text{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 98.5%;
+    display: flex;
+    text-align: center;
+    color: #79655E;
+}
+
+.modal-includedServices{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+    align-items: center;
+    height: 180px;
+    padding: 30px;
+}
+
+.modal-services{
+    background-color: rgba(124,149,154,0.2);
+}
+
+.modal-description{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 98.5%;
+    color: #79655E;
+}
+
+.modal-price-wrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.modal-price{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 98.5%;
+}
+
+.modal-tariff{
+    color: #79655E;
+}
+
+.modal-tariff-discount{
+    color: #CE6845;
+}
+
+.modal-btn{
+    width: 240px;
+    height: 62px;
+    background: rgba(192, 155, 90, 0.6);
+    border: 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+    font-style: normal;
+    font-weight: 200;
+    font-size: 20px;
+    line-height: 98.5%;
+    color: #79655E;
+    transition: 0.7s;
+    cursor: pointer;
+}
+
+.modal-btn:hover {
+    color: #DBDBDB;
+    background: #79655E;
+    box-shadow: 0 0 0 rgba(0,0,0,0.25);
 }

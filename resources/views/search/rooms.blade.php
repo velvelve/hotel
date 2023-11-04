@@ -16,12 +16,70 @@
                                 <div class="modal-room-type">{{ $room->roomType->name }} {{$room->viewType->description}}</div>
                                 <img class="modal-close" id="close-modal-{{$room->id}}" src="img/roomsSearch/cart-icons/close.svg" alt="close">
                             </div>
+                            <div class="modal-img-wrapper">
+                                <img class="modal-img-0" src="{{$room->images[0]->path}}" alt="{{ $room->images[0]->filename }}">
+                                <img class="modal-img-1" src="{{$room->images[1]->path}}" alt="{{ $room->images[0]->filename }}">
+                                <div class="modal-right-img">
+                                    <img class="modal-img-2" src="{{$room->images[2]->path}}" alt="{{ $room->images[0]->filename }}">
+                                    <img class="modal-img-2" src="{{$room->images[3]->path}}" alt="{{ $room->images[0]->filename }}">
+                                </div>
+                            </div>
+                            <div class="modal-bottom">
+                                <div class="modal-left-wrapper">
+                                    <div class="modal-description">
+                                        {{--колличество взрослых--}}
+                                        <div class="modal-adults_max_guests modal-description-text_icon_wrapper">
+                                            <img class="modal-description-img" src="img/roomsSearch/cart-icons/men.svg" alt="взрослые" title="Взрослые">
+                                            <p class="modal-description-text">{{ $room->adults_max_guests}} @choice('messages.adult_plural', $room->adults_max_guests)</p>
+                                        </div>
+                                        {{--колличество детей--}}
+                                        <div class="modal-adults_max_guests modal-description-text_icon_wrapper">
+                                            <img class="modal-description-img" src="img/roomsSearch/cart-icons/child.svg" alt="дети" title="Дети">
+                                            <p class="modal-description-text">{{$room->children_max_guests }} @choice('messages.child_plural', $room->children_max_guests) (0-11 лет)</p>
+                                        </div>
+                                        {{--полщадь комнаты--}}
+                                        <div class="modal-area modal-description-text_icon_wrapper">
+                                            <img class="modal-description-img" src="img/roomsSearch/cart-icons/area.svg" alt="площадь" title="Площадь">
+                                            <p class="modal-description-text">{{$room->area}}m²</p>
+                                        </div>
+                                        {{--Тип кровати--}}
+                                        <div class="modal-bed_type modal-description-text_icon_wrapper">
+                                            <img class="modal-description-img" src="img/roomsSearch/cart-icons/bed.svg" alt="кровать" title="Кровати">
+                                            <p class="modal-description-text">{{$room->BedType->description}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="modal-services">
+                                        <ul class="modal-includedServices">
+                                            @foreach ($room->includedServices as $service)
+                                                <li class="modal-icon-list">
+                                                    <img class="modal-icon" src="{{ $service->icon[0]->path }}" alt="{{ $service->icon[0]->filename }}" title="{{ $service->name }}">
+                                                    <p class="modal-icon-text">{{$service->name}}</p>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="modal-right-wrapper">
+                                    <div class="modal-description">
+                                        {{$room->description}}
+                                    </div>
+                                    <div class="modal-price-wrapper">
+                                        <div class="modal-price">
+                                            <p class="modal-tariff">RUB {{$room->price}}</p>
+                                            <p class="modal-tariff-discount">RUB {{round($room->price - ($room->price / 100) * 24,2) }} 24% savings </p>
+                                        </div>
+                                        <form action="{{ route('bookings.create', ['room_id' => $room->id]) }}" method="GET">
+                                            <button class="modal-btn">Выбрать</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     {{--Карточка номера--}}
                     <div class="searchResult-cart" >
                         <div class="cart-img" id="open-modal-{{$room->id}}">
-                            <img class="cart-img" src="{{ asset($room->images[mt_rand(0, 2)]->path) }}"
+                            <img class="cart-img" src="{{$room->images[mt_rand(0, 2)]->path}}"
                                  alt="{{ $room->images[mt_rand(0, 2)]->filename }}">
                         </div>
                         {{-- Сервисы:--}}
@@ -34,7 +92,7 @@
                         </ul>
                         <div class="cart-bottom-wrapper">
                             {{--Тип комнаты--}}
-                            <div class="cart-roomType">
+                            <div class="cart-roomType" id="open-modal-room_type-{{$room->id}}" >
                                 {{ $room->roomType->name }} {{$room->viewType->description}}
                             </div>
                             <div class="cart-description">
@@ -80,7 +138,10 @@
     </div>
     <script>
         @foreach($roomsList as $room)
-        document.getElementById("open-modal-{{$room->id}}").addEventListener("click",function (){
+        document.getElementById("open-modal-{{$room->id}}",).addEventListener("click",function (){
+            document.getElementById("modal-{{$room->id}}").classList.add("open")
+        })
+        document.getElementById("open-modal-room_type-{{$room->id}}").addEventListener("click",function (){
             document.getElementById("modal-{{$room->id}}").classList.add("open")
         })
         document.getElementById("close-modal-{{$room->id}}").addEventListener("click",function (){

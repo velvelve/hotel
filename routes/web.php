@@ -42,7 +42,9 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 //Админка
 Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin.'], static function () {
-    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::group(['middleware' => 'admin.employee'], function () {
+        Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    });
 });
 
 //регистрация

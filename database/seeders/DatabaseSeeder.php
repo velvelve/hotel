@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
 
         // Truncate tables
         DB::table('notifications')->truncate();
+        DB::table('roles')->truncate();
         DB::table('view_types')->truncate();
         DB::table('bed_types')->truncate();
         DB::table('room_types')->truncate();
@@ -37,6 +38,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             NotificationSeeder::class,
+            RoleSeeder::class,
             LocationSeeder::class,
             HotelSeeder::class,
             PhoneSeeder::class,

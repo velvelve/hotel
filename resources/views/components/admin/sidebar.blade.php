@@ -8,6 +8,20 @@
                     Информационная доска
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link @if (request()->routeIs('admin.view-type.index')) active @endif" aria-current="page"
+                    href="{{ route('admin.view-type.index') }}">
+                    <span>🔲</span>
+                    Виды из окна
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link @if (request()->routeIs('admin.notification-preference.index')) active @endif" aria-current="page"
+                    href="{{ route('admin.notification-preference.index') }}">
+                    <span>📲</span>
+                    Настройки уведомлений
+                </a>
+            </li>
             @if (auth()->user()->isAdmin())
                 <li class="nav-item">
                     <a class="nav-link @if (request()->routeIs('admin.locations.index')) active @endif" aria-current="page"
@@ -28,13 +42,6 @@
                         href="{{ route('admin.cities.index') }}">
                         <span>🏰</span>
                         Города
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link @if (request()->routeIs('admin.notification-preference.index')) active @endif" aria-current="page"
-                        href="{{ route('admin.notification-preference.index') }}">
-                        <span>📜</span>
-                        Настройки уведомлений
                     </a>
                 </li>
             @endif

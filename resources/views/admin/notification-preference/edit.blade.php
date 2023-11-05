@@ -1,8 +1,8 @@
 @extends('layouts.admin')
 @section('content')
-    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Редактирование настройки уведомлений</h1>
-        <br>
+    <div
+        class="d-flex justify-content-between flex-wrap flex-column flex-md-nowrap align-items-start pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="d-block" class="h2">Редактирование настройки уведомлений</h1>
         <h3>Пользователь: {{ $user->first_name }} {{ $user->last_name }} {{ $user->email }}</h3>
         <div class="btn-toolbar mb-2 mb-md-0">
 

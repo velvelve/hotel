@@ -4,5 +4,6 @@
     "We can not delete location, it has hotel bounded": "We can not delete location, it has hotel bounded",
     "We can not delete city, it has location bounded": "We can not delete city, it has location bounded",
     "We can not delete country, it has location bounded": "We can not delete country, it has location bounded",
-    "No users without notification prefernces": "No users without notification prefernces"
+    "No users without notification prefernces": "No users without notification prefernces",
+    "We can not delete this item, it has room bounded": "We can not delete this item, it has room bounded"
 }

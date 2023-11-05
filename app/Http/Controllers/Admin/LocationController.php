@@ -38,11 +38,6 @@ class LocationController extends Controller
         return back()->with('error', __('We can not save item, please try again'));
     }
 
-    public function show(string $id)
-    {
-        //
-    }
-
     public function edit(Location $location)
     {
         $countries = Country::all();

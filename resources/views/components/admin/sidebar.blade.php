@@ -16,6 +16,13 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link @if (request()->routeIs('admin.bed-type.index')) active @endif" aria-current="page"
+                    href="{{ route('admin.bed-type.index') }}">
+                    <span>🛌</span>
+                    Виды кроватей
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link @if (request()->routeIs('admin.notification-preference.index')) active @endif" aria-current="page"
                     href="{{ route('admin.notification-preference.index') }}">
                     <span>📲</span>

@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\CityController as AdminCityController;
 use App\Http\Controllers\Admin\CountryController as AdminCountryController;
 use App\Http\Controllers\Admin\NotificationPreferenceController as AdminNotificationPreferenceController;
 use App\Http\Controllers\Admin\ViewTypeController as AdminViewTypeController;
+use App\Http\Controllers\Admin\BedTypeController as AdminBedTypeController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Auth\ChangePasswordController;
 use App\Http\Controllers\Auth\EmailVerificationController;
@@ -51,6 +52,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin.'], st
         Route::get('/', [DashboardController::class, 'index'])->name('index');
         Route::resource('/notification-preference', AdminNotificationPreferenceController::class);
         Route::resource('/view-type', AdminViewTypeController::class);
+        Route::resource('/bed-type', AdminBedTypeController::class);
     });
     Route::group(['middleware' => 'admin'], function () {
         Route::resource('/locations', AdminLocationController::class);

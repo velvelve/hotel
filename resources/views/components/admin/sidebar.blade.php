@@ -8,28 +8,36 @@
                     Информационная доска
                 </a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link @if (request()->routeIs('admin.locations.index')) active @endif" aria-current="page"
-                    href="{{ route('admin.locations.index') }}">
-                    <span>⛳</span>
-                    Локации
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link @if (request()->routeIs('admin.countries.index')) active @endif" aria-current="page"
-                    href="{{ route('admin.countries.index') }}">
-                    <span>🎌</span>
-                    Страны
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link @if (request()->routeIs('admin.cities.index')) active @endif" aria-current="page"
-                    href="{{ route('admin.cities.index') }}">
-                    <span>🏰</span>
-                    Города
-                </a>
-            </li>
-
+            @if (auth()->user()->isAdmin())
+                <li class="nav-item">
+                    <a class="nav-link @if (request()->routeIs('admin.locations.index')) active @endif" aria-current="page"
+                        href="{{ route('admin.locations.index') }}">
+                        <span>⛳</span>
+                        Локации
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @if (request()->routeIs('admin.countries.index')) active @endif" aria-current="page"
+                        href="{{ route('admin.countries.index') }}">
+                        <span>🎌</span>
+                        Страны
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @if (request()->routeIs('admin.cities.index')) active @endif" aria-current="page"
+                        href="{{ route('admin.cities.index') }}">
+                        <span>🏰</span>
+                        Города
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link @if (request()->routeIs('admin.notification-preference.index')) active @endif" aria-current="page"
+                        href="{{ route('admin.notification-preference.index') }}">
+                        <span>📜</span>
+                        Настройки уведомлений
+                    </a>
+                </li>
+            @endif
             <li class="nav-item">
                 <a class="nav-link" href="#">
                     <span>☎</span>

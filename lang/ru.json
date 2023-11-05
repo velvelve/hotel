@@ -3,5 +3,6 @@
     "We can not save item, please try again": "Не удалось сохранить запись",
     "We can not delete location, it has hotel bounded": "Мы не можем удалить локацию, к ней привязан действующий отель",
     "We can not delete city, it has location bounded": "Мы не можем удалить город, существует связанная с ним локация",
-    "We can not delete country, it has location bounded": "Мы не можем удалить страну, существует связанная с ней локация"
+    "We can not delete country, it has location bounded": "Мы не можем удалить страну, существует связанная с ней локация",
+    "No users without notification prefernces": "Нет пользователей с невыбранными настройками уведомлений"
 }

@@ -242,7 +242,10 @@
                     <div class="current-balance-points">Баллов: <span class="points">0</span></div>
                     <div class="current-balance-nights">Ночей: <span class="nights">0</span></div>
                     <!--Позже как добавим user is_admin  выставить тут проверку -->
-                    <a href="{{ route('admin.index') }}">Перейдите в админ-панель</a>
+                    @if (auth()->user()->isAdmin() ||
+                            auth()->user()->isEmployee())
+                        <a href="{{ route('admin.index') }}">Перейдите в админ-панель</a>
+                    @endif
                 </div>
             </div>
         </div>

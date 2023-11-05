@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -16,7 +15,8 @@ class DatabaseSeeder extends Seeder
     {
 
         // Truncate tables
-        DB::table('notifications')->truncate();
+        DB::table('notification_preferences')->truncate();
+        DB::table('roles')->truncate();
         DB::table('view_types')->truncate();
         DB::table('bed_types')->truncate();
         DB::table('room_types')->truncate();
@@ -33,10 +33,13 @@ class DatabaseSeeder extends Seeder
         DB::table('phones')->truncate();
         DB::table('hotels')->truncate();
         DB::table('locations')->truncate();
+        DB::table('cities')->truncate();
+        DB::table('countries')->truncate();
 
 
         $this->call([
             NotificationSeeder::class,
+            RoleSeeder::class,
             LocationSeeder::class,
             HotelSeeder::class,
             PhoneSeeder::class,

@@ -25,11 +25,13 @@ return new class extends Migration
             $table->enum('gender', Gender::getGenderTypes())->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->unsignedBigInteger('notification_id')->nullable();
+            $table->unsignedBigInteger('notification_preference_id')->nullable();
+            $table->unsignedBigInteger('role_id')->default(1);
             $table->rememberToken();
             $table->timestamps();
 
-            $table->foreign('notification_id')->references('id')->on('notifications')->onDelete('cascade');
+            $table->foreign('notification_preference_id')->references('id')->on('notification_preferences')->onDelete('cascade');
+            $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
         });
     }
 

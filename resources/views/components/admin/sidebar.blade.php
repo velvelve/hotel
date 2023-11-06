@@ -9,6 +9,13 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link @if (request()->routeIs('admin.bookings.index')) active @endif" aria-current="page"
+                    href="{{ route('admin.bookings.index') }}">
+                    <span>📆</span>
+                    Бронирования
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link @if (request()->routeIs('admin.view-types.index')) active @endif" aria-current="page"
                     href="{{ route('admin.view-types.index') }}">
                     <span>🔲</span>
@@ -69,12 +76,6 @@
                 <a class="nav-link" href="#">
                     <span>😀</span>
                     Пользователи
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <span>🛎</span>
-                    Бронирования
                 </a>
             </li>
             <li class="nav-item">

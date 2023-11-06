@@ -6,5 +6,6 @@
     "We can not delete country, it has location bounded": "Мы не можем удалить страну, существует связанная с ней локация",
     "No users without notification prefernces": "Нет пользователей с невыбранными настройками уведомлений",
     "We can not delete this item, it has room bounded": "Мы не можем удалить эту запись, существует связанная с ней комната",
-    "We can not delete this item, it is service icon, you need to delete service first": "Мы не можем удалить это изображение - это иконка сервиса, сначала удалите связанный сервис"
+    "We can not delete this item, it is service icon, you need to delete service first": "Мы не можем удалить это изображение - это иконка сервиса, сначала удалите связанный сервис",
+    "We can not save item, its dates overlap other bookings": "Мы не можем сохранить бронирование, есть конфликты с датами других бронирований"
 }

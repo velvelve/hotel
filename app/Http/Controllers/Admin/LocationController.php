@@ -41,7 +41,7 @@ class LocationController extends Controller
     public function edit(Location $location)
     {
         $countries = Country::all();
-        return \view('admin.locations.edit', [
+        return view('admin.locations.edit', [
             'location' => $location,
             'countries' => $countries,
         ]);

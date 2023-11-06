@@ -6,5 +6,6 @@
     "We can not delete country, it has location bounded": "We can not delete country, it has location bounded",
     "No users without notification prefernces": "No users without notification prefernces",
     "We can not delete this item, it has room bounded": "We can not delete this item, it has room bounded",
-    "We can not delete this item, it is service icon, you need to delete service first": "We can not delete this item, it is service icon, you need to delete service first"
+    "We can not delete this item, it is service icon, you need to delete service first": "We can not delete this item, it is service icon, you need to delete service first",
+    "We can not save item, its dates overlap other bookings": "We can not save item, its dates overlap other bookings"
 }

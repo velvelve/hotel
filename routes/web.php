@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\TypeRoomController;
 use App\Http\Controllers\Auth\ChangePasswordController;
 use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
@@ -44,6 +45,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin.'], static function () {
     Route::group(['middleware' => 'admin.employee'], function () {
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+        Route::resource('/types-rooms', TypeRoomController::class)->parameters(['types-rooms' => 'typeRoom']);;
     });
 });
 

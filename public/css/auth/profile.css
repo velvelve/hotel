@@ -141,7 +141,9 @@
     background-color: #eeeaea;
 }
 
-.reservation-content__current-content, .reservation-content__past-content, .reservation-content__canceled-content {
+.reservation-content__current-content,
+.reservation-content__past-content,
+.reservation-content__canceled-content {
     margin-top: 50px;
     padding-left: 20px;
     font-family: "Forum", serif;
@@ -190,6 +192,7 @@
     color: #fff;
     cursor: pointer;
 }
+
 .profileSettings-nav-link-active {
     border-bottom: 1px solid #fff;
 }
@@ -256,7 +259,6 @@
     height: 42px;
     padding: 0 15px 0 15px;
     border: 1px solid #79655e;
-    border-radius: 50px;
     outline: none;
     font-family: "Manrope", serif;
     font-size: 18px;
@@ -305,7 +307,6 @@
     width: 203px;
     height: 43px;
     border: none;
-    border-radius: 50px;
     background: #79655E;
     font-family: "Manrope", serif;
     font-size: 20px;
@@ -360,7 +361,6 @@
     margin-top: 5px;
     padding: 0 15px 0 15px;
     border: 1px solid #79655e;
-    border-radius: 50px;
     outline: none;
     font-family: "Manrope", serif;
     font-size: 18px;
@@ -474,18 +474,23 @@
     color: #79655e;
 }
 
-.current-balance-points, .current-balance-nights {
+.current-balance-points,
+.current-balance-nights {
     font-family: "Forum", serif;
     font-size: 22px;
     color: #79655e;
 }
 
-.points, .nights {
+.points,
+.nights {
     font-family: "Forum", serif;
     font-size: 22px;
     color: #CE6845;
 }
 
-.profileInfo-logout-btn, .current-balance, .current-balance-points, .current-balance-nights {
+.profileInfo-logout-btn,
+.current-balance,
+.current-balance-points,
+.current-balance-nights {
     margin-left: 15px;
 }

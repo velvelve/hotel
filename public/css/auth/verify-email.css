@@ -23,7 +23,6 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    border-radius: 30px;
     font-style: normal;
     line-height: normal;
     font-weight: 400;
@@ -55,17 +54,16 @@
     text-align: center;
     font-family: Forum;
     font-size: 16px;
-    margin: 47px 0 16px 0           ;
+    margin: 47px 0 16px 0;
 }
 
 .verify-email__button {
-    margin:  0 auto;
+    margin: 0 auto;
     display: block;
     border: none;
     color: #453834;
     width: 230px;
     height: 48px;
-    border-radius: 4px;
     background: #C09B5A;
     font-family: Montserrat;
     font-size: 14px;

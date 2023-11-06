@@ -69,6 +69,7 @@
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
+    transition: 0.7s;
 }
 
 .verify-email__button:active {
@@ -76,4 +77,7 @@
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 
-.verify-email__img {}
+.verify-email__button:hover {
+    color: #ffff;
+    background: #79655E;
+}

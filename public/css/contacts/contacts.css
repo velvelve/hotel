@@ -352,16 +352,18 @@ select:focus {
     height: 61px;
     width: 363px;
     text-align: center;
-    border: none;
-    color: #ffffff;
+    color: #463820;
     font-size: 24px;
-    background: linear-gradient(to top, #463820, #BFB7A8);
+    background: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+    transition: 0.7s;
 }
 
 .button:hover {
-    background: linear-gradient(to top, #BFB7A8, #FFFFFF);
-    color: #463820;
-    border: none;
+    color: #ffffff;
+    background-color: rgb(192, 155, 90);
 }
 
 .twitter,

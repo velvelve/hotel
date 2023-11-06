@@ -28,7 +28,7 @@ class BedTypeController extends Controller
     {
         $bedType = new BedType($request->validated());
         if ($bedType->save()) {
-            return redirect()->route('admin.bed-type.index')->with('success', __('Record was saved successfully'));
+            return redirect()->route('admin.bed-types.index')->with('success', __('Record was saved successfully'));
         }
         return back()->with('error', __('We can not save item, please try again'));
     }
@@ -46,7 +46,7 @@ class BedTypeController extends Controller
 
         $bedType = $bedType->fill($validated);
         if ($bedType->save()) {
-            return redirect()->route('admin.bed-type.index')->with('success', __('Record was saved successfully'));
+            return redirect()->route('admin.bed-types.index')->with('success', __('Record was saved successfully'));
         }
         return back()->with('error', __('We can not save item, please try again'));
     }
@@ -55,7 +55,7 @@ class BedTypeController extends Controller
     {
         $room = Room::where('bed_type_id', $bedType->id)->first();
         if ($room !== null) {
-            redirect()->route('admin.bed-type.index')->with('error', __('We can not delete this item, it has room bounded'));
+            redirect()->route('admin.bed-types.index')->with('error', __('We can not delete this item, it has room bounded'));
             return response()->json('ok');
         }
         try {

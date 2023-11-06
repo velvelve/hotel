@@ -11,18 +11,18 @@
                         <div class="searchResult-content__item"> <!-- Карточка номера -->
                             <div class="item-description">
                                 <div class="item-description__leftSide-block">
-                                <img class="item-description-img" src="{{ asset($room->images[mt_rand(0, 2)]->path) }}"
-                                    alt="{{ $room->images[mt_rand(0, 2)]->filename }}">
+                                    <img class="item-description-img" src="{{ $room->images[mt_rand(0, 2)]->path }}"
+                                        alt="{{ $room->images[mt_rand(0, 2)]->filename }}">
                                     <div class="item-description__leftSide-block-text">
                                         <p class="item-description__leftSide-block-text-heading">Описание тарифа</p>
                                         <p>Только номер</p>
                                         <p>Возврату не подлежит</p>
-                                        <p>Оплата баллами</p>    
+                                        <p>Оплата баллами</p>
                                     </div>
                                 </div>
                                 <div class="item-description__rightSide">
                                     <div class="item-description__rightSide-upperText"> <!-- Номер комнаты -->
-                                        {{ $room->roomType->name }} {{$room->viewType->description}} 
+                                        {{ $room->roomType->name }} {{ $room->viewType->description }}
                                     </div>
                                     <div class="item-description__rightSide-textDescription">
                                         <div class="textDescription">{{ $room->description }}</div>
@@ -31,18 +31,21 @@
                                     <ul class="item-description__rightSide-servise">
                                         @foreach ($room->includedServices as $service)
                                             <li class="item-search-icon_list">
-                                                <a href="#"><img class="icon" src="{{ $service->icon[0]->path }}" alt="{{ $service->icon[0]->filename }}" title="{{ $service->name }}"></a>
+                                                <a href="#"><img class="icon" src="{{ $service->icon[0]->path }}"
+                                                        alt="{{ $service->icon[0]->filename }}"
+                                                        title="{{ $service->name }}"></a>
                                             </li>
                                         @endforeach
-                                    </ul> 
+                                    </ul>
                                     <div class="item-description__rightSide-centralText">
                                         <!-- Максимальная вместительность -->
-                                        Максимальная вместительность: {{ $room->adults_max_guests + $room->children_max_guests }}
+                                        Максимальная вместительность:
+                                        {{ $room->adults_max_guests + $room->children_max_guests }}
                                     </div>
                                     <div class="item-description__rightSide-lowerText"> <!-- Цена -->
                                         Цена: {{ $room->price }}
-                                    </div>  
-                                    
+                                    </div>
+
 
                                     @foreach ($room->services as $service)
                                         {{-- <div class="item-description__leftSide-textDescription">{{ $service->name }}</div> --}}

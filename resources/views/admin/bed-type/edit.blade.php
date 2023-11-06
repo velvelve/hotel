@@ -13,7 +13,7 @@
                 <x-alert :message="$error" type="danger"></x-alert>
             @endforeach
         @endif
-        <form method="POST" action="{{ route('admin.bed-type.update', ['bed_type' => $bedType]) }}" id="store_form">
+        <form method="POST" action="{{ route('admin.bed-types.update', ['bed_type' => $bedType]) }}" id="store_form">
             @csrf
             @method('PUT')
             <div class="form-group">

@@ -9,24 +9,31 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link @if (request()->routeIs('admin.view-type.index')) active @endif" aria-current="page"
-                    href="{{ route('admin.view-type.index') }}">
+                <a class="nav-link @if (request()->routeIs('admin.view-types.index')) active @endif" aria-current="page"
+                    href="{{ route('admin.view-types.index') }}">
                     <span>🔲</span>
                     Виды из окна
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link @if (request()->routeIs('admin.bed-type.index')) active @endif" aria-current="page"
-                    href="{{ route('admin.bed-type.index') }}">
+                <a class="nav-link @if (request()->routeIs('admin.bed-types.index')) active @endif" aria-current="page"
+                    href="{{ route('admin.bed-types.index') }}">
                     <span>🛌</span>
                     Виды кроватей
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link @if (request()->routeIs('admin.notification-preference.index')) active @endif" aria-current="page"
-                    href="{{ route('admin.notification-preference.index') }}">
+                <a class="nav-link @if (request()->routeIs('admin.notification-preferences.index')) active @endif" aria-current="page"
+                    href="{{ route('admin.notification-preferences.index') }}">
                     <span>📲</span>
                     Настройки уведомлений
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link @if (request()->routeIs('admin.images.index')) active @endif" aria-current="page"
+                    href="{{ route('admin.images.index') }}">
+                    <span>⛺</span>
+                    Изображения
                 </a>
             </li>
             @if (auth()->user()->isAdmin())

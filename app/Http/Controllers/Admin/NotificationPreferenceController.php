@@ -28,7 +28,7 @@ class NotificationPreferenceController extends Controller
                 'users' => $noNotificationPrefsUsers,
             ]);
         } else {
-            return redirect()->route('admin.notification-preference.index')->with('error', __('No users without notification prefernces'));
+            return redirect()->route('admin.notification-preferences.index')->with('error', __('No users without notification prefernces'));
         }
     }
 
@@ -40,7 +40,7 @@ class NotificationPreferenceController extends Controller
 
                 User::where('id', $request->input('user_id'))
                     ->update(['notification_preference_id' => $notificationPreference->id]);
-                return redirect()->route('admin.notification-preference.index')->with('success', __('Record was saved successfully'));
+                return redirect()->route('admin.notification-preferences.index')->with('success', __('Record was saved successfully'));
             }, 2);
         } catch (Exception $e) {
             return back()->with('error', $e->getMessage());
@@ -63,7 +63,7 @@ class NotificationPreferenceController extends Controller
         $notificationPreference->bonus_earnings = $request->has('bonus_earnings');
         $notificationPreference->feedback_responses = $request->has('feedback_responses');
         if ($notificationPreference->save()) {
-            return redirect()->route('admin.notification-preference.index')->with('success', __('Record was saved successfully'));
+            return redirect()->route('admin.notification-preferences.index')->with('success', __('Record was saved successfully'));
         }
         return back()->with('error', __('We can not save item, please try again'));
     }

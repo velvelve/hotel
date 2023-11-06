@@ -12,6 +12,13 @@ class Image extends Model
 
     protected $table = 'images';
 
+    protected $fillable = [
+        'hotel_id',
+        'room_id',
+        'filename',
+        'path',
+    ];
+
     public function hotel(): BelongsTo
     {
         return $this->belongsTo(Hotel::class, 'hotel_id');
@@ -21,5 +28,4 @@ class Image extends Model
     {
         return $this->belongsTo(Room::class, 'room_id');
     }
-
 }

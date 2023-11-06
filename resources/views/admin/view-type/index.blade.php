@@ -4,7 +4,7 @@
         <h1 class="h2">Список типов вида из окна номера</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group me-2">
-                <a href="{{ route('admin.view-type.create') }}" class="btn btn-sm btn-outline-secondary">Добавить
+                <a href="{{ route('admin.view-types.create') }}" class="btn btn-sm btn-outline-secondary">Добавить
                     тип вида из номера</a>
             </div>
         </div>
@@ -26,7 +26,7 @@
                         <td>{{ $viewType->id }}</td>
                         <td>{{ $viewType->description }}</td>
                         <td>{{ $viewType->constant }}</td>
-                        <td><a href="{{ route('admin.view-type.edit', ['view_type' => $viewType]) }}">Edit</a>
+                        <td><a href="{{ route('admin.view-types.edit', ['view_type' => $viewType]) }}">Edit</a>
                             &nbsp;
                             <a href="javascript:;" class="delete" rel="{{ $viewType->id }}">Delete</a>
                         </td>
@@ -48,7 +48,7 @@
                 element.addEventListener('click', function() {
                     const id = this.getAttribute('rel');
                     if (confirm(`Вы подтверждаете удаление записи с ID ${id}?`)) {
-                        send(`/admin/view-type/${id}`).then(() => {
+                        send(`/admin/view-types/${id}`).then(() => {
                             location.reload();
                         });
                     } else {

@@ -17,10 +17,10 @@ class DatabaseSeeder extends Seeder
         // Truncate tables
         DB::table('notification_preferences')->truncate(); // admin
         DB::table('roles')->truncate(); // наверное в админке не должно быть
-        DB::table('view_types')->truncate();
-        DB::table('bed_types')->truncate();
-        DB::table('room_types')->truncate();
-        DB::table('images')->truncate();
+        DB::table('view_types')->truncate(); // admin
+        DB::table('bed_types')->truncate(); // admin
+        DB::table('room_types')->truncate(); // admin
+        DB::table('images')->truncate(); // admin
         DB::table('bookings')->truncate();
         DB::table('image_service')->truncate();
         DB::table('hotel_service')->truncate();

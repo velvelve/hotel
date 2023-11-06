@@ -1,12 +1,11 @@
 @extends('layouts.admin')
 @section('content')
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Список настроек уведомлений</h1>
+        <h1 class="h2">Список изображений</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group me-2">
-                <a href="{{ route('admin.notification-preferences.create') }}"
-                    class="btn btn-sm btn-outline-secondary">Добавить
-                    настройку</a>
+                <a href="{{ route('admin.images.create') }}" class="btn btn-sm btn-outline-secondary">Добавить
+                    изображение</a>
             </div>
         </div>
     </div>
@@ -16,30 +15,25 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Данные пользователя</th>
-                    <th scope="col">Уведомления о скидках</th>
-                    <th scope="col">Уведомления о спецпредложениях</th>
-                    <th scope="col">Уведомления о начисленных бонусах</th>
-                    <th scope="col">Уведомления о ответах на отзывы</th>
+                    <th scope="col">Отель</th>
+                    <th scope="col">Номер</th>
+                    <th scope="col">Имя файла</th>
+                    <th scope="col">Путь к файлу</th>
                     <th scope="col">Дата добавления</th>
                     <th scope="col">Действия</th>
                 </tr>
             </thead>
             <tbody>
-                @forelse ($preferences as $preference)
+                @forelse ($images as $image)
                     <tr>
-                        <td>{{ $preference->id }}</td>
-                        <td>{{ $preference->user()->first_name }} {{ $preference->user()->last_name }}
-                            {{ $preference->user()->email }}</td>
-                        <td>{{ $preference->discounts ? 'Включено' : 'Отключено' }}</td>
-                        <td>{{ $preference->special_offers ? 'Включено' : 'Отключено' }}</td>
-                        <td>{{ $preference->bonus_earnings ? 'Включено' : 'Отключено' }}</td>
-                        <td>{{ $preference->feedback_responses ? 'Включено' : 'Отключено' }}</td>
-                        <td>{{ $preference->created_at }}</td>
-                        <td><a
-                                href="{{ route('admin.notification-preferences.edit', ['notification_preference' => $preference]) }}">Edit</a>
-                            &nbsp;
-                            <a href="javascript:;" class="delete" rel="{{ $preference->id }}">Delete</a>
+                        <td>{{ $image->id }}</td>
+                        <td>{{ optional($image->hotel)->name ?: 'Нет связи' }}</td>
+                        <td>{{ optional($image->room)->room_number ?: 'Нет связи' }}</td>
+                        <td>{{ $image->filename }}</td>
+                        <td>{{ $image->path }}</td>
+                        <td>{{ $image->created_at }}</td>
+                        <td><a href="{{ route('admin.images.edit', ['image' => $image]) }}">Edit</a> &nbsp;
+                            <a href="javascript:;" class="delete" rel="{{ $image->id }}">Delete</a>
                         </td>
                     </tr>
                 @empty
@@ -59,7 +53,7 @@
                 element.addEventListener('click', function() {
                     const id = this.getAttribute('rel');
                     if (confirm(`Вы подтверждаете удаление записи с ID ${id}?`)) {
-                        send(`/admin/notification-preferences/${id}`).then(() => {
+                        send(`/admin/images/${id}`).then(() => {
                             location.reload();
                         });
                     } else {

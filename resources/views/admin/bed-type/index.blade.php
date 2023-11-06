@@ -4,7 +4,7 @@
         <h1 class="h2">Список типов кроватей в номере</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group me-2">
-                <a href="{{ route('admin.bed-type.create') }}" class="btn btn-sm btn-outline-secondary">Добавить
+                <a href="{{ route('admin.bed-types.create') }}" class="btn btn-sm btn-outline-secondary">Добавить
                     тип вида кровати в номере</a>
             </div>
         </div>
@@ -26,7 +26,7 @@
                         <td>{{ $bedType->id }}</td>
                         <td>{{ $bedType->description }}</td>
                         <td>{{ $bedType->constant }}</td>
-                        <td><a href="{{ route('admin.bed-type.edit', ['bed_type' => $bedType]) }}">Edit</a>
+                        <td><a href="{{ route('admin.bed-types.edit', ['bed_type' => $bedType]) }}">Edit</a>
                             &nbsp;
                             <a href="javascript:;" class="delete" rel="{{ $bedType->id }}">Delete</a>
                         </td>
@@ -48,7 +48,7 @@
                 element.addEventListener('click', function() {
                     const id = this.getAttribute('rel');
                     if (confirm(`Вы подтверждаете удаление записи с ID ${id}?`)) {
-                        send(`/admin/bed-type/${id}`).then(() => {
+                        send(`/admin/bed-types/${id}`).then(() => {
                             location.reload();
                         });
                     } else {

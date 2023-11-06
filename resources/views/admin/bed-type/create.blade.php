@@ -13,7 +13,7 @@
                 <x-alert :message="$error" type="danger"></x-alert>
             @endforeach
         @endif
-        <form method="POST" action="{{ route('admin.bed-type.store') }}" id="store_form">
+        <form method="POST" action="{{ route('admin.bed-types.store') }}" id="store_form">
             @csrf
             <div class="form-group">
                 <label for="name">Описание</label>

@@ -28,7 +28,7 @@ class ViewTypeController extends Controller
     {
         $viewType = new ViewType($request->validated());
         if ($viewType->save()) {
-            return redirect()->route('admin.view-type.index')->with('success', __('Record was saved successfully'));
+            return redirect()->route('admin.view-types.index')->with('success', __('Record was saved successfully'));
         }
         return back()->with('error', __('We can not save item, please try again'));
     }
@@ -46,7 +46,7 @@ class ViewTypeController extends Controller
 
         $viewType = $viewType->fill($validated);
         if ($viewType->save()) {
-            return redirect()->route('admin.view-type.index')->with('success', __('Record was saved successfully'));
+            return redirect()->route('admin.view-types.index')->with('success', __('Record was saved successfully'));
         }
         return back()->with('error', __('We can not save item, please try again'));
     }
@@ -55,7 +55,7 @@ class ViewTypeController extends Controller
     {
         $room = Room::where('view_type_id', $viewType->id)->first();
         if ($room !== null) {
-            redirect()->route('admin.view-type.index')->with('error', __('We can not delete this item, it has room bounded'));
+            redirect()->route('admin.view-types.index')->with('error', __('We can not delete this item, it has room bounded'));
             return response()->json('ok');
         }
         try {

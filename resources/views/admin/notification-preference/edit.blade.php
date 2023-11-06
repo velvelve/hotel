@@ -16,7 +16,7 @@
             @endforeach
         @endif
         <form method="POST"
-            action="{{ route('admin.notification-preference.update', ['notification_preference' => $preference]) }}"
+            action="{{ route('admin.notification-preferences.update', ['notification_preference' => $preference]) }}"
             id="store_form">
             @csrf
             @method('PUT')

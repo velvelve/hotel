@@ -18,7 +18,7 @@
             <div class="form-group">
                 <!--Пока что name менять нельзя иначе ломается поиск.-->
                 <label for="name">Название</label>
-                <input type="text" class="form-control" name="name" id="name" value="{{ $typeRoom->name }}" readonly>
+                <input type="text" class="form-control" name="name" id="name" value="{{ $typeRoom->name }}">
             </div>
             <div class="form-group">
                 <label for="description">Описание</label>

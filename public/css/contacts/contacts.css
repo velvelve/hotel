@@ -1,5 +1,5 @@
 h1 {
-    font-size: 48px;  
+    font-size: 48px;
 }
 
 h2 {
@@ -9,17 +9,18 @@ h2 {
 a {
     text-decoration: none;
     color: white;
-    transition: 1s; 
-    text-align: center; 
+    transition: 1s;
+    text-align: center;
 }
 
- a:hover {
+a:hover {
     color: black;
-  }
+}
 
- a:visited {
-    color: #e2f7f6; /* Цвет посещенной ссылки */
-   } 
+a:visited {
+    color: #e2f7f6;
+    /* Цвет посещенной ссылки */
+}
 
 ul {
     list-style-type: none;
@@ -27,7 +28,7 @@ ul {
 
 .content-contacts {
     margin: 0 auto;
-    background: linear-gradient(to right, #786853,  #D9EBEB);
+    background: linear-gradient(to right, #786853, #D9EBEB);
     min-height: 2200px;
     min-width: 1800px;
     background-size: 100% 100%;
@@ -47,7 +48,7 @@ ul {
 .section-contact_heading {
     color: white;
     font-family: 'Forum', cursive;
-    
+
 }
 
 .section-contact_booking-dep {
@@ -109,10 +110,11 @@ ul {
     top: 150px;
     float: right;
 }
- .img_reception {
+
+.img_reception {
     height: 577px;
     width: 865px;
- }
+}
 
 .section-two {
     position: relative;
@@ -128,14 +130,13 @@ ul {
 
 .forms-input {
     border: #ffffff;
-    border-radius: 30px;
 
 }
 
 .section-two_info {
- display: grid;
- position: relative;
- left: -30px;
+    display: grid;
+    position: relative;
+    left: -30px;
 }
 
 .section-two_heading {
@@ -166,6 +167,7 @@ ul {
 option:focus {
     outline: none;
 }
+
 .section-two_img-container {
     position: relative;
     height: 522px;
@@ -203,7 +205,7 @@ input:focus {
     color: #ffffff;
     font-size: 18px;
 
-   }
+}
 
 textarea {
     padding-top: 25px;
@@ -218,23 +220,23 @@ textarea:focus {
     outline: none;
     font-size: 18px;
 }
-   
+
 .section-two_social {
     position: absolute;
     top: 830px;
 }
-   
+
 .forms-input {
     background: transparent;
     border: #ffffff solid 1px;
     height: 64px;
     font-size: 20px;
 }
-   
+
 .input_name {
     width: 574px;
 }
-   
+
 .input_phone {
     width: 369px;
 }
@@ -253,7 +255,6 @@ textarea:focus {
     justify-content: space-between;
     background: transparent;
     border: #ffffff solid 1px;
-    border-radius: 30px;
     width: 316px;
 }
 
@@ -272,7 +273,6 @@ select:focus {
 .input-feedback {
     background: transparent;
     border: #ffffff solid 1px;
-    border-radius: 30px;
     color: white;
     text-align: center;
 }
@@ -294,6 +294,7 @@ select:focus {
     font-size: 32px;
     padding-top: 16px;
 }
+
 .section-two_social-networks {
     display: flex;
     position: relative;
@@ -321,7 +322,6 @@ select:focus {
     height: 132px;
     width: 566px;
     border: #ffffff solid 1px;
-    border-radius: 40px;
     background: transparent;
     top: -34px;
     font-size: 20px;
@@ -352,30 +352,41 @@ select:focus {
     height: 61px;
     width: 363px;
     text-align: center;
-    border:  none;
-    border-radius: 40px;
+    border: none;
     color: #ffffff;
     font-size: 24px;
-    background: linear-gradient(to top,#463820, #BFB7A8);
+    background: linear-gradient(to top, #463820, #BFB7A8);
 }
 
 .button:hover {
-    background: linear-gradient(to top,#BFB7A8, #FFFFFF);
+    background: linear-gradient(to top, #BFB7A8, #FFFFFF);
     color: #463820;
     border: none;
 }
 
-.twitter, .vk, .facebook, .instagram, .tiktok {
+.twitter,
+.vk,
+.facebook,
+.instagram,
+.tiktok {
     filter: brightness(0) invert(1);
 }
-.twitter:hover, .vk:hover, .facebook:hover, .instagram:hover, .tiktok:hover {
+
+.twitter:hover,
+.vk:hover,
+.facebook:hover,
+.instagram:hover,
+.tiktok:hover {
     filter: none;
 }
 
-.vk:hover, .facebook:hover, .tiktok:hover {
+.vk:hover,
+.facebook:hover,
+.tiktok:hover {
     background-color: #FFFFFF;
     border-radius: 15px;
 }
+
 .a-social {
     height: 65px;
     width: 65px;

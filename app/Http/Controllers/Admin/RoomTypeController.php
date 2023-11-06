@@ -3,19 +3,19 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\TypesRooms\EditTypesRoomsRequest;
+use App\Http\Requests\Admin\RoomTypes\EditRoomTypesRequest;
 use App\Models\RoomType;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
-class TypeRoomController extends Controller
+class RoomTypeController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index(): View
     {
-        return view('admin.types-rooms.index', [
+        return view('admin.room-types.index', [
             'arrayTypesRooms' => RoomType::all(),
         ]);
     }
@@ -49,7 +49,7 @@ class TypeRoomController extends Controller
      */
     public function edit(RoomType $typeRoom)
     {
-        return view('admin.types-rooms.edit', [
+        return view('admin.room-types.edit', [
             'typeRoom' => $typeRoom,
         ]);
     }
@@ -57,12 +57,12 @@ class TypeRoomController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(EditTypesRoomsRequest $request, RoomType $typeRoom)
+    public function update(EditRoomTypesRequest $request, RoomType $typeRoom)
     {
         $typeRoom->fill($request->validated());
 
         if($typeRoom->save()) {
-            return redirect()->route('admin.types-rooms.index')->with('success', 'Запись была успешно сохранена');
+            return redirect()->route('admin.room-types.index')->with('success', 'Запись была успешно сохранена');
         }
 
         return back()->with('error', 'При сохранение произошла ошибка');

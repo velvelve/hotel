@@ -31,7 +31,7 @@
                         <td> {{ $typeRoom->created_at }}</td>
                         <td> {{ $typeRoom->updated_at }}</td>
                         <td>
-                            <a href="{{ route('admin.types-rooms.edit', ['typeRoom' => $typeRoom]) }}">Редактировать</a>
+                            <a href="{{ route('admin.room-types.edit', ['typeRoom' => $typeRoom]) }}">Редактировать</a>
                         </td>
                     </tr>
                 @empty

@@ -12,7 +12,7 @@
             @endforeach
         @endif
 
-        <form method="post" action="{{ route('admin.types-rooms.update', ['typeRoom' => $typeRoom]) }}">
+        <form method="post" action="{{ route('admin.room-types.update', ['typeRoom' => $typeRoom]) }}">
             @csrf
             @method('PUT')
             <div class="form-group">

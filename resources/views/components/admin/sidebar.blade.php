@@ -32,7 +32,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link @if(request()->routeIs('admin.types-rooms.*')) active @endif" aria-current="page" href="{{ route('admin.types-rooms.index') }}">
+                <a class="nav-link @if(request()->routeIs('admin.room-types.*')) active @endif" aria-current="page" href="{{ route('admin.room-types.index') }}">
                     <span>📌</span>
                     Типы номеров
                 </a>

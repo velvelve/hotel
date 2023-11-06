@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Admin\RoomTypes\CreateRoomTypesRequest;
 use App\Http\Requests\Admin\RoomTypes\EditRoomTypesRequest;
 use App\Models\RoomType;
 use Illuminate\Http\Request;
@@ -31,14 +32,14 @@ class RoomTypeController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CreateRoomTypesRequest $request)
     {
-        $data = $request->only('name', 'description');
+        $data = $request->validated();
         $data['constant'] = strtoupper($data['name']);
 
         $roomType = new RoomType($data);
 
-        if($roomType->save()) {
+        if ($roomType->save()) {
             return redirect()->route('admin.room-types.index')->with('success', 'Запись была успешно создана');
         }
 
@@ -70,7 +71,7 @@ class RoomTypeController extends Controller
     {
         $roomType->fill($request->validated());
 
-        if($roomType->save()) {
+        if ($roomType->save()) {
             return redirect()->route('admin.room-types.index')->with('success', 'Запись была успешно сохранена');
         }
 
@@ -80,8 +81,12 @@ class RoomTypeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(RoomType $roomType)
     {
-        //
+        if ($roomType->delete()) {
+            return redirect()->route('admin.room-types.index')->with('success', 'Запись была успешно удалена');
+        }
+
+        return back()->with('error', 'При удаление произошла ошибка');
     }
 }

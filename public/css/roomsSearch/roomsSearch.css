@@ -25,7 +25,6 @@
     width: 124px;
     height: 36px;
     border: none;
-    border-radius: 50px;
     background-color: #79655E;
     font-family: 'Manrope', sans-serif;
     font-size: 16px;
@@ -59,8 +58,6 @@
     max-width: 330px;
     min-height: 55px;
     max-height: 55px;
-
-    border-radius: 50px;
     font-family: 'Forum', cursive;
     font-size: 24px;
     color: #79655E;
@@ -76,7 +73,6 @@
     width: 700px;
     min-height: 81px;
     max-height: 81px;
-    border-radius: 50px;
     background-color: #fff;
     box-shadow: 0px 20px 50px 0px rgba(34, 60, 80, 0.2);
 }
@@ -106,6 +102,8 @@
     background-color: #e3dcd9 !important;
 }
 
-.active, .start-date, .end-date {
+.active,
+.start-date,
+.end-date {
     background-color: #79655E !important;
 }

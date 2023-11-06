@@ -113,7 +113,6 @@ input:focus {
     background: transparent;
     border: #ffffff solid 1px;
     width: 100%;
-    border-radius: 30px;
     margin: 0 0 12px 0;
     padding: 18px 10px 21px 37px;
     box-sizing: border-box;
@@ -184,7 +183,6 @@ input:focus {
     width: 45%;
     text-align: center;
     border: none;
-    border-radius: 40px;
     color: #ffffff;
     background: linear-gradient(to top, #463820, #BFB7A8);
     font-family: Forum;
@@ -276,7 +274,6 @@ input:focus {
     min-height: 50px;
     width: 272px;
     border: none;
-    border-radius: 40px;
     background: rgba(192, 155, 90, 0.60);
     text-decoration: none;
     text-align: center;
@@ -333,7 +330,6 @@ input:focus {
 
 .booking-information__img {
     margin: 0 17px 0 0;
-    border-radius: 25px;
     opacity: 0.8;
 }
 

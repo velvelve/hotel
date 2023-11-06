@@ -45,7 +45,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin.'], static function () {
     Route::group(['middleware' => 'admin.employee'], function () {
         Route::get('/', [AdminDashboardController::class, 'index'])->name('dashboard');
-        Route::resource('/room-types', AdminRoomTypeController::class)->parameters(['room-types' => 'typeRoom']);;
+        Route::resource('/room-types', AdminRoomTypeController::class)->parameters(['room-types' => 'roomType']);;
     });
 });
 

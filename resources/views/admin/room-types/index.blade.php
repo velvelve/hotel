@@ -4,7 +4,7 @@
         <h1 class="h2">Список категорий номеров</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group me-2">
-                <a href="#" class="btn btn-sm btn-outline-secondary">Добавить новую категорию</a>
+                <a href="{{ route('admin.room-types.create') }}" class="btn btn-sm btn-outline-secondary">Добавить новую категорию</a>
             </div>
         </div>
     </div>
@@ -23,15 +23,15 @@
                 </tr>
             </thead>
             <tbody>
-                @forelse($arrayTypesRooms as $typeRoom)
+                @forelse($arrayRoomTypes as $roomType)
                     <tr>
-                        <td> {{ $typeRoom->id }}</td>
-                        <td> {{ $typeRoom->name }}</td>
-                        <td> {{ $typeRoom->description }}</td>
-                        <td> {{ $typeRoom->created_at }}</td>
-                        <td> {{ $typeRoom->updated_at }}</td>
+                        <td> {{ $roomType->id }}</td>
+                        <td> {{ $roomType->name }}</td>
+                        <td> {{ $roomType->description }}</td>
+                        <td> {{ $roomType->created_at }}</td>
+                        <td> {{ $roomType->updated_at }}</td>
                         <td>
-                            <a href="{{ route('admin.room-types.edit', ['typeRoom' => $typeRoom]) }}">Редактировать</a>
+                            <a href="{{ route('admin.room-types.edit', ['roomType' => $roomType]) }}">Редактировать</a>
                         </td>
                     </tr>
                 @empty

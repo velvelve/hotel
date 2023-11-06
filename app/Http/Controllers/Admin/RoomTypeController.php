@@ -16,16 +16,16 @@ class RoomTypeController extends Controller
     public function index(): View
     {
         return view('admin.room-types.index', [
-            'arrayTypesRooms' => RoomType::all(),
+            'arrayRoomTypes' => RoomType::all(),
         ]);
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(): View
     {
-        //
+        return view('admin.room-types.create');
     }
 
     /**
@@ -33,7 +33,16 @@ class RoomTypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->only('name', 'description');
+        $data['constant'] = strtoupper($data['name']);
+
+        $roomType = new RoomType($data);
+
+        if($roomType->save()) {
+            return redirect()->route('admin.room-types.index')->with('success', 'Запись была успешно создана');
+        }
+
+        return back()->with('error', 'При создание произошла ошибка');
     }
 
     /**
@@ -47,21 +56,21 @@ class RoomTypeController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(RoomType $typeRoom)
+    public function edit(RoomType $roomType): View
     {
         return view('admin.room-types.edit', [
-            'typeRoom' => $typeRoom,
+            'roomType' => $roomType,
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(EditRoomTypesRequest $request, RoomType $typeRoom)
+    public function update(EditRoomTypesRequest $request, RoomType $roomType)
     {
-        $typeRoom->fill($request->validated());
+        $roomType->fill($request->validated());
 
-        if($typeRoom->save()) {
+        if($roomType->save()) {
             return redirect()->route('admin.room-types.index')->with('success', 'Запись была успешно сохранена');
         }
 

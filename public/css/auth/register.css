@@ -90,7 +90,6 @@
     margin: 43px 0 16px;
     display: block;
     border: none;
-    color: #453834;
     width: 100%;
     height: 48px;
     background: #C09B5A;
@@ -98,10 +97,13 @@
     font-size: 18px;
     font-weight: 600;
     cursor: pointer;
+    transition: 0.7s;
+    color: #453834;
 }
 
 .register__button:hover {
-    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    color: #ffff;
+    background: #79655E;
 }
 
 .register__button:active {

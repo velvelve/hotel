@@ -312,11 +312,12 @@
     font-size: 18px;
     color: #fff;
     cursor: pointer;
-    transition: .3s;
+    transition: 0.7s;
 }
 
 .form-btn:hover {
-    opacity: .8;
+    color: #ffff;
+    background: #C09B5A;
 }
 
 .profileSettings-content__security {

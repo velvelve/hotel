@@ -632,6 +632,13 @@
     color: #0C0B10;
     cursor: pointer;
     z-index: 1;
+    transition: 0.7s;
+}
+
+.section-4-subscription__btn:hover {
+    border: solid rgba(192, 155, 90, 1) 1px;
+    background-color: rgb(192, 155, 90);
+
 }
 
 .section-4_anchor {

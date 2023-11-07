@@ -182,20 +182,22 @@ input:focus {
     justify-content: center;
     width: 45%;
     text-align: center;
-    border: none;
-    color: #ffffff;
-    background: linear-gradient(to top, #463820, #BFB7A8);
-    font-family: 'Forum', sans-serif;
+    color: #463820;
+    font-family: Forum;
     font-size: 24px;
     line-height: normal;
     letter-spacing: 0.96px;
     text-transform: uppercase;
+    background: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+    transition: 0.7s;
 }
 
 .booking__button:hover {
-    background: linear-gradient(to top, #a7a095, #3f382b);
-    border: none;
-    cursor: pointer;
+    color: #ffffff;
+    background-color: rgb(192, 155, 90);
 }
 
 /*-----------------------booking-information-----------------------*/

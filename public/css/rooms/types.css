@@ -186,7 +186,7 @@
 .button {
     width: 500px;
     height: 50px;
-    background: rgba(192, 155, 90, 0.6);
+    background: #79655E;
     border: 0;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     margin-top: 123px;
@@ -194,13 +194,13 @@
     font-weight: 200;
     font-size: 20px;
     line-height: 98.5%;
-    color: #79655E;
+    color: #DBDBDB;
     transition: 0.7s;
 }
 
 .button:hover {
-    color: #DBDBDB;
-    background: #79655E;
+    color: #79655E;
+    background: rgba(192, 155, 90, 0.6);
 }
 
 .room-cart__modal {

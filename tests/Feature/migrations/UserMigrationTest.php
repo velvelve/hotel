@@ -2,8 +2,9 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
+use App\Models\Role;
+use App\Models\User;
+use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Schema;
 use Tests\TestCase;
 
@@ -13,6 +14,7 @@ class UserMigrationTest extends TestCase
     {
         // Проверяем, что таблица "users" была создана
         $this->assertTrue(Schema::hasTable('users'));
+
 
         // Проверяем, что таблица "users" содержит необходимые столбцы
         $this->assertTrue(Schema::hasColumns('users', [
@@ -33,5 +35,13 @@ class UserMigrationTest extends TestCase
             'created_at',
             'updated_at',
         ]));
+    }
+
+    public function testUserHasRole()
+    {
+        $user = User::find(1);
+
+        // Проверяем, что связь с roles установлена
+        $this->assertInstanceOf(Role::class, $user->role);
     }
 }

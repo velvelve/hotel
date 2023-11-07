@@ -1,5 +1,5 @@
 body {
-    font-family: Manrope;
+    font-family: 'Forum', sans-serif;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
@@ -62,10 +62,10 @@ input:focus {
 
 .booking__title {
     margin: 0 0 61px 0;
-    font-family: 'Forum';
+    font-family: 'Forum', sans-serif;
     font-style: normal;
     min-height: 102px;
-    font-size: 62px;
+    font-size: 40px;
     font-weight: 400;
 }
 
@@ -147,13 +147,13 @@ input:focus {
 .booking__input_textarea::placeholder {
     width: 50%;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 400;
     line-height: normal;
 }
 
 .booking__form-text {
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 400;
     max-width: 274px;
     align-self: self-end;
 }
@@ -166,7 +166,7 @@ input:focus {
 
 .booking__text-info {
     padding: 0 0 0 37px;
-    font-weight: 500;
+    font-weight: 400;
     line-height: normal;
 }
 
@@ -225,9 +225,9 @@ input:focus {
 }
 
 .booking-information__title {
-    font-family: Forum;
+    font-family: 'Forum', sans-serif;
     margin: 16px 0 15px;
-    font-size: 36px;
+    font-size: 30px;
     font-weight: 400;
 }
 
@@ -235,7 +235,7 @@ input:focus {
     margin: 0 0 13px 0;
     width: 270px;
     text-align: center;
-    font-family: Forum;
+    font-family: 'Forum', sans-serif;
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
@@ -260,7 +260,7 @@ input:focus {
 .booking-information__text {
     margin: 34px 36px;
     text-align: center;
-    font-family: Forum;
+    font-family: 'Forum', sans-serif;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
@@ -279,7 +279,7 @@ input:focus {
     background: rgba(192, 155, 90, 0.60);
     text-decoration: none;
     text-align: center;
-    font-family: Fraunces;
+    font-family: 'Forum', sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -315,7 +315,7 @@ input:focus {
 
 .booking-information__important {
     color: #CE6845;
-    font-family: Manrope;
+    font-family: 'Forum', sans-serif;
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
@@ -342,9 +342,9 @@ input:focus {
     transform: translate(-50%, -50%);
     padding: 10px;
     color: #FFF;
-    font-family: Manrope;
+    font-family: 'Forum', sans-serif;
     font-size: 16px;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 179.8%;
 }

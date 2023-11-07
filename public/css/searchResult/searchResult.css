@@ -176,20 +176,20 @@
 .cart-btn{
         width: 140px;
         height: 30px;
-        background: rgba(192, 155, 90, 0.6);
+        background: #79655E;
         border: 0;
         box-shadow: 0 2px 4px rgba(0,0,0,0.25);
         font-style: normal;
         font-weight: 200;
         font-size: 16px;
         line-height: 98.5%;
-        color: #79655E;
+        color: #DBDBDB;
         transition: 0.7s;
         cursor: pointer;
 }
 .cart-btn:hover {
-    color: #DBDBDB;
-    background: #79655E;
+    color: #79655E;
+    background: rgba(192, 155, 90, 0.6);
     box-shadow: 0 0 0 rgba(0,0,0,0.25);
 }
 
@@ -402,20 +402,20 @@
 .modal-btn{
     width: 240px;
     height: 62px;
-    background: rgba(192, 155, 90, 0.6);
+    background: #79655E;
     border: 0;
     box-shadow: 0 2px 4px rgba(0,0,0,0.25);
     font-style: normal;
     font-weight: 200;
     font-size: 20px;
     line-height: 98.5%;
-    color: #79655E;
+    color: #DBDBDB;
     transition: 0.7s;
     cursor: pointer;
 }
 
 .modal-btn:hover {
-    color: #DBDBDB;
-    background: #79655E;
+    color: #79655E;
+    background: rgba(192, 155, 90, 0.6);
     box-shadow: 0 0 0 rgba(0,0,0,0.25);
 }

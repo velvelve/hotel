@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
+use App\Http\Controllers\Admin\RoomTypeController as AdminRoomTypeController;
 use App\Http\Controllers\Auth\ChangePasswordController;
 use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
@@ -43,7 +44,8 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 //Админка
 Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin.'], static function () {
     Route::group(['middleware' => 'admin.employee'], function () {
-        Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+        Route::get('/', [AdminDashboardController::class, 'index'])->name('dashboard');
+        Route::resource('/room-types', AdminRoomTypeController::class)->parameters(['room-types' => 'roomType']);;
     });
 });
 

@@ -1,0 +1,51 @@
+.bookings-show {
+    padding: 40px 0;
+    background: linear-gradient(to right, #786853, #D9EBEB);
+}
+
+.bookings-show__wrapper {
+    margin: 0 auto;
+    display: flex;
+    width: 1350px;
+    min-height: 724px;
+    background-color: white;
+    position: relative;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.bookings-show__logo::before {
+    content: '';
+    background-image: url(/img/auth/logo.png);
+    position: absolute;
+    top: 0;
+    left: 100px;
+    height: 85.16px;
+    width: 245.62px;
+}
+
+.bookings-show__img {
+    transform: scaleX(-1);
+    width: 100%;
+    max-height: 500px;
+}
+
+.bookings-show__title {
+    color: #79655E;
+    font-family: Abhaya Libre;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0 0 16px 0;
+}
+
+.bookings-show__text {
+    color: #79655E;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0 0 48px 0;
+}

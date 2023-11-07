@@ -35,35 +35,36 @@
 }
 
 .restaurant-heading {
-    font-size: 38px;
-    font-family: 'Forum';
+    font-size: 30px;
+    font-weight: 600;
+    font-family: 'Forum', sans-serif;
     margin-bottom: 30px;
     color: #333333;
 }
 
 .restaurant-text {
-    font-size: 28px;
-    font-family: 'Forum', cursive;
+    font-size: 24px;
+    font-family: 'Forum', sans-serif;
     color: #333333;
     margin-top: 30px;
 }
 
 .restaurant-img {
     max-width: 734px;
-    max-height: 422;
+    max-height: 422px;
 }
 
 .restaurant-text-clock {
     margin-top: 20px;
     margin-bottom: 10px;
     font-size: 28px;
-    font-family: 'Forum', cursive;
+    font-family: 'Forum', sans-serif;
     color: #333333;
 
 }
 
 .restaurant-text-clock-item {
-    font-family: 'Forum', cursive;
+    font-family: 'Forum', sans-serif;
     font-size: 28px;
     color: #333333;
 }

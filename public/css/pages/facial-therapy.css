@@ -11,8 +11,9 @@
 h1 {
     position: relative;
     color: #FFFFFF;
-    font-family: 'Forum', cursive;
-    font-size: 80px;
+    font-family: 'Forum', sans-serif;
+    font-size: 60px;
+    font-weight: 400;
     height: 100px;
     display: flex;
     text-align: center;
@@ -33,14 +34,15 @@ h1 {
 }
 
 .main__content {
-    min-height: 1000px;
+    min-height: 910px;
     position: relative;
     display: grid;
     justify-items: center;
 }
 
 .content__header {
-    height: 50px;
+    height: 30px;
+    font-weight: 600;
     max-width: 1452px;
     position: relative;
     text-align: center;
@@ -48,8 +50,9 @@ h1 {
 }
 
 .header_massage {
-    font-family: 'Forum', cursive;
-    font-size: 48px;
+    font-family: 'Forum', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
     color: #453834;
 }
 
@@ -70,8 +73,8 @@ h1 {
 }
 
 .text {
-    font-family: 'Forum', cursive;
-    font-size: 30px;
+    font-family: 'Forum', sans-serif;
+    font-size: 24px;
     padding-bottom: 15px;
 }
 
@@ -95,6 +98,7 @@ h1 {
     margin-bottom: 84px; 
     display: grid;
     justify-content: center;
+    margin-top: -84px;
 }
 
 .price__content {
@@ -110,10 +114,11 @@ h1 {
 .content__text {
     height: 208px;
     width: 400px;
-    font-family: 'Montserrat', bold;
-    font-size: 34px;
+    font-family: 'Forum', sans-serif;
+    font-size: 30px;
     color: #453834;
     padding-top: 55px;
+    font-weight: 600;
 }
 
 .main__img-background {

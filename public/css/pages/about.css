@@ -13,7 +13,8 @@
 }
 
 .about-the-company-heading-main {
-    font-size: 48px;
+    font-size: 40px;
+    font-weight: 600;
     font-family: 'Forum';
     margin-bottom: 30px;
     color: #333333;
@@ -50,7 +51,7 @@
 }
 
 .about-the-company-title-text {
-    font-size: 30px;
+    font-size: 24px;
     font-family: 'Forum';
     margin-bottom: 30px;
     color: #FFFCFC;
@@ -85,21 +86,19 @@
 
 .about-the-company-info {
     max-width: 751px;
-    min-height: 422px;
+    min-height: 444px;
     margin-right: 20px;
-    margin-top: 50px;
-
 }
 
 .about-the-company-heading {
-    font-size: 32px;
+    font-size: 30px;
     font-family: 'Forum';
     margin-bottom: 30px;
     color: #333333;
 }
 
 .about-the-company-text {
-    font-size: 26px;
+    font-size: 24px;
     font-family: 'Forum';
     color: #333333;
 }

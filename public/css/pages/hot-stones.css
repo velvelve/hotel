@@ -10,13 +10,13 @@
 h1 {
     position: relative;
     color: #FFFFFF;
-    font-family: 'Forum', cursive;
-    font-size: 80px;
+    font-family: 'Forum', sans-serif;
+    font-size: 60px;
     height: 100px;
     top: 234px;
     display: flex;
     justify-content: center;
-    font-weight: 400px;
+    font-weight: 400;
 }
 
 .main__header {
@@ -29,7 +29,7 @@ h1 {
 }
 
 .main__content {
-    min-height: 1000px;
+    min-height: 780px;
     position: relative;
     display: grid;
     justify-items: center;
@@ -41,12 +41,12 @@ h1 {
     position: relative;
     text-align: center;
     top: 84px;
-    margin-bottom: 69px;
 }
 
 .header_stones {
-    font-family: 'Forum', cursive;
-    font-size: 68px;
+    font-family: 'Forum', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
     color: #453834;
 }
 
@@ -69,8 +69,8 @@ h1 {
 }
 
 .text {
-    font-family: 'Forum', cursive;
-    font-size: 30px;
+    font-family: 'Forum', sans-serif;
+    font-size: 24px;
     padding-bottom: 15px;
 }
 
@@ -105,10 +105,11 @@ h1 {
 .price__text {
     height: 208px;
     width: 400px;
-    font-family: 'Montserrat', bold;
-    font-size: 34px;
+    font-family: 'Forum', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
     color: #453834;
-    padding-top: 55px;
+    padding-top: 75px;
 }
 
 .main__img-background {

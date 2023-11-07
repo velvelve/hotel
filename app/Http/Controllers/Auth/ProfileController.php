@@ -62,7 +62,7 @@ class ProfileController extends Controller
             'first_name' => ['required', 'min:3'],
             'last_name' => ['required', 'min:3'],
             'middle_name' => ['sometimes', 'nullable', 'min:3'],
-            'phone' => ['sometimes', 'nullable', 'digits:10'],
+            'phone' => ['sometimes', 'nullable', 'regex:/^((\+7)+([0-9]){10})$/'],
             'country' => ['sometimes', 'nullable', 'min:3'],
             'city' => ['sometimes', 'nullable', 'min:3'],
             'date_of_birth' => ['sometimes', 'nullable', 'date'],
@@ -76,7 +76,7 @@ class ProfileController extends Controller
             'phone' => $request->phone,
             'country' => $request->country,
             'city' => $request->city,
-            'date_of_birth' => (new DateTimeImmutable($request->date_of_birth))->format('Y-m-d H:i:s'),
+            'date_of_birth' => (new DateTimeImmutable($request->date_of_birth))->format('Y-m-d'),
             'gender' => $request->gender,
             'updated_at' => now()
         ]);

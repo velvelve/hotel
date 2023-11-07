@@ -110,7 +110,7 @@
                                 </div>
                                 <div class="form-item form-item-date">
                                     <div class="form-item-name">Дата рождения</div>
-                                    <input name="date_of_birth" type="date" class="form-item-input input-dateOfBirth" value="{{ auth()->user()->date_of_birth }}"/>
+                                    <input name="date_of_birth" type="date" class="form-item-input input-dateOfBirth" value="{{ date_format(date_create(auth()->user()->date_of_birth), 'Y-m-d') }}"/>
                                 </div>
                                 <div class="form-item form-item-gender">
                                     <div class="form-item-name">Пол</div>

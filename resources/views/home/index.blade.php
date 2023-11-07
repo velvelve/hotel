@@ -4,7 +4,7 @@
     @include('includes.message')
     <div class="section-1">
         {{-- Хедер главной страницы --}}
-        <div class="section-1-header">
+        <div class="section-1-header" id="section-1-header">
             <div class="section-1-header__logo">
                 <a href="{{ route('home') }}">
                     <div class="section-1-header__logo-bg">
@@ -262,6 +262,7 @@
                 </form>
             </div>
         </div>
+        <a class="section-4_anchor" href="#section-1-header" >Наверх</a>
     </div>
     @push('styles')
         <link href="{{ asset('css/main.css') }}" rel="stylesheet">

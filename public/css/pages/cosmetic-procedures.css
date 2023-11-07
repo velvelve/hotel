@@ -1,0 +1,137 @@
+.wrapper {
+    background: linear-gradient(to right, #786853, #D9EBEB);
+    position: relative;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    min-height: 2557px;
+}
+
+.section-cosmetic-procedures {
+    display: flex;
+    flex-direction: column;
+}
+
+.cosmetic-procedures-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #786853, #D9EBEB);
+}
+
+.cosmetic-procedures-img-main {
+    display: flex;
+    position: relative;
+    width: 100%;
+}
+
+.cosmetic-procedures-title {
+    font-size: 60px;
+    font-family: 'Forum', sans-serif;
+    font-weight: 400;
+    color: #FFFCFC;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+}
+
+.cosmetic-procedures-one {
+    display: flex;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 80px;
+    margin-top: 80px;
+}
+
+.cosmetic-procedures-two {
+    display: flex;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 80px;
+}
+
+.cosmetic-procedures-three {
+    display: flex;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 80px;
+}
+
+.cosmetic-procedures-four {
+    display: flex;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 80px;
+
+}
+
+.cosmetic-procedures-five {
+    display: flex;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 80px;
+
+}
+
+.cosmetic-procedures-info {
+    max-width: 751px;
+    min-height: 422px;
+    display: grid;
+}
+
+.cosmetic-procedures-heading {
+    font-size: 30px;
+    font-family: 'Forum', sans-serif;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #333333;
+}
+
+.cosmetic-procedures-text {
+    font-size: 24px;
+    font-family: 'Forum', sans-serif;
+    font-weight: 400;
+    color: #333333;
+}
+
+.cosmetic-procedures-img {
+    max-width: 702px;
+    max-height: 388;
+    margin-left: 30px;
+}
+
+.cosmetic-procedures-img2 {
+    max-width: 702px;
+    max-height: 388;
+    margin-right: 30px;
+}
+
+.cosmetic-procedures-pricelist {
+    background: #D9D9D9;
+    opacity: 0.7;
+    display: grid;
+    justify-content: center;
+    min-height: 60px;
+    max-width: 751px;
+    margin-top: 30px;
+    grid-auto-flow: column;
+    align-items: center;
+}
+
+.cosmetic-procedures-price-text {
+    max-width: 250px;
+    min-height: 60px;
+    text-align: center;
+    justify-content: center;
+    display: grid;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #453834;
+    font-size: 20px;
+    font-weight: 800;
+    font-family: 'Forum', sans-serif;
+    grid-auto-flow: column;
+    align-items: center;
+}

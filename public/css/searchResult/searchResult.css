@@ -49,8 +49,8 @@
     min-height: 100px;
     max-height: 100px;
     color: #fff;
-    font-family: 'Forum', cursive;
-    font-size: 62px;
+    font-family: 'Forum', sans-serif;
+    font-size: 40px;
 }
 
 .searchResult-content__item {
@@ -87,14 +87,14 @@
 }
 
 .item-description__rightSide-upperText {
-    font-family: 'Forum', cursive;
+    font-family: 'Forum', sans-serif;
     font-size: 24px;
     color: #79655E;
     text-align: left;
 }
 
 .item-description__rightSide-centralText {
-    font-family: 'Forum', cursive;
+    font-family: 'Forum', sans-serif;
     font-size: 18px;
     color: #79655E;
     text-align: left;
@@ -102,7 +102,7 @@
 }
 
 .item-description__rightSide-lowerText {
-    font-family: 'Forum', cursive;
+    font-family: 'Forum', sans-serif;
     font-size: 20px;
     color: #CE6845;
     text-align: left;
@@ -122,13 +122,12 @@
     width: 144px;
     height: 25px;
     border: none;
-    border-radius: 50px;
     background-color: #C09B5A;
 }
 
 .searchResult-content__item .item-btn a {
     text-decoration: none;
-    font-family: 'Fraunces', serif;
+    font-family: 'Forum', sans-serif;
     font-size: 16px;
     font-weight: 700;
     color: #79655E;
@@ -174,7 +173,7 @@ ul {
 }
 
 .item-description__leftSide-block-text {
-    font-family: 'Forum', cursive;
+    font-family: 'Forum', sans-serif;
     font-size: 18px;
     color: #79655E;
     text-align: left;
@@ -182,7 +181,7 @@ ul {
 }
 
 .item-description__leftSide-block-text-heading {
-    font-family: 'Forum', cursive;
+    font-family: 'Forum', sans-serif;
     font-size: 18px;
     color: #CE6845;
     text-align: left;

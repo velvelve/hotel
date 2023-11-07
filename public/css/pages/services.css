@@ -1,0 +1,232 @@
+.bg {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    min-width: 100vw;
+    height: 4000px;
+    background: linear-gradient(90deg, rgba(120,104,83,1) 0%, rgba(217,235,235,1) 100%);
+}
+
+.container {
+    width: 1600px;
+}
+
+.section-1 {
+    font-family: 'Forum', sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    color: #333333;
+    left: 30px;
+    position: relative;
+}
+
+.section-2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 404px;
+    background: url("/img/servicesPage/aqua-bg.png") center no-repeat;
+}
+
+.section-2__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 754px;
+    height: 204px;
+    font-family: 'Forum', sans-serif;
+    font-size: 60px;
+    font-weight: 400;
+    color: #333333;
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(217,217,217,0) 100%);
+}
+
+.section-3 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-3__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 663px;
+    height: 450px;
+    font-family: 'Forum', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #453834;
+    position: relative;
+    left: 30px;
+}
+
+.section-3__description-item {
+    margin-bottom: 20px;
+
+}
+
+.section-3__image {
+    width: 783px;
+    height: 450px;
+}
+
+.section-4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 404px;
+    background: url("/img/servicesPage/laundry-bg.png") center no-repeat;
+}
+
+.section-4__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 754px;
+    height: 204px;
+    font-family: 'Forum', sans-serif;
+    font-size: 60px;
+    font-weight: 400;
+    color: #333333;
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(217,217,217,0) 100%);
+}
+
+.section-5 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-5__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 663px;
+    height: 450px;
+    font-family: 'Forum', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #453834;
+    position: relative;
+    right: 30px;
+}
+
+.section-5__description-item {
+    margin-bottom: 20px;
+
+}
+
+.section-5__image {
+    width: 783px;
+    height: 450px;
+}
+
+.section-6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 404px;
+    background: url("/img/servicesPage/transfer-bg.png") center no-repeat;
+}
+
+.section-6__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 754px;
+    height: 204px;
+    font-family: 'Forum', sans-serif;
+    font-size: 60px;
+    font-weight: 400;
+    color: #333333;
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(217,217,217,0) 100%);
+}
+
+.section-7 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-7__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 663px;
+    height: 450px;
+    font-family: 'Forum', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #453834;
+    position: relative;
+    left: 30px;
+}
+
+.section-7__description-item {
+    margin-bottom: 20px;
+
+}
+
+.section-7__image {
+    width: 783px;
+    height: 450px;
+}
+
+.section-8 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 404px;
+    background: url("/img/servicesPage/concierge-bg.png") center no-repeat;
+}
+
+.section-8__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1000px;
+    height: 204px;
+    font-family: 'Forum', sans-serif;
+    font-size: 60px;
+    font-weight: 400;
+    color: #333333;
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(217,217,217,0) 100%);
+    text-align: center;
+}
+
+.section-9 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-9__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 663px;
+    height: 450px;
+    font-family: 'Forum', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: #453834;
+    position: relative;
+    right: 30px;
+}
+
+.section-9__description-item {
+    margin-bottom: 20px;
+
+}
+
+.section-9__image {
+    width: 783px;
+    height: 450px;
+}
+
+.image__bg {
+    width: 783px;
+    height: 450px;
+}

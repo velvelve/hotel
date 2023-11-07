@@ -1,25 +1,44 @@
-.roomsSearch input {
+.roomsSearch-menu__input {
     border: none;
     outline: none;
     cursor: pointer;
 }
 
-.roomsSearch label {
+.roomsSearch-menu__guest input {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.roomsSearch-menu__type select {
+    border: none;
+    outline: none;
     cursor: pointer;
 }
 
-.roomsSearch button {
+.roomsSearch-menu__label {
+    cursor: pointer;
+}
+
+.roomsSearch-menu__btn {
     width: 124px;
     height: 36px;
     border: none;
-    border-radius: 50px;
     background-color: #79655E;
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Forum', sans-serif;
     font-size: 16px;
     font-weight: 500;
     text-align: center;
     color: #fff;
     cursor: pointer;
+    transition: 0.7s;
+}
+
+.roomsSearch-menu__btn:hover {
+    color: #79655E;
+    background: rgba(192, 155, 90, 0.6);
+
 }
 
 .roomsSearch {
@@ -41,9 +60,7 @@
     max-width: 330px;
     min-height: 55px;
     max-height: 55px;
-
-    border-radius: 50px;
-    font-family: 'Forum', cursive;
+    font-family: 'Forum', sans-serif;
     font-size: 24px;
     color: #79655E;
     text-align: center;
@@ -58,7 +75,6 @@
     width: 700px;
     min-height: 81px;
     max-height: 81px;
-    border-radius: 50px;
     background-color: #fff;
     box-shadow: 0px 20px 50px 0px rgba(34, 60, 80, 0.2);
 }
@@ -70,7 +86,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Forum', sans-serif;
     font-size: 16px;
     font-weight: 300;
     color: #79655E;
@@ -82,4 +98,23 @@
 .roomsSearch-menu__guest-head img,
 .roomsSearch-menu__type-head img {
     margin-right: 5px;
+}
+
+.in-range {
+    background-color: #e3dcd9 !important;
+}
+
+.active,
+.start-date,
+.end-date {
+    background-color: #79655E !important;
+}
+
+.textDescription {
+    font-family: 'Forum', sans-serif;
+    color: #79655E;
+}
+
+.item-description__rightSide-upperText {
+    font-weight: 600;
 }

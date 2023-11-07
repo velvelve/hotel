@@ -8,15 +8,15 @@
             <div class="roomsSearch-menu__date">
                 <div class="roomsSearch-menu__date-head">
                     <img src="/img/roomsSearch/date.svg">
-                    <label for="date_range">Заезд - Выезд</label>
+                    <label class="roomsSearch-menu__label" for="date_range">Заезд - Выезд</label>
                 </div>
-                <input type="text" name="date_range" id="date_range">
+                <input type="text" class="roomsSearch-menu__input" name="date_range" id="date_range">
             </div>
 
             <div class="roomsSearch-menu__guest">
                 <div class="roomsSearch-menu__guest-head">
                     <img src="/img/roomsSearch/guest.svg">
-                    <label for="guest_count">Кол-во гостей</label>
+                    <label class="roomsSearch-menu__label" for="guest_count">Кол-во гостей</label>
                 </div>
                 @if ($errors->any())
                     <div class="alert alert-danger">
@@ -46,9 +46,9 @@
                 @endif
                 <select name="type-room" id="type-room">
                     <option value="Все" {{ $typeRoom == 'Все' ? 'selected' : '' }}>Все</option>
-                    @foreach (\App\Enums\Rooms\RoomTypes::getRoomTypes() as $type)
-                        <option value="{{ $type }}" {{ $typeRoom == $type ? 'selected' : '' }}>
-                            {{ $type }}</option>
+                    @foreach (\App\Models\RoomType::all() as $type)
+                        <option value="{{ $type->name }}" class="option-{{$type->name}} options" {{ $typeRoom == $type->name ? 'selected' : '' }}>
+                            {{ $type->name }}</option>
                     @endforeach
                 </select>
             </div>

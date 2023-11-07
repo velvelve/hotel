@@ -62,7 +62,7 @@
 .profile-leftSide__nav-link {
     text-decoration: none;
     font-family: "Forum", serif;
-    font-size: 32px;
+    font-size: 30px;
     color: #fff;
     opacity: 0.3;
     cursor: pointer;
@@ -102,7 +102,7 @@
     min-height: 42px;
     max-height: 42px;
     font-family: "Forum", serif;
-    font-size: 26px;
+    font-size: 24px;
     color: #fff;
     background: transparent;
     cursor: pointer;
@@ -111,7 +111,7 @@
 .reservation-nav-li-active {
     background: #eeeaea;
     font-family: "Forum", serif;
-    font-size: 26px;
+    font-size: 24px;
     color: #79655e;
 }
 
@@ -141,11 +141,13 @@
     background-color: #eeeaea;
 }
 
-.reservation-content__current-content, .reservation-content__past-content, .reservation-content__canceled-content {
+.reservation-content__current-content,
+.reservation-content__past-content,
+.reservation-content__canceled-content {
     margin-top: 50px;
     padding-left: 20px;
     font-family: "Forum", serif;
-    font-size: 28px;
+    font-size: 24px;
     color: #79655E;
 }
 
@@ -186,10 +188,11 @@
 .profileSettings-nav-link {
     text-decoration: none;
     font-family: "Forum", serif;
-    font-size: 24px;
+    font-size: 22px;
     color: #fff;
     cursor: pointer;
 }
+
 .profileSettings-nav-link-active {
     border-bottom: 1px solid #fff;
 }
@@ -246,7 +249,7 @@
     max-width: 186px;
     height: 34px;
     margin-left: 10px;
-    font-family: "Manrope", serif;
+    font-family: 'Forum', sans-serif;
     font-size: 20px;
     color: #79655e;
 }
@@ -256,9 +259,8 @@
     height: 42px;
     padding: 0 15px 0 15px;
     border: 1px solid #79655e;
-    border-radius: 50px;
     outline: none;
-    font-family: "Manrope", serif;
+    font-family: 'Forum', sans-serif;
     font-size: 18px;
 }
 
@@ -295,7 +297,7 @@
 }
 
 .form-input-group__type-checkbox label {
-    font-family: "Manrope", serif;
+    font-family: 'Forum', sans-serif;
     font-size: 16px;
     color: #79655e;
     cursor: pointer;
@@ -305,17 +307,17 @@
     width: 203px;
     height: 43px;
     border: none;
-    border-radius: 50px;
     background: #79655E;
-    font-family: "Manrope", serif;
-    font-size: 20px;
+    font-family: 'Forum', sans-serif;
+    font-size: 18px;
     color: #fff;
     cursor: pointer;
-    transition: .3s;
+    transition: 0.7s;
 }
 
 .form-btn:hover {
-    opacity: .8;
+    color: #ffff;
+    background: #C09B5A;
 }
 
 .profileSettings-content__security {
@@ -326,12 +328,12 @@
     max-width: 690px;
     min-height: 536px;
     max-height: 536px;
-    padding-left: 30PX;
+    padding-left: 30px;
 }
 
 .security-head {
-    font-family: "Manrope", serif;
-    font-size: 28px;
+    font-family: 'Forum', sans-serif;
+    font-size: 24px;
     color: #79655e;
 }
 
@@ -349,7 +351,7 @@
 
 .security-form__item-head {
     margin-left: 15px;
-    font-family: "Manrope", serif;
+    font-family: 'Forum', sans-serif;
     font-size: 18px;
     color: #79655e;
 }
@@ -360,9 +362,8 @@
     margin-top: 5px;
     padding: 0 15px 0 15px;
     border: 1px solid #79655e;
-    border-radius: 50px;
     outline: none;
-    font-family: "Manrope", serif;
+    font-family: 'Forum', sans-serif;
     font-size: 18px;
 }
 
@@ -388,7 +389,7 @@
     max-width: 450px;
     margin-top: 40px;
     font-family: "Forum", serif;
-    font-size: 28px;
+    font-size: 24px;
     color: #79655e;
 }
 
@@ -439,14 +440,14 @@
 }
 
 .profileInfo-head__nameAndEmail-name {
-    font-family: "Forum", serif;
+    font-family: 'Forum', sans-serif;
     font-size: 34px;
     color: #79655e;
 }
 
 .profileInfo-head__nameAndEmail-email {
-    font-family: "Forum", serif;
-    font-size: 24px;
+    font-family: 'Forum', sans-serif;
+    font-size: 22px;
     color: #79655e;
 }
 
@@ -455,8 +456,8 @@
     height: 32px;
     border: none;
     background: none;
-    font-family: "Forum", serif;
-    font-size: 28px;
+    font-family: 'Forum', sans-serif;
+    font-size: 24px;
     color: #CE6845;
     cursor: pointer;
     transition: .3s;
@@ -469,23 +470,28 @@
 .current-balance {
     margin-top: 15px;
     margin-bottom: 15px;
-    font-family: "Forum", serif;
+    font-family: 'Forum', sans-serif;
     font-size: 26px;
     color: #79655e;
 }
 
-.current-balance-points, .current-balance-nights {
-    font-family: "Forum", serif;
+.current-balance-points,
+.current-balance-nights {
+    font-family: 'Forum', sans-serif;
     font-size: 22px;
     color: #79655e;
 }
 
-.points, .nights {
-    font-family: "Forum", serif;
+.points,
+.nights {
+    font-family: 'Forum', sans-serif;
     font-size: 22px;
     color: #CE6845;
 }
 
-.profileInfo-logout-btn, .current-balance, .current-balance-points, .current-balance-nights {
+.profileInfo-logout-btn,
+.current-balance,
+.current-balance-points,
+.current-balance-nights {
     margin-left: 15px;
 }

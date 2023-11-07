@@ -25,7 +25,7 @@ class BookingController extends Controller
     }
 
     // Отображение формы для создания нового бронирования
-    public function create($room_id): View | RedirectResponse
+    public function create($room_id): View|RedirectResponse
     {
         //Проверка авторизации пользователя
         if (!Auth::check()) {
@@ -40,7 +40,7 @@ class BookingController extends Controller
         //Получаю из url room_id
         $room = Room::findOrFail($room_id);
 
-        //Получаю авторизированого user
+        //Получаю авторизированного user
         $user = Auth::user();
 
         return view('bookings.create', [

@@ -10,13 +10,13 @@
 h1 {
     position: relative;
     color: #FFFFFF;
-    font-family: 'Forum', cursive;
-    font-size: 80px;
+    font-family: 'Forum', sans-serif;
+    font-size: 60px;
     height: 100px;
     top: 234px;
     display: flex;
     justify-content: center;
-    font-weight: 400px;
+    font-weight: 400;
 }
 
 .main__header {
@@ -29,24 +29,24 @@ h1 {
 }
 
 .main__content {
-    min-height: 1205px;
+    min-height: 780px;
     position: relative;
     display: grid;
     justify-items: center;
 }
 
 .content__header {
-    min-height: 158px;
+    height: 158px;
     max-width: 1452px;
     position: relative;
     text-align: center;
     top: 84px;
-    margin-bottom: 69px;
 }
 
 .header_stones {
-    font-family: 'Forum', cursive;
-    font-size: 68px;
+    font-family: 'Forum', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
     color: #453834;
 }
 
@@ -55,7 +55,6 @@ h1 {
     display: flex;
     max-width: 1600px;
     max-height: 581px;
-    top: 63px;
 }
 
 .info__text {
@@ -70,8 +69,8 @@ h1 {
 }
 
 .text {
-    font-family: 'Forum', cursive;
-    font-size: 30px;
+    font-family: 'Forum', sans-serif;
+    font-size: 24px;
     padding-bottom: 15px;
 }
 
@@ -84,25 +83,33 @@ h1 {
 }
 
 .main__price {
-    max-width: 1600px;
+    min-width: 1600px;
     height: 208px;
-    top: 83px;
     background-color: #CACECB;
     position: relative;
-    text-align: center;
-    margin-bottom: 84px;
+    margin-bottom: 84px; 
+    display: grid;
+    justify-content: center;
+}
+
+.price__content {
+    height: 208px;
+    max-width: 1600px;
     display: grid;
     justify-items: center;
     grid-auto-flow: column;
+    position: relative;
+    text-align: center;
 }
 
 .price__text {
     height: 208px;
     width: 400px;
-    font-family: 'Montserrat', bold;
-    font-size: 34px;
+    font-family: 'Forum', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
     color: #453834;
-    padding-top: 55px;
+    padding-top: 75px;
 }
 
 .main__img-background {

@@ -1,0 +1,133 @@
+.main {
+    position: relative;
+    min-width: 1600px;
+    height: 1922px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(to right, #786853,  #D9EBEB);
+}
+
+h1 {
+    position: relative;
+    color: #FFFFFF;
+    font-family: 'Forum', sans-serif;
+    font-size: 60px;
+    font-weight: 400;
+    height: 100px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.main__header {
+    min-width: 100%;
+    height: 558px;
+    background-image: url(../../img/facial-therapy/background-face.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    text-align: center;
+    position: relative;
+    display: grid;
+    align-items: center;
+}
+
+.main__content {
+    min-height: 910px;
+    position: relative;
+    display: grid;
+    justify-items: center;
+}
+
+.content__header {
+    height: 30px;
+    font-weight: 600;
+    max-width: 1452px;
+    position: relative;
+    text-align: center;
+    top: 46px;
+}
+
+.header_massage {
+    font-family: 'Forum', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: #453834;
+}
+
+.content-info {
+    position: relative;
+    display: flex;
+    max-width: 1469px;
+    max-height: 711px;
+}
+
+.info__text {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 663px;
+    height: 711px;
+}
+
+.text {
+    font-family: 'Forum', sans-serif;
+    font-size: 24px;
+    padding-bottom: 15px;
+}
+
+.info__img {
+    position: relative;
+    height: 630px;
+    width: 780px;
+    left: 15px;
+}
+
+.img__massage {
+    height: 630px;
+    width: 780px;
+}
+
+.main__price {
+    min-width: 1600px;
+    height: 208px;
+    background-color: #CACECB;
+    position: relative;
+    margin-bottom: 84px; 
+    display: grid;
+    justify-content: center;
+    margin-top: -84px;
+}
+
+.price__content {
+    height: 208px;
+    max-width: 1600px;
+    display: grid;
+    justify-items: center;
+    grid-auto-flow: column;
+    position: relative;
+    text-align: center;
+}
+
+.content__text {
+    height: 208px;
+    width: 400px;
+    font-family: 'Forum', sans-serif;
+    font-size: 30px;
+    color: #453834;
+    padding-top: 55px;
+    font-weight: 600;
+}
+
+.main__img-background {
+    height: 158px;
+    min-width: 1600px;
+    position: relative;
+    display: contents;
+}
+
+.img-background {
+    height: 158px;
+}

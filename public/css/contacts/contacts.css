@@ -1,9 +1,11 @@
 h1 {
-    font-size: 48px;
+    font-size: 40px;
+    font-weight: 600;
 }
 
 h2 {
-    font-size: 36px;
+    font-size: 30px;
+    font-weight: 600;
 }
 
 a {
@@ -30,7 +32,7 @@ ul {
     margin: 0 auto;
     background: linear-gradient(to right, #786853, #D9EBEB);
     min-height: 2200px;
-    min-width: 1800px;
+    min-width: 1600px;
     background-size: 100% 100%;
     display: grid;
     justify-content: center;
@@ -42,12 +44,11 @@ ul {
     display: flex;
     width: 727px;
     left: 55px;
-
 }
 
 .section-contact_heading {
     color: white;
-    font-family: 'Forum', cursive;
+    font-family: 'Forum', sans-serif;
 
 }
 
@@ -61,14 +62,13 @@ ul {
 
 .section-contact_messenger-list {
     position: relative;
-    font-size: 32px;
+    font-size: 30px;
     text-align: center;
     padding-top: 25px;
     left: 100px;
     height: 65px;
     width: 398px;
     vertical-align: middle;
-
 }
 
 .a-number {
@@ -99,7 +99,8 @@ ul {
 }
 
 .connection-_messenger-list {
-    font-size: 28px;
+    font-size: 24px;
+    font-weight: 400;
     padding-top: 25px;
 }
 
@@ -107,7 +108,7 @@ ul {
     position: relative;
     height: 577px;
     width: 865px;
-    top: 150px;
+    top: 75px;
     float: right;
 }
 
@@ -156,6 +157,7 @@ ul {
     height: 34px;
     width: 166px;
     font-size: 20px;
+    font-family: 'Forum', sans-serif;
     color: white;
     padding-left: 30px;
 }
@@ -190,6 +192,7 @@ option:focus {
 }
 
 input {
+    font-family: 'Forum', sans-serif;
     font-size: 18px;
     color: #e2f7f6;
     padding-left: 15px;
@@ -208,6 +211,7 @@ input:focus {
 }
 
 textarea {
+    font-family: 'Forum', sans-serif;
     padding-top: 25px;
     padding-left: 15px;
     padding-right: 15px;
@@ -217,6 +221,7 @@ textarea {
 
 
 textarea:focus {
+    font-family: 'Forum', sans-serif;
     outline: none;
     font-size: 18px;
 }
@@ -227,6 +232,7 @@ textarea:focus {
 }
 
 .forms-input {
+    font-family: 'Forum', sans-serif;
     background: transparent;
     border: #ffffff solid 1px;
     height: 64px;
@@ -289,9 +295,11 @@ select:focus {
 }
 
 .info_list {
+    font-family: 'Forum', sans-serif;
     height: 32px;
     width: 675px;
-    font-size: 32px;
+    font-size: 24px;
+    font-weight: 400;
     padding-top: 16px;
 }
 
@@ -355,6 +363,7 @@ select:focus {
     border: none;
     color: #ffffff;
     font-size: 24px;
+    font-family: 'Forum', sans-serif;
     background: linear-gradient(to top, #463820, #BFB7A8);
 }
 

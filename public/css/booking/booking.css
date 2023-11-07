@@ -361,3 +361,7 @@ input:focus {
     height: 1250px;
     background-color: #dbdbdb;
 }
+
+::placeholder {
+    color: #79655e;
+}

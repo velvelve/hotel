@@ -90,7 +90,7 @@
 .title {
     font-style: normal;
     font-weight: 400;
-    font-size: 48px;
+    font-size: 40px;
     line-height: 98.5%;
     text-align: center;
     color: #79655E;
@@ -101,7 +101,7 @@
 .description {
     font-style: normal;
     font-weight: 400;
-    font-size: 28px;
+    font-size: 24px;
     line-height: 127.5%;
     text-align: center;
     color: #79655E;
@@ -111,7 +111,7 @@
 
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
+    font-size: 22px;
     line-height: 98.5%;
     text-align: center;
     color: #CE6845;
@@ -145,7 +145,7 @@
     justify-content: space-between;
     align-items: flex-start;
     padding: 40px 25px 0 25px;
-    font-family: 'Forum', serif;
+    font-family: 'Forum', sans-serif;
 }
 
 .right-text-wrapper {
@@ -158,7 +158,7 @@
 .tariff-title {
     font-style: normal;
     font-weight: 400;
-    font-size: 30px;
+    font-size: 28px;
     line-height: 98.5%;
     color: #79655E;
 }
@@ -186,7 +186,7 @@
 .button {
     width: 500px;
     height: 50px;
-    background: rgba(192, 155, 90, 0.6);
+    background: #79655E;
     border: 0;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     margin-top: 123px;
@@ -194,13 +194,13 @@
     font-weight: 200;
     font-size: 20px;
     line-height: 98.5%;
-    color: #79655E;
+    color: #DBDBDB;
     transition: 0.7s;
 }
 
 .button:hover {
-    color: #DBDBDB;
-    background: #79655E;
+    color: #79655E;
+    background: rgba(192, 155, 90, 0.6);
 }
 
 .room-cart__modal {

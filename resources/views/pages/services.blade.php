@@ -27,7 +27,7 @@
                 </div>
             </div>
             <div class="section-3__image">
-                <img src="img/servicesPage/sport.png">
+                <img class="image__bg" src="img/servicesPage/sport.png">
             </div>
         </div>
         <div class="section-4">
@@ -37,7 +37,7 @@
         </div>
         <div class="section-5 container">
             <div class="section-5__image">
-                <img src="img/servicesPage/massage.png">
+                <img class="image__bg" src="img/servicesPage/massage.png">
             </div>
             <div class="section-5__description">
                 <div class="section-5__description-item">
@@ -73,7 +73,7 @@
                 </div>
             </div>
             <div class="section-7__image">
-                <img src="img/servicesPage/transfer.png">
+                <img class="image__bg" src="img/servicesPage/transfer.png">
             </div>
         </div>
 
@@ -84,7 +84,7 @@
         </div>
         <div class="section-9 container">
             <div class="section-9__image">
-                <img src="img/servicesPage/concierge.png">
+                <img class="image__bg" src="img/servicesPage/concierge.png">
             </div>
             <div class="section-9__description">
                 <div class="section-9__description-item">

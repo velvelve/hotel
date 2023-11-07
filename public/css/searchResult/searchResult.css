@@ -25,7 +25,7 @@
     width: 1500px;
     flex-wrap: wrap;
     margin: auto;
-    font-family: 'Forum', serif;
+    font-family: 'Forum', sans-serif;
 }
 
 .searchResults {
@@ -51,8 +51,8 @@
     min-height: 100px;
     max-height: 100px;
     color: #fff;
-    font-family: 'Forum', cursive;
-    font-size: 62px;
+    font-family: 'Forum', sans-serif;
+    font-size: 40px;
 }
 
 .search-carts-container{
@@ -115,6 +115,7 @@
     border-bottom: solid rgba(6,94, 114, 0) 1px;
 }
 
+
 .cart-roomType:hover{
     text-shadow: 20px 20px 20px rgba(0, 0, 0, 0.25);
     border-bottom: solid rgba(6,94, 114, 0.3) 1px;
@@ -140,6 +141,7 @@
     line-height: 12px;
 }
 
+
 .cart-description-text_icon_wrapper{
     display: flex;
     align-items: center;
@@ -160,6 +162,7 @@
     line-height: 98.5%;
     color: #79655E;
 }
+
 
 .tariff{
 
@@ -316,6 +319,7 @@
     max-width: 250px;
 }
 
+
 .modal-description-img{
     height: 50px;
 }
@@ -328,6 +332,7 @@
     text-align: center;
     color: #79655E;
 }
+
 
 .modal-icon-list{
     display: grid;

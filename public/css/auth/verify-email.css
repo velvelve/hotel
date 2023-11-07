@@ -32,7 +32,7 @@
 .verify-email__link {
     color: #453834;
     text-align: left;
-    font-family: Montserrat;
+    font-family: 'Forum', sans-serif;
     font-size: 14px;
     font-weight: 500;
 }
@@ -44,7 +44,7 @@
 
 .verify-email__title {
     color: #79655E;
-    font-family: Abhaya Libre;
+    font-family: 'Forum', sans-serif;
     font-size: 40px;
     font-weight: 400;
 }
@@ -52,7 +52,7 @@
 .verify-email__text {
     color: #453834;
     text-align: center;
-    font-family: Forum;
+    font-family: 'Forum', sans-serif;
     font-size: 16px;
     margin: 47px 0 16px 0;
 }
@@ -65,10 +65,11 @@
     width: 230px;
     height: 48px;
     background: #C09B5A;
-    font-family: Montserrat;
+    font-family: 'Forum', sans-serif;
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
+    transition: 0.7s;
 }
 
 .verify-email__button:active {
@@ -76,4 +77,7 @@
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
 }
 
-.verify-email__img {}
+.verify-email__button:hover {
+    color: #ffff;
+    background: #79655E;
+}

@@ -21,7 +21,6 @@ class RegistrationAuthorizationTest extends TestCase
         // Задаем данные пользователя для регистрации
         $data = [
             'first_name' => 'Иван',
-
             'last_name' => 'Иванов',
             'email' => 'kwuhn.dax@example.net',
             'tel' => '+123456789', // Устанавливаем значение для поля телефона
@@ -40,7 +39,6 @@ class RegistrationAuthorizationTest extends TestCase
         // Проверьте, что пользователь был добавлен в базу данных
         $this->assertDatabaseHas('users', [
             'first_name' => 'Иван',
-
             'last_name' => 'Иванов',
             'email' => 'kwuhn.dax@example.net',
         ]);

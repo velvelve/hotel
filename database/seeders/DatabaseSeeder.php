@@ -21,12 +21,12 @@ class DatabaseSeeder extends Seeder
         DB::table('bed_types')->truncate(); // admin
         DB::table('room_types')->truncate(); // admin
         DB::table('images')->truncate(); // admin
-        DB::table('bookings')->truncate();
+        DB::table('bookings')->truncate(); // admin
         DB::table('image_service')->truncate();
         DB::table('hotel_service')->truncate();
         DB::table('room_service')->truncate();
         DB::table('booking_service')->truncate();
-        DB::table('services')->truncate();
+        DB::table('services')->truncate(); // admin
         DB::table('rooms')->truncate();
         DB::table('reviews')->truncate();
         DB::table('users')->truncate();

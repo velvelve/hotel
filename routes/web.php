@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\ViewTypeController as AdminViewTypeController;
 use App\Http\Controllers\Admin\BedTypeController as AdminBedTypeController;
 use App\Http\Controllers\Admin\ImageController as AdminImageController;
 use App\Http\Controllers\Admin\BookingController as AdminBookingController;
+use App\Http\Controllers\Admin\ServiceController as AdminServiceController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Auth\ChangePasswordController;
 use App\Http\Controllers\Auth\EmailVerificationController;
@@ -57,6 +58,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin.'], st
         Route::resource('/bed-types', AdminBedTypeController::class);
         Route::resource('/images', AdminImageController::class);
         Route::resource('/bookings', AdminBookingController::class);
+        Route::resource('/services', AdminServiceController::class);
     });
     Route::group(['middleware' => 'admin'], function () {
         Route::resource('/locations', AdminLocationController::class);

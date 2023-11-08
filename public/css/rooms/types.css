@@ -21,7 +21,7 @@
     Width: 1500px;
     Height: 900px;
     background-color: #DBDBDB;
-    box-shadow: 10px 10px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.25);
 }
 
 .room_slider_wrapper {
@@ -188,13 +188,13 @@
     height: 50px;
     background: #79655E;
     border: 0;
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     margin-top: 123px;
     font-style: normal;
     font-weight: 200;
     font-size: 20px;
     line-height: 98.5%;
     color: #DBDBDB;
+    cursor: pointer;
     transition: 0.7s;
 }
 

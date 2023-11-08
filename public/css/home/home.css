@@ -8,10 +8,8 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    min-width: 100vw;
-    max-width: 100vw;
-    min-height: 970px;
-    max-height: 970px;
+    min-width: 1600px;
+    height: 970px;
     background: url(/img/homePage/section1/section1-bg.png);
     background-size: 100% 100%;
 }
@@ -93,10 +91,16 @@
     font-family: 'Forum', sans-serif;
     font-size: 20px;
     color: #fff;
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .3s;
 }
 
 .section-1-header__menu ul li a:hover {
-    text-decoration: underline;
+    background-size: 100% 2px;
 }
 
 .section-1-social {
@@ -214,8 +218,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-width: 100vw;
-    max-width: 100vw;
+    min-width: 1600px;
     background-color: #000;
 }
 
@@ -230,6 +233,7 @@
     height: 650px;
     background-color: #DBDBDB;
     cursor: pointer;
+
 }
 
 .cart-img {
@@ -240,6 +244,7 @@
 }
 
 .slider-cart-description {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -248,13 +253,68 @@
     height: 100%;
 }
 
+.description-arrow-corner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    background-color: #00838d;
+    border-radius: 0 0 0 24px;
+}
+
+.description-arrow {
+    margin-top: -8px;
+    margin-right: -4px;
+    color: white;
+    font-family: courier, sans;
+}
+
+.card-effect {
+    position: relative;
+    text-decoration: none;
+    z-index: 0;
+    overflow: hidden;
+
+    &:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: -16px;
+        right: -16px;
+        background: #00838d;
+        height: 32px;
+        width: 32px;
+        border-radius: 32px;
+        transform: scale(1);
+        transform-origin: 50% 50%;
+        transition: transform 0.25s ease-out;
+    }
+
+    &:hover:before {
+        transform: scale(38);
+    }
+}
+
+.card-effect:hover span {
+    transition: all 0.3s ease-out;
+    color: #ffffffcc;
+}
+
+.card-effect:hover img {
+    filter: brightness(0) invert(1);
+}
+
 .description-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    min-width: 257px;
-    max-width: 257px;
+    width: 90%;
     height: 100%;
 }
 
@@ -262,8 +322,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Forum', sans-serif;
-    font-size: 24px;
+    font-size: 1.2rem;
     color: #79655E;
     line-height: 98.5%;
     text-align: center;
@@ -272,23 +331,36 @@
 
 .description-upperText {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+}
 
-    font-family: 'Forum', sans-serif;
-    font-size: 12px;
+.description-row {
+    margin: 2px;
+    width: 100%;
+}
+
+.description-row-icon {
+    width: 0.77rem;
+    height: 0.77rem;
+    margin-right: 10px;
+}
+
+.description-row-text {
+    display: inline-block;
+    font-size: 0.77rem;
     color: #79655E;
-    line-height: 98.5%;
-    text-align: center;
-    margin: 16px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 90%;
 }
 
 .description-lowerText {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    font-family: 'Forum', sans-serif;
     font-size: 16px;
     color: #79655E;
     line-height: 98.5%;
@@ -315,6 +387,7 @@
     min-height: 30px;
     max-height: 30px;
     margin: 0 5px 0 5px;
+    fill: #79655E;
 }
 
 .services {
@@ -411,10 +484,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 100vw;
-    max-width: 100vw;
-    min-height: 540px;
-    max-height: 540px;
+    min-width: 1600px;
+    height: 540px;
     background: url(/img/homePage/section3/section3-bg.png);
     background-size: 100% 100%;
 }
@@ -489,8 +560,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    min-width: 100vw;
-    max-width: 100vw;
+    min-width: 1600px;
     height: 1600px;
     background-color: black;
 }
@@ -656,4 +726,10 @@
 .section-4_anchor:hover {
     border: solid rgba(255, 255, 255, 1) 1px;
     background-color: rgb(255, 255, 255);
+}
+
+.roomsSearch-stroke {
+    position: absolute;
+    top: 563px;
+    z-index: 1;
 }

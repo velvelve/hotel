@@ -189,12 +189,12 @@
     text-decoration: none;
     font-family: "Forum", serif;
     font-size: 22px;
-    color: #fff;
+    color: #79655e;
     cursor: pointer;
 }
 
 .profileSettings-nav-link-active {
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid #79655e;
 }
 
 .profileSettings-content__general {

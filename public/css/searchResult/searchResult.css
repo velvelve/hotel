@@ -10,6 +10,14 @@
     align-items: start;
 }
 
+.roomsSearch-head{
+    display: none;
+}
+
+.roomsSearch-menu, .roomsSearch-menu form{
+    box-shadow: none;
+}
+
 .searchResult-wrapper {
     width: 1500px;
     flex-wrap: wrap;

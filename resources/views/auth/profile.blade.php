@@ -48,19 +48,28 @@
                         <!-- Подраздел Текущие -->
                         <div class="reservation-content__current">
                             <div class="reservation-content__current-content">
-                                Бронирований не найдено
+                                @foreach($bookingsBooked as $bookingBooked)
+                                    <p> {{ $bookingBooked->last_name . ' ' . $bookingBooked->client_first_name . ' ' . $bookingBooked->middle_name . ' ' . $bookingBooked->client_phone . ' ' . $bookingBooked->client_email . ' ' . $bookingBooked->promo_code . ' ' . $bookingBooked->client_wishes . ' ' . $bookingBooked->guests_count . ' ' . $bookingBooked->total_price }} </p>
+                                    <hr>
+                                @endforeach
                             </div>
                         </div>
                         <!-- Подраздел Прошедшие -->
                         <div class="reservation-content__past">
                             <div class="reservation-content__past-content">
-                                Бронирований не найдено
+                                @foreach($bookingsConfirmed as $bookingCancelled)
+                                    <p> {{ $bookingCancelled->last_name . ' ' . $bookingCancelled->client_first_name . ' ' . $bookingCancelled->middle_name . ' ' . $bookingCancelled->client_phone . ' ' . $bookingCancelled->client_email . ' ' . $bookingCancelled->promo_code . ' ' . $bookingCancelled->client_wishes . ' ' . $bookingCancelled->guests_count . ' ' . $bookingCancelled->total_price }} </p>
+                                    <hr>
+                                @endforeach
                             </div>
                         </div>
                         <!-- Подраздел Отмененные -->
                         <div class="reservation-content__canceled">
                             <div class="reservation-content__canceled-content">
-                                Бронирований не найдено
+                                @foreach($bookingsCancelled as $bookingCancelled)
+                                    <p> {{ $bookingCancelled->last_name . ' ' . $bookingCancelled->client_first_name . ' ' . $bookingCancelled->middle_name . ' ' . $bookingCancelled->client_phone . ' ' . $bookingCancelled->client_email . ' ' . $bookingCancelled->promo_code . ' ' . $bookingCancelled->client_wishes . ' ' . $bookingCancelled->guests_count . ' ' . $bookingCancelled->total_price }}</p>
+                                    <hr>
+                                @endforeach
                             </div>
                         </div>
                     </div>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Enums\Booking\Status;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use DateTimeImmutable;
@@ -18,7 +19,13 @@ class ProfileController extends Controller
      */
     public function index(): view
     {
-        return view('auth.profile');
+        $bookingsBooked = User::find(auth()->user()->id)->bookings()->where('status', Status::BOOKED)->get();
+        $bookingsConfirmed = User::find(auth()->user()->id)->bookings()->where('status', Status::CONFIRMED)->get();
+        $bookingsCancelled= User::find(auth()->user()->id)->bookings()->where('status', Status::CANCELLED)->get();
+
+
+        return view('auth.profile', ['bookingsBooked' => $bookingsBooked, 'bookingsConfirmed' => $bookingsConfirmed,
+            'bookingsCancelled' => $bookingsCancelled ]);
     }
 
     /**
@@ -70,7 +77,7 @@ class ProfileController extends Controller
             'updated_at' => now()
         ]);
 
-        return redirect()->back()->with('profile','Данные изменены!');
+        return redirect()->back()->with('profile', 'Данные изменены!');
     }
 
     /**

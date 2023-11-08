@@ -307,6 +307,7 @@
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
+    padding-bottom: 20px;
 }
 
 .modal-description-text_icon_wrapper{

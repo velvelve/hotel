@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\BedTypeController as AdminBedTypeController;
 use App\Http\Controllers\Admin\ImageController as AdminImageController;
 use App\Http\Controllers\Admin\BookingController as AdminBookingController;
 use App\Http\Controllers\Admin\ServiceController as AdminServiceController;
+use App\Http\Controllers\Admin\RoomController as AdminRoomController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Auth\ChangePasswordController;
 use App\Http\Controllers\Auth\EmailVerificationController;
@@ -65,6 +66,8 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin.'], st
         Route::get('/locations/{country_id}/city', [AdminLocationController::class, 'city'])->name('location.city');
         Route::resource('/cities', AdminCityController::class);
         Route::resource('/countries', AdminCountryController::class);
+        Route::resource('/rooms',  AdminRoomController::class);
+        Route::get('/rooms/{hotel}/room-numbers',  [AdminRoomController::class, 'room_numbers'])->name('room.room-numbers');
     });
 });
 

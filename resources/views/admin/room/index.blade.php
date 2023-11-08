@@ -1,11 +1,11 @@
 @extends('layouts.admin')
 @section('content')
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Список сервисов</h1>
+        <h1 class="h2">Список номеров</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group me-2">
-                <a href="{{ route('admin.services.create') }}" class="btn btn-sm btn-outline-secondary">Добавить
-                    сервис</a>
+                <a href="{{ route('admin.rooms.create') }}" class="btn btn-sm btn-outline-secondary">Добавить
+                    номер</a>
             </div>
         </div>
     </div>
@@ -15,26 +15,41 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Название</th>
+                    <th scope="col">Отель</th>
+                    <th scope="col">Номер комнаты</th>
                     <th scope="col">Описание</th>
+                    <th scope="col">Площадь</th>
+                    <th scope="col">Количество комнат</th>
+                    <th scope="col">Количство взрослых</th>
+                    <th scope="col">Количество детей</th>
                     <th scope="col">Цена</th>
-                    <th scope="col">Константа</th>
-                    <th scope="col">Дата добавления</th>
+                    <th scope="col">Доступность</th>
+                    <th scope="col">Тип комнаты</th>
+                    <th scope="col">Тип вида из окна</th>
+                    <th scope="col">Тип кроватей</th>
                     <th scope="col">Действия</th>
                 </tr>
             </thead>
             <tbody>
-                @forelse ($services as $service)
+                @forelse ($rooms as $room)
                     <tr>
-                        <td>{{ $service->id }}</td>
-                        <td>{{ $service->name }} </td>
-                        <td>{{ $service->full_description }}</td>
-                        <td>{{ $service->price }}</td>
-                        <td>{{ $service->constant }}</td>
-                        <td>{{ $service->created_at }}</td>
-                        <td><a href="{{ route('admin.services.edit', ['service' => $service]) }}">Edit</a>
+                        <td>{{ $room->id }}</td>
+                        <td>{{ $room->hotel->name }} </td>
+                        <td>{{ $room->room_number }}</td>
+                        <td>{{ $room->description }}</td>
+                        <td>{{ $room->area }}</td>
+                        <td>{{ $room->apartment_count }}</td>
+                        <td>{{ $room->adults_max_guests }}</td>
+                        <td>{{ $room->children_max_guests }}</td>
+                        <td>{{ $room->price }}</td>
+                        <td>{{ $room->availability ? 'Доступен' : 'Не доступен' }}</td>
+                        <td>{{ $room->roomType->name }}</td>
+                        <td>{{ $room->viewType->description }}</td>
+                        <td>{{ $room->bedType->description }}</td>
+                        <td>{{ $room->created_at }}</td>
+                        <td><a href="{{ route('admin.rooms.edit', ['room' => $room]) }}">Edit</a>
                             &nbsp;
-                            <a href="javascript:;" class="delete" rel="{{ $service->id }}">Delete</a>
+                            <a href="javascript:;" class="delete" rel="{{ $room->id }}">Delete</a>
                         </td>
                     </tr>
                 @empty
@@ -54,7 +69,7 @@
                 element.addEventListener('click', function() {
                     const id = this.getAttribute('rel');
                     if (confirm(`Вы подтверждаете удаление записи с ID ${id}?`)) {
-                        send(`/admin/services/${id}`).then(() => {
+                        send(`/admin/rooms/${id}`).then(() => {
                             location.reload();
                         });
                     } else {

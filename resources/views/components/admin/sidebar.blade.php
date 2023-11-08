@@ -72,6 +72,13 @@
                         Города
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link @if (request()->routeIs('admin.rooms.index')) active @endif" aria-current="page"
+                        href="{{ route('admin.rooms.index') }}">
+                        <span>🏬</span>
+                        Номера
+                    </a>
+                </li>
             @endif
             <li class="nav-item">
                 <a class="nav-link" href="#">

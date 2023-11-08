@@ -16,7 +16,7 @@
         <form method="POST" action="{{ route('admin.locations.store') }}" id="store_form">
             @csrf
             <div class="form-group">
-                <label>Страна</label>
+                <label for="country_id">Страна</label>
                 <select class="form-control" name="country_id" id="country_id">
                     @foreach ($countries as $country)
                         <option value="{{ $country->id }}" @if ($country->id === old('country_id')) selected @endif>
@@ -46,13 +46,11 @@
         $(document).ready(function() {
 
             $('#country_id').on('change', function() {
-                console.log($(this).val());
                 var countryId = $(this).val();
                 $('#city_id').empty()
                 $.ajax({
                     url: `${countryId}/city`,
                     success: data => {
-                        console.log(data);
                         data.cities.forEach(city =>
                             $('#city_id').append(`<option value="${city.id}">
                         ${city.name}</option>`)

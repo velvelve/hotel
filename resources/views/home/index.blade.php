@@ -55,6 +55,7 @@
         </div>
         {{-- Поиск --}}
         <div class="section-1-search">
+            <img src="/img/roomsSearch/header-stroke.svg" class="roomsSearch-stroke">
             <x-rooms.search :guests="$guests" :typeRoom="$typeRoom" />
         </div>
         <div class="section-1-services">
@@ -259,7 +260,7 @@
                 </form>
             </div>
         </div>
-        <a class="section-4_anchor" href="#section-1-header" >Наверх</a>
+        <a class="section-4_anchor" href="#section-1-header">Наверх</a>
     </div>
     @push('styles')
         <link href="{{ asset('css/main.css') }}" rel="stylesheet">

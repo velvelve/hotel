@@ -13,13 +13,15 @@
                     <ul class="profile-leftSide__nav-ul">
                         <li class="profile-leftSide__nav-li" id="reservation-li">
                             <a class="profile-leftSide__nav-link" onclick="clickOnReservation()"
-                                id="reservation-link">Бронирование</a>
+                               id="reservation-link">Бронирование</a>
                         </li>
                         <li class="profile-leftSide__nav-li profile-leftSide__nav-li-active" id="profile-li">
-                            <a class="profile-leftSide__nav-link" onclick="clickOnProfile()" id="profile-link">Профиль</a>
+                            <a class="profile-leftSide__nav-link" onclick="clickOnProfile()"
+                               id="profile-link">Профиль</a>
                         </li>
                         <li class="profile-leftSide__nav-li" id="bonuses-li">
-                            <a class="profile-leftSide__nav-link" onclick="clickOnBonuses()" id="bonuses-link">Бонусы</a>
+                            <a class="profile-leftSide__nav-link" onclick="clickOnBonuses()"
+                               id="bonuses-link">Бонусы</a>
                         </li>
                     </ul>
                 </div>
@@ -30,15 +32,15 @@
                         <ul class="reservation-nav-ul">
                             <li class="reservation-nav-li reservation-nav-li-active" id="current-li">
                                 <a class="reservation-nav-link reservation-nav-link-active"
-                                    onclick="reservationClickOnCurrent()" id="current-link">текущие</a>
+                                   onclick="reservationClickOnCurrent()" id="current-link">текущие</a>
                             </li>
                             <li class="reservation-nav-li" id="past-li">
                                 <a class="reservation-nav-link" onclick="reservationClickOnPast()"
-                                    id="past-link">прошедшие</a>
+                                   id="past-link">прошедшие</a>
                             </li>
                             <li class="reservation-nav-li" id="canceled-li">
                                 <a class="reservation-nav-link" onclick="reservationClickOnCanceled()"
-                                    id="canceled-link">отмененные</a>
+                                   id="canceled-link">отмененные</a>
                             </li>
                         </ul>
                     </div>
@@ -70,11 +72,11 @@
                         <ul class="profileSettings-nav-ul">
                             <li class="profileSettings-nav-li">
                                 <a class="profileSettings-nav-link profileSettings-nav-link-active"
-                                    onclick="profileClickOnGeneral()" id="general-link">Общее</a>
+                                   onclick="profileClickOnGeneral()" id="general-link">Общее</a>
                             </li>
                             <li class="profileSettings-nav-li">
                                 <a class="profileSettings-nav-link" onclick="profileClickOnSecurity()"
-                                    id="security-link">Безопасность</a>
+                                   id="security-link">Безопасность</a>
                             </li>
                         </ul>
                     </div>
@@ -92,68 +94,72 @@
                         <!-- Подраздел Общее  -->
                         <div class="profileSettings-content__general">
                             <form action="{{ route('profile.update', auth()->user()) }}" method="post"
-                                class="profileSettings-form" id="profile-form">
+                                  class="profileSettings-form" id="profile-form">
                                 @csrf
                                 <div class="form-input-group__type-text">
                                     <div class="form-item">
                                         <div class="form-item-name">Фамилия</div>
                                         <input name="last_name" type="text" class="form-item-input"
-                                            value="{{ auth()->user()->last_name }}" />
+                                               value="{{ auth()->user()->last_name }}"/>
                                     </div>
                                     <div class="form-item">
                                         <div class="form-item-name">Имя</div>
                                         <input name="first_name" type="text" class="form-item-input"
-                                            value="{{ auth()->user()->first_name }}" />
+                                               value="{{ auth()->user()->first_name }}"/>
                                     </div>
                                     <div class="form-item">
                                         <div class="form-item-name">Отчество</div>
-                                        <input type="text" class="form-item-input" />
+                                        <input name="middle_name" type="text" class="form-item-input"
+                                               value="{{ auth()->user()->middle_name }}"/>
                                     </div>
                                     <div class="form-item form-item-date">
                                         <div class="form-item-name">Дата рождения</div>
-                                        <input type="date" class="form-item-input input-dateOfBirth" />
+                                        <input name="date_of_birth" type="date"
+                                               class="form-item-input input-dateOfBirth"
+                                               value="{{ date_format(date_create(auth()->user()->date_of_birth), 'Y-m-d') }}"/>
                                     </div>
                                     <div class="form-item form-item-gender">
                                         <div class="form-item-name">Пол</div>
-                                        <select class="form-item-input input-gender" form="profile-form">
-                                            <option>М</option>
-                                            <option>Ж</option>
+                                        <select name="gender" class="form-item-input input-gender" form="profile-form">
+                                            <option {{ (auth()->user()->gender === 'M') ? 'selected' : '' }} value="M">М</option>
+                                            <option {{ (auth()->user()->gender === 'W') ? 'selected' : '' }} value="W">Ж</option>
                                         </select>
                                     </div>
                                     <div class="form-item">
                                         <div class="form-item-name">Телефон гостя</div>
-                                        <input type="tel" class="form-item-input" />
+                                        <input name="phone" type="tel" class="form-item-input" value="{{ auth()->user()->phone }}" />
                                     </div>
                                     <div class="form-item">
                                         <div class="form-item-name">Электронная почта</div>
-                                        <input type="email" class="form-item-input" value="{{ auth()->user()->email }}" />
+                                        <input name="email" type="email" class="form-item-input"
+                                               value="{{ auth()->user()->email }}"/>
                                     </div>
                                     <div class="form-item">
                                         <div class="form-item-name">Страна</div>
-                                        <input type="text" class="form-item-input" />
+                                        <input name="country" type="text" class="form-item-input" value="{{ auth()->user()->country }}"/>
                                     </div>
                                     <div class="form-item">
                                         <div class="form-item-name">Город</div>
-                                        <input type="text" class="form-item-input" />
+                                        <input name="city" type="text" class="form-item-input" value="{{ auth()->user()->city }}"/>
                                     </div>
                                 </div>
                                 <div class="form-input-group__type-checkbox">
                                     <div class="form-input-group__type-checkbox-item">
-                                        <input type="checkbox" id="sale-info" />
+                                        <input type="checkbox" id="sale-info"/>
                                         <label for="sale-info">Получать информацию об эксклюзивных скидках на
                                             номера</label>
                                     </div>
                                     <div class="form-input-group__type-checkbox-item">
-                                        <input type="checkbox" id="special-offer-info" />
+                                        <input type="checkbox" id="special-offer-info"/>
                                         <label for="special-offer-info">Получать уведомления о спец предложениях</label>
                                     </div>
                                     <div class="form-input-group__type-checkbox-item">
-                                        <input type="checkbox" id="bonus-info" />
+                                        <input type="checkbox" id="bonus-info"/>
                                         <label for="bonus-info">Получать уведомления о начисленных бонусах (1 бонус = 1
                                             рубль)</label>
                                     </div>
                                     <div class="form-input-group__type-checkbox-item">
-                                        <input type="checkbox" id="hotel-answer-info" />
+                                        <input type="checkbox" id="hotel-answer-info"/>
                                         <label for="hotel-answer-info">Получать уведомления об ответе отелей на ваши
                                             отзывы</label>
                                     </div>
@@ -182,28 +188,28 @@
                                 @endforeach
                             @endif
                             <form action="{{ route('password.change') }}" method="POST" class="security-form"
-                                id="security-form">
+                                  id="security-form">
                                 @csrf
                                 <div class="security-form__item">
                                     <div class="security-form__item-head">
                                         Введите текущий пароль:
                                     </div>
                                     <input id="current_password" name="current_password" type="password"
-                                        class="security-form__item-input" />
+                                           class="security-form__item-input"/>
                                 </div>
                                 <div class="security-form__item">
                                     <div class="security-form__item-head">
                                         Новый пароль:
                                     </div>
                                     <input id="new_password" name="new_password" type="password"
-                                        class="security-form__item-input" />
+                                           class="security-form__item-input"/>
                                 </div>
                                 <div class="security-form__item">
                                     <div class="security-form__item-head">
                                         Повторите новый пароль:
                                     </div>
                                     <input id="new_password_confirmation" name="new_password_confirmation"
-                                        type="password" class="security-form__item-input" />
+                                           type="password" class="security-form__item-input"/>
                                 </div>
                                 <button id="change-password-btn" type="submit" class="form-btn">Сохранить</button>
                             </form>
@@ -226,7 +232,7 @@
                 <div class="profile-rightSide__profileInfo">
                     <div class="profileInfo-head">
                         <div class="profileInfo-head__avatar">
-                            <img src="" class="profileInfo-head__img" />
+                            <img src="" class="profileInfo-head__img"/>
                         </div>
                         <div class="profileInfo-head__nameAndEmail">
                             <div class="profileInfo-head__nameAndEmail-name">

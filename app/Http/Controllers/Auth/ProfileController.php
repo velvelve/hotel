@@ -4,9 +4,12 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use DateTimeImmutable;
+use Exception;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+
 
 class ProfileController extends Controller
 {
@@ -52,6 +55,7 @@ class ProfileController extends Controller
 
     /**
      * Update the specified resource in storage.
+     * @throws Exception
      */
     public function update(Request $request, User $user): RedirectResponse
     {

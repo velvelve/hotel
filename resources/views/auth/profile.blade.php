@@ -50,14 +50,16 @@
                             <div class="reservation-content__current-content">
                                 @foreach($bookingsBooked as $bookingBooked)
                                     <p> {{ $bookingBooked->last_name . ' ' . $bookingBooked->client_first_name . ' ' . $bookingBooked->middle_name . ' ' . $bookingBooked->client_phone . ' ' . $bookingBooked->client_email . ' ' . $bookingBooked->promo_code . ' ' . $bookingBooked->client_wishes . ' ' . $bookingBooked->guests_count . ' ' . $bookingBooked->total_price }} </p>
+                                    <hr>
                                 @endforeach
                             </div>
                         </div>
                         <!-- Подраздел Прошедшие -->
                         <div class="reservation-content__past">
                             <div class="reservation-content__past-content">
-                                @foreach($bookingsConfirmed as $bookingConfirmed)
-                                    <p> {{ $bookingBooked->last_name . ' ' . $bookingBooked->client_first_name . ' ' . $bookingBooked->middle_name . ' ' . $bookingBooked->client_phone . ' ' . $bookingBooked->client_email . ' ' . $bookingBooked->promo_code . ' ' . $bookingBooked->client_wishes . ' ' . $bookingBooked->guests_count . ' ' . $bookingBooked->total_price }} </p>
+                                @foreach($bookingsConfirmed as $bookingCancelled)
+                                    <p> {{ $bookingCancelled->last_name . ' ' . $bookingCancelled->client_first_name . ' ' . $bookingCancelled->middle_name . ' ' . $bookingCancelled->client_phone . ' ' . $bookingCancelled->client_email . ' ' . $bookingCancelled->promo_code . ' ' . $bookingCancelled->client_wishes . ' ' . $bookingCancelled->guests_count . ' ' . $bookingCancelled->total_price }} </p>
+                                    <hr>
                                 @endforeach
                             </div>
                         </div>
@@ -65,7 +67,8 @@
                         <div class="reservation-content__canceled">
                             <div class="reservation-content__canceled-content">
                                 @foreach($bookingsCancelled as $bookingCancelled)
-                                    <p> {{ $bookingBooked->last_name . ' ' . $bookingBooked->client_first_name . ' ' . $bookingBooked->middle_name . ' ' . $bookingBooked->client_phone . ' ' . $bookingBooked->client_email . ' ' . $bookingBooked->promo_code . ' ' . $bookingBooked->client_wishes . ' ' . $bookingBooked->guests_count . ' ' . $bookingBooked->total_price }}</p>
+                                    <p> {{ $bookingCancelled->last_name . ' ' . $bookingCancelled->client_first_name . ' ' . $bookingCancelled->middle_name . ' ' . $bookingCancelled->client_phone . ' ' . $bookingCancelled->client_email . ' ' . $bookingCancelled->promo_code . ' ' . $bookingCancelled->client_wishes . ' ' . $bookingCancelled->guests_count . ' ' . $bookingCancelled->total_price }}</p>
+                                    <hr>
                                 @endforeach
                             </div>
                         </div>

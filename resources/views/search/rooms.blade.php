@@ -1,10 +1,12 @@
 @extends('layouts.main')
-
+@push('styles')
+    <link href="{{ asset('css/searchResult/searchResult.css') }}" rel="stylesheet">
+@endpush
 @section('content')
     <div class="searchResult-bg">
         <div class="searchResult-wrapper">
             <div class="top-section">
-                <div class="searchResult-head">Результаты поиска :</div>
+                <div class="searchResult-title">Результаты поиска :</div>
                 <x-rooms.search :guests=$guests :typeRoom="$typeRoom" />
             </div>
             <div class="search-carts-container">

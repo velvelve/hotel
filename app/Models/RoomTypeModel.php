@@ -161,7 +161,7 @@ class RoomTypeModel
                 }
             }
             if (empty($imagesPaths)) {
-                $imagesPaths = 'img/no_image_icon.svg';
+                $imagesPaths = ['img/no_image_icon.svg'];
             }
 
             $services = [];

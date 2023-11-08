@@ -1,28 +1,27 @@
 .room_main_container {
-    background: linear-gradient(to right, #786853,  #D9EBEB);
+    background: linear-gradient(to right, #786853, #D9EBEB);
     background-size: 100% 100%;
     min-height: 2200px;
     min-width: 1600px;
 }
 
-.room_wrapper{
+.room_wrapper {
     width: 1500px;
     height: auto;
     margin-right: auto;
-    margin-left:  auto;
+    margin-left: auto;
     display: grid;
     grid-template-columns: 1fr;
     gap: 50px;
     padding: 50px;
 }
 
-.room_cart{
+.room_cart {
     position: relative;
-    Width:1500px;
-    Height:900px;
+    Width: 1500px;
+    Height: 900px;
     background-color: #DBDBDB;
-    border-radius:50px;
-    box-shadow: 10px 10px 4px rgba(0,0,0,0.25);
+    box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.25);
 }
 
 .room_slider_wrapper {
@@ -30,12 +29,12 @@
     width: 780px;
 }
 
-.img-slider{
+.img-slider {
     width: 780px;
     height: 462px;
 }
 
-.img-slider-nav{
+.img-slider-nav {
     width: 780px;
     height: 130px;
     position: relative;
@@ -43,7 +42,7 @@
     margin-top: 16px;
 }
 
-.slick-arrow{
+.slick-arrow {
     position: absolute;
     top: 35%;
     z-index: 20;
@@ -52,35 +51,35 @@
     height: 25px;
     border: 0;
 }
-.slick-arrow.slick-prev{
+
+.slick-arrow.slick-prev {
     left: -3px;
     background: no-repeat 100% url("left_icon.png");
 }
-.slick-arrow.slick-next{
+
+.slick-arrow.slick-next {
     right: 3px;
     background: no-repeat 100% url("right_icon.png");
 }
 
-.img{
+.img {
     width: 775px;
     height: 460px;
-    object-fit:cover;
-    border-radius: 50px;
+    object-fit: cover;
     border: solid black 1px;
 }
 
-.nav-img{
+.nav-img {
     width: 223px;
     height: 124px;
-    border-radius: 20px;
 }
 
-.room-cart-container{
+.room-cart-container {
     display: flex;
     border-bottom: solid #79655E 1px;
 }
 
-.text-wrapper{
+.text-wrapper {
     width: 614px;
     align-content: center;
     padding-left: 16px;
@@ -88,30 +87,31 @@
     font-family: 'Forum', serif;
 }
 
-.title{
+.title {
     font-style: normal;
     font-weight: 400;
-    font-size: 48px;
+    font-size: 40px;
     line-height: 98.5%;
     text-align: center;
     color: #79655E;
     padding-bottom: 50px;
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
-.description{
+
+.description {
     font-style: normal;
     font-weight: 400;
-    font-size: 28px;
+    font-size: 24px;
     line-height: 127.5%;
     text-align: center;
     color: #79655E;
 }
 
-.description-small{
+.description-small {
 
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
+    font-size: 22px;
     line-height: 98.5%;
     text-align: center;
     color: #CE6845;
@@ -119,51 +119,51 @@
     padding-top: 25px;
 }
 
-.text-icon-wrapper{
+.text-icon-wrapper {
     display: flex;
     flex-direction: column;
     height: 260px;
     justify-content: space-evenly;
 }
 
-.icons_wrapper{
+.icons_wrapper {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.icon{
-    width:60px;
+.icon {
+    width: 60px;
     height: 60px;
     padding-left: 25px;
     padding-right: 25px;
     padding-top: 25px;
 }
 
-.room-cart-container-lower{
+.room-cart-container-lower {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     padding: 40px 25px 0 25px;
-    font-family: 'Forum', serif;
+    font-family: 'Forum', sans-serif;
 }
 
-.right-text-wrapper{
+.right-text-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 123px;
 }
 
-.tariff-title{
+.tariff-title {
     font-style: normal;
     font-weight: 400;
-    font-size: 30px;
+    font-size: 28px;
     line-height: 98.5%;
     color: #79655E;
 }
 
-.tariff{
+.tariff {
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
@@ -171,7 +171,7 @@
     color: #CE6845;
 }
 
-.tariff-description{
+.tariff-description {
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
@@ -179,40 +179,37 @@
     color: #79655E;
 }
 
-.right-text{
+.right-text {
     text-align: right;
 }
 
-.button{
+.button {
     width: 500px;
     height: 50px;
-    border-radius: 50px;
-    background: rgba(192, 155, 90, 0.6);
+    background: #79655E;
     border: 0;
-    box-shadow: 0 4px 4px rgba(0,0,0,0.25);
     margin-top: 123px;
-
     font-style: normal;
     font-weight: 200;
     font-size: 20px;
     line-height: 98.5%;
-    color: #79655E;
+    color: #DBDBDB;
+    cursor: pointer;
     transition: 0.7s;
 }
 
 .button:hover {
-    color: #DBDBDB;
-    background: #79655E;
+    color: #79655E;
+    background: rgba(192, 155, 90, 0.6);
 }
 
 .room-cart__modal {
     position: absolute;
     display: none;
     justify-content: center;
-    width:1500px;
-    height:765px;
+    width: 1500px;
+    height: 765px;
     padding-top: 135px;
-    border-radius: 50px;
     background: rgba(0, 0, 0, 0.7);
     z-index: 100;
 }
@@ -222,7 +219,6 @@
     height: 622px;
     padding-top: 20px;
     background-color: #fff;
-    border-radius: 50px;
 }
 
 /* Стили календаря */
@@ -240,7 +236,6 @@
     height: 400px;
     margin-top: 50px !important;
     margin-left: 255px !important;
-    border-radius: 30px !important;
     box-shadow: 0px 20px 30px 0px rgba(34, 60, 80, 0.2);
 }
 
@@ -252,4 +247,9 @@
 .right {
     min-width: 580px !important;
     height: 160px !important;
+}
+
+.daterangepicker .calendar-table th,
+.daterangepicker .calendar-table td {
+    border-radius: 0px;
 }

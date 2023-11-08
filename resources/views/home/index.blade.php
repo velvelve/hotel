@@ -4,13 +4,10 @@
     @include('includes.message')
     <div class="section-1">
         {{-- Хедер главной страницы --}}
-        <div class="section-1-header">
+        <div class="section-1-header" id="section-1-header">
             <div class="section-1-header__logo">
                 <a href="{{ route('home') }}">
-                    <div class="section-1-header__logo-bg">
-                        <div class="section-1-header__logo-upperText">LUXURY</div>
-                        <div class="section-1-header__logo-lowerText">HOTELS</div>
-                    </div>
+                    <img class="footer_img" src="{{ asset('img\footer\logo.png') }}" alt="logo">
                 </a>
             </div>
             <div class="section-1-header__menu">
@@ -58,6 +55,7 @@
         </div>
         {{-- Поиск --}}
         <div class="section-1-search">
+            <img src="/img/roomsSearch/header-stroke.svg" class="roomsSearch-stroke">
             <x-rooms.search :guests="$guests" :typeRoom="$typeRoom" />
         </div>
         <div class="section-1-services">
@@ -294,6 +292,7 @@
                 </form>
             </div>
         </div>
+        <a class="section-4_anchor" href="#section-1-header">Наверх</a>
     </div>
     @push('styles')
         <link href="{{ asset('css/main.css') }}" rel="stylesheet">

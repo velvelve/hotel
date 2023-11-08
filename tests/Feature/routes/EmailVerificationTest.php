@@ -15,7 +15,10 @@ class EmailVerificationTest extends TestCase
         //  Создаем пользователя
         $user = User::factory()->create([
             'first_name' => 'Иван',
-            'last_name' => 'Иванович',
+            'middle_name' => 'Иванович',
+            'last_name' => 'Иванов',
+            'phone' => '+79324562345',
+            'email' => 'sdffq@fsd.ru',
             'password' => '123456789',
             'email_verified_at' => null,
         ]);
@@ -39,8 +42,10 @@ class EmailVerificationTest extends TestCase
         //  Создаем пользователя с помощью фабрики
         $user = User::factory()->create([
             'first_name' => 'Иван',
-            'last_name' => 'Иванович',
+            'middle_name' => 'Иванович',
+            'last_name' => 'Иванов',
             'password' => '123456789',
+            'phone' => '+7945734567',
             'email_verified_at' => null,
         ]);
 

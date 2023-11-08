@@ -1,13 +1,15 @@
+* {
+    scroll-behavior: smooth;
+}
+
 .section-1 {
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    min-width: 100vw;
-    max-width: 100vw;
-    min-height: 970px;
-    max-height: 970px;
+    min-width: 1600px;
+    height: 970px;
     background: url(/img/homePage/section1/section1-bg.png);
     background-size: 100% 100%;
 }
@@ -47,7 +49,7 @@
 }
 
 .section-1-header__logo-upperText {
-    font-family: 'Forum', cursive;
+    font-family: 'Forum', sans-serif;
     font-size: 40px;
     color: #79655E;
     line-height: 98.5%;
@@ -55,7 +57,7 @@
 }
 
 .section-1-header__logo-lowerText {
-    font-family: 'Forum', cursive;
+    font-family: 'Forum', sans-serif;
     font-size: 15px;
     color: #79655E;
     line-height: 98.5%;
@@ -86,12 +88,19 @@
 
 .section-1-header__menu ul li a {
     text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Forum', sans-serif;
+    font-size: 20px;
     color: #fff;
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .3s;
 }
 
 .section-1-header__menu ul li a:hover {
-    text-decoration: underline;
+    background-size: 100% 2px;
 }
 
 .section-1-social {
@@ -110,7 +119,7 @@
 .section-1-social__followUs {
     writing-mode: vertical-lr;
     transform: rotate(-180deg);
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Forum', sans-serif;
     font-size: 18px;
     color: #fff;
     margin-bottom: 10px;
@@ -133,7 +142,7 @@
 
 .section-1-welcomeText__welcome {
     height: 55px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Forum', sans-serif;
     font-size: 50px;
     color: #fff;
 }
@@ -147,7 +156,7 @@
 
 .section-1-welcomeText__name-hotel-top {
     height: 142px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Forum', sans-serif;
     font-size: 128px;
     font-weight: 500;
     color: #fff;
@@ -155,7 +164,7 @@
 
 .section-1-welcomeText__name-hotel-bottom {
     height: 61px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Forum', sans-serif;
     font-size: 50px;
     font-weight: 300;
     color: #fff;
@@ -192,7 +201,7 @@
     align-items: center;
     min-height: 80px;
     max-height: 80px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Forum', sans-serif;
     font-size: 18px;
     color: #fff;
 }
@@ -209,8 +218,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-width: 100vw;
-    max-width: 100vw;
+    min-width: 1600px;
     background-color: #000;
 }
 
@@ -407,8 +415,9 @@
 }
 
 .item-description {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Forum', sans-serif;
     color: #fff;
+    font-size: 20px;
 }
 
 .service-carts {
@@ -461,7 +470,7 @@
     max-height: 98px;
     margin-bottom: 15px;
 
-    font-family: 'Forum', cursive;
+    font-family: 'Forum', sans-serif;
     font-weight: 300;
     font-size: 20px;
     color: #fff;
@@ -475,10 +484,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 100vw;
-    max-width: 100vw;
-    min-height: 540px;
-    max-height: 540px;
+    min-width: 1600px;
+    height: 540px;
     background: url(/img/homePage/section3/section3-bg.png);
     background-size: 100% 100%;
 }
@@ -520,8 +527,8 @@
     align-items: center;
     min-width: 265px;
     max-width: 265px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 24px;
+    font-family: 'Forum', sans-serif;
+    font-size: 26px;
 }
 
 .section-3-carts__item-description {
@@ -530,8 +537,8 @@
     align-items: center;
     min-width: 265px;
     max-width: 265px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
+    font-family: 'Forum', sans-serif;
+    font-size: 16px;
     text-align: left;
 }
 
@@ -541,7 +548,7 @@
     min-width: 265px;
     max-width: 265px;
     text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Forum', sans-serif;
     font-size: 18px;
     font-weight: 700;
     color: black;
@@ -553,10 +560,8 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    min-width: 100vw;
-    max-width: 100vw;
-    min-height: 1723px;
-    max-height: 1723px;
+    min-width: 1600px;
+    height: 1600px;
     background-color: black;
 }
 
@@ -568,7 +573,7 @@
     max-width: 1520px;
     min-height: 643px;
     max-height: 643px;
-    margin-top: 220px;
+    margin-top: 120px;
 }
 
 .section-4-top__description {
@@ -578,49 +583,46 @@
     align-items: center;
     min-width: 530px;
     max-width: 530px;
-    min-height: 570px;
-    max-height: 570px;
+    height: 470px;
     color: #fff;
+    position: relative;
+    top: -83px;
 }
 
 .section-4-top__description-upperTitle {
     min-width: 500px;
     max-width: 500px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 48px;
-    font-weight: 700;
+    font-family: 'Forum', sans-serif;
+    font-size: 40px;
+    font-weight: 600;
     text-align: left;
 }
 
 .section-4-top__description-downTitle {
     min-width: 500px;
     max-width: 500px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 32px;
-    font-weight: 500;
+    font-family: 'Forum', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
     text-align: left;
 }
 
 .section-4-top__description-upperText {
     min-width: 500px;
     max-width: 500px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Forum', sans-serif;
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 400;
     text-align: left;
 }
 
 .section-4-top__description-downText {
     min-width: 500px;
     max-width: 500px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Forum', sans-serif;
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 400;
     text-align: left;
-}
-
-.section-4-bottom {
-    margin-bottom: 170px;
 }
 
 .section-4-subscription {
@@ -641,16 +643,16 @@
     max-width: 710px;
     min-height: 212px;
     max-height: 212px;
-    font-family: 'Forum', cursive;
-    font-weight: 300;
+    font-family: 'Forum', sans-serif;
+    font-weight: 400;
     font-size: 60px;
     color: #fff;
 }
 
 .section-4-subscription__subscribeText {
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Forum', sans-serif;
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 400;
     margin-top: 10px;
 }
 
@@ -667,7 +669,6 @@
     max-width: 380px;
     min-height: 50px;
     max-height: 50px;
-    border-radius: 50px 0 0 50px;
     backdrop-filter: blur(5px);
 }
 
@@ -677,7 +678,6 @@
     min-height: 50px;
     max-height: 50px;
     border: 1px solid #fff;
-    border-radius: 50px 0 0 50px;
     outline: none;
     padding-left: 20px;
     background: none;
@@ -695,12 +695,41 @@
     max-height: 51px;
     margin-left: -20px;
     border: none;
-    border-radius: 50px 50px 50px 50px;
     background-color: #fff;
-    font-family: 'Forum', cursive;
-    font-weight: 300;
+    font-family: 'Forum', sans-serif;
+    font-weight: 400;
     font-size: 24px;
     color: #0C0B10;
     cursor: pointer;
+    z-index: 1;
+    transition: 0.7s;
+}
+
+.section-4-subscription__btn:hover {
+    border: solid rgba(192, 155, 90, 1) 1px;
+    background-color: rgb(192, 155, 90);
+
+}
+
+.section-4_anchor {
+    font-family: 'Forum', serif;
+    font-size: 30px;
+    color: #C09B5A;
+    margin-bottom: 80px;
+    transition: 0.7s;
+    width: 300px;
+    text-align: center;
+    border: solid rgba(192, 155, 90, 1) 1px;
+    padding: 10px 0;
+}
+
+.section-4_anchor:hover {
+    border: solid rgba(255, 255, 255, 1) 1px;
+    background-color: rgb(255, 255, 255);
+}
+
+.roomsSearch-stroke {
+    position: absolute;
+    top: 563px;
     z-index: 1;
 }

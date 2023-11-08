@@ -2,11 +2,15 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Enums\Booking\Status;
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use DateTimeImmutable;
+use Exception;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+
 
 class ProfileController extends Controller
 {
@@ -15,7 +19,13 @@ class ProfileController extends Controller
      */
     public function index(): view
     {
-        return view('auth.profile');
+        $bookingsBooked = User::find(auth()->user()->id)->bookings()->where('status', Status::BOOKED)->get();
+        $bookingsConfirmed = User::find(auth()->user()->id)->bookings()->where('status', Status::CONFIRMED)->get();
+        $bookingsCancelled= User::find(auth()->user()->id)->bookings()->where('status', Status::CANCELLED)->get();
+
+
+        return view('auth.profile', ['bookingsBooked' => $bookingsBooked, 'bookingsConfirmed' => $bookingsConfirmed,
+            'bookingsCancelled' => $bookingsCancelled ]);
     }
 
     /**
@@ -52,6 +62,7 @@ class ProfileController extends Controller
 
     /**
      * Update the specified resource in storage.
+     * @throws Exception
      */
     public function update(Request $request, User $user): RedirectResponse
     {
@@ -66,7 +77,7 @@ class ProfileController extends Controller
             'updated_at' => now()
         ]);
 
-        return redirect()->back()->with('profile','Данные изменены!');
+        return redirect()->back()->with('profile', 'Данные изменены!');
     }
 
     /**

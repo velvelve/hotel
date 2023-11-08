@@ -8,7 +8,6 @@ use App\Models\City;
 use App\Models\Country;
 use App\Models\Location;
 use Exception;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
 class CityController extends Controller

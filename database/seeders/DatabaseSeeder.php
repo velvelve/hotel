@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
         DB::table('room_service')->truncate();
         DB::table('booking_service')->truncate();
         DB::table('services')->truncate(); // admin
-        DB::table('rooms')->truncate();
+        DB::table('rooms')->truncate(); //admin
         DB::table('reviews')->truncate();
         DB::table('users')->truncate();
         DB::table('phones')->truncate();

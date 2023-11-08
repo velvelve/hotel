@@ -7,10 +7,7 @@
         <div class="section-1-header" id="section-1-header">
             <div class="section-1-header__logo">
                 <a href="{{ route('home') }}">
-                    <div class="section-1-header__logo-bg">
-                        <div class="section-1-header__logo-upperText">LUXURY</div>
-                        <div class="section-1-header__logo-lowerText">HOTELS</div>
-                    </div>
+                    <img class="footer_img" src="{{ asset('img\footer\logo.png') }}" alt="logo">
                 </a>
             </div>
             <div class="section-1-header__menu">

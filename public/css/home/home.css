@@ -8,10 +8,8 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    min-width: 100vw;
-    max-width: 100vw;
-    min-height: 970px;
-    max-height: 970px;
+    min-width: 1600px;
+    height: 970px;
     background: url(/img/homePage/section1/section1-bg.png);
     background-size: 100% 100%;
 }
@@ -93,10 +91,16 @@
     font-family: 'Forum', sans-serif;
     font-size: 20px;
     color: #fff;
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .3s;
 }
 
 .section-1-header__menu ul li a:hover {
-    text-decoration: underline;
+    background-size: 100% 2px;
 }
 
 .section-1-social {
@@ -214,8 +218,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-width: 100vw;
-    max-width: 100vw;
+    min-width: 1600px;
     background-color: #000;
 }
 
@@ -411,10 +414,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 100vw;
-    max-width: 100vw;
-    min-height: 540px;
-    max-height: 540px;
+    min-width: 1600px;
+    height: 540px;
     background: url(/img/homePage/section3/section3-bg.png);
     background-size: 100% 100%;
 }
@@ -489,8 +490,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    min-width: 100vw;
-    max-width: 100vw;
+    min-width: 1600px;
     height: 1600px;
     background-color: black;
 }

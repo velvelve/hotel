@@ -211,7 +211,6 @@
 
 .modal-box{
     width: 1500px;
-    height: 1000px;
     background-color: #8E9192;
     z-index: 1;
 }
@@ -256,21 +255,21 @@
 
 .modal-img-0{
     width: 720px;
-    height: 500px;
+    height: 400px;
     object-fit: cover;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
 }
 
 .modal-img-1{
     width: 300px;
-    height: 500px;
+    height: 400px;
     object-fit: cover;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
 }
 
 .modal-img-2{
     width: 380px;
-    height: 237px;
+    height: 187px;
     object-fit: cover;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
 }
@@ -285,7 +284,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 25px;
-    height: 320px;
+    height: 250px;
     background-color: #DBDBDB;
     gap: 25px;
 }
@@ -359,11 +358,11 @@
 .modal-includedServices{
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 10px;
     justify-content: space-around;
     align-items: center;
-    height: 180px;
-    padding: 30px;
+    height: 160px;
+    padding: 15px;
 }
 
 .modal-services{

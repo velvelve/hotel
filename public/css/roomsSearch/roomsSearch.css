@@ -119,9 +119,3 @@
 .item-description__rightSide-upperText {
     font-weight: 600;
 }
-
-.roomsSearch-stroke {
-    position: absolute;
-    top: 563px;
-    z-index: 1;
-}

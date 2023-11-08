@@ -657,3 +657,9 @@
     border: solid rgba(255, 255, 255, 1) 1px;
     background-color: rgb(255, 255, 255);
 }
+
+.roomsSearch-stroke {
+    position: absolute;
+    top: 563px;
+    z-index: 1;
+}

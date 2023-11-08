@@ -2,3 +2,18 @@
     margin: 0;
     padding: 0;
 }
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('/fonts/Roboto-Regular.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    font-size: 20px;
+}
+
+body {
+    font-family: 'Roboto';
+}

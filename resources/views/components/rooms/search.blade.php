@@ -1,4 +1,5 @@
 <div class="componentRoomsSearch">
+    <img src="/img/roomsSearch/header-stroke.svg" class="roomsSearch-stroke">
     <div class="roomsSearch-head">
         Поиск номеров
     </div>

@@ -10,7 +10,8 @@ use App\Http\Controllers\Admin\ImageController as AdminImageController;
 use App\Http\Controllers\Admin\BookingController as AdminBookingController;
 use App\Http\Controllers\Admin\ServiceController as AdminServiceController;
 use App\Http\Controllers\Admin\RoomController as AdminRoomController;
-use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
+use App\Http\Controllers\Admin\RoomTypeController as AdminRoomTypeController;
 use App\Http\Controllers\Auth\ChangePasswordController;
 use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
@@ -53,7 +54,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 //Админка
 Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin.'], static function () {
     Route::group(['middleware' => 'admin.employee'], function () {
-        Route::get('/', [DashboardController::class, 'index'])->name('index');
+        Route::get('/', [AdminDashboardController::class, 'index'])->name('index');
         Route::resource('/notification-preferences', AdminNotificationPreferenceController::class);
         Route::resource('/view-types', AdminViewTypeController::class);
         Route::resource('/bed-types', AdminBedTypeController::class);
@@ -68,6 +69,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin.'], st
         Route::resource('/countries', AdminCountryController::class);
         Route::resource('/rooms',  AdminRoomController::class);
         Route::get('/rooms/{hotel}/room-numbers',  [AdminRoomController::class, 'room_numbers'])->name('room.room-numbers');
+        Route::resource('/room-types', AdminRoomTypeController::class)->parameters(['room-types' => 'roomType']);;
     });
 });
 

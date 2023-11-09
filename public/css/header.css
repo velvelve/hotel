@@ -39,7 +39,7 @@
 }
 
 .header_logo_upper_text {
-    font-family: 'Forum', cursive;
+    font-family: 'Forum', sans-serif;
     font-size: 40px;
     color: #79655E;
     line-height: 98.5%;
@@ -47,7 +47,7 @@
 }
 
 .header_logo_lower_text {
-    font-family: 'Forum', cursive;
+    font-family: 'Forum', sans-serif;
     font-size: 15px;
     color: #79655E;
     line-height: 98.5%;
@@ -70,12 +70,19 @@
 
 .header_list li a {
     text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Forum', sans-serif;
+    font-size: 20px;
     color: #fff;
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size .3s;
 }
 
 .header_list li a:hover {
-    text-decoration: underline;
+    background-size: 100% 2px;
 }
 
 

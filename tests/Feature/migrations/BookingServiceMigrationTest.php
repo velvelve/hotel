@@ -2,6 +2,9 @@
 
 namespace Tests\Feature\migrations;
 
+use App\Models\Booking;
+use App\Models\BookingService;
+use App\Models\Service;
 use Illuminate\Support\Facades\Schema;
 use Tests\TestCase;
 

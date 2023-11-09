@@ -93,7 +93,8 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link @if (request()->routeIs('admin.room-types.*')) active @endif" aria-current="page"
+                    href="{{ route('admin.room-types.index') }}">
                     <span>📌</span>
                     Типы номеров
                 </a>

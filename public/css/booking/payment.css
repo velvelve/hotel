@@ -23,20 +23,27 @@
     align-items: center;
     justify-content: space-around;
     padding: 1rem;
-    width: 8rem;
-    height: 2rem;
-    background-color: #ffffff;
+    width: fit-content;
+    height: fit-content;
+    color: #ffffff;
+    background-color: #00838d;
     border: 0.5px solid #2c1a14;
-    border-radius: 8px;
+    border-radius: 5px;
+    font-family: 'Roboto';
     z-index: 13000;
 }
 
 .toast-title {
-    font-size: 1em;
+    font-size: 0.7rem;
 }
 
 .toast-message {
-    font-size: 1em;
+    font-size: 0.7rem;
+}
+
+.toast-error {
+    color: #ffffff;
+    background-color: #ff0033;
 }
 
 .toast-hidden {

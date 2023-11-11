@@ -194,6 +194,7 @@
                 $('#toast').addClass('pop')
                 if (response.error) {
                     hideLoading();
+                    $('#toast').addClass('toast-error')
                     $('#toast_header #toast_title').text('Произошла ошибка!');
                     $('#toast_body #toast_message').text(response.error.message);
                     $('#toast-title').text = 'Произошла ошибка!'
@@ -208,6 +209,7 @@
                     }
                 }
                 setTimeout(() => {
+                    $('#toast').removeClass('toast-error')
                     $('#toast').addClass('toast-hidden')
                 }, 2000);
             }

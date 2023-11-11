@@ -9,11 +9,13 @@
 .btn-primary {
     color: #F9F7F7;
     background-color: #3F72AF;
+    border-color: transparent;
 }
 
 .btn-primary:hover {
     color: #F9F7F7;
     background-color: #6592c8;
+    border-color: transparent;
 }
 
 .icon {

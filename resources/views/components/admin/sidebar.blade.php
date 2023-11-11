@@ -50,10 +50,10 @@
                     Сервисы
                 </a>
             </li>
-            <li class="list-group-item @if (request()->routeIs('admin.room-types.*')) active @endif">
-                <a class="nav-link" aria-current="page" href="{{ route('admin.room-types.index') }}">
-                    <span>📌</span>
-                    Типы номеров
+            <li class="list-group-item @if (request()->routeIs('admin.phones.index')) active @endif">
+                <a class="nav-link" aria-current="page" href="{{ route('admin.phones.index') }}">
+                    <span>📞</span>
+                    Телефоны отеля
                 </a>
             </li>
         </ul>
@@ -88,6 +88,12 @@
                     <a class="nav-link" aria-current="page" href="{{ route('admin.rooms.index') }}">
                         <span>🏬</span>
                         Номера
+                    </a>
+                </li>
+                <li class="list-group-item @if (request()->routeIs('admin.room-types.*')) active @endif">
+                    <a class="nav-link" aria-current="page" href="{{ route('admin.room-types.index') }}">
+                        <span>📌</span>
+                        Типы номеров
                     </a>
                 </li>
             </ul>

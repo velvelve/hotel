@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Admin\RoomTypeController as AdminRoomTypeController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
 use App\Http\Controllers\Admin\ReviewController as AdminReviewController;
+use App\Http\Controllers\Admin\PhoneController as AdminPhoneController;
 use App\Http\Controllers\Auth\ChangePasswordController;
 use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
@@ -64,6 +65,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin.'], st
         Route::resource('/bookings', AdminBookingController::class);
         Route::resource('/services', AdminServiceController::class);
         Route::resource('/reviews', AdminReviewController::class);
+        Route::resource('/phones', AdminPhoneController::class);
     });
     Route::group(['middleware' => 'admin'], function () {
         Route::resource('/users', AdminUserController::class);

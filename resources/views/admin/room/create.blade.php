@@ -26,8 +26,8 @@
             </div>
             <div class="form-group">
                 <label for="room_number">Номер комнаты</label>
-                <input type="number" data-forbiden-numbers="" class="form-control" name="room_number" id="room_number"
-                    value="{{ old('room_number') }}">
+                <input type="number" max="599" data-forbiden-numbers="" class="form-control" name="room_number"
+                    id="room_number" value="{{ old('room_number') }}">
             </div>
             <div class="form-group">
                 <label for="description">Описание</label>
@@ -51,12 +51,18 @@
             </div>
             <div class="form-group">
                 <label for="name">Максимальное количество детей</label>
-                <input type="number" min="1" max="5" class="form-control" name="children_max_guests"
+                <input type="number" min="0" max="5" class="form-control" name="children_max_guests"
                     id="children_max_guests" value="{{ old('children_max_guests') }}">
             </div>
             <div class="form-group">
                 <label for="price">Цена</label>
-                <input type="number" class="form-control" name="price" id="price" value="{{ old('price') }}">
+                <input type="number" max="50000" class="form-control" name="price" id="price"
+                    value="{{ old('price') }}">
+            </div>
+            <div class="form-group">
+                <input type="checkbox" class="form-check-input" name="availability" id="availability" value="1"
+                    checked>
+                <label for="availability">Доступность в поиске</label>
             </div>
             <div class="form-group">
                 <label for="room_type_id">Тип номера</label>
@@ -85,11 +91,28 @@
                     @endforeach
                 </select>
             </div>
+            <div class="form-group">
+                <label>Фотографии номера</label>
+                <div class="row">
+                    @foreach ($images as $image)
+                        <div class="col-md-3">
+                            <div class="card mb-4">
+                                <img class="p-2 bd-highlight" src="{{ $image->path }}" alt="{{ $image->filename }}"
+                                    style="max-width: 100px" />
+                                <div class="card-body">
+                                    <input class="form-check-input" type="checkbox"
+                                        name="selected_images{{ $image->id }}"
+                                        id="selected_images{{ $image->id }}" value="{{ $image->path }}">
+                                    <label for="selected_images{{ $image->id }}"> {{ $image->path }}</label>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
             <button type="submit" class="btn btn-success mt-4">Сохранить</button>
         </form>
     </div>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
             let $hotelSelect = $('#hotel_id');
@@ -117,6 +140,24 @@
                 if (data.includes($roomNumberInput.val())) {
                     $roomNumberInput.val('');
                 }
+            });
+
+            $('#store_form').submit(function(event) {
+                event.preventDefault();
+                let selectedImagePaths = [];
+                $('[name^="selected_images"]').each(function() {
+                    if ($(this).is(':checked')) {
+                        let imagePath = $(this).val();
+                        selectedImagePaths.push(imagePath);
+                    }
+                });
+                $('[name="selected_image_paths"]').remove();
+                selectedImagePaths.forEach(function(imagePath) {
+                    $('#store_form').append(
+                        '<input type="hidden" name="selected_image_paths[]" value="' +
+                        imagePath + '">');
+                });
+                this.submit();
             });
         });
     </script>

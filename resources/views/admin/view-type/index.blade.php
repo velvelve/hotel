@@ -4,7 +4,7 @@
         <h1 class="h2">Список типов вида из окна номера</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group me-2">
-                <a href="{{ route('admin.view-types.create') }}" class="btn btn-sm btn-outline-secondary">Добавить
+                <a href="{{ route('admin.view-types.create') }}" class="btn btn-sm btn-primary">Добавить
                     тип вида из номера</a>
             </div>
         </div>
@@ -26,9 +26,11 @@
                         <td>{{ $viewType->id }}</td>
                         <td>{{ $viewType->description }}</td>
                         <td>{{ $viewType->constant }}</td>
-                        <td><a href="{{ route('admin.view-types.edit', ['view_type' => $viewType]) }}">Edit</a>
+                        <td>
+                            <a class="icon icon-edit"
+                                href="{{ route('admin.view-types.edit', ['view_type' => $viewType]) }}"></a>
                             &nbsp;
-                            <a href="javascript:;" class="delete" rel="{{ $viewType->id }}">Delete</a>
+                            <a class="icon icon-delete delete" href="javascript:;" rel="{{ $viewType->id }}"></a>
                         </td>
                     </tr>
                 @empty

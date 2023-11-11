@@ -35,6 +35,7 @@ class Create extends FormRequest
             'room_type_id' => ['required', 'integer', 'exists:room_types,id'],
             'view_type_id' => ['required', 'integer', 'exists:view_types,id'],
             'bed_type_id' => ['required', 'integer', 'exists:bed_types,id'],
+            'selected_image_paths' => ['required', 'array', 'min:1'],
         ];
     }
 }

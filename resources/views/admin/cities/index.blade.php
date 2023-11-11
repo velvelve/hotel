@@ -4,7 +4,7 @@
         <h1 class="h2">Список городов</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group me-2">
-                <a href="{{ route('admin.cities.create') }}" class="btn btn-sm btn-outline-secondary">Добавить
+                <a href="{{ route('admin.cities.create') }}" class="btn btn-sm btn-primary">Добавить
                     город</a>
             </div>
         </div>
@@ -27,7 +27,7 @@
                         <td>{{ $city->country->name }}</td>
                         <td>{{ $city->name }}</td>
                         <td>
-                            <a href="javascript:;" class="delete" rel="{{ $city->id }}">Delete</a>
+                            <a class="icon icon-delete delete" href="javascript:;" rel="{{ $city->id }}"></a>
                         </td>
                     </tr>
                 @empty

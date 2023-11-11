@@ -66,7 +66,6 @@
         </form>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             let initialIconSelected = $('#icon').find('option:selected');
@@ -81,7 +80,7 @@
             });
             $('#store_form').submit(function(event) {
                 event.preventDefault();
-                var selectedImageIds = [];
+                let selectedImageIds = [];
                 $('[name^="selected_images"]').each(function() {
                     if ($(this).is(':checked')) {
                         var imageId = $(this).attr('name').replace('selected_images', '');

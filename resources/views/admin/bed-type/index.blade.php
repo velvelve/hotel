@@ -4,7 +4,7 @@
         <h1 class="h2">Список типов кроватей в номере</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group me-2">
-                <a href="{{ route('admin.bed-types.create') }}" class="btn btn-sm btn-outline-secondary">Добавить
+                <a href="{{ route('admin.bed-types.create') }}" class="btn btn-sm btn-primary">Добавить
                     тип вида кровати в номере</a>
             </div>
         </div>
@@ -26,9 +26,10 @@
                         <td>{{ $bedType->id }}</td>
                         <td>{{ $bedType->description }}</td>
                         <td>{{ $bedType->constant }}</td>
-                        <td><a href="{{ route('admin.bed-types.edit', ['bed_type' => $bedType]) }}">Edit</a>
+                        <td><a class="icon icon-edit"
+                                href="{{ route('admin.bed-types.edit', ['bed_type' => $bedType]) }}"></a>
                             &nbsp;
-                            <a href="javascript:;" class="delete" rel="{{ $bedType->id }}">Delete</a>
+                            <a class="icon icon-delete delete" href="javascript:;" rel="{{ $bedType->id }}"></a>
                         </td>
                     </tr>
                 @empty

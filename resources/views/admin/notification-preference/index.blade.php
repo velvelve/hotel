@@ -4,8 +4,7 @@
         <h1 class="h2">Список настроек уведомлений</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group me-2">
-                <a href="{{ route('admin.notification-preferences.create') }}"
-                    class="btn btn-sm btn-outline-secondary">Добавить
+                <a href="{{ route('admin.notification-preferences.create') }}" class="btn btn-sm btn-primary">Добавить
                     настройку</a>
             </div>
         </div>
@@ -29,17 +28,23 @@
                 @forelse ($preferences as $preference)
                     <tr>
                         <td>{{ $preference->id }}</td>
-                        <td>{{ $preference->user()->first_name }} {{ $preference->user()->last_name }}
-                            {{ $preference->user()->email }}</td>
+                        <td>
+                            @if ($preference->user() === null)
+                                <span>Пользователь не существует</span>
+                            @else
+                                <span>{{ $preference->user()->first_name }} {{ $preference->user()->last_name }}
+                                    {{ $preference->user()->email }}</span>
+                            @endif
+                        </td>
                         <td>{{ $preference->discounts ? 'Включено' : 'Отключено' }}</td>
                         <td>{{ $preference->special_offers ? 'Включено' : 'Отключено' }}</td>
                         <td>{{ $preference->bonus_earnings ? 'Включено' : 'Отключено' }}</td>
                         <td>{{ $preference->feedback_responses ? 'Включено' : 'Отключено' }}</td>
                         <td>{{ $preference->created_at }}</td>
-                        <td><a
-                                href="{{ route('admin.notification-preferences.edit', ['notification_preference' => $preference]) }}">Edit</a>
+                        <td><a class="icon icon-edit"
+                                href="{{ route('admin.notification-preferences.edit', ['notification_preference' => $preference]) }}"></a>
                             &nbsp;
-                            <a href="javascript:;" class="delete" rel="{{ $preference->id }}">Delete</a>
+                            <a class="icon icon-delete delete" href="javascript:;" rel="{{ $preference->id }}"></a>
                         </td>
                     </tr>
                 @empty

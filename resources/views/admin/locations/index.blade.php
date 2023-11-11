@@ -4,7 +4,7 @@
         <h1 class="h2">Список местоположений</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group me-2">
-                <a href="{{ route('admin.locations.create') }}" class="btn btn-sm btn-outline-secondary">Добавить
+                <a href="{{ route('admin.locations.create') }}" class="btn btn-sm btn-primary">Добавить
                     местоположение</a>
             </div>
         </div>
@@ -32,8 +32,9 @@
                         <td>{{ $location->street }}</td>
                         <td>{{ $location->house }}</td>
                         <td>{{ $location->created_at }}</td>
-                        <td><a href="{{ route('admin.locations.edit', ['location' => $location]) }}">Edit</a> &nbsp;
-                            <a href="javascript:;" class="delete" rel="{{ $location->id }}">Delete</a>
+                        <td><a class="icon icon-edit"
+                                href="{{ route('admin.locations.edit', ['location' => $location]) }}"></a> &nbsp;
+                            <a class="icon icon-delete delete" href="javascript:;" rel="{{ $location->id }}"></a>
                         </td>
                     </tr>
                 @empty

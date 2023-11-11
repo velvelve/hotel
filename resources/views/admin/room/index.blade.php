@@ -4,7 +4,7 @@
         <h1 class="h2">Список номеров</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group me-2">
-                <a href="{{ route('admin.rooms.create') }}" class="btn btn-sm btn-outline-secondary">Добавить
+                <a href="{{ route('admin.rooms.create') }}" class="btn btn-sm btn-primary">Добавить
                     номер</a>
             </div>
         </div>
@@ -27,6 +27,7 @@
                     <th scope="col">Тип комнаты</th>
                     <th scope="col">Тип вида из окна</th>
                     <th scope="col">Тип кроватей</th>
+                    <th scope="col">Дата добавления</th>
                     <th scope="col">Действия</th>
                 </tr>
             </thead>
@@ -47,9 +48,9 @@
                         <td>{{ $room->viewType->description }}</td>
                         <td>{{ $room->bedType->description }}</td>
                         <td>{{ $room->created_at }}</td>
-                        <td><a href="{{ route('admin.rooms.edit', ['room' => $room]) }}">Edit</a>
+                        <td><a class="icon icon-edit" href="{{ route('admin.rooms.edit', ['room' => $room]) }}"></a>
                             &nbsp;
-                            <a href="javascript:;" class="delete" rel="{{ $room->id }}">Delete</a>
+                            <a class="icon icon-delete delete" href="javascript:;" rel="{{ $room->id }}"></a>
                         </td>
                     </tr>
                 @empty

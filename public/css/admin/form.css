@@ -1,0 +1,42 @@
+.content-bg {
+    background-color: #F9F7F7;
+}
+
+.content-font {
+    font-size: 0.75em;
+}
+
+.btn-primary {
+    color: #F9F7F7;
+    background-color: #3F72AF;
+}
+
+.btn-primary:hover {
+    color: #F9F7F7;
+    background-color: #6592c8;
+}
+
+.icon {
+    display: inline-block;
+    width: 1.4em;
+    height: 1.4em;
+    background-size: 100% 100%;
+}
+
+.icon-edit {
+    background-image: url(/img/admin/edit.svg);
+}
+
+.icon-edit:hover,
+.icon-edit:focus {
+    background-image: url(/img/admin/edit-focus.svg);
+}
+
+.icon-delete {
+    background-image: url(/img/admin/delete.svg);
+}
+
+.icon-delete:hover,
+.icon-delete:focus {
+    background-image: url(/img/admin/delete-focus.svg);
+}

@@ -4,7 +4,7 @@
         <h1 class="h2">Список изображений</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group me-2">
-                <a href="{{ route('admin.images.create') }}" class="btn btn-sm btn-outline-secondary">Добавить
+                <a href="{{ route('admin.images.create') }}" class="btn btn-sm btn-primary">Добавить
                     изображение</a>
             </div>
         </div>
@@ -32,8 +32,9 @@
                         <td>{{ $image->filename }}</td>
                         <td>{{ $image->path }}</td>
                         <td>{{ $image->created_at }}</td>
-                        <td><a href="{{ route('admin.images.edit', ['image' => $image]) }}">Edit</a> &nbsp;
-                            <a href="javascript:;" class="delete" rel="{{ $image->id }}">Delete</a>
+                        <td><a class="icon icon-edit" href="{{ route('admin.images.edit', ['image' => $image]) }}"></a>
+                            &nbsp;
+                            <a class="icon icon-delete delete" href="javascript:;" rel="{{ $image->id }}"></a>
                         </td>
                     </tr>
                 @empty

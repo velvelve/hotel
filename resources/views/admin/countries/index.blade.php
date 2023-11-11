@@ -4,7 +4,7 @@
         <h1 class="h2">Список стран</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group me-2">
-                <a href="{{ route('admin.countries.create') }}" class="btn btn-sm btn-outline-secondary">Добавить
+                <a href="{{ route('admin.countries.create') }}" class="btn btn-sm btn-primary">Добавить
                     страну</a>
             </div>
         </div>
@@ -25,7 +25,7 @@
                         <td>{{ $country->id }}</td>
                         <td>{{ $country->name }}</td>
                         <td>
-                            <a href="javascript:;" class="delete" rel="{{ $country->id }}">Delete</a>
+                            <a class="icon icon-delete delete" href="javascript:;" rel="{{ $country->id }}"></a>
                         </td>
                     </tr>
                 @empty

@@ -5,7 +5,7 @@
         <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group me-2">
                 @if (auth()->user()->isAdmin())
-                    <a href="{{ route('admin.bookings.create') }}" class="btn btn-sm btn-outline-secondary">Добавить
+                    <a href="{{ route('admin.bookings.create') }}" class="btn btn-sm btn-primary">Добавить
                         бронирование</a>
                 @endif
             </div>
@@ -51,9 +51,10 @@
                         <td>{{ $booking->status }}</td>
                         <td>{{ $booking->total_price }}</td>
                         <td>{{ $booking->created_at }}</td>
-                        <td><a href="{{ route('admin.bookings.edit', ['booking' => $booking]) }}">Edit</a>
+                        <td><a class="icon icon-edit"
+                                href="{{ route('admin.bookings.edit', ['booking' => $booking]) }}"></a>
                             &nbsp;
-                            <a href="javascript:;" class="delete" rel="{{ $booking->id }}">Delete</a>
+                            <a class="icon icon-delete delete" href="javascript:;" rel="{{ $booking->id }}"></a>
                         </td>
                     </tr>
                 @empty

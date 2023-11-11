@@ -4,7 +4,7 @@
         <h1 class="h2">Список сервисов</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group me-2">
-                <a href="{{ route('admin.services.create') }}" class="btn btn-sm btn-outline-secondary">Добавить
+                <a href="{{ route('admin.services.create') }}" class="btn btn-sm btn-primary">Добавить
                     сервис</a>
             </div>
         </div>
@@ -32,9 +32,10 @@
                         <td>{{ $service->price }}</td>
                         <td>{{ $service->constant }}</td>
                         <td>{{ $service->created_at }}</td>
-                        <td><a href="{{ route('admin.services.edit', ['service' => $service]) }}">Edit</a>
+                        <td><a class="icon icon-edit"
+                                href="{{ route('admin.services.edit', ['service' => $service]) }}"></a>
                             &nbsp;
-                            <a href="javascript:;" class="delete" rel="{{ $service->id }}">Delete</a>
+                            <a class="icon icon-delete delete" href="javascript:;" rel="{{ $service->id }}"></a>
                         </td>
                     </tr>
                 @empty

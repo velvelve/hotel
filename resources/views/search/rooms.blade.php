@@ -11,8 +11,15 @@
                         <div class="searchResult-content__item"> <!-- Карточка номера -->
                             <div class="item-description">
                                 <div class="item-description__leftSide-block">
-                                    <img class="item-description-img" src="{{ $room->images[mt_rand(0, 2)]->path }}"
-                                        alt="{{ $room->images[mt_rand(0, 2)]->filename }}">
+                                    <span>{{ sizeof($room->images) }}</span>
+                                    @php
+                                        $roomImagesArraySize = sizeof($room->images);
+                                    @endphp
+                                    @if ($roomImagesArraySize > 0)
+                                        <img class="item-description-img"
+                                            src="{{ $room->images[mt_rand(0, $roomImagesArraySize - 1)]->path }}"
+                                            alt="{{ $room->images[mt_rand(0, $roomImagesArraySize - 1)]->filename }}">
+                                    @endif
                                     <div class="item-description__leftSide-block-text">
                                         <p class="item-description__leftSide-block-text-heading">Описание тарифа</p>
                                         <p>Только номер</p>
@@ -31,9 +38,16 @@
                                     <ul class="item-description__rightSide-servise">
                                         @foreach ($room->includedServices as $service)
                                             <li class="item-search-icon_list">
-                                                <a href="#"><img class="icon" src="{{ $service->icon[0]->path }}"
-                                                        alt="{{ $service->icon[0]->filename }}"
-                                                        title="{{ $service->name }}"></a>
+                                                @php
+                                                    $serviceIconExist = sizeof($service->icon) > 0;
+                                                @endphp
+                                                <a href="#">
+                                                    @if ($serviceIconExist)
+                                                        <img class="icon" src="{{ $service->icon[0]->path }}"
+                                                            alt="{{ $service->icon[0]->filename }}"
+                                                            title="{{ $service->name }}">
+                                                    @endif
+                                                </a>
                                             </li>
                                         @endforeach
                                     </ul>

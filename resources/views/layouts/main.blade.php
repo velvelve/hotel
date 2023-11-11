@@ -25,7 +25,6 @@
 
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     <link href="{{ asset('css/roomsSearch/roomsSearch.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/searchResult/searchResult.css') }}" rel="stylesheet">
     <link href="{{ asset('css/header.css') }}" rel="stylesheet">
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet">
     <link href="{{ asset('css/alert.css') }}" rel="stylesheet">

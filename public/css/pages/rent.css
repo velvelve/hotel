@@ -28,8 +28,8 @@
     width: 754px;
     height: 204px;
     font-family: 'Forum', sans-serif;
-    font-size: 56px;
-    font-weight: 300;
+    font-size: 60px;
+    font-weight: 400;
     color: #333333;
     background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(217,217,217,0) 100%);
 }
@@ -46,9 +46,11 @@
     width: 663px;
     height: 507px;
     font-family: 'Forum', sans-serif;
-    font-size: 30px;
-    font-weight: 300;
+    font-size: 24px;
+    font-weight: 400;
     color: #453834;
+    position: relative;
+    left: 30px;
 }
 
 .section-2__description-item {
@@ -77,8 +79,8 @@
     width: 754px;
     height: 204px;
     font-family: 'Forum', sans-serif;
-    font-size: 56px;
-    font-weight: 300;
+    font-size: 60px;
+    font-weight: 400;
     color: #333333;
     background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(217,217,217,0) 100%);
 }
@@ -95,9 +97,11 @@
     width: 663px;
     height: 507px;
     font-family: 'Forum', sans-serif;
-    font-size: 30px;
-    font-weight: 300;
+    font-size: 24px;
+    font-weight: 400;
     color: #453834;
+    position: relative;
+    right: 30px;
 }
 
 .section-4__description-item {
@@ -126,8 +130,8 @@
     width: 754px;
     height: 204px;
     font-family: 'Forum', sans-serif;
-    font-size: 56px;
-    font-weight: 300;
+    font-size: 60px;
+    font-weight: 400;
     color: #333333;
     background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(217,217,217,0) 100%);
 }
@@ -144,9 +148,11 @@
     width: 663px;
     height: 507px;
     font-family: 'Forum', sans-serif;
-    font-size: 30px;
-    font-weight: 300;
+    font-size: 24px;
+    font-weight: 400;
     color: #453834;
+    position: relative;
+    left: 30px;
 }
 
 .section-6__description-item {

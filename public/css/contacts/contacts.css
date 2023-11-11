@@ -1,9 +1,11 @@
 h1 {
-    font-size: 48px;
+    font-size: 40px;
+    font-weight: 600;
 }
 
 h2 {
-    font-size: 36px;
+    font-size: 30px;
+    font-weight: 600;
 }
 
 a {
@@ -30,7 +32,7 @@ ul {
     margin: 0 auto;
     background: linear-gradient(to right, #786853, #D9EBEB);
     min-height: 2200px;
-    min-width: 1800px;
+    min-width: 1600px;
     background-size: 100% 100%;
     display: grid;
     justify-content: center;
@@ -42,12 +44,11 @@ ul {
     display: flex;
     width: 727px;
     left: 55px;
-
 }
 
 .section-contact_heading {
-    color: white;
-    font-family: 'Forum', cursive;
+    color: #fff;
+    font-family: 'Forum', sans-serif;
 
 }
 
@@ -61,14 +62,13 @@ ul {
 
 .section-contact_messenger-list {
     position: relative;
-    font-size: 32px;
+    font-size: 30px;
     text-align: center;
     padding-top: 25px;
     left: 100px;
     height: 65px;
     width: 398px;
     vertical-align: middle;
-
 }
 
 .a-number {
@@ -99,7 +99,8 @@ ul {
 }
 
 .connection-_messenger-list {
-    font-size: 28px;
+    font-size: 24px;
+    font-weight: 400;
     padding-top: 25px;
 }
 
@@ -107,7 +108,7 @@ ul {
     position: relative;
     height: 577px;
     width: 865px;
-    top: 150px;
+    top: 75px;
     float: right;
 }
 
@@ -128,11 +129,6 @@ ul {
     width: 710px;
 }
 
-.forms-input {
-    border: #ffffff;
-
-}
-
 .section-two_info {
     display: grid;
     position: relative;
@@ -140,12 +136,16 @@ ul {
 }
 
 .section-two_heading {
-    height: 60px;
+    height: 50px;
+    width: 630px;
+    padding-top: 10px;
+    padding-left: 20px;
+    color: #79655e;
 }
 
 .forms {
     display: grid;
-    height: 1066px;
+    height: 966px;
     width: 626px;
     position: relative;
     top: 43px;
@@ -156,7 +156,8 @@ ul {
     height: 34px;
     width: 166px;
     font-size: 20px;
-    color: white;
+    font-family: 'Forum', sans-serif;
+    color: #79655e;
     padding-left: 30px;
 }
 
@@ -190,8 +191,9 @@ option:focus {
 }
 
 input {
+    font-family: 'Forum', sans-serif;
     font-size: 18px;
-    color: #e2f7f6;
+    color: black;
     padding-left: 15px;
     font-size: 18px;
 }
@@ -208,15 +210,17 @@ input:focus {
 }
 
 textarea {
+    font-family: 'Forum', sans-serif;
     padding-top: 25px;
     padding-left: 15px;
     padding-right: 15px;
-    color: #e2f7f6;
+    color: black;
     font-size: 18px;
 }
 
 
 textarea:focus {
+    font-family: 'Forum', sans-serif;
     outline: none;
     font-size: 18px;
 }
@@ -227,8 +231,8 @@ textarea:focus {
 }
 
 .forms-input {
-    background: transparent;
-    border: #ffffff solid 1px;
+    font-family: 'Forum', sans-serif;
+    border: 1px solid #79655e;
     height: 64px;
     font-size: 20px;
 }
@@ -253,9 +257,12 @@ textarea:focus {
 .forms-input_hotel {
     display: flex;
     justify-content: space-between;
-    background: transparent;
-    border: #ffffff solid 1px;
+    border: 1px solid #79655e;
     width: 316px;
+}
+
+select {
+    cursor: pointer;
 }
 
 select:focus {
@@ -271,9 +278,8 @@ select:focus {
 }
 
 .input-feedback {
-    background: transparent;
-    border: #ffffff solid 1px;
-    color: white;
+    border: 1px solid #79655e;
+    color: #79655e;
     text-align: center;
 }
 
@@ -289,9 +295,11 @@ select:focus {
 }
 
 .info_list {
+    font-family: 'Forum', sans-serif;
     height: 32px;
     width: 675px;
-    font-size: 32px;
+    font-size: 24px;
+    font-weight: 400;
     padding-top: 16px;
 }
 
@@ -321,10 +329,10 @@ select:focus {
     text-align: left;
     height: 132px;
     width: 566px;
-    border: #ffffff solid 1px;
-    background: transparent;
+    border: 1px solid #79655e;
     top: -34px;
     font-size: 20px;
+    resize: none;
 }
 
 .title-question_approval {
@@ -338,6 +346,7 @@ select:focus {
     left: 30px;
     height: 24px;
     width: 24px;
+    cursor: pointer;
 }
 
 .title-question_heading {
@@ -345,6 +354,7 @@ select:focus {
     width: 453px;
     left: 30px;
     align-content: center;
+    cursor: pointer;
 }
 
 .button {
@@ -352,16 +362,18 @@ select:focus {
     height: 61px;
     width: 363px;
     text-align: center;
-    border: none;
-    color: #ffffff;
+    color: #463820;
     font-size: 24px;
-    background: linear-gradient(to top, #463820, #BFB7A8);
+    background: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+    transition: 0.7s;
 }
 
 .button:hover {
-    background: linear-gradient(to top, #BFB7A8, #FFFFFF);
-    color: #463820;
-    border: none;
+    color: #ffffff;
+    background-color: rgb(192, 155, 90);
 }
 
 .twitter,
@@ -390,4 +402,24 @@ select:focus {
 .a-social {
     height: 65px;
     width: 65px;
+}
+
+.section-contact_bg {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 650px;
+    height: 1074px;
+    margin-top: 50px;
+    background-color: #eeeaea;
+}
+
+.section-contact_head {
+    width: 650px;
+    height: 50px;
+    background: linear-gradient(90deg, rgba(217, 235, 235, 1) 0%, rgba(190, 198, 192, 1) 100%);
+}
+
+::placeholder {
+    color: #79655e;
 }

@@ -1,5 +1,5 @@
 body {
-    font-family: Manrope;
+    font-family: "Forum", sans-serif;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
@@ -13,14 +13,13 @@ textarea {
     color: #e2f7f6;
 }
 
-
 textarea:focus {
     outline: none;
 }
 
 input {
     font-size: 14px;
-    color: #e2f7f6;
+    color: black;
     padding-left: 15px;
     margin-bottom: 31px;
 }
@@ -49,23 +48,23 @@ input:focus {
 
 .container {
     margin: 0 auto;
-    width: 91.87%;
+    width: 1600px;
 }
 
 /*-----------------------booking-----------------------*/
 
 .booking {
-    background: linear-gradient(to right, #786853, #D9EBEB);
-    color: #FFF;
+    background: linear-gradient(to right, #786853, #d9ebeb);
+    color: #fff;
     padding: 63px 0 32px 0;
 }
 
 .booking__title {
     margin: 0 0 61px 0;
-    font-family: 'Forum';
+    font-family: "Forum", sans-serif;
     font-style: normal;
     min-height: 102px;
-    font-size: 62px;
+    font-size: 40px;
     font-weight: 400;
 }
 
@@ -80,6 +79,7 @@ input:focus {
 
 .booking__wrp {
     display: flex;
+    justify-content: space-between;
 }
 
 .booking__wrp_name {
@@ -92,11 +92,11 @@ input:focus {
 }
 
 .booking__wrp-f-name {
-    min-width: 316px;
+    width: 270px;
 }
 
 .booking__wrp-l-name {
-    min-width: 368px;
+    width: 270px;
 }
 
 .booking__wrp-communication {
@@ -107,15 +107,16 @@ input:focus {
 .booking__label {
     display: flex;
     margin: 0 0 11px 37px;
+    color: #79655e;
 }
 
 .booking__input {
-    background: transparent;
-    border: #ffffff solid 1px;
+    border: 1px solid #79655e;
     width: 100%;
     margin: 0 0 12px 0;
     padding: 18px 10px 21px 37px;
     box-sizing: border-box;
+    color: black;
 }
 
 .booking__input_date {
@@ -135,7 +136,7 @@ input:focus {
 } */
 
 .booking__input_f-name {
-    min-width: 316px;
+    min-width: 270px;
 }
 
 .booking__input_textarea {
@@ -147,27 +148,30 @@ input:focus {
 .booking__input_textarea::placeholder {
     width: 50%;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 400;
     line-height: normal;
 }
 
 .booking__form-text {
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 400;
     max-width: 274px;
     align-self: self-end;
+    color: #79655e;
 }
 
 .booking__subtitle {
     padding: 0 0 5px 37px;
     box-sizing: border-box;
     font-weight: 600;
+    color: #79655e;
 }
 
 .booking__text-info {
     padding: 0 0 0 37px;
-    font-weight: 500;
+    font-weight: 400;
     line-height: normal;
+    color: #79655e;
 }
 
 .booking__text-info_last {
@@ -182,26 +186,28 @@ input:focus {
     justify-content: center;
     width: 45%;
     text-align: center;
-    border: none;
-    color: #ffffff;
-    background: linear-gradient(to top, #463820, #BFB7A8);
+    color: #463820;
     font-family: Forum;
     font-size: 24px;
     line-height: normal;
     letter-spacing: 0.96px;
     text-transform: uppercase;
+    background: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+    transition: 0.7s;
 }
 
 .booking__button:hover {
-    background: linear-gradient(to top, #a7a095, #3f382b);
-    border: none;
-    cursor: pointer;
+    color: #ffffff;
+    background-color: rgb(192, 155, 90);
 }
 
 /*-----------------------booking-information-----------------------*/
 
 .booking-information {
-    color: #79655E;
+    color: #79655e;
 }
 
 .booking-information__info {
@@ -219,13 +225,13 @@ input:focus {
     align-items: center;
     width: 691px;
     min-height: 600px;
-    background: #DBDBDB;
+    background: #dbdbdb;
 }
 
 .booking-information__title {
-    font-family: Forum;
+    font-family: "Forum", sans-serif;
     margin: 16px 0 15px;
-    font-size: 36px;
+    font-size: 30px;
     font-weight: 400;
 }
 
@@ -233,7 +239,7 @@ input:focus {
     margin: 0 0 13px 0;
     width: 270px;
     text-align: center;
-    font-family: Forum;
+    font-family: "Forum", sans-serif;
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
@@ -258,7 +264,7 @@ input:focus {
 .booking-information__text {
     margin: 34px 36px;
     text-align: center;
-    font-family: Forum;
+    font-family: "Forum", sans-serif;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
@@ -269,15 +275,15 @@ input:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #CE6845;
+    color: #ce6845;
     margin: 0 0 26px 0;
     min-height: 50px;
     width: 272px;
     border: none;
-    background: rgba(192, 155, 90, 0.60);
+    background: rgba(192, 155, 90, 0.6);
     text-decoration: none;
     text-align: center;
-    font-family: Fraunces;
+    font-family: "Forum", sans-serif;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -297,7 +303,7 @@ input:focus {
     padding: 24px 80px;
     box-sizing: border-box;
     width: 691px;
-    background: #DBDBDB;
+    background: #dbdbdb;
     text-align: center;
 }
 
@@ -312,8 +318,8 @@ input:focus {
 }
 
 .booking-information__important {
-    color: #CE6845;
-    font-family: Manrope;
+    color: #ce6845;
+    font-family: "Forum", sans-serif;
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
@@ -339,10 +345,23 @@ input:focus {
     left: 35%;
     transform: translate(-50%, -50%);
     padding: 10px;
-    color: #FFF;
-    font-family: Manrope;
+    color: #fff;
+    font-family: "Forum", sans-serif;
     font-size: 16px;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 179.8%;
+}
+
+.booking-leftSide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 775px;
+    height: 1250px;
+    background-color: #dbdbdb;
+}
+
+::placeholder {
+    color: #79655e;
 }

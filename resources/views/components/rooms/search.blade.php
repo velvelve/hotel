@@ -46,9 +46,9 @@
                 @endif
                 <select name="type-room" id="type-room">
                     <option value="Все" {{ $typeRoom == 'Все' ? 'selected' : '' }}>Все</option>
-                    @foreach (\App\Enums\Rooms\RoomTypes::getRoomTypes() as $type)
-                        <option value="{{ $type }}" class="option-{{$type}} options" {{ $typeRoom == $type ? 'selected' : '' }}>
-                            {{ $type }}</option>
+                    @foreach (\App\Models\RoomType::all() as $type)
+                        <option value="{{ $type->name }}" class="option-{{$type->name}} options" {{ $typeRoom == $type->name ? 'selected' : '' }}>
+                            {{ $type->name }}</option>
                     @endforeach
                 </select>
             </div>

@@ -34,15 +34,15 @@ enum BedTypes: string
     public static function getBedTypeObjects(): array
     {
         return [
-            (object)['constant' => self::SINGLE->value, 'description' => 'Односпальная кровать'],
+            (object)['constant' => self::SINGLE->value, 'description' => 'односпальная кровать'],
             (object)['constant' => self::TWO_SINGLE->value, 'description' => '2 односпальных кровати'],
-            (object)['constant' => self::DOUBLE->value, 'description' => 'Двуспальная кровать'],
+            (object)['constant' => self::DOUBLE->value, 'description' => 'двуспальная кровать'],
             (object)['constant' => self::TWO_SINGLE_ONE_ADDITIONAL->value, 'description' => '2 односпальных кровати с дополнительной'],
-            (object)['constant' => self::ONE_DOUBLE_ONE_ADDITIONAL->value, 'description' => 'Двуспальная кровать с дополнительной'],
+            (object)['constant' => self::ONE_DOUBLE_ONE_ADDITIONAL->value, 'description' => 'двуспальная кровать с дополнительной'],
             (object)['constant' => self::TWO_SINGLE_TWO_ADDITIONAL->value, 'description' => '2 односпальных кровати с 2 дополнительными'],
-            (object)['constant' => self::ONE_DOUBLE_TWO_ADDITIONAL->value, 'description' => 'Двуспальная кровать с 2 дополнительными'],
+            (object)['constant' => self::ONE_DOUBLE_TWO_ADDITIONAL->value, 'description' => 'двуспальная кровать с 2 дополнительными'],
             (object)['constant' => self::TWO_DOUBLE_ONE_ADDITIONAL->value, 'description' => '2 двуспальных кровати с дополнительной'],
-            (object)['constant' => self::ONE_DOUBLE_THREE_ADDITIONAL->value, 'description' => 'Двуспальная кровать с 3 дополнительными']
+            (object)['constant' => self::ONE_DOUBLE_THREE_ADDITIONAL->value, 'description' => 'двуспальная кровать с 3 дополнительными']
 
         ];
     }

@@ -23,6 +23,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Forum&family=Montserrat:wght@300;400&display=swap"
         rel="stylesheet">
 
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     <link href="{{ asset('css/roomsSearch/roomsSearch.css') }}" rel="stylesheet">
     <link href="{{ asset('css/searchResult/searchResult.css') }}" rel="stylesheet">
     <link href="{{ asset('css/header.css') }}" rel="stylesheet">

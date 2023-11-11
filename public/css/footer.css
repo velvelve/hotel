@@ -28,10 +28,10 @@ a {
     margin-top: auto;
     background: linear-gradient(180deg, #066074 6.99%, rgb(0, 0, 0) 100%);
     color: #FFF;
-    font-family: Montserrat, serif;
-    font-size: 16px;
+    font-family: 'Forum', sans-serif;
+    font-size: 20px;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 400;
     line-height: normal;
 }
 
@@ -75,8 +75,8 @@ a {
 }
 
 .footer__contacts {
-    font-family: Montserrat, serif;
-    font-size: 16px;
+    font-family: 'Forum', sans-serif;
+    font-size: 20px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -96,10 +96,6 @@ a {
     display: grid;
     grid-template-columns: 32px 32px 32px 32px;
     gap: 25px;
-}
-
-.social_link a {
-
 }
 
 .social__link-icon {

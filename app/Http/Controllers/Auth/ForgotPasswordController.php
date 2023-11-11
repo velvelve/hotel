@@ -7,6 +7,7 @@ use App\Http\Requests\Auth\ForgotPasswordRequest;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Password;
+use Illuminate\Validation\ValidationException;
 
 class ForgotPasswordController extends Controller
 {
@@ -24,10 +25,12 @@ class ForgotPasswordController extends Controller
         );
 
         if ($status === Password::RESET_LINK_SENT) {
-            return back()->with('status', trans($status));
+            return redirect()->route('password.request')->with('status', trans($status));
         }
 
-        return back()->withInput($request->only('email'))->withErrors(['email' => trans($status)]);
+        throw ValidationException::withMessages([
+            'email' => [trans($status)],
+        ])->redirectTo(route('password.request'));
     }
 
 }

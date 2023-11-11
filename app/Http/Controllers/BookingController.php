@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Booking;
 use App\Models\Room;
 use App\Services\MailService;
+use Carbon\Carbon;
+use Exception;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -101,36 +103,82 @@ class BookingController extends Controller
 
     public function price(Request $request)
     {
+        $startDate = Carbon::parse($request->input('check_in_date'));
+        $endDate = Carbon::parse($request->input('check_out_date'));
+        $diff = $endDate->diffInDays($startDate);
         $data = [
+            'room_id' => $request->input('room_id'),
+            'user_id' => $request->input('user_id'),
             'check_in_date' => $request->input('check_in_date'),
             'check_out_date' => $request->input('check_out_date'),
-            'last_name' => $request->input('last_name'),
             'first_name' => $request->input('first_name'),
+            'last_name' => $request->input('last_name'),
             'patronymic_name' => $request->input('patronymic_name'),
             'tel' => $request->input('tel'),
             'email' => $request->input('email'),
             'promo_code' => $request->input('promo_code'),
             'wishes' => $request->input('wishes'),
-            'room_id' => $request->input('room_id'),
-            'user_id' => $request->input('user_id'),
             'guests_count' => $request->input('guests_count'),
             'price' => $request->input('price'),
+            'days' => $diff,
+            'stripe_error' => '',
+        ];
+        return view('bookings.price', $data);
+    }
+
+    public function pay_info(Request $request)
+    {
+        $customerData = $request->input('customer_data');
+        $startDate = Carbon::parse($request->input('check_in_date'));
+        $endDate = Carbon::parse($request->input('check_out_date'));
+        $diff = $endDate->diffInDays($startDate);
+        $promo_code = '';
+        if (in_array("promo_code", $customerData)) {
+            $promo_code = $customerData['promo_code'];
+        }
+        $wishes = '';
+        if (in_array("wishes", $customerData)) {
+            $wishes = $customerData['wishes'];
+        }
+        $error = $customerData['error'];
+        $data = [
+            'room_id' => $customerData['room_id'],
+            'user_id' => $customerData['user_id'],
+            'check_in_date' => $customerData['check_in_date'],
+            'check_out_date' => $customerData['check_out_date'],
+            'first_name' => $customerData['first_name'],
+            'last_name' => $customerData['last_name'],
+            'patronymic_name' =>  $customerData['patronymic_name'],
+            'tel' =>  $customerData['tel'],
+            'email' =>  $customerData['email'],
+            'promo_code' =>  $promo_code,
+            'wishes' =>  $wishes,
+            'guests_count' =>  $customerData['guests_count'],
+            'price' =>  $customerData['total_price'],
+            'days' => $diff,
+            'stripe_error' => $error,
         ];
         return view('bookings.price', $data);
     }
 
     public function pay(Request $request)
     {
-        Stripe::setApiKey(env('STRIPE_SECRET'));
-        Charge::create([
-            "amount" => 100 * 100,
-            "currency" => "INR",
-            "source" => $request->stripeToken,
-            "description" => "This payment is testing purpose of laravel-hotel",
-        ]);
+        try {
+            Stripe::setApiKey(env('STRIPE_SECRET'));
+            Charge::create([
+                "amount" => 100 * 100,
+                "currency" => "INR",
+                "source" => $request->stripeToken,
+                "description" => "This payment is testing purpose of laravel-hotel",
+            ]);
 
-        Session::flash('success', 'Payment Successfull!');
-        return redirect()->route('bookings.save')->with(['customer_data' => $request->all()]);
+            Session::flash('success', 'Payment Successfull!');
+            return redirect()->route('bookings.save')->with(['customer_data' => $request->all()]);
+        } catch (Exception $e) {
+            $dataWithError = $request->all();
+            $dataWithError["error"] = $e->getMessage();
+            return redirect()->route('bookings.pay_info', ['customer_data' => $dataWithError]);
+        }
     }
 
     // Отображение информации о конкретном бронировании

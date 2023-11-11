@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\RoomTypeController as AdminRoomTypeController;
 use App\Http\Controllers\Admin\UserController as AdminUserController;
 use App\Http\Controllers\Admin\ReviewController as AdminReviewController;
 use App\Http\Controllers\Admin\PhoneController as AdminPhoneController;
+use App\Http\Controllers\Admin\HotelController as AdminHotelController;
 use App\Http\Controllers\Auth\ChangePasswordController;
 use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
@@ -76,6 +77,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin.'], st
         Route::resource('/rooms',  AdminRoomController::class);
         Route::get('/rooms/{hotel}/room-numbers',  [AdminRoomController::class, 'room_numbers'])->name('room.room-numbers');
         Route::resource('/room-types', AdminRoomTypeController::class)->parameters(['room-types' => 'roomType']);;
+        Route::resource('/hotels',  AdminHotelController::class);
     });
 });
 

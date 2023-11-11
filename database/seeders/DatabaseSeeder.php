@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
         DB::table('reviews')->truncate(); //admin
         DB::table('users')->truncate(); //admin
         DB::table('hotel_phones')->truncate(); // admin
-        DB::table('hotels')->truncate();
+        DB::table('hotels')->truncate(); // admin
         DB::table('locations')->truncate(); // admin
         DB::table('cities')->truncate(); // admin
         DB::table('countries')->truncate(); // admin

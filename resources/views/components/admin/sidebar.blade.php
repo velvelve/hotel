@@ -60,10 +60,10 @@
         @if (auth()->user()->isAdmin())
             <ul class="list-group list-group-flush">
                 <span class="ul-title">Для администраторов</span>
-                <li class="list-group-item @if (request()->routeIs('admin.users.index')) active @endif">
-                    <a class="nav-link" aria-current="page" href="{{ route('admin.users.index') }}">
-                        <span>😀</span>
-                        Пользователи
+                <li class="list-group-item @if (request()->routeIs('admin.cities.index')) active @endif">
+                    <a class="nav-link" aria-current="page" href="{{ route('admin.cities.index') }}">
+                        <span>🏰</span>
+                        Города
                     </a>
                 </li>
                 <li class="list-group-item @if (request()->routeIs('admin.locations.index')) active @endif">
@@ -72,22 +72,28 @@
                         Локации
                     </a>
                 </li>
-                <li class="list-group-item @if (request()->routeIs('admin.countries.index')) active @endif">
-                    <a class="nav-link" aria-current="page" href="{{ route('admin.countries.index') }}">
-                        <span>🎌</span>
-                        Страны
-                    </a>
-                </li>
-                <li class="list-group-item @if (request()->routeIs('admin.cities.index')) active @endif">
-                    <a class="nav-link" aria-current="page" href="{{ route('admin.cities.index') }}">
-                        <span>🏰</span>
-                        Города
-                    </a>
-                </li>
                 <li class="list-group-item @if (request()->routeIs('admin.rooms.index')) active @endif">
                     <a class="nav-link" aria-current="page" href="{{ route('admin.rooms.index') }}">
                         <span>🏬</span>
                         Номера
+                    </a>
+                </li>
+                <li class="list-group-item @if (request()->routeIs('admin.hotels.index')) active @endif">
+                    <a class="nav-link" aria-current="page" href="{{ route('admin.hotels.index') }}">
+                        <span>🏯</span>
+                        Отели
+                    </a>
+                </li>
+                <li class="list-group-item @if (request()->routeIs('admin.users.index')) active @endif">
+                    <a class="nav-link" aria-current="page" href="{{ route('admin.users.index') }}">
+                        <span>😀</span>
+                        Пользователи
+                    </a>
+                </li>
+                <li class="list-group-item @if (request()->routeIs('admin.countries.index')) active @endif">
+                    <a class="nav-link" aria-current="page" href="{{ route('admin.countries.index') }}">
+                        <span>🎌</span>
+                        Страны
                     </a>
                 </li>
                 <li class="list-group-item @if (request()->routeIs('admin.room-types.*')) active @endif">

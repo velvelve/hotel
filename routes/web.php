@@ -131,8 +131,7 @@ Route::post('/contacts/send-message', [ContactsController::class, 'sendMessage']
     ->name('contacts.sendMessage');
 
 //Бронирование
-Route::get('/bookings/create/{room_id}', [BookingController::class, 'create'])
-    ->where('room_id', '\w+')
+Route::post('/bookings/create', [BookingController::class, 'create'])
     ->name('bookings.create');
 Route::post('/bookings', [BookingController::class, 'store'])
     ->name('bookings.store');

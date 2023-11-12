@@ -31,7 +31,7 @@ ul {
 .content-contacts {
     margin: 0 auto;
     background: linear-gradient(to right, #786853, #D9EBEB);
-    min-height: 2200px;
+    min-height: 1850px;
     min-width: 1600px;
     background-size: 100% 100%;
     display: grid;
@@ -120,7 +120,7 @@ ul {
 .section-two {
     position: relative;
     display: flex;
-    height: 1220px;
+    height: 1120px;
     padding-left: 55px;
 }
 

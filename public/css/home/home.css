@@ -442,6 +442,28 @@
     max-width: 297px;
     min-height: 410px;
     max-height: 410px;
+    transition: all .3s ease-in-out;
+    opacity: .8;
+}
+
+.service-cart-1:hover {
+    opacity: 1;
+    transform: scale(1.1) translateY(-5px);
+}
+
+.service-cart-2:hover {
+    opacity: 1;
+    transform: scale(1.1) translateY(-5px);
+}
+
+.service-cart-3:hover {
+    opacity: 1;
+    transform: scale(1.1) translateY(-5px);
+}
+
+.service-cart-4:hover {
+    opacity: 1;
+    transform: scale(1.1) translateY(-5px);
 }
 
 .service-cart-1 {

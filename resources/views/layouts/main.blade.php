@@ -29,8 +29,6 @@
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet">
     <link href="{{ asset('css/alert.css') }}" rel="stylesheet">
     <link href="{{ asset('css/loading.css') }}" rel="stylesheet">
-    <script src="{{ asset('js/jquery.js') }}"></script>
-    <script src="{{ asset('js/loading-indicator.js') }}"></script>
     @stack('styles')
 </head>
 

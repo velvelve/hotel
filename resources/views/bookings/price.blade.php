@@ -2,6 +2,8 @@
 
 @push('styles')
     <link href="{{ asset('css/booking/payment.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/loading-indicator.js') }}"></script>
 @endpush
 
 @section('content')

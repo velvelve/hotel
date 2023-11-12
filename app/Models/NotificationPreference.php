@@ -4,9 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Notification extends Model
+class NotificationPreference extends Model
 {
     use HasFactory;
     protected $fillable = [
@@ -18,6 +17,6 @@ class Notification extends Model
 
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return User::where('notification_preference_id', $this->id)->first();
     }
 }

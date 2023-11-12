@@ -19,8 +19,8 @@ return new class extends Migration
             $table->string('path');
             $table->timestamps();
 
-            $table->foreign('hotel_id')->references('id')->on('hotels')->onDelete('cascade');
-            $table->foreign('room_id')->references('id')->on('rooms')->onDelete('cascade');
+            $table->foreign('hotel_id')->references('id')->on('hotels');
+            $table->foreign('room_id')->references('id')->on('rooms');
         });
     }
 

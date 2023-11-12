@@ -13,6 +13,14 @@ class Service extends Model
 
     protected $with = ['icon'];
 
+    protected $fillable = [
+        'name',
+        'full_description',
+        'price',
+        'constant',
+    ];
+
+
     public function images()
     {
         return $this->belongsToMany(Image::class)->wherePivot('is_icon', false);

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('notifications', function (Blueprint $table) {
+        Schema::create('notification_preferences', function (Blueprint $table) {
             $table->id();
             $table->boolean('discounts')->default(false);
             $table->boolean('special_offers')->default(false);
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('notifications');
+        Schema::dropIfExists('notification_preferences');
     }
 };

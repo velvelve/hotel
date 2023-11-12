@@ -11,7 +11,14 @@ class ImageService extends Model
 
     protected $table = 'image_service';
 
-    public function iconImage()
+    protected $fillable = [
+        'image_id',
+        'service_id',
+        'is_icon',
+    ];
+
+
+    public function image()
     {
         return $this->belongsTo(Image::class, 'image_id');
     }

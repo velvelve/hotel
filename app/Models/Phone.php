@@ -10,11 +10,12 @@ class Phone extends Model
 {
     use HasFactory;
 
-    protected $table = 'phones';
+    protected $table = 'hotel_phones';
 
     protected $fillable = [
         'hotel_id',
-        'number'
+        'number',
+        'type',
     ];
 
     public function hotel(): BelongsTo

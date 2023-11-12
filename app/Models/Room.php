@@ -17,15 +17,16 @@ class Room extends Model
     protected $fillable = [
         'hotel_id',
         'room_number',
+        'description',
         'area',
-        'apartments_count',
+        'apartment_count',
+        'adults_max_guests',
+        'children_max_guests',
         'price',
         'availability',
         'room_type_id',
         'view_type_id',
         'bed_type_id',
-        'adults_max_guests',
-        'children_max_guests',
     ];
 
     public function images(): HasMany

@@ -14,14 +14,16 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $hotel = Hotel::all()[0];
-        $rooms = RoomTypeModel::getRoomTypesArray();
-        return view('home.index', [
-            'typeRoom' => 'Все',
-            'guests' => 1,
-            'hotel' => $hotel,
-            'rooms' => $rooms,
-        ]);
+        if (Hotel::count() > 0) {
+            $hotel = Hotel::all()[0];
+            $rooms = RoomTypeModel::getRoomTypesArray();
+            return view('home.index', [
+                'typeRoom' => 'Все',
+                'guests' => 1,
+                'hotel' => $hotel,
+                'rooms' => $rooms,
+            ]);
+        }
     }
 
     /**

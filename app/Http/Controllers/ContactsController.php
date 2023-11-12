@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Contacts\ContactsRequest;
-use App\Mail\ContactMessage;
 use App\Services\MailService;
 use Exception;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\View\View;
 
 class ContactsController extends Controller

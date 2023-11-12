@@ -1,16 +1,17 @@
 @extends('layouts.main')
 
 @push('styles')
-    <link href="{{ asset('css/reset.css') }}" rel="stylesheet">
     <link href="{{ asset('css/booking/payment.css') }}" rel="stylesheet">
 @endpush
 
 @section('content')
-
     @if ($errors->any())
         @foreach ($errors->all() as $error)
             <x-alert :message="$error" type="danger"></x-alert>
         @endforeach
+    @endif
+    @if ($stripe_error !== null && $stripe_error !== '')
+        <x-alert :message="$stripe_error" type="danger"></x-alert>
     @endif
 
     <section class="payment">
@@ -31,26 +32,26 @@
                     data-cc-on-file="false" data-stripe-publishable-key="{{ env('STRIPE_KEY') }}" id="payment-form">
                     @csrf
 
-                    <p class="payment__text">К оплате: <strong>{{ $price }}</strong></p>
+                    <p class="payment__text">К оплате: <strong>{{ $price * $days }}</strong></p>
 
                     <div class="payment__input-container">
                         <label class='payment__label'>Введите номер карты</label>
-                        <input class='payment__input card-number' autocomplete='off' size='20' type='text'
-                            value="4242424242424242">
+                        <input class='payment__input' id="card_number" pattern="\ d*" autocomplete='off' maxlength="19"
+                            type='text' value="4242 4242 4242 4242">
                     </div>
 
                     <div class="payment__flex">
 
                         <div class="payment__input-container payment__input-container_mod">
-                            <label for="card-month" class='payment__label'>Месяц/год</label>
-                            <label for="card-year"></label>
+                            <label for="payment__input" class='payment__label'>Месяц/год</label>
                             <div class="payment__input">
-                                <input class='card-expiry-month' name="card-month" id="card-month" type="text"
-                                    pattern="\d{2}" maxlength="2" placeholder="ММ" size='2' value="04" required>
+                                <input class='payment__input card-expiry-month' name="card-month" id="card-month"
+                                    type="text" pattern="\d{2}" maxlength="2" placeholder="ММ" size='2'
+                                    value="04" required>
                                 /
-                                <input class="card-expiry-year" name="card-year" id="card-year" size='4'
-                                    type="text" pattern="\d{4}" maxlength="4" placeholder="ГГГГ" value="2024"
-                                    required>
+                                <input class="payment__input card-expiry-year" name="card-year" id="card-year"
+                                    size='4' type="text" pattern="\d{4}" maxlength="4" placeholder="ГГГГ"
+                                    value="2024" required>
                             </div>
                         </div>
 
@@ -95,8 +96,8 @@
                         <input type="text" name="first_name" id="first_name" value="{{ $first_name }}" required>
 
                         <label for="patronymic_name">patronymic_name</label>
-                        <input type="text" name="patronymic_name" id="patronymic_name"
-                            value="{{ $patronymic_name }}" required>
+                        <input type="text" name="patronymic_name" id="patronymic_name" value="{{ $patronymic_name }}"
+                            required>
 
                         <label for="tel">tel</label>
                         <input type="tel" name="tel" id="tel" value="{{ $tel }}" required>
@@ -127,12 +128,33 @@
 
                 </form>
             </div>
+            <div class="toast-container toast-hidden" id="toast">
+                <div class="toast-header" id="toast_header">
+                    <strong class="toast-title" id="toast_title">Сообщение</strong>
+                </div>
+                <div class="toast-body" id="toast_body">
+                    <span class="toast-message" id="toast_message">Текст события!</span>
+                </div>
+            </div>
         </div>
 
     </section>
 
     <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
     <script type="text/javascript">
+        $(document).ready(function() {
+            hideLoading();
+            $('#card_number').on('input', function() {
+                let currentValue = $(this).val().replaceAll(' ', '');
+                let formattedNumber = currentValue.split('').reduce((seed, next, index) => {
+                    if (index !== 0 && !(index % 4)) seed += " ";
+                    return seed + next;
+                }, '')
+                $(this).val(formattedNumber);
+            });
+        });
+
+
         $(function() {
             var $form = $(".require-validation");
             $('form.require-validation').bind('submit', function(e) {
@@ -154,10 +176,11 @@
                     }
                 });
                 if (!$form.data('cc-on-file')) {
+                    showLoading()
                     e.preventDefault();
                     Stripe.setPublishableKey($form.data('stripe-publishable-key'));
                     Stripe.createToken({
-                        number: $('.card-number').val(),
+                        number: $('#card_number').val(),
                         cvc: $('.card-cvc').val(),
                         exp_month: $('.card-expiry-month').val(),
                         exp_year: $('.card-expiry-year').val()
@@ -166,18 +189,30 @@
             });
 
             function stripeResponseHandler(status, response) {
+                $('#toast').removeClass('toast-hidden')
+                $('#toast').addClass('animate')
+                $('#toast').addClass('pop')
                 if (response.error) {
-                    $form.append("<input type='text' name='stripeToken' value='" + response.error.message + "'/>");
+                    hideLoading();
+                    $('#toast').addClass('toast-error')
+                    $('#toast_header #toast_title').text('Произошла ошибка!');
+                    $('#toast_body #toast_message').text(response.error.message);
+                    $('#toast-title').text = 'Произошла ошибка!'
                 } else {
                     var token = response['id'];
                     if (token) {
-                        var x = $(this).data('price');
-                        $form.append("<input type='text' name='stripeToken' value='" + token + "'/>");
+                        $('#toast_header #toast_title').text('Обработка...');
+                        $('#toast_body #toast_message').text('Передаём данные в банк');
+                        $form.append("<input style='display: none' type='text' name='stripeToken' value='" + token +
+                            "'/>");
                         $form.get(0).submit();
                     }
                 }
+                setTimeout(() => {
+                    $('#toast').removeClass('toast-error')
+                    $('#toast').addClass('toast-hidden')
+                }, 2000);
             }
         });
     </script>
-
 @endsection

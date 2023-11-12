@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Hotel extends Model
 {
@@ -14,6 +15,7 @@ class Hotel extends Model
 
     protected $fillable = [
         'name',
+        'location_id',
     ];
 
     public function location(): BelongsTo
@@ -24,5 +26,10 @@ class Hotel extends Model
     public function services()
     {
         return $this->belongsToMany(Service::class);
+    }
+
+    public function rooms(): HasMany
+    {
+        return $this->hasMany(Room::class);
     }
 }

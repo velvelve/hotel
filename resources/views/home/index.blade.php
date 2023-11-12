@@ -7,10 +7,7 @@
         <div class="section-1-header" id="section-1-header">
             <div class="section-1-header__logo">
                 <a href="{{ route('home') }}">
-                    <div class="section-1-header__logo-bg">
-                        <div class="section-1-header__logo-upperText">LUXURY</div>
-                        <div class="section-1-header__logo-lowerText">HOTELS</div>
-                    </div>
+                    <img class="footer_img" src="{{ asset('img\footer\logo.png') }}" alt="logo">
                 </a>
             </div>
             <div class="section-1-header__menu">
@@ -58,6 +55,7 @@
         </div>
         {{-- Поиск --}}
         <div class="section-1-search">
+            <img src="/img/roomsSearch/header-stroke.svg" class="roomsSearch-stroke">
             <x-rooms.search :guests="$guests" :typeRoom="$typeRoom" />
         </div>
         <div class="section-1-services">
@@ -95,15 +93,46 @@
                             <a href="{{ route('rooms.types') }}" class="slider-route">
                                 <div class="slider-cart">
                                     <img src="{{ $room->images[0] }}" class="cart-img" />
-                                    <div class="slider-cart-description">
+                                    <div class="slider-cart-description card-effect">
                                         <div class="description-wrapper">
-                                            <div class="description-level">Номер {{ $room->roomTypeName }}</div>
-                                            <div class="description-upperText" style="white-space: pre-line;">
-                                                Ценовой дипапазон: {{ $room->getPriceRange() }}
-                                                Площади: {{ $room->getAreaRange() }}
-                                                Количество гостей: {{ $room->getGuestCountRange() }}
-                                                Доступные виды из окна: {{ $room->viewTypeDescriptions }}
-                                                Доступные типы кроватей: {{ $room->bedTypeDescriptions }}
+                                            <span class="description-level">Номер {{ $room->roomTypeName }}</span>
+                                            <div class="description-upperText">
+                                                <div class="description-row">
+                                                    <img src="{{ asset('img/rooms/price.svg') }}" alt="price"
+                                                        class="description-row-icon">
+                                                    <span class="description-row-text">
+                                                        {{ $room->getPriceRange() }}
+                                                        &#8381;</span>
+                                                </div>
+                                                <div class="description-row">
+                                                    <img src="{{ asset('img/rooms/area.svg') }}" alt="area"
+                                                        class="description-row-icon">
+                                                    <span class="description-row-text">{{ $room->getAreaRange() }}
+                                                        м&sup2;</span>
+                                                </div>
+                                                <div class="description-row">
+                                                    <img src="{{ asset('img/rooms/guests.svg') }}" alt="guest"
+                                                        class="description-row-icon">
+                                                    <span class="description-row-text">
+                                                        {{ $room->getGuestCountRange() }}</span>
+                                                </div>
+                                                <div class="description-row">
+                                                    <img src="{{ asset('img/rooms/view.svg') }}" alt="view"
+                                                        class="description-row-icon">
+                                                    <span class="description-row-text">
+                                                        {{ $room->viewTypeDescriptions }}</span>
+                                                </div>
+                                                <div class="description-row">
+                                                    <img src="{{ asset('img/rooms/bed.svg') }}" alt="bed"
+                                                        class="description-row-icon">
+                                                    <span class="description-row-text">
+                                                        {{ $room->bedTypeDescriptions }}</span>
+                                                </div>
+                                                <div class="description-arrow-corner" href="{{ route('rooms.types') }}">
+                                                    <div class="description-arrow">
+                                                        &#8594;
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="description-icons">
                                                 @foreach ($room->includedServices as $service)
@@ -112,7 +141,8 @@
                                                     </div>
                                                 @endforeach
                                             </div>
-                                            <div class="description-lowerText">{{ $room->roomTypeDescription }}</div>
+                                            <span class="description-lowerText">{{ $room->roomTypeDescription }}</span>
+
                                         </div>
                                     </div>
                                 </div>
@@ -262,7 +292,7 @@
                 </form>
             </div>
         </div>
-        <a class="section-4_anchor" href="#section-1-header" >Наверх</a>
+        <a class="section-4_anchor" href="#section-1-header">Наверх</a>
     </div>
     @push('styles')
         <link href="{{ asset('css/main.css') }}" rel="stylesheet">

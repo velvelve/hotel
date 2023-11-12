@@ -1,10 +1,9 @@
 <header class="header_container">
     <div class="header_content_container">
         <div class="header_logo">
-            <div class="header_logo_background">
-                <div class="header_logo_upper_text">LUXURY</div>
-                <div class="header_logo_lower_text">HOTELS</div>
-            </div>
+            <a href="{{ route('home') }}">
+                <img class="footer_img" src="{{ asset('img\footer\logo.png') }}" alt="logo">
+            </a>
         </div>
         <div class="header_menu">
             <ul class="header_list">

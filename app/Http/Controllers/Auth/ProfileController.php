@@ -97,7 +97,7 @@ class ProfileController extends Controller
                 $user->sendEmailVerificationNotification();
             }
         }
-
+      
         return redirect()->back()->with('profile', 'Данные изменены!');
     }
 

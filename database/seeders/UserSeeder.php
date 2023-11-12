@@ -26,7 +26,7 @@ class UserSeeder extends Seeder
             'gender' => Gender::MAN,
             'email_verified_at' => now(),
             'password' => Hash::make('admin'),
-            'notification_id' => 1,
+            'notification_preference_id' => 1,
             'role_id' => 3,
         ]);
         User::create([
@@ -41,7 +41,7 @@ class UserSeeder extends Seeder
             'gender' => Gender::MAN,
             'email_verified_at' => now(),
             'password' => Hash::make('worker'),
-            'notification_id' => 1,
+            'notification_preference_id' => 2,
             'role_id' => 2,
         ]);
     }

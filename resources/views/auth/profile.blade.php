@@ -67,7 +67,7 @@
                         <div class="reservation-content__canceled">
                             <div class="reservation-content__canceled-content">
                                 @foreach($bookingsCancelled as $bookingCancelled)
-                                    <p> {{ $bookingCancelled->last_name . ' ' . $bookingCancelled->client_first_name . ' ' . $bookingCancelled->middle_name . ' ' . $bookingCancelled->client_phone . ' ' . $bookingCancelled->client_email . ' ' . $bookingCancelled->promo_code . ' ' . $bookingCancelled->client_wishes . ' ' . $bookingCancelled->guests_count . ' ' . $bookingCancelled->total_price }}</p>
+                         <p> {{ $bookingCancelled->last_name . ' ' . $bookingCancelled->client_first_name . ' ' . $bookingCancelled->middle_name . ' ' . $bookingCancelled->client_phone . ' ' . $bookingCancelled->client_email . ' ' . $bookingCancelled->promo_code . ' ' . $bookingCancelled->client_wishes . ' ' . $bookingCancelled->guests_count . ' ' . $bookingCancelled->total_price }}</p>
                                     <hr>
                                 @endforeach
                             </div>
@@ -118,14 +118,11 @@
                                     </div>
                                     <div class="form-item">
                                         <div class="form-item-name">Отчество</div>
-                                        <input name="middle_name" type="text" class="form-item-input"
-                                               value="{{ auth()->user()->middle_name }}"/>
+                                        <input name="middle_name" type="text" class="form-item-input" value="{{ auth()->user()->middle_name }}"/>
                                     </div>
                                     <div class="form-item form-item-date">
                                         <div class="form-item-name">Дата рождения</div>
-                                        <input name="date_of_birth" type="date"
-                                               class="form-item-input input-dateOfBirth"
-                                               value="{{ date_format(date_create(auth()->user()->date_of_birth), 'Y-m-d') }}"/>
+                                        <input name="date_of_birth"  type="date" class="form-item-input input-dateOfBirth" value="{{ date_format(date_create(auth()->user()->date_of_birth), 'Y-m-d') }}"/>
                                     </div>
                                     <div class="form-item form-item-gender">
                                         <div class="form-item-name">Пол</div>
@@ -136,7 +133,7 @@
                                     </div>
                                     <div class="form-item">
                                         <div class="form-item-name">Телефон гостя</div>
-                                        <input name="phone" type="tel" class="form-item-input" value="{{ auth()->user()->phone }}" />
+                                        <input name="phone"  type="tel" class="form-item-input"  value="{{ auth()->user()->phone }}"/>
                                     </div>
                                     <div class="form-item">
                                         <div class="form-item-name">Электронная почта</div>
@@ -145,7 +142,7 @@
                                     </div>
                                     <div class="form-item">
                                         <div class="form-item-name">Страна</div>
-                                        <input name="country" type="text" class="form-item-input" value="{{ auth()->user()->country }}"/>
+                                        <input name="country"  type="text" class="form-item-input" value="{{ auth()->user()->country }}"/>
                                     </div>
                                     <div class="form-item">
                                         <div class="form-item-name">Город</div>
@@ -259,7 +256,7 @@
                     <!--Позже как добавим user is_admin  выставить тут проверку -->
                     @if (auth()->user()->isAdmin() ||
                             auth()->user()->isEmployee())
-                        <a href="{{ route('admin.dashboard') }}">Перейдите в админ-панель</a>
+                        <a href="{{ route('admin.index') }}">Перейдите в админ-панель</a>
                     @endif
                 </div>
             </div>

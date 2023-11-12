@@ -1,8 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-}
-
 .searchResult-bg {
     width: 100%;
     min-height: 100vh;
@@ -11,14 +6,16 @@
     padding-bottom: 50px;
 }
 
-.roomsSearch-head{
-    display:none
+.componentRoomsSearch {
+    align-items: start;
 }
 
-.componentRoomsSearch {
-    align-items: center;
-    margin-bottom: 40px;
-    width: 883px;
+.roomsSearch-head{
+    display: none;
+}
+
+.roomsSearch-menu, .roomsSearch-menu form{
+    box-shadow: none;
 }
 
 .searchResult-wrapper {
@@ -46,10 +43,9 @@
     margin: 0 auto;
 }
 
-.searchResult-head {
-    padding-top: 40px;
-    min-height: 100px;
-    max-height: 100px;
+.searchResult-title {
+    padding-top: 20px;
+    padding-bottom: 20px;
     color: #fff;
     font-family: 'Forum', sans-serif;
     font-size: 40px;

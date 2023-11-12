@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -16,24 +15,26 @@ class DatabaseSeeder extends Seeder
     {
 
         // Truncate tables
-        DB::table('notifications')->truncate();
-        DB::table('roles')->truncate();
-        DB::table('view_types')->truncate();
-        DB::table('bed_types')->truncate();
-        DB::table('room_types')->truncate();
-        DB::table('images')->truncate();
-        DB::table('bookings')->truncate();
-        DB::table('image_service')->truncate();
-        DB::table('hotel_service')->truncate();
-        DB::table('room_service')->truncate();
-        DB::table('booking_service')->truncate();
-        DB::table('services')->truncate();
-        DB::table('rooms')->truncate();
-        DB::table('reviews')->truncate();
-        DB::table('users')->truncate();
-        DB::table('phones')->truncate();
-        DB::table('hotels')->truncate();
-        DB::table('locations')->truncate();
+        DB::table('notification_preferences')->truncate(); // admin
+        DB::table('roles')->truncate(); // наверное в админке не должно быть
+        DB::table('view_types')->truncate(); // admin
+        DB::table('bed_types')->truncate(); // admin
+        DB::table('room_types')->truncate(); // admin
+        DB::table('images')->truncate(); // admin
+        DB::table('bookings')->truncate(); // admin
+        DB::table('image_service')->truncate(); // пока решено не делать
+        DB::table('hotel_service')->truncate(); // пока решено не делать
+        DB::table('room_service')->truncate(); // пока решено не делать
+        DB::table('booking_service')->truncate(); // пока решено не делать
+        DB::table('services')->truncate(); // admin
+        DB::table('rooms')->truncate(); //admin
+        DB::table('reviews')->truncate(); //admin
+        DB::table('users')->truncate(); //admin
+        DB::table('hotel_phones')->truncate(); // admin
+        DB::table('hotels')->truncate(); // admin
+        DB::table('locations')->truncate(); // admin
+        DB::table('cities')->truncate(); // admin
+        DB::table('countries')->truncate(); // admin
 
 
         $this->call([

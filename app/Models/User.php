@@ -22,10 +22,17 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     protected $fillable = [
         'first_name',
+        'middle_name',
         'last_name',
         'email',
         'phone',
+        'country',
+        'city',
+        'gender',
         'password',
+        'email_verified_at',
+        'date_of_birth',
+        'notification_preference_id',
         'role_id',
     ];
 
@@ -49,9 +56,9 @@ class User extends Authenticatable implements MustVerifyEmail
         'password' => 'hashed',
     ];
 
-    public function notification()
+    public function notificationPreference()
     {
-        return $this->hasOne(Notification::class);
+        return $this->belongsTo(NotificationPreference::class, 'notification_preference_id');
     }
 
     public function role()

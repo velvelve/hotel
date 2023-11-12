@@ -9,7 +9,10 @@ class BedType extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['constant'];
+    protected $fillable = [
+        'description',
+        'constant',
+    ];
 
     public function rooms()
     {

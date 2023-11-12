@@ -12,9 +12,19 @@ class Location extends Model
     protected $table = 'locations';
 
     protected $fillable = [
-        'country',
-        'city',
+        'country_id',
+        'city_id',
         'street',
         'house'
     ];
+
+    public function country()
+    {
+        return $this->belongsTo(Country::class);
+    }
+
+    public function city()
+    {
+        return $this->belongsTo(City::class);
+    }
 }

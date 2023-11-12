@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Enums\Hotels\PhoneType;
 use App\Models\Phone;
 use Illuminate\Database\Seeder;
 
@@ -14,19 +15,24 @@ class PhoneSeeder extends Seeder
     {
         Phone::factory()->createMany([
             array(
-                "id" => 1,
                 "hotel_id" => 1,
                 "number" => "+78373159813",
+                'type' => PhoneType::MAIN,
             ),
             array(
-                "id" => 2,
                 "hotel_id" => 1,
                 "number" => "+75188206448",
+                'type' => PhoneType::BOOKING,
             ),
             array(
-                "id" => 3,
                 "hotel_id" => 1,
                 "number" => "+74051437056",
+                'type' => PhoneType::RECEPTION,
+            ),
+            array(
+                "hotel_id" => 1,
+                "number" => "+74051432346",
+                'type' => PhoneType::SALES,
             ),
         ]);
     }

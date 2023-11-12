@@ -31,14 +31,14 @@ class Booking extends Model
         'total_price',
     ];
 
-    public function room(): BelongsTo
+    public function room()
     {
-        return $this->belongsTo(Room::class, 'room_id');
+        return Room::where('id', $this->room_id)->first();
     }
 
-    public function user(): BelongsTo
+    public function user()
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return User::where('id', $this->user_id)->first();
     }
 
     public function services()

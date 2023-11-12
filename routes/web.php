@@ -1,7 +1,21 @@
 <?php
 
+use App\Http\Controllers\Admin\LocationController as AdminLocationController;
+use App\Http\Controllers\Admin\CityController as AdminCityController;
+use App\Http\Controllers\Admin\CountryController as AdminCountryController;
+use App\Http\Controllers\Admin\NotificationPreferenceController as AdminNotificationPreferenceController;
+use App\Http\Controllers\Admin\ViewTypeController as AdminViewTypeController;
+use App\Http\Controllers\Admin\BedTypeController as AdminBedTypeController;
+use App\Http\Controllers\Admin\ImageController as AdminImageController;
+use App\Http\Controllers\Admin\BookingController as AdminBookingController;
+use App\Http\Controllers\Admin\ServiceController as AdminServiceController;
+use App\Http\Controllers\Admin\RoomController as AdminRoomController;
 use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Admin\RoomTypeController as AdminRoomTypeController;
+use App\Http\Controllers\Admin\UserController as AdminUserController;
+use App\Http\Controllers\Admin\ReviewController as AdminReviewController;
+use App\Http\Controllers\Admin\PhoneController as AdminPhoneController;
+use App\Http\Controllers\Admin\HotelController as AdminHotelController;
 use App\Http\Controllers\Auth\ChangePasswordController;
 use App\Http\Controllers\Auth\EmailVerificationController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
@@ -44,8 +58,26 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 //Админка
 Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin.'], static function () {
     Route::group(['middleware' => 'admin.employee'], function () {
-        Route::get('/', [AdminDashboardController::class, 'index'])->name('dashboard');
+        Route::get('/', [AdminDashboardController::class, 'index'])->name('index');
+        Route::resource('/notification-preferences', AdminNotificationPreferenceController::class);
+        Route::resource('/view-types', AdminViewTypeController::class);
+        Route::resource('/bed-types', AdminBedTypeController::class);
+        Route::resource('/images', AdminImageController::class);
+        Route::resource('/bookings', AdminBookingController::class);
+        Route::resource('/services', AdminServiceController::class);
+        Route::resource('/reviews', AdminReviewController::class);
+        Route::resource('/phones', AdminPhoneController::class);
+    });
+    Route::group(['middleware' => 'admin'], function () {
+        Route::resource('/users', AdminUserController::class);
+        Route::resource('/locations', AdminLocationController::class);
+        Route::get('/locations/{country_id}/city', [AdminLocationController::class, 'city'])->name('location.city');
+        Route::resource('/cities', AdminCityController::class);
+        Route::resource('/countries', AdminCountryController::class);
+        Route::resource('/rooms',  AdminRoomController::class);
+        Route::get('/rooms/{hotel}/room-numbers',  [AdminRoomController::class, 'room_numbers'])->name('room.room-numbers');
         Route::resource('/room-types', AdminRoomTypeController::class)->parameters(['room-types' => 'roomType']);;
+        Route::resource('/hotels',  AdminHotelController::class);
     });
 });
 

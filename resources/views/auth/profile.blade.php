@@ -259,7 +259,7 @@
                     <!--Позже как добавим user is_admin  выставить тут проверку -->
                     @if (auth()->user()->isAdmin() ||
                             auth()->user()->isEmployee())
-                        <a href="{{ route('admin.dashboard') }}">Перейдите в админ-панель</a>
+                        <a href="{{ route('admin.index') }}">Перейдите в админ-панель</a>
                     @endif
                 </div>
             </div>

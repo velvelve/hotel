@@ -179,8 +179,11 @@
                                     <p>Заезд: <span class="booking-information__important">{{ $check_in_date }}</span></p>
                                 </li>
                                 <li class="booking-information__item">
-                                    <p>Номер: <span class="booking-information__important">{{ $room->room_type }}</span>
+                                    <p>Номер: <span class="booking-information__important">{{ $room->roomType->name }}</span>
                                     </p>
+                                </li>
+                                <li class="booking-information__item">
+                                    <p>Ночей:</p>
                                 </li>
                                 <li class="booking-information__item">
                                     <p>Сумма доп. услуг:</p>
@@ -196,13 +199,16 @@
                                     </p>
                                 </li>
                                 <li class="booking-information__item">
-                                    <p><span class="booking-information__important">{{ $room->price }} rub</span></p>
+                                    <p><span class="booking-information__important">{{ $room->price }} ₽ </span></p>
+                                </li>
+                                <li class="booking-information__item">
+                                    <p><span class="booking-information__important">{{ $quantityDays }}</span></p>
                                 </li>
                                 <li class="booking-information__item">
                                     <p><span class="booking-information__important">0.00 rub</span></p>
                                 </li>
                                 <li class="booking-information__item">
-                                    <p><span class="booking-information__important">{{ $room->price }} rub</span></p>
+                                    <p><span class="booking-information__important">{{ $room->price * $quantityDays }} ₽</span></p>
                                 </li>
                             </ul>
                         </div>

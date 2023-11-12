@@ -48,19 +48,25 @@
                         <!-- Подраздел Текущие -->
                         <div class="reservation-content__current">
                             <div class="reservation-content__current-content">
-                                Бронирований не найдено
+                                @foreach($bookingsBooked as $bookingBooked)
+                                    <p> {{ $bookingBooked->last_name . ' ' . $bookingBooked->client_first_name . ' ' . $bookingBooked->middle_name . ' ' . $bookingBooked->client_phone . ' ' . $bookingBooked->client_email . ' ' . $bookingBooked->promo_code . ' ' . $bookingBooked->client_wishes . ' ' . $bookingBooked->guests_count . ' ' . $bookingBooked->total_price }} </p>
+                                @endforeach
                             </div>
                         </div>
                         <!-- Подраздел Прошедшие -->
                         <div class="reservation-content__past">
                             <div class="reservation-content__past-content">
-                                Бронирований не найдено
+                                @foreach($bookingsConfirmed as $bookingConfirmed)
+                                    <p> {{ $bookingBooked->last_name . ' ' . $bookingBooked->client_first_name . ' ' . $bookingBooked->middle_name . ' ' . $bookingBooked->client_phone . ' ' . $bookingBooked->client_email . ' ' . $bookingBooked->promo_code . ' ' . $bookingBooked->client_wishes . ' ' . $bookingBooked->guests_count . ' ' . $bookingBooked->total_price }} </p>
+                                @endforeach
                             </div>
                         </div>
                         <!-- Подраздел Отмененные -->
                         <div class="reservation-content__canceled">
                             <div class="reservation-content__canceled-content">
-                                Бронирований не найдено
+                                @foreach($bookingsCancelled as $bookingCancelled)
+                                    <p> {{ $bookingBooked->last_name . ' ' . $bookingBooked->client_first_name . ' ' . $bookingBooked->middle_name . ' ' . $bookingBooked->client_phone . ' ' . $bookingBooked->client_email . ' ' . $bookingBooked->promo_code . ' ' . $bookingBooked->client_wishes . ' ' . $bookingBooked->guests_count . ' ' . $bookingBooked->total_price }}</p>
+                                @endforeach
                             </div>
                         </div>
                     </div>
@@ -109,14 +115,11 @@
                                     </div>
                                     <div class="form-item">
                                         <div class="form-item-name">Отчество</div>
-                                        <input name="middle_name" type="text" class="form-item-input"
-                                               value="{{ auth()->user()->middle_name }}"/>
+                                        <input name="middle_name" type="text" class="form-item-input" value="{{ auth()->user()->middle_name }}"/>
                                     </div>
                                     <div class="form-item form-item-date">
                                         <div class="form-item-name">Дата рождения</div>
-                                        <input name="date_of_birth" type="date"
-                                               class="form-item-input input-dateOfBirth"
-                                               value="{{ date_format(date_create(auth()->user()->date_of_birth), 'Y-m-d') }}"/>
+                                        <input name="date_of_birth"  type="date" class="form-item-input input-dateOfBirth" value="{{ date_format(date_create(auth()->user()->date_of_birth), 'Y-m-d') }}"/>
                                     </div>
                                     <div class="form-item form-item-gender">
                                         <div class="form-item-name">Пол</div>
@@ -127,7 +130,7 @@
                                     </div>
                                     <div class="form-item">
                                         <div class="form-item-name">Телефон гостя</div>
-                                        <input name="phone" type="tel" class="form-item-input" value="{{ auth()->user()->phone }}" />
+                                        <input name="phone"  type="tel" class="form-item-input"  value="{{ auth()->user()->phone }}"/>
                                     </div>
                                     <div class="form-item">
                                         <div class="form-item-name">Электронная почта</div>
@@ -136,7 +139,7 @@
                                     </div>
                                     <div class="form-item">
                                         <div class="form-item-name">Страна</div>
-                                        <input name="country" type="text" class="form-item-input" value="{{ auth()->user()->country }}"/>
+                                        <input name="country"  type="text" class="form-item-input" value="{{ auth()->user()->country }}"/>
                                     </div>
                                     <div class="form-item">
                                         <div class="form-item-name">Город</div>

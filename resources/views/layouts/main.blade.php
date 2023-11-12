@@ -28,20 +28,29 @@
     <link href="{{ asset('css/header.css') }}" rel="stylesheet">
     <link href="{{ asset('css/footer.css') }}" rel="stylesheet">
     <link href="{{ asset('css/alert.css') }}" rel="stylesheet">
-
+    <link href="{{ asset('css/loading.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/loading-indicator.js') }}"></script>
     @stack('styles')
 </head>
 
 <body>
-    @if (Request::route()->getName() !== 'home')
-        @include('includes.header')
-    @endif
-    <main>
-        <div>
+    <div class="main-container">
+        @if (Request::route()->getName() !== 'home')
+            @include('includes.header')
+        @endif
+        <main>
             @yield('content')
-        </div>
-    </main>
-    @include('includes.footer')
+        </main>
+        @include('includes.footer')
+        <section class="loading-hide" id="loading">
+            <div id="loading-content">
+                <div class="lds-heart">
+                    <div></div>
+                </div>
+            </div>
+        </section>
+    </div>
 </body>
 
 

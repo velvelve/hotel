@@ -108,6 +108,8 @@ Route::get('/bookings/show', [BookingController::class, 'show'])
     ->name('bookings.show');
 Route::post('/bookings/price', [BookingController::class, 'price'])
     ->name('bookings.price');
+Route::get('/bookings/price', [BookingController::class, 'pay_info'])
+    ->name('bookings.pay_info');
 Route::post('/bookings/pay', [BookingController::class, 'pay'])
     ->name('bookings.pay');
 Route::get('/bookings/save', [BookingController::class, 'save'])

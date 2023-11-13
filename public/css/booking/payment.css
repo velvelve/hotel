@@ -1,6 +1,7 @@
 .payment {
     background: linear-gradient(to right, #786853, #D9EBEB);
     padding: 40px 0;
+    min-width: 1600px;
 }
 
 .payment__wrp {

@@ -57,6 +57,7 @@ input:focus {
     background: linear-gradient(to right, #786853, #d9ebeb);
     color: #fff;
     padding: 63px 0 32px 0;
+    min-width: 1600px;
 }
 
 .booking__title {
@@ -126,12 +127,12 @@ input:focus {
     box-sizing: border-box;
 }
 
-/* надо настраивать иконку 
+/* надо настраивать иконку
 .booking__input_date::after {
     content: url('/img/roomsSearch/date.svg');
     position: absolute;
-    right: 10px; 
-    top: 50%; 
+    right: 10px;
+    top: 50%;
     transform: translateY(-50%);
 } */
 

@@ -3,6 +3,7 @@
     justify-content: center;
     position: relative;
     background: linear-gradient(to right, #786853, #D9EBEB);
+    min-width: 1600px;
 }
 
 .verify-email__logo::before {

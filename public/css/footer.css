@@ -33,10 +33,10 @@ a {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    min-width: 1600px;
 }
 
 .footer_container {
-    min-width: 1500px;
     max-width: 1500px;
     margin: auto;
     padding-bottom: 15px;

@@ -5,6 +5,7 @@
     height: 140px;
     background: url(/img/header/header_background.png);
     background-size: 100% 100%;
+    min-width: 1600px;
 }
 
 .header_logo {
@@ -91,7 +92,7 @@
     .header_container {
         display: flex;
         align-items: start;
-        height: 260px;
+        height: 340px;
     }
 
     .header_content_container {

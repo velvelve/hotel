@@ -95,9 +95,10 @@
                                             <p class="modal-tariff-discount">RUB
                                                 {{ round($room->price - ($room->price / 100) * 24, 2) }} 24% savings </p>
                                         </div>
-                                        <form action="{{ route('bookings.create', ['room_id' => $room->id]) }}"
-                                            method="GET">
-                                            <button class="modal-btn">Выбрать</button>
+                                        <form action="{{ route('bookings.create') }}" method="POST">
+                                            @csrf
+                                            <input type="hidden" name="room_id" value="{{ $room->id }}">
+                                            <button class="cart-btn">Выбрать</button>
                                         </form>
                                     </div>
                                 </div>
@@ -166,7 +167,9 @@
                                         24% savings </p>
                                 </div>
 
-                                <form action="{{ route('bookings.create', ['room_id' => $room->id]) }}" method="GET">
+                                <form action="{{ route('bookings.create') }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="room_id" value="{{ $room->id }}">
                                     <button class="cart-btn">Выбрать</button>
                                 </form>
                             </div>

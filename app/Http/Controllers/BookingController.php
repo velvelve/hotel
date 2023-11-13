@@ -17,17 +17,8 @@ use Stripe\Stripe;
 
 class BookingController extends Controller
 {
-    // Отображение списка всех бронирований(например для admin панели)
-    public function index(): View
-    {
-        $bookings = Booking::all();
-        return view('bookings.index', [
-            'bookings' => $bookings,
-        ]);
-    }
-
     // Отображение формы для создания нового бронирования
-    public function create($room_id): View|RedirectResponse
+    public function create(Request $request): View|RedirectResponse
     {
         //Проверка авторизации пользователя
         if (!Auth::check()) {
@@ -39,7 +30,8 @@ class BookingController extends Controller
         $check_out_date = session('check_out_date');
         $guests_count = session('guest_count');
 
-        //Получаю из url room_id
+        // Получаю room_id из формы
+        $room_id = $request->input('room_id');
         $room = Room::findOrFail($room_id);
 
         //Получаю авторизированного user

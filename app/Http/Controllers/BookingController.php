@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Booking;
 use App\Models\Room;
+use App\Services\CheckRoomAvailabilityService;
 use App\Services\MailService;
 use Carbon\Carbon;
 use Exception;
@@ -18,7 +19,7 @@ use Stripe\Stripe;
 class BookingController extends Controller
 {
     // Отображение формы для создания нового бронирования
-    public function create(Request $request): View|RedirectResponse
+    public function create(Request $request, CheckRoomAvailabilityService $checkRoomAvailabilityService): View|RedirectResponse
     {
         //Проверка авторизации пользователя
         if (!Auth::check()) {
@@ -30,6 +31,10 @@ class BookingController extends Controller
         $check_out_date = session('check_out_date');
         $guests_count = session('guest_count');
 
+        $startDate = Carbon::parse($check_in_date);
+        $endDate = Carbon::parse($check_out_date);
+        $quantityDays = $endDate->diffInDays($startDate);
+
         // Получаю room_id из формы
         $room_id = $request->input('room_id');
         $room = Room::findOrFail($room_id);
@@ -37,13 +42,21 @@ class BookingController extends Controller
         //Получаю авторизированного user
         $user = Auth::user();
 
-        return view('bookings.create', [
-            'check_in_date' => $check_in_date,
-            'check_out_date' => $check_out_date,
-            'guests_count' => $guests_count,
-            'room' => $room,
-            'user' => $user,
-        ]);
+        //Проверка доступности room
+        if($checkRoomAvailabilityService->isAvailable($room, $check_in_date, $check_out_date)) {
+            return view('bookings.create', [
+                'check_in_date' => $check_in_date,
+                'check_out_date' => $check_out_date,
+                'guests_count' => $guests_count,
+                'room' => $room,
+                'user' => $user,
+                'quantityDays' => $quantityDays,
+            ]);
+        } else {
+            return redirect()->route('home')->with('error', 'Выбранная комната недоступна в выбранные даты.');
+        }
+
+        
     }
 
     // Сохранение нового бронирования

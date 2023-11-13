@@ -38,7 +38,7 @@
                                 class="d-inline" onsubmit="return confirm('Вы уверены, что хотите удалить?')">
                                 @csrf
                                 @method('delete')
-                                <a class="icon icon-delete" type="submit" class="btn btn-link"></a>
+                                <button style="border: none" class="icon icon-delete" type="submit" class="btn btn-link"></button>
                             </form>
                         </td>
                     </tr>

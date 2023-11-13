@@ -137,7 +137,7 @@
                                             <div class="description-icons">
                                                 @foreach ($room->includedServices as $service)
                                                     <div class="description-icon-container">
-                                                        <img src="{{ $service->icon[0]->path }}" class="description-ico">
+                                                        <img src="{{ $service->icon[0]->path }}" class="description-ico" title="{{ $service->name }}">
                                                     </div>
                                                 @endforeach
                                             </div>

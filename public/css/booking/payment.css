@@ -17,15 +17,16 @@
 
 .toast-container {
     position: fixed;
-    top: 3rem;
-    right: 7rem;
+    top: 10vh;
+    left: 50vw;
+    transform: translate(-50%, 0%);
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     justify-content: space-around;
     padding: 1rem;
-    width: fit-content;
-    height: fit-content;
+    width: 200px;
+    min-height: 85px;
     color: #ffffff;
     background-color: #00838d;
     border: 0.5px solid #2c1a14;

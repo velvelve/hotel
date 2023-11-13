@@ -6,7 +6,6 @@
 @endpush
 
 @section('content')
-    @include('includes.message')
 
     <section class="login">
 
@@ -15,6 +14,7 @@
             <div class="login__logo"></div>
 
             <div>
+                @include('includes.message')
                 <h2 class="login__title">Вход</h2>
                 <p class="login__text">Войдите, чтобы получить доступ к своей учетной записи</p>
 

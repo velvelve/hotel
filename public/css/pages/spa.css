@@ -1,44 +1,55 @@
 .wrapper {
     min-width: 100%;
     min-height: 100%;
-    background: linear-gradient(to right, #786853,  #D9EBEB);
-}
-
-.main-section {
-    position: relative;
-    height: 1245px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background: linear-gradient(to right, #786853, #D9EBEB);
 }
 
 .main-section_screensaver {
-    height: 879px;
-    width: 1600px;
-    background-image: url(../../img/spa/spa.png);
-    background-repeat: no-repeat;
-    background-position: center top;
-    position: relative;
     display: flex;
     justify-content: center;
-    
+    align-items: center;
+    background: linear-gradient(to right, #786853, #D9EBEB);
+}
+
+.main-section_screensaver_img {
+    display: flex;
+    position: relative;
+    width: 100%;
+
 }
 
 .text_h1 {
-    position: relative;
-    font-family: 'Forum', sans-serif;
     font-size: 60px;
+    font-family: 'Forum', sans-serif;
     font-weight: 600;
-    color: #453834;
-    top: 383px;
+    color: #FFFCFC;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+
+}
+
+.massage-title {
+    font-size: 60px;
+    font-family: 'Forum', sans-serif;
+    font-weight: 400;
+    color: #FFFCFC;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
 }
 
 .mail-section_content {
-    position: relative;
     width: 1421px;
-    height: 311px;
+    min-height: 311px;
     text-align: center;
-    top: 56px;
+    padding-top: 56px;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding-left: 250px;
+    padding-right: 250px;
+
 }
 
 .content_text {
@@ -47,9 +58,11 @@
     font-weight: 400;
     margin-bottom: 20px;
     color: #453834;
+
 }
 
-.second-section, .third-section {
+.second-section,
+.third-section {
     position: relative;
     height: 845px;
     width: 1600px;
@@ -57,10 +70,14 @@
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
-    top: 450px;
+    top: 420px;
 }
 
-.second-section_spa, .second-section_sauna, .third-section_swimming, .third-section_fitness, .fourth-section_cafe  {
+.second-section_spa,
+.second-section_sauna,
+.third-section_swimming,
+.third-section_fitness,
+.fourth-section_cafe {
     position: relative;
     height: 422px;
     display: flex;
@@ -69,7 +86,9 @@
     left: 61px;
 }
 
-.spa_img, .swimming_img, .cafe_img  {
+.spa_img,
+.swimming_img,
+.cafe_img {
     width: 739px;
     position: relative;
     justify-content: start;
@@ -106,7 +125,7 @@
     margin-bottom: 15px;
     color: #453834;
     position: relative;
-} 
+}
 
 .sauna_description {
     width: 751px;
@@ -143,7 +162,8 @@
     top: 130px;
 }
 
-.third-section_swimming, .third-section_fitness {
+.third-section_swimming,
+.third-section_fitness {
     position: relative;
     display: flex
 }
@@ -194,6 +214,7 @@
     position: relative;
     height: 159px;
     min-width: 100%;
+    margin-top: 60px;
 }
 
 .background {

@@ -6,13 +6,14 @@
 @endpush
 
 @section('content')
+<div class="main-section_screensaver">
+    <img class="main-section_screensaver_img" src="img/spa/spa.png" alt="spa">
+    <h1 class="main-section_screensaver_text text_h1">The Luxury Spa</h1>
+</div>
 <section class="wrapper">
 <!--Первая секция-->
     <section class="main-section">
 <!--Банер с заголовком-->
-        <div class="main-section_screensaver">
-            <h1 class="screensaver_text text_h1">The Luxury Spa</h1>
-        </div>
 <!--Описание-->
         <div class="mail-section_content">
             <p class="content_text">К услугам гостей инкрустированный кристаллами Swarovski бассейн, джакузи, парная, сауна с гималайской солью. </p>

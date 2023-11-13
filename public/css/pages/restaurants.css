@@ -1,5 +1,5 @@
 .wrapper {
-    min-height: 1718px;
+    min-height: 1655px;
     background: linear-gradient(to right, #786853, #D9EBEB);
     position: relative;
     display: flex;
@@ -16,12 +16,12 @@
 
 .section-restaurant-one {
     display: flex;
-    margin-bottom: 61px;
+    margin-bottom: 25px;
 }
 
 .section-restaurant-two {
     display: flex;
-    margin-bottom: 61px;
+    margin-bottom: 25px;
 }
 
 .section-restaurant-three {

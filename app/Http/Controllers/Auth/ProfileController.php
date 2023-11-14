@@ -74,6 +74,10 @@ class ProfileController extends Controller
             'city' => ['sometimes', 'nullable', 'min:3'],
             'date_of_birth' => ['sometimes', 'nullable', 'date'],
             'gender' => ['sometimes', 'nullable'],
+            'sale_info' => ['sometimes', 'accepted'],
+            'special_offer_info' => ['sometimes', 'accepted'],
+            'bonus_info' => ['sometimes', 'accepted'],
+            'hotel_answer_info' => ['sometimes', 'accepted'],
         ]);
 
         $user->update([
@@ -87,6 +91,17 @@ class ProfileController extends Controller
             'gender' => $request->gender,
             'updated_at' => now()
         ]);
+
+        $notifications = $user->notifications();
+        $notifications->update(
+            [
+                'discounts' => $request->has('sale_info'),
+                'special_offers' => $request->has('special_offer_info'),
+                'bonus_earnings' => $request->has('bonus_info'),
+                'feedback_responses' => $request->has('hotel_answer_info'),
+                'updated_at' => now(),
+            ]
+        );
 
         $oldEmail = $user->email;
         if (!empty($request->email)) {

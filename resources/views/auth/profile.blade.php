@@ -151,21 +151,21 @@
                                 </div>
                                 <div class="form-input-group__type-checkbox">
                                     <div class="form-input-group__type-checkbox-item">
-                                        <input name="sale-info" type="checkbox" id="sale-info" {{ ($notifications->discounts) ? 'checked' : '' }}/>
+                                        <input name="sale_info" type="checkbox" id="sale-info" {{ ($notifications->discounts) ? 'checked' : '' }}/>
                                         <label for="sale-info">Получать информацию об эксклюзивных скидках на
                                             номера</label>
                                     </div>
                                     <div class="form-input-group__type-checkbox-item">
-                                        <input name="special-offer-info" type="checkbox" id="special-offer-info" {{ ($notifications->special_offers) ? 'checked' : '' }}/>
+                                        <input name="special_offer_info" type="checkbox" id="special-offer-info" {{ ($notifications->special_offers) ? 'checked' : '' }}/>
                                         <label for="special-offer-info">Получать уведомления о спец предложениях</label>
                                     </div>
                                     <div class="form-input-group__type-checkbox-item">
-                                        <input name="bonus-info" type="checkbox" id="bonus-info" {{ ($notifications->bonus_earnings) ? 'checked' : '' }}/>
+                                        <input name="bonus_info" type="checkbox" id="bonus-info" {{ ($notifications->bonus_earnings) ? 'checked' : '' }}/>
                                         <label for="bonus-info">Получать уведомления о начисленных бонусах (1 бонус = 1
                                             рубль)</label>
                                     </div>
                                     <div class="form-input-group__type-checkbox-item">
-                                        <input name="hotel-answer-info" type="checkbox" id="hotel-answer-info" {{ ($notifications->feedback_responses) ? 'checked' : '' }}/>
+                                        <input name="hotel_answer_info" type="checkbox" id="hotel-answer-info" {{ ($notifications->feedback_responses) ? 'checked' : '' }}/>
                                         <label for="hotel-answer-info">Получать уведомления об ответе отелей на ваши
                                             отзывы</label>
                                     </div>

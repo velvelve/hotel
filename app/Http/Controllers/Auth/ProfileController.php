@@ -6,7 +6,6 @@ use App\Enums\Booking\Status;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use DateTimeImmutable;
-use Exception;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -18,13 +17,14 @@ class ProfileController extends Controller
      */
     public function index(): view
     {
-        $bookingsBooked = User::find(auth()->user()->id)->bookings()->where('status', Status::BOOKED)->get();
-        $bookingsConfirmed = User::find(auth()->user()->id)->bookings()->where('status', Status::CONFIRMED)->get();
-        $bookingsCancelled= User::find(auth()->user()->id)->bookings()->where('status', Status::CANCELLED)->get();
-
+        $user = User::find(auth()->user()->id);
+        $bookingsBooked = $user->bookings()->where('status', Status::BOOKED)->get();
+        $bookingsConfirmed = $user->bookings()->where('status', Status::CONFIRMED)->get();
+        $bookingsCancelled = $user->bookings()->where('status', Status::CANCELLED)->get();
+        $notifications = $user->notifications()->get()->first();
 
         return view('auth.profile', ['bookingsBooked' => $bookingsBooked, 'bookingsConfirmed' => $bookingsConfirmed,
-            'bookingsCancelled' => $bookingsCancelled ]);
+            'bookingsCancelled' => $bookingsCancelled, 'notifications' => $notifications]);
     }
 
     /**
@@ -74,6 +74,10 @@ class ProfileController extends Controller
             'city' => ['sometimes', 'nullable', 'min:3'],
             'date_of_birth' => ['sometimes', 'nullable', 'date'],
             'gender' => ['sometimes', 'nullable'],
+            'sale_info' => ['sometimes', 'accepted'],
+            'special_offer_info' => ['sometimes', 'accepted'],
+            'bonus_info' => ['sometimes', 'accepted'],
+            'hotel_answer_info' => ['sometimes', 'accepted'],
         ]);
 
         $user->update([
@@ -88,6 +92,17 @@ class ProfileController extends Controller
             'updated_at' => now()
         ]);
 
+        $notifications = $user->notifications();
+        $notifications->update(
+            [
+                'discounts' => $request->has('sale_info'),
+                'special_offers' => $request->has('special_offer_info'),
+                'bonus_earnings' => $request->has('bonus_info'),
+                'feedback_responses' => $request->has('hotel_answer_info'),
+                'updated_at' => now(),
+            ]
+        );
+
         $oldEmail = $user->email;
         if (!empty($request->email)) {
             if ($oldEmail !== $request->email) {
@@ -97,7 +112,7 @@ class ProfileController extends Controller
                 $user->sendEmailVerificationNotification();
             }
         }
-      
+
         return redirect()->back()->with('profile', 'Данные изменены!');
     }
 

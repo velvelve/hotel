@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -56,11 +57,6 @@ class User extends Authenticatable implements MustVerifyEmail
         'password' => 'hashed',
     ];
 
-    public function notificationPreference()
-    {
-        return $this->belongsTo(NotificationPreference::class, 'notification_preference_id');
-    }
-
     public function role()
     {
         return $this->belongsTo(Role::class);
@@ -89,5 +85,10 @@ class User extends Authenticatable implements MustVerifyEmail
     public function bookings(): HasMany
     {
         return $this->hasMany(Booking::class);
+    }
+
+    public function notifications(): BelongsTo
+    {
+        return $this->belongsTo(NotificationPreference::class, 'notification_id', 'id');
     }
 }

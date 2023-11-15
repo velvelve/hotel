@@ -14,10 +14,10 @@ class PhoneMigrationTest extends TestCase
     public function test_example(): void
     {
         // Проверяем, что таблица "phones" была создана
-        $this->assertTrue(Schema::hasTable('phones'));
+        $this->assertTrue(Schema::hasTable('hotel_phones'));
 
         // Проверяем столбцы таблицы "phones"
-        $this->assertTrue(Schema::hasColumns('phones', [
+        $this->assertTrue(Schema::hasColumns('hotel_phones', [
             'id',
             'hotel_id',
             'number',

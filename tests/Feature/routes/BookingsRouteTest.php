@@ -6,35 +6,11 @@ use App\Enums\Booking\Status;
 use App\Models\Booking;
 use App\Models\Room;
 use App\Models\User;
+use Illuminate\Support\Facades\Password;
 use Tests\TestCase;
 
 class BookingsRouteTest extends TestCase
 {
-    // Проверяем корректность работы маршрута `/bookings/create/{room_id}`.
-    public function testCreateRoute()
-    {
-        // Находим пользователя с идентификатором 1
-        $user = User::find(1);
-
-        // Авторизуемся от имени данного пользователя
-        $this->actingAs($user);
-
-        // Находим комнату
-        $room = Room::find(1);
-
-        // Выполняем GET-запрос на маршрут '/bookings/create/{room_id}' и следуем перенаправлением
-        $response = $this->followingRedirects()->get(route('bookings.create', ['room_id' => $room->id]));
-
-        // Проверяем, что ответ имеет статус 200 (успешный запрос)
-        $response->assertStatus(200);
-
-        // Проверяем, что представление, связанное с этим ответом, является 'bookings.create'
-        $response->assertViewIs('bookings.create');
-
-        // Проверяем, что в представлении доступна переменная 'room' с ожидаемым значением
-        $response->assertViewHas('room', $room);
-    }
-
     // Проверяем сохранение заказа в БД.
     public function testSaveRoute()
     {

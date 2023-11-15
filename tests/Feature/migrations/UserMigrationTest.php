@@ -30,7 +30,7 @@ class UserMigrationTest extends TestCase
             'gender',
             'email_verified_at',
             'password',
-            'notification_id',
+            'notification_preference_id',
             'remember_token',
             'created_at',
             'updated_at',

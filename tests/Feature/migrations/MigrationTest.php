@@ -10,6 +10,6 @@ class MigrationTest extends TestCase
 {
     public function test_count_migration(): void
     {
-        $this->assertDatabaseCount('migrations', 17);
+        $this->assertDatabaseCount('migrations', 19);
     }
 }

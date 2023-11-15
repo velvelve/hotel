@@ -98,7 +98,7 @@
                                         <form action="{{ route('bookings.create') }}" method="POST">
                                             @csrf
                                             <input type="hidden" name="room_id" value="{{ $room->id }}">
-                                            <button class="cart-btn">Выбрать</button>
+                                            <button class="modal-btn">Выбрать</button>
                                         </form>
                                     </div>
                                 </div>

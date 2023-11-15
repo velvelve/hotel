@@ -2,8 +2,9 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
+use App\Models\City;
+use App\Models\Country;
+use App\Models\Location;
 use Illuminate\Support\Facades\Schema;
 use Tests\TestCase;
 
@@ -17,12 +18,28 @@ class LocationMigrationTest extends TestCase
         // Проверяем столбцы таблицы "locations"
         $this->assertTrue(Schema::hasColumns('locations', [
             'id',
-            'country',
-            'city',
+            'country_id',
+            'city_id',
             'street',
             'house',
             'created_at',
             'updated_at',
         ]));
+    }
+    public function testLocationHasCountry()
+    {
+        $location = Location::find(1);
+
+        // Проверяем, что у брони есть с комнатой
+        $this->assertInstanceOf(Country::class, $location->country);
+    }
+
+    public
+    function testLocationHasCity()
+    {
+        $location = Location::find(1);
+
+        // Проверяем, что у брони есть с комнатой
+        $this->assertInstanceOf(City::class, $location->city);
     }
 }

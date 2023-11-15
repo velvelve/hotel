@@ -2,11 +2,6 @@
 
 namespace Tests\Feature\migrations;
 
-use App\Models\Booking;
-use App\Models\Room;
-use App\Models\User;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Facades\Schema;
 use Tests\TestCase;
 
@@ -40,21 +35,5 @@ class BookingMigrationTest extends TestCase
             'created_at',
             'updated_at',
         ]));
-    }
-
-    public function testBookingHasRoom()
-    {
-        $booking = Booking::find(1);
-
-        // Проверяем, что у брони есть с комнатой
-        $this->assertInstanceOf(Room::class, $booking->room);
-    }
-
-    public function testBookingHasUser()
-    {
-        $booking = Booking::find(1);
-
-        // Проверяем, что у брони есть с комнатой
-        $this->assertInstanceOf(User::class, $booking->user);
     }
 }

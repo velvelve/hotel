@@ -6,7 +6,6 @@ use App\Enums\Booking\Status;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use DateTimeImmutable;
-use Exception;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -18,13 +17,14 @@ class ProfileController extends Controller
      */
     public function index(): view
     {
-        $bookingsBooked = User::find(auth()->user()->id)->bookings()->where('status', Status::BOOKED)->get();
-        $bookingsConfirmed = User::find(auth()->user()->id)->bookings()->where('status', Status::CONFIRMED)->get();
-        $bookingsCancelled= User::find(auth()->user()->id)->bookings()->where('status', Status::CANCELLED)->get();
-
+        $user = User::find(auth()->user()->id);
+        $bookingsBooked = $user->bookings()->where('status', Status::BOOKED)->get();
+        $bookingsConfirmed = $user->bookings()->where('status', Status::CONFIRMED)->get();
+        $bookingsCancelled = $user->bookings()->where('status', Status::CANCELLED)->get();
+        $notifications = $user->notifications()->get()->first();
 
         return view('auth.profile', ['bookingsBooked' => $bookingsBooked, 'bookingsConfirmed' => $bookingsConfirmed,
-            'bookingsCancelled' => $bookingsCancelled ]);
+            'bookingsCancelled' => $bookingsCancelled, 'notifications' => $notifications]);
     }
 
     /**
@@ -97,7 +97,7 @@ class ProfileController extends Controller
                 $user->sendEmailVerificationNotification();
             }
         }
-      
+
         return redirect()->back()->with('profile', 'Данные изменены!');
     }
 
